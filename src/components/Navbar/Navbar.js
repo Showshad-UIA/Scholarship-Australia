@@ -19,7 +19,7 @@ function Navbar() {
 			id: 3,
 			link: "Study in Australia",
 		},
-		
+
 	];
 
 	return (
@@ -72,6 +72,18 @@ function Navbar() {
 				)}
 			</div>
 		</div>
+		// <>
+		// 	<div className="w-full bg-[#0E1724]  text-white">
+		// 		<div className="flex  items-center justify-between w-5/6 mx-52 py-2">
+		// 			<div className="mr-60 cursor-pointer">ScholarShips Australia</div>
+		// 			<div className="flex items-center ">
+		// 				<p className="mx-2 cursor-pointer font-bold">About Us</p>
+		// 				<p className="mx-2 cursor-pointer font-bold">Scholarship 2023* </p>
+		// 				<p className="mx-2 cursor-pointer font-bold">Study in Australia </p>
+		// 			</div>
+		// 		</div>
+		// 	</div>
+		// </>
 	);
 }
 
