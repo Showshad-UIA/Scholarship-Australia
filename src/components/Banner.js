@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 const Banner = () => {
 	const navigate = useNavigate();
 	return (
-		<div className="bg-gradient-to-tr from-purple-100 to-cyan-800 relative h-[600px]   w-full">
+		<div className="bg-gradient-to-tr from-purple-100 to-cyan-800 relative h-[300px]   w-full">
 			<div
 				className=" w-full h-full object-cover absolute mix-blend-overlay    "
 				style={{
@@ -12,13 +12,11 @@ const Banner = () => {
 			>
 				<div className="lg:mx-[330px] mx-20 pt-20">
 					<h1 className="text-white text-4xl  mb">
-						Hire the best freelancers for any job, online.
+						Hire the best consultant for your scholarship application.
 					</h1>
 					<div className="my-5 text-white text-md">
-						<li>World's largest freelance marketplace</li>
-						<li>Any job you can possibly think of</li>
-						<li>Save up to 90% & get quotes for free</li>
-						<li>Pay only when you're 100% happy</li>
+						<li> Australia’s first scholarship consultancy online platform</li>
+						<li> Get feedback from previous scholarship recipients</li>
 					</div>
 				</div>
 				<div className="flex gap-5 lg:mx-[330px] mx-20 ">

@@ -4,8 +4,8 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 const SecondNavbar = () => {
     const [nav,setNav]=useState(false)
     return (
-        <div className='w-full h-10  bg-[#fff]'>
-        <div className='flex justify-between items-center  mx-[330px] py-2'>
+        <div className=' h-10  bg-[#fff]'>
+        <div className='flex justify-between items-center  lg:mx-[330px] py-2'>
 
         
         <div className='md:flex hidden '>

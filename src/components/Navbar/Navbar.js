@@ -28,7 +28,7 @@ function Navbar() {
 				<div>
 					<a href="/" className="text-3xl  ml-2">
 						{" "}
-						Australian Scholarship
+						Scholarships Australia
 					</a>
 				</div>
 				<ul className="hidden md:flex">
