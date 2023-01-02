@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar/Navbar";
 
 import Home from "./components/Home/Home";
 import SecondNavbar from "./components/Navbar/SecondNavbar";
+import Footer from "./components/Footer/Footer";
 
 function App() {
 	return (
@@ -17,6 +18,7 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Home></Home>}></Route>
 			</Routes>
+			<Footer></Footer>
 		</Router>
 	);
 }

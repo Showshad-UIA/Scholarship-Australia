@@ -1,0 +1,146 @@
+[
+	{
+		"id": 1,
+		"institutions": "Western sydney university",
+		"year": "Year 2022",
+		"scholarShipList": [
+			{
+				"id": 1,
+
+				"uniName": " Western Sydney University",
+				"scholarQuality": "China Scholarship Council Research Scholarships",
+				"Scholarship inclusions": "Step 1: Find a supervisor You need to find a supervisor at Western Sydney University and acquire a supervisor letter of support to include in your application. Step 2: Submit an application for admission You need to submit an&..",
+				"levelStudy": "Postgraduate",
+
+				"ScholarshipValue": "The CSC Research Scholarship may provide funding to cover a living...",
+				"availableAward": "All eligible students",
+				"primaryImg": "https://i.ibb.co/121StQB/myhc-285246.jpg"
+			},
+			{
+				"id": 2,
+
+				"uniName": " Western Sydney University",
+				"scholarQuality": "Vice-Chancellor's Academic Excellence Postgraduate Scholarships",
+				"Scholarship inclusions": "Step 1: Find a supervisor You need to find a supervisor at Western Sydney University and acquire a supervisor letter of support to include in your application. Step 2: Submit an application for admission You need to submit an&..",
+				"levelStudy": "Postgraduate",
+
+				"ScholarshipValue": "The CSC Research Scholarship may provide funding to cover a living...",
+				"availableAward": "All eligible students",
+				"primaryImg": "https://i.ibb.co/121StQB/myhc-285246.jpg"
+			},
+			{
+				"id": 3,
+
+				"uniName": " Western Sydney University",
+				"scholarQuality": "No separate application is necessary. You will be automatically considered for a scholarship when you apply to study at Western Sydney University, Sydney City Campus. Your initial scholarship will be applied to your Western student account after census...",
+				"Scholarship inclusions": "Step 1: Find a supervisor You need to find a supervisor at Western Sydney University and acquire a supervisor letter of support to include in your application. Step 2: Submit an application for admission You need to submit an&..",
+				"levelStudy": "Postgraduate",
+
+				"ScholarshipValue": "6,000 per year. Up to two years maximum, to the value of 12,000 or 3,000...",
+				"availableAward": "All eligible students",
+				"primaryImg": "https://i.ibb.co/121StQB/myhc-285246.jpg"
+			},
+			{
+				"id": 4,
+
+				"uniName": " Western Sydney University",
+				"scholarQuality": "No separate application is necessary. You will be automatically considered for a scholarship when you apply to study at Western Sydney University, Sydney City Campus.",
+				"Scholarship inclusions": "Step 1: Find a supervisor You need to find a supervisor at Western Sydney University and acquire a supervisor letter of support to include in your application. Step 2: Submit an application for admission You need to submit an&..",
+				"levelStudy": "Undergraduate",
+
+				"ScholarshipValue": "6,000 per year. Up to two years maximum, to the value of 12,000 or 3,000...",
+				"availableAward": "All eligible students",
+				"primaryImg": "https://i.ibb.co/121StQB/myhc-285246.jpg"
+			}
+		]
+	},
+	{
+		"id": 2,
+		"institutions": "Melbourne university",
+		"year": "Year 2023",
+		"scholarShipList": [
+			{
+				"id": 1,
+
+				"uniName": "Melbourne university",
+				"scholarQuality": "Dean award scholarship ",
+				"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
+				"levelStudy": "undergraduate",
+				"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
+				"availableAward": "All eligible students",
+				"primaryImg": "https://i.ibb.co/dmc5gtC/myhc-254404.jpg"
+			}
+		]
+	},
+
+	{
+		"id": 3,
+		"institutions": "Sydney university",
+		"year": "Year 2024",
+		"scholarShipList": [
+			{
+				"id": 1,
+
+				"uniName": " Sydney University",
+				"scholarQuality": "China Scholarship Council Research Scholarships",
+				"courseDetails": "Step 1: Find a supervisor You need to find a supervisor at Western Sydney University and acquire a supervisor letter of support to include in your application. Step 2: Submit an application for admission You need to submit an&..",
+				"levelStudy": "Postgraduate",
+				"ScholarshipValue": "The CSC Research Scholarship may provide funding to cover a living...",
+				"availableAward": "All eligible students",
+				"primaryImg": "https://i.ibb.co/121StQB/myhc-285246.jpg"
+			}
+		]
+	},
+
+	{
+		"id": 4,
+		"institutions": "Tasmania university",
+		"year": "Year 2025",
+		"scholarShipList": [
+			{
+				"id": 1,
+
+				"uniName": "Tasmania university",
+				"scholarQuality": "Fellowship scholarship ",
+				"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
+				"levelStudy": "Postgraduate",
+				"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
+				"availableAward": "All eligible students",
+				"primaryImg": "https://i.ibb.co/dmc5gtC/myhc-254404.jpg"
+			},
+			{
+				"id": 2,
+
+				"uniName": "Tasmania university",
+				"scholarQuality": "Fellowship scholarship ",
+				"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
+				"levelStudy": "Postgraduate",
+				"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
+				"availableAward": "All eligible students",
+				"primaryImg": "https://i.ibb.co/dmc5gtC/myhc-254404.jpg"
+			},
+			{
+				"id": 3,
+
+				"uniName": "Tasmania university",
+				"scholarQuality": "Fellowship scholarship ",
+				"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
+				"levelStudy": "Postgraduate",
+				"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
+				"availableAward": "All eligible students",
+				"primaryImg": "https://i.ibb.co/dmc5gtC/myhc-254404.jpg"
+			},
+			{
+				"id": 4,
+
+				"uniName": "Tasmania university",
+				"scholarQuality": "Fellowship scholarship ",
+				"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
+				"levelStudy": "Postgraduate",
+				"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
+				"availableAward": "All eligible students",
+				"primaryImg": "https://i.ibb.co/dmc5gtC/myhc-254404.jpg"
+			}
+		]
+	}
+]

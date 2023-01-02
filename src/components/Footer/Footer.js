@@ -2,44 +2,111 @@ import React from "react";
 
 const Footer = () => {
 	return (
-		<div>
-			<footer className="footer container mx-auto p-10 bg-green-400 text-base-content">
-				<div>
-					<span className="footer-title">Services</span>
-					<a className="link link-hover">Branding</a>
-					<a className="link link-hover">Design</a>
-					<a className="link link-hover">Marketing</a>
-					<a className="link link-hover">Advertisement</a>
-				</div>
-				<div>
-					<span className="footer-title">Company</span>
-					<a className="link link-hover">About us</a>
-					<a className="link link-hover">Contact</a>
-					<a className="link link-hover">Jobs</a>
-					<a className="link link-hover">Press kit</a>
-				</div>
-				<div>
-					<span className="footer-title">Legal</span>
-					<a className="link link-hover">Terms of use</a>
-					<a className="link link-hover">Privacy policy</a>
-					<a className="link link-hover">Cookie policy</a>
-				</div>
-				<div>
-					<span className="footer-title">Newsletter</span>
-					<div className="form-control w-80">
-						<label className="label">
-							<span className="label-text">Enter your email address</span>
-						</label>
-						<div className="relative">
-							<input
-								type="text"
-								placeholder="username@site.com"
-								className="input input-bordered w-full pr-16"
-							/>
-							<button className="btn btn-primary absolute top-0 right-0 rounded-l-none">
-								Subscribe
-							</button>
-						</div>
+		<div className="bg-[#1E282D]  mt-5">
+			<footer class="  text-white mx-28">
+				<div class="grid grid-cols-2  py-8 px-6 md:grid-cols-4 mx-20 gap-20">
+					<div>
+						<h2 class="mb-6 text-sm font-semibold text-white uppercase dark:text-white">
+							Company
+						</h2>
+						<ul class="text-white dark:text-white">
+							<li class="mb-4">
+								<a href="#" class=" hover:underline">
+									About
+								</a>
+							</li>
+							<li class="mb-4">
+								<a href="#" class="hover:underline">
+									Careers
+								</a>
+							</li>
+							<li class="mb-4">
+								<a href="#" class="hover:underline">
+									Brand Center
+								</a>
+							</li>
+							<li class="mb-4">
+								<a href="#" class="hover:underline">
+									Blog
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<h2 class="mb-6 text-sm font-semibold  uppercase text-white">
+							Help center
+						</h2>
+						<ul class=" text-white">
+							<li class="mb-4">
+								<a href="#" class="hover:underline">
+									Discord Server
+								</a>
+							</li>
+							<li class="mb-4">
+								<a href="#" class="hover:underline">
+									Twitter
+								</a>
+							</li>
+							<li class="mb-4">
+								<a href="#" class="hover:underline">
+									Facebook
+								</a>
+							</li>
+							<li class="mb-4">
+								<a href="#" class="hover:underline">
+									Contact Us
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<h2 class="mb-6 text-sm font-semibold  uppercase text-white">
+							Legal
+						</h2>
+						<ul class=" text-white">
+							<li class="mb-4">
+								<a href="#" class="hover:underline">
+									Privacy Policy
+								</a>
+							</li>
+							<li class="mb-4">
+								<a href="#" class="hover:underline">
+									Licensing
+								</a>
+							</li>
+							<li class="mb-4">
+								<a href="#" class="hover:underline">
+									Terms &amp; Conditions
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<h2 class="mb-6 text-sm font-semibold  uppercase text-white">
+							Download
+						</h2>
+						<ul class=" text-white">
+							<li class="mb-4">
+								<a href="#" class="hover:underline">
+									iOS
+								</a>
+							</li>
+							<li class="mb-4">
+								<a href="#" class="hover:underline">
+									Android
+								</a>
+							</li>
+							<li class="mb-4">
+								<a href="#" class="hover:underline">
+									Windows
+								</a>
+							</li>
+							<li class="mb-4">
+								<a href="#" class="hover:underline">
+									MacOS
+								</a>
+							</li>
+						</ul>
 					</div>
 				</div>
 			</footer>
@@ -48,43 +115,3 @@ const Footer = () => {
 };
 
 export default Footer;
-<footer className="footer p-10 bg-base-200 text-base-content">
-	<div>
-		<span className="footer-title">Services</span>
-		<a className="link link-hover">Branding</a>
-		<a className="link link-hover">Design</a>
-		<a className="link link-hover">Marketing</a>
-		<a className="link link-hover">Advertisement</a>
-	</div>
-	<div>
-		<span className="footer-title">Company</span>
-		<a className="link link-hover">About us</a>
-		<a className="link link-hover">Contact</a>
-		<a className="link link-hover">Jobs</a>
-		<a className="link link-hover">Press kit</a>
-	</div>
-	<div>
-		<span className="footer-title">Legal</span>
-		<a className="link link-hover">Terms of use</a>
-		<a className="link link-hover">Privacy policy</a>
-		<a className="link link-hover">Cookie policy</a>
-	</div>
-	<div>
-		<span className="footer-title">Newsletter</span>
-		<div className="form-control w-80">
-			<label className="label">
-				<span className="label-text">Enter your email address</span>
-			</label>
-			<div className="relative">
-				<input
-					type="text"
-					placeholder="username@site.com"
-					className="input input-bordered w-full pr-16"
-				/>
-				<button className="btn btn-primary absolute top-0 right-0 rounded-l-none">
-					Subscribe
-				</button>
-			</div>
-		</div>
-	</div>
-</footer>;

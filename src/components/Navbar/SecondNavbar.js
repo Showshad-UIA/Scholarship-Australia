@@ -5,9 +5,9 @@ const SecondNavbar = () => {
     const [nav,setNav]=useState(false)
     return (
         <div className=' h-10  bg-[#fff]'>
-        <div className='flex justify-between items-center  lg:mx-[330px] py-2'>
+        <div className='flex justify-between items-center  mx-12  py-2'>
 
-        
+         
         <div className='md:flex hidden '>
             <p className='mx-2  font-bold cursor-pointer'>Login</p>
             <p className='mx-2  font-bold cursor-pointer'>Sign Up</p>
