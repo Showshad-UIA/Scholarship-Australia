@@ -1,23 +1,26 @@
 import { data } from "autoprefixer";
-import { IoMdArrowDropdown } from "react-icons/io";
 import React, { useEffect, useState } from "react";
 import WesternSydney from "./Pages/WesternSydney";
+import Searchbox from "../components/Searchbox.css";
 
 const SearchBox = ({ universityName }) => {
 	const [selectUniversity, setSelectUniversity] = useState("");
 	const [searchButton, setSearchButton] = useState(false);
 	const [yearSelect, setYearSelect] = useState([]);
-	const [selectedYear, setSelectedYear] = useState("");
+	const [selectedScholarship, setSelectedScholarship] = useState("");
 	const [selectedLevel, setSelectedLevel] = useState("");
 
 	const selectedData = universityName?.filter(
 		(data) =>
-			data?.govtStatus === selectedYear || data?.levelStudy === selectedLevel
+			data?.govtStatus === selectedScholarship ||
+			data?.levelStudy === selectedLevel
 	);
 
 	const searchedData = universityName?.filter(
 		(data) =>
-			data?.govtStatus?.toLowerCase()?.includes(selectedYear.toLowerCase()) ||
+			data?.govtStatus
+				?.toLowerCase()
+				?.includes(selectedScholarship.toLowerCase()) ||
 			data?.levelStudy?.toLowerCase()?.includes(selectedLevel.toLowerCase())
 	);
 
@@ -37,20 +40,19 @@ const SearchBox = ({ universityName }) => {
 
 	return (
 		<div>
-			<h1 className="text-xl text-center text-[#304F40] items-center container mx-auto font-bold mt-5 ">
+			<h1 className="text-xl text-center text-[#304F40] items-center container mx-auto font-bold mt-5 rounded-3xl border-2 border-[#304F40] shadow-md p-2 ">
 				Scholarship Australia is the first scholarship consultancy online
 				platform. Hire the best consultant for your scholarship application. Get
 				feedback from previous scholarship recipients.
 			</h1>
 			<div className="flex justify-center mt-5 gap-5 ">
-				<div className="relative  lg:max-w-sm">
+				<div className="relative  lg:max-w-sm dropdown ">
 					<select
-						onChange={(e) => setSelectedYear(e.target.value)}
-						className="p-2.5 lg:w-60 w-full  bg-white border-2 border-[#304F40] rounded-3xl shadow-sm outline-none appearance-none  text-black"
+						onChange={(e) => setSelectedScholarship(e.target.value)}
+						className="p-2.5 lg:w-60 w-full  bg-white border-2 border-[#304F40] rounded-3xl shadow-sm outline-none appearance-none  text-white"
 					>
 						<option className="font-bold dropdown inline">
 							Select a scholarships{" "}
-							<IoMdArrowDropdown size={30} className="text-red-500" />
 						</option>
 						<option>Government scholarships</option>
 						<option>University scholarships</option>
@@ -58,10 +60,10 @@ const SearchBox = ({ universityName }) => {
 					</select>
 				</div>
 
-				<div className="relative  lg:max-w-sm">
+				<div className="relative  lg:max-w-sm dropdown">
 					<select
 						onChange={(e) => setSelectedLevel(e.target.value)}
-						className="p-2.5 lg:w-60 w-full  bg-white border-2 border-[#304F40] rounded-3xl shadow-sm outline-none appearance-none  text-black"
+						className="p-2.5 lg:w-60 w-full  bg-white border-2 border-[#304F40] rounded-3xl shadow-sm outline-none appearance-none  text-white"
 					>
 						<option className="font-bold">Select a study level</option>
 						<option>Undergraduate</option>
@@ -75,6 +77,9 @@ const SearchBox = ({ universityName }) => {
 				>
 					Search
 				</button>
+				{/* <button className="rounded-3xl text-white bg-[#304F40] p-2">
+					Post your Scholarship Query
+				</button> */}
 			</div>
 
 			{searchButton ? (

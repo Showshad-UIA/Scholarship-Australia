@@ -1,0 +1,56 @@
+.dropdown select {
+
+	width: 250px;
+	padding: 2px;
+
+	color: black;
+	line-height: 2;
+
+	/*Hides the default arrows for Selects*/
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	text-indent: 0.01px;
+	text-overflow: "";
+	position: relative;
+}
+
+.dropdown {
+	width: 250px;
+	overflow: hidden;
+	background: no-repeat right white;
+;
+    
+	
+}
+
+.dropdown {
+	position: relative;
+}
+
+.dropdown:before {
+	content: "";
+	position: absolute;
+	right: 10px;
+	top: 8px;
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+}
+
+.dropdown:after {
+	content: "";
+	position: absolute;
+	right: 10px;
+	top: 15px;
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid black;
+}
+
+select > option {
+	background: #d3d3d3;
+	color: black;
+}

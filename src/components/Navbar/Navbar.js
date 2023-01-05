@@ -25,7 +25,7 @@ function Navbar() {
 		},
 		{
 			id: 5,
-			link: "About Us",
+			link: "Our Services",
 		},
 	];
 
