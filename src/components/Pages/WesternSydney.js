@@ -14,8 +14,8 @@ const WesternSydney = ({ d }) => {
 								className="lg:h-28 lg:w-[120px] border-2  h-20 w-[150px]"
 							/>
 						</a>
-						<p className="bg-[#304F40] rounded-2xl p-1 my-2 text-white text-center cursor-pointer">
-							Website
+						<p className="bg-[#304F40] rounded-2xl text-white text-center cursor-pointer  px-3  mt-2">
+							View courses
 						</p>
 					</div>
 
@@ -23,15 +23,17 @@ const WesternSydney = ({ d }) => {
 						<p className="text-xl  text-black  font-bold underline cursor-pointer ">
 							{d.scholarQuality}
 						</p>
-						<p className="text-md font-bold mb-2 text-black hover:underline cursor-pointer">
+						<div>
+						<h1 className="text-md font-bold mb-2 text-black hover:underline cursor-pointer underline">
 							{d.uniName}
-						</p>
+						</h1>
+						</div>
 
-						<div className="flex w-full lg:gap-40 my-1 text-[16px]">
+						<div className="flex w-full lg:gap-[155px] my-1 text-[16px]">
 							<p className=" text-black font-bold">Level of study:</p>
 							<p className=" text-black ">{d.levelStudy}</p>
 						</div>
-						<div className="flex  w-full lg:gap-24 my-1 text-[16px]">
+						<div className="flex  w-full lg:gap-[87px] my-1 text-[16px]">
 							<p className=" text-black font-bold ">Scholarship inclusions:</p>
 							<p className=" text-black  ">
 								Scholarships include a stipend of $30,000(AUD) per annum for
@@ -47,10 +49,11 @@ const WesternSydney = ({ d }) => {
 							</p>
 						</div>
 						<div className=" flex justify-between w-full text-[16px] ">
-							<div className="flex lg:gap-[150px] my-1">
+							<div className="flex lg:gap-[143px] my-1">
 								<p className="mb-3 text-black font-bold ">Who can apply?</p>
 								<p className="mb-3 text-black ">
-									Domestic and international applicants.
+									Domestic and international applicants{" "}
+									<span className="underline">Find out more</span>
 								</p>
 							</div>
 						</div>
@@ -65,8 +68,8 @@ const WesternSydney = ({ d }) => {
 									Australia can assist you to get connected with consultants who
 									are previous scholarship recipients in your field to ensure
 									you submit a competitive application{" "}
-									<span className="bg-[#304F40] px-3 py-1 text-white rounded-2xl">
-										Enquire now
+									<span className="bg-[#304F40] px-3 py-1  text-white rounded-2xl">
+										Get your application advice
 									</span>
 								</p>
 							</div>

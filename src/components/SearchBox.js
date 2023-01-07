@@ -40,7 +40,7 @@ const SearchBox = ({ universityName }) => {
 
 	return (
 		<div>
-			<h1 className="text-xl text-center text-[#304F40] items-center container mx-auto font-bold mt-5 rounded-3xl border-2 border-[#304F40] shadow-md p-2 ">
+			<h1 className="text-xl text-center text-[#304F40] items-center container mx-auto font-bold mt-5 rounded-3xl   ">
 				Scholarship Australia is the first scholarship consultancy online
 				platform. Hire the best consultant for your scholarship application. Get
 				feedback from previous scholarship recipients.
@@ -49,9 +49,9 @@ const SearchBox = ({ universityName }) => {
 				<div className="relative  lg:max-w-sm dropdown ">
 					<select
 						onChange={(e) => setSelectedScholarship(e.target.value)}
-						className="p-2.5 lg:w-60 w-full  bg-white border-2 border-[#304F40] rounded-3xl shadow-sm outline-none appearance-none  text-white"
+						className=" lg:w-60 w-full  bg-white border-2 border-[#304F40] rounded-3xl shadow-sm  outline-none appearance-none  text-white"
 					>
-						<option className="font-bold dropdown inline">
+						<option className="font-bold dropdown inline ">
 							Select a scholarships{" "}
 						</option>
 						<option>Government scholarships</option>
@@ -103,8 +103,8 @@ const SearchBox = ({ universityName }) => {
 												className="lg:h-28 lg:w-[120px] border-2  h-20 w-[150px]"
 											/>
 										</a>
-										<p className="bg-[#304F40] rounded-2xl p-1 my-2 text-white text-center cursor-pointer">
-											Website
+										<p className="bg-[#304F40] rounded-2xl text-white text-center cursor-pointer  px-3 mt-2">
+										View courses
 										</p>
 									</div>
 
@@ -112,15 +112,17 @@ const SearchBox = ({ universityName }) => {
 										<p className="text-xl mt-5 text-black  font-bold underline cursor-pointer ">
 											{d.scholarQuality}
 										</p>
+										<div>
 										<p className="text-md font-bold mb-2 text-black hover:underline cursor-pointer">
 											{d.uniName}
 										</p>
+										</div>
 
-										<div className="flex w-full lg:gap-40">
+										<div className="flex w-full lg:gap-[153px]">
 											<p className=" text-black font-bold">Level of study:</p>
 											<p className=" text-black ">{d.levelStudy}</p>
 										</div>
-										<div className="flex  w-full lg:gap-24 ">
+										<div className="flex  w-full lg:gap-[85px] ">
 											<p className=" text-black font-bold ">
 												Scholarship inclusions:
 											</p>
@@ -139,12 +141,12 @@ const SearchBox = ({ universityName }) => {
 											</p>
 										</div>
 										<div className=" flex justify-between w-full">
-											<div className="flex lg:gap-[150px]">
+											<div className="flex lg:gap-[143px]">
 												<p className="mb-3 text-black font-bold ">
 													Who can apply?
 												</p>
 												<p className="mb-3 text-black ">
-													Domestic and international applicants.
+													Domestic and international applicants <span className="underline">Find out more</span>
 												</p>
 											</div>
 										</div>
@@ -153,15 +155,15 @@ const SearchBox = ({ universityName }) => {
 												<p className=" text-black font-bold lg:w-3/5 ">
 													Need Help with Your Application:
 												</p>
-												<p className=" text-md ">
+												<p className=" text-md text-black">
 													Would you like someone experienced to review and give
 													feedback prior to submitting your scholarship
 													application? Scholarships Australia can assist you to
 													get connected with consultants who are previous
 													scholarship recipients in your field to ensure you
 													submit a competitive application{" "}
-													<span className="bg-[#304F40] px-3 py-1 text-white rounded-2xl">
-														Enquire now
+													<span className="bg-[#304F40] px-3 py-1 text-white rounded-2xl ">
+													Get your application advice
 													</span>
 												</p>
 											</div>

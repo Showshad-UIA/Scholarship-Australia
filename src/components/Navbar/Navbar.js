@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import image from "../../Image/scholarships-australia-high-resolution-logo-white-on-transparent-background.png";
 // import { Link } from "react-scroll";
 
 function Navbar() {
@@ -34,16 +35,13 @@ function Navbar() {
 			<div className="">
 				<div className="flex justify-around  w-full items-center h-20 text-white  px-4  sticky top-0 ">
 					<div>
-						<a href="/" className="text-3xl  ml-2">
-							{" "}
-							Scholarships Australia
-						</a>
+						<img src={image} className="lg:w-[400px] h-10" alt="" />
 					</div>
 					<ul className="hidden md:flex">
 						{links.map(({ id, link }) => (
 							<li
 								key={id}
-								className="px-4 cursor-pointer capitalize font-medium text-white hover:scale-105 duration-200"
+								className="px-4 cursor-pointer capitalize font-medium text-xl text-white hover:scale-105 duration-200"
 							>
 								<Link to={link} smooth duration={500}>
 									{" "}
