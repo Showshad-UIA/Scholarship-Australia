@@ -5,7 +5,7 @@ const Banner = () => {
 
 	const banner = {
 		backgroundImage: "url('https://i.ibb.co/ZHLRNqq/Wedding-Banner-5.png') ",
-		height: "630px",
+		height: "530px",
 		backgroundSize: "cover",
 		backgroundRepeat: "no-repeat",
 	};

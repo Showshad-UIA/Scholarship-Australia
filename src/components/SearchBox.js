@@ -54,8 +54,8 @@ const SearchBox = ({ universityName }) => {
 						<option className="font-bold dropdown inline ">
 							Select a scholarships{" "}
 						</option>
-						<option>Government scholarships</option>
 						<option>University scholarships</option>
+						<option>Government scholarships</option>
 						<option>External scholarships </option>
 					</select>
 				</div>
