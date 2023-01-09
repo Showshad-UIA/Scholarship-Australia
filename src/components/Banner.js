@@ -5,7 +5,7 @@ const Banner = () => {
 
 	const banner = {
 		backgroundImage: "url('https://i.ibb.co/QC1gbGm/Blue-Gold-Rustic-Artisinal-Remote-Graduation-Banner-5.png') ",
-		height: "530px",
+		height: "500px",
 		backgroundSize: "cover",
 		backgroundRepeat: "no-repeat",
 	};
