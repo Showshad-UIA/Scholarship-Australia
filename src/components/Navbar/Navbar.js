@@ -31,7 +31,7 @@ function Navbar() {
 	];
 
 	return (
-		<div className="bg-[#1E282D]">
+		<div className="bg-[#1E282D] sticky top-0">
 			<div className="">
 				<div className="flex justify-around  w-full items-center h-20 text-white  px-4  sticky top-0 ">
 					<div>
@@ -41,7 +41,7 @@ function Navbar() {
 						{links.map(({ id, link }) => (
 							<li
 								key={id}
-								className="px-4 cursor-pointer capitalize font-medium text-xl text-white hover:scale-105 duration-200"
+								className="px-4 cursor-pointer capitalize font-medium text-md text-white hover:scale-105 duration-200"
 							>
 								<Link to={link} smooth duration={500}>
 									{" "}

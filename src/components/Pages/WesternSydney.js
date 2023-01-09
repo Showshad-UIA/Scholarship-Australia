@@ -31,10 +31,10 @@ const WesternSydney = ({ d }) => {
 
 						<div className="flex w-full lg:gap-[155px] my-1 text-[16px]">
 							<p className=" text-black font-bold">Level of study:</p>
-							<p className=" text-black ">{d.levelStudy}</p>
+							<p className=" text-black start">{d.levelStudy}</p>
 						</div>
 						<div className="flex  w-full lg:gap-[87px] my-1 text-[16px]">
-							<p className=" text-black font-bold ">Scholarship inclusions:</p>
+							<p className=" text-black font-bold start">Scholarship inclusions:</p>
 							<p className=" text-black  ">
 								Scholarships include a stipend of $30,000(AUD) per annum for
 								three (3) years.
@@ -50,7 +50,7 @@ const WesternSydney = ({ d }) => {
 						</div>
 						<div className=" flex justify-between w-full text-[16px] ">
 							<div className="flex lg:gap-[143px] my-1">
-								<p className="mb-3 text-black font-bold ">Who can apply?</p>
+								<p className="mb-3 text-black font-bold start ">Who can apply?</p>
 								<p className="mb-3 text-black ">
 									Domestic and international applicants{" "}
 									<span className="underline">Find out more</span>

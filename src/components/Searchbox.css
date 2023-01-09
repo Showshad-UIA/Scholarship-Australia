@@ -1,12 +1,11 @@
 .dropdown select {
-
 	width: 250px;
 	padding: 2px 8px;
 
 	color: black;
 	line-height: 2;
 
-	/*Hides the default arrows for Selects*/
+	/*Hides the default arrows*/
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	text-indent: 0.01px;
@@ -18,14 +17,10 @@
 	width: 250px;
 	overflow: hidden;
 	background: no-repeat right white;
-;
-    
-	
 }
 
 .dropdown {
 	position: relative;
-	
 }
 
 .dropdown:before {
@@ -52,9 +47,6 @@
 	padding-left: 2px;
 }
 
-
 select > option {
-	
 	color: black;
-	
 }
