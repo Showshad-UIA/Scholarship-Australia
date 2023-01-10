@@ -13,7 +13,8 @@ import GovernmentScolarship from "./components/Navbar/GovernmentScolarship";
 
 function App() {
 	return (
-		<Router>
+		<div>
+			
 			<SecondNavbar></SecondNavbar>
 			<Navbar></Navbar>
 			<Routes>
@@ -21,7 +22,8 @@ function App() {
 				<Route path="/government" element={<GovernmentScolarship></GovernmentScolarship>}></Route>
 			</Routes>
 			<Footer></Footer>
-		</Router>
+		
+		</div>
 	);
 }
 
