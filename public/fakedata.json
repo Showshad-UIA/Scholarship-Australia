@@ -96,10 +96,10 @@
 	{
 		"id": 9,
 		"uniName": "The University of Western Australia",
-		"govtStatus": "Government scholarships",
+		"govtStatus": "University scholarships",
 		"scholarQuality": "Fellowship scholarship ",
 		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
-		"levelStudy": "Postgraduate",
+		"levelStudy": "Undergraduate",
 		"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
 		"availableAward": "All eligible students",
 		"primaryImg": "https://i.postimg.cc/7YXG8Q0z/Western.jpg"
@@ -131,11 +131,11 @@
 
 	{
 		"id": 12,
-		"govtStatus": "Government scholarships",
+		"govtStatus": "University scholarships",
 		"uniName": "Charles Darwin University",
 		"scholarQuality": " Academic Excellence Scholarship ",
 		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
-		"levelStudy": "Postgraduate",
+		"levelStudy": "Undergraduate",
 		"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
 		"availableAward": "All eligible students",
 		"primaryImg": "https://i.ibb.co/SRJ7rnX/darwin.png"
@@ -286,6 +286,17 @@
 		"scholarQuality": "Vice-Chancellor's Academic Excellence Postgraduate Scholarships",
 		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
 		"levelStudy": "Postgraduate",
+		"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
+		"availableAward": "All eligible students",
+		"primaryImg": "https://i.ibb.co/5vCBFh8/adilade.png"
+	},
+	{
+		"id": 24,
+		"govtStatus": "University scholarships",
+		"uniName": "University of Adelaide",
+		"scholarQuality": "Vice-Chancellor's Academic Excellence Postgraduate Scholarships",
+		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
+		"levelStudy": "Undergraduate",
 		"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
 		"availableAward": "All eligible students",
 		"primaryImg": "https://i.ibb.co/5vCBFh8/adilade.png"

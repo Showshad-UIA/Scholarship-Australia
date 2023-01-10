@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import image from "../../Image/scholarships-australia-high-resolution-logo-white-on-transparent-background.png";
+import image from "../../Image/logo.png";
 // import { Link } from "react-scroll";
 
 function Navbar() {
@@ -31,11 +31,11 @@ function Navbar() {
 	];
 
 	return (
-		<div className="bg-[#1E282D] sticky top-0">
+		<div className="bg-[#1E282D] ">
 			<div className="">
-				<div className="flex justify-around  w-full items-center h-20 text-white  px-4  sticky top-0 ">
+				<div className="flex justify-around  w-full items-center h-20 text-white  px-4  ">
 					<div>
-						<img src={image} className="lg:w-[400px] h-10" alt="" />
+						<img src={image} className="lg:w-[180px] h-10" alt="" />
 					</div>
 					<ul className="hidden md:flex">
 						{links.map(({ id, link }) => (
@@ -79,18 +79,7 @@ function Navbar() {
 				</div>
 			</div>
 		</div>
-		// <>
-		// 	<div className="w-full bg-[#0E1724]  text-white">
-		// 		<div className="flex  items-center justify-between w-5/6 mx-52 py-2">
-		// 			<div className="mr-60 cursor-pointer">ScholarShips Australia</div>
-		// 			<div className="flex items-center ">
-		// 				<p className="mx-2 cursor-pointer font-bold">About Us</p>
-		// 				<p className="mx-2 cursor-pointer font-bold">Scholarship 2023* </p>
-		// 				<p className="mx-2 cursor-pointer font-bold">Study in Australia </p>
-		// 			</div>
-		// 		</div>
-		// 	</div>
-		// </>
+		
 	);
 }
 
