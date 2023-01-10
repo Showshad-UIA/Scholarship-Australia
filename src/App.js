@@ -18,8 +18,6 @@ function App() {
 			<Navbar></Navbar>
 			<Routes>
 				<Route path="/" element={<Home></Home>}></Route>
-			</Routes>
-			<Routes>
 				<Route path="/government" element={<GovernmentScolarship></GovernmentScolarship>}></Route>
 			</Routes>
 			<Footer></Footer>

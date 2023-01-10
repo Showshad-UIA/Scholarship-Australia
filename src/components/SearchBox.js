@@ -12,15 +12,15 @@ const SearchBox = ({ universityName }) => {
 
 	const selectedData = universityName?.filter(
 		(data) =>
-			data?.govtStatus === selectedScholarship ||
-			data?.levelStudy === selectedLevel
+			data?.govtStatus === selectedScholarship &&
+			data?.levelStudy === selectedLevel 
 	);
 
 	const searchedData = universityName?.filter(
 		(data) =>
 			data?.govtStatus
 				?.toLowerCase()
-				?.includes(selectedScholarship.toLowerCase()) ||
+				?.includes(selectedScholarship.toLowerCase()) &&
 			data?.levelStudy?.toLowerCase()?.includes(selectedLevel.toLowerCase())
 	);
 

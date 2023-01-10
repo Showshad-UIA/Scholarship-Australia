@@ -31,7 +31,7 @@ function Navbar() {
 	];
 
 	return (
-		<div className="bg-[#1E282D] sticky top-0">
+		<div className="bg-[#1E282D] sticky top-0 z-10">
 			<div className="">
 				<div className="flex justify-around  w-full items-center h-20 text-white  px-4  sticky top-0 ">
 					<div>
