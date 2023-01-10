@@ -21,7 +21,7 @@ const Home = () => {
 			<Banner></Banner>
 
 			<SearchBox universityName={universityName}></SearchBox>
-			<ExternalScholarships></ExternalScholarships>
+			{/* <ExternalScholarships></ExternalScholarships> */}
 		</div>
 	);
 };

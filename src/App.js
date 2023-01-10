@@ -14,26 +14,24 @@ import ExternalScholarships from "./components/Pages/ExternalScholarships";
 
 function App() {
 	return (
-		<Router>
+		<div>
 			<SecondNavbar></SecondNavbar>
 			<Navbar></Navbar>
 			<Routes>
 				<Route path="/" element={<Home></Home>}></Route>
-			</Routes>
-			<Routes>
+			
 				<Route
 					path="/government"
 					element={<GovernmentScolarship></GovernmentScolarship>}
 				></Route>
-			</Routes>
-			<Routes>
+			
 				<Route
 					path="/external"
 					element={<ExternalScholarships></ExternalScholarships>}
 				></Route>
 			</Routes>
 			<Footer></Footer>
-		</Router>
+		</div>
 	);
 }
 
