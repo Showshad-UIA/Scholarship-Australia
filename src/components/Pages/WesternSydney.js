@@ -24,7 +24,7 @@ const WesternSydney = ({ d }) => {
 							{d.scholarQuality}
 						</p>
 						<div>
-						<h1 className="text-md font-bold mb-2 text-black hover:underline cursor-pointer underline">
+						<h1 className="text-md font-bold mb-2 text-black hover:underline cursor-pointer ">
 							{d.uniName}
 						</h1>
 						</div>
