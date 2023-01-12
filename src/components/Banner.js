@@ -1,31 +1,40 @@
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+// import Bannar from "../Image/Wedding Banner  (10).png";
 
+// const Banner = () => {
+// 	const navigate = useNavigate();
+
+// 	const banner = {
+// 		backgroundImage: "url('https://i.ibb.co/QC1gbGm/Blue-Gold-Rustic-Artisinal-Remote-Graduation-Banner-5.png') ",
+// 		backgroundImage: "url('https://i.ibb.co/wz6qqWW/Wedding-Banner-10.png') ",
+// 		height: "460px",
+// 		backgroundSize: "cover",
+// 		backgroundRepeat: "no-repeat",
+// 	};
+// 	return (
+// 		<div style={banner}  className=" w-full auto"></div>
+
+// 	);
+// };
+
+// export default Banner;
+
+import React from "react";
+
+import slider1 from "../Image/banner-01.png";
+import "../components/Banner.css";
 const Banner = () => {
-	const navigate = useNavigate();
-
-	const banner = {
-		// backgroundImage: "url('https://i.ibb.co/QC1gbGm/Blue-Gold-Rustic-Artisinal-Remote-Graduation-Banner-5.png') ",
-		backgroundImage: "url('https://i.ibb.co/wz6qqWW/Wedding-Banner-10.png') ",
-		height: "460px",
-		backgroundSize: "cover",
-		backgroundRepeat: "no-repeat",
-	};
 	return (
-		<div style={banner} className="lg:[630px] w-ful"></div>
-
-		// <div className="bg-[#304F40]  border-t-4 h-[400px] border-t-green-900 shadow-4xl items-center justify-center">
-		// 	{/* <div className="lg:px-[300px]  ">
-
-		// 		<h1 className="text-white text-2xl py-5 mt-5 ">
-		// 			Hire the best consultant for your scholarship application.
-		// 		</h1>
-		// 		<div className="pb-10 text-white text-xl">
-		// 			<li> Australia’s first scholarship consultancy online platform</li>
-		// 			<li> Get feedback from previous scholarship recipients</li>
-		// 		</div>
-		// 	</div> */}
-
-		// </div>
+		<div>
+			<div className="carousel lg:w-full  relative lg:h-[380px] h-[130px] md:h-[280px] bg-[#304F40] banner ">
+				{/* Banner one added here  */}
+				<div
+					id="item2"
+					className="carousel-item w-full   bg-cover banner "
+					style={{ backgroundImage: `url(${slider1})` }}
+				></div>
+			</div>
+		</div>
 	);
 };
 

@@ -13,7 +13,7 @@ const SearchBox = ({ universityName }) => {
 	const selectedData = universityName?.filter(
 		(data) =>
 			data?.govtStatus === selectedScholarship &&
-			data?.levelStudy === selectedLevel 
+			data?.levelStudy === selectedLevel
 	);
 
 	const searchedData = universityName?.filter(
@@ -41,15 +41,17 @@ const SearchBox = ({ universityName }) => {
 	return (
 		<div>
 			<h1 className="text-xl text-center text-[#304F40] items-center container mx-auto font-bold mt-5 rounded-3xl   ">
-				Scholarship Australia is the first scholarship consultancy online
-				platform. Hire the best consultant for your scholarship application. Get
-				feedback from previous scholarship recipients.
+				<p className="lg:mx-28 text-center px-2">
+					Scholarship Australia is the first scholarship consultancy online
+					platform. Hire the best consultant for your scholarship application.
+					Get feedback from previous scholarship recipients.
+				</p>
 			</h1>
-			<div className="flex justify-center mt-5 gap-5 ">
-				<div className="relative  lg:max-w-sm dropdown ">
+			<div className="lg:flex md:flex  w-full justify-center mt-5 lg:gap-5 md:gap-3   ">
+				<div className="relative px-1.5 w-full lg:w-60 lg:max-w-sm dropdown ">
 					<select
 						onChange={(e) => setSelectedScholarship(e.target.value)}
-						className=" lg:w-60 w-full  bg-white border-2 border-[#304F40] rounded-3xl shadow-sm  outline-none appearance-none  text-white"
+						className=" p-1  w-full  bg-white border-2 border-[#304F40] rounded-3xl shadow-sm outline-none appearance-none  text-white"
 					>
 						<option className="font-bold dropdown inline ">
 							Select a scholarships{" "}
@@ -60,20 +62,20 @@ const SearchBox = ({ universityName }) => {
 					</select>
 				</div>
 
-				<div className="relative  lg:max-w-sm dropdown">
+				<div className="relative w-full px-1.5 lg:w-60 lg:max-w-sm dropdown">
 					<select
 						onChange={(e) => setSelectedLevel(e.target.value)}
-						className="p-2.5 lg:w-60 w-full  bg-white border-2 border-[#304F40] rounded-3xl shadow-sm outline-none appearance-none  text-white"
+						className="p-1  w-full  bg-white border-2 border-[#304F40] rounded-3xl shadow-sm outline-none appearance-none  text-white"
 					>
-						<option className="font-bold">Select a study level</option>
-						<option>Undergraduate</option>
+						<option className=" font-bold">Select a study level</option>
 						<option>Postgraduate</option>
+						<option>Undergraduate</option>
 					</select>
 				</div>
 
 				<button
 					onClick={() => setSearchButton(!searchButton)}
-					className="p-2.5 lg:w-60 w-full  rounded-3xl shadow-sm outline-none appearance-none focus:border-indigo-600 text-white cursor-pointer bg-[#304F40]"
+					className="relative w-full lg:max-w-sm lg:w-60 p-1 ml-1 px-5    rounded-3xl shadow-sm outline-none appearance-none focus:border-indigo-600 text-white cursor-pointer bg-[#304F40]"
 				>
 					Search
 				</button>
@@ -92,37 +94,37 @@ const SearchBox = ({ universityName }) => {
 			) : (
 				<>
 					{universityName.map((d) => (
-						<div className="container mx-auto ">
-							<div className="  ">
-								<div className="flex   p-3 mb-5 gap-20 lg:mt-5">
+						<div className="container mx-auto shadow-sm">
+							<div className="lg:mx-24  ">
+								<div className="flex flex-wrap p-3 mb-5 lg:gap-20 lg:mt-5">
 									<div className="">
 										<a>
 											<img
 												src={d.primaryImg}
 												alt=""
-												className="lg:h-28 lg:w-[120px] border-2  h-20 w-[150px]"
+												className="lg:h-28 lg:w-[120px] border-2  h-20  min-w-[150px] sm:justify-center  w-full"
 											/>
 										</a>
-										<p className="bg-[#304F40] rounded-2xl text-white text-center cursor-pointer  px-3 mt-2">
-										View courses
+										<p className="bg-[#304F40] w-full rounded-2xl text-white text-center cursor-pointer  px-3 mt-2">
+											View courses
 										</p>
 									</div>
 
-									<div className="w-[75%] border-t-2 py-2">
-										<p className="text-xl mt-5 text-black  font-bold underline cursor-pointer ">
+									<div className="lg:w-[75%]  border-t-2 border-gray-400 py-2">
+										<div className="text-xl mt-5 text-black  font-bold underline cursor-pointer ">
 											{d.scholarQuality}
-										</p>
+										</div>
 										<div>
-										<p className="text-md font-bold mb-2 text-black hover:underline cursor-pointer">
-											{d.uniName}
-										</p>
+											<p className="text-md font-bold mb-2 text-black hover:underline cursor-pointer">
+												{d.uniName}
+											</p>
 										</div>
 
-										<div className="flex w-full lg:gap-[153px]">
+										<div className="flex w-full lg:gap-[120px] gap-3 md:gap-5">
 											<p className=" text-black font-bold">Level of study:</p>
 											<p className=" text-black ">{d.levelStudy}</p>
 										</div>
-										<div className="flex  w-full lg:gap-[85px] ">
+										<div className="flex  w-full lg:gap-[107px] gap-8 ">
 											<p className=" text-black font-bold ">
 												Scholarship inclusions:
 											</p>
@@ -141,29 +143,30 @@ const SearchBox = ({ universityName }) => {
 											</p>
 										</div>
 										<div className=" flex justify-between w-full">
-											<div className="flex lg:gap-[143px]">
+											<div className="flex lg:gap-[110px] gap-12">
 												<p className="mb-3 text-black font-bold ">
 													Who can apply?
 												</p>
 												<p className="mb-3 text-black ">
-													Domestic and international applicants <span className="underline">Find out more</span>
+													Domestic and international applicants{" "}
+													<span className="underline">Find out more</span>
 												</p>
 											</div>
 										</div>
 										<div className=" flex justify-between w-full">
-											<div className="flex ">
-												<p className=" text-black font-bold lg:w-3/5 ">
+											<div className="flex gap-5">
+												<p className=" text-black font-bold lg:w-full ">
 													Need Help with Your Application:
 												</p>
-												<p className=" text-md text-black">
+												<p className=" text-md text-justify text-black">
 													Would you like someone experienced to review and give
 													feedback prior to submitting your scholarship
 													application? Scholarships Australia can assist you to
 													get connected with consultants who are previous
 													scholarship recipients in your field to ensure you
 													submit a competitive application{" "}
-													<span className="bg-[#304F40] px-3 py-1 text-white rounded-2xl ">
-													Get your application advice
+													<span className="bg-[#304F40] mx-7 px-2 lg:mx-3 py-1 text-white rounded-2xl ">
+														Enquiry now
 													</span>
 												</p>
 											</div>

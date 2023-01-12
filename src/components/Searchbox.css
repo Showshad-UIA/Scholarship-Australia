@@ -1,11 +1,7 @@
 .dropdown select {
-	width: 250px;
-	padding: 2px 8px;
-
 	color: black;
 	line-height: 2;
 
-	/*Hides the default arrows*/
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	text-indent: 0.01px;
@@ -49,4 +45,5 @@
 
 select > option {
 	color: black;
+	
 }

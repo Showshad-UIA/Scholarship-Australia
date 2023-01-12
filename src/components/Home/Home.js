@@ -17,7 +17,7 @@ const Home = () => {
 	}, []);
 
 	return (
-		<div>
+		<div className="">
 			<Banner></Banner>
 
 			<SearchBox universityName={universityName}></SearchBox>

@@ -37,7 +37,7 @@
 	{
 		"id": 4,
 		"uniName": " Victoria University",
-		"govtStatus": " Government scholarships",
+		"govtStatus": " University scholarships",
 		"scholarQuality": "China Scholarship Council Research Scholarships",
 		"courseDetails": "Step 1: Find a supervisor You need to find a supervisor at Western Sydney University and acquire a supervisor letter of support to include in your application. Step 2: Submit an application for admission You need to submit an&..",
 		"levelStudy": "Postgraduate",
@@ -49,10 +49,10 @@
 	{
 		"id": 5,
 		"uniName": "University of Tasmania",
-		"govtStatus": " Government scholarships",
+		"govtStatus": " University scholarships",
 		"scholarQuality": "Destination Australia Scholarship ",
 		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
-		"levelStudy": "Postgraduate",
+		"levelStudy": "Undergraduate",
 		"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
 		"availableAward": "All eligible students",
 		"primaryImg": "https://i.postimg.cc/G2h3QbgS/tasmania.jpg"
@@ -61,10 +61,10 @@
 	{
 		"id": 6,
 		"uniName": "Macquarie University",
-		"govtStatus": " Government scholarships",
+		"govtStatus": " University scholarships",
 		"scholarQuality": "ACU International Student Scholarship ",
 		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
-		"levelStudy": "Postgraduate / Undergraduate",
+		"levelStudy": "Postgraduate",
 		"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
 		"availableAward": "All eligible students",
 		"primaryImg": "https://i.ibb.co/SVFxsh1/macquarie.jpg"
@@ -120,7 +120,7 @@
 	{
 		"id": 11,
 		"uniName": "La Trobe University ",
-		"govtStatus": "Government scholarships",
+		"govtStatus": "University scholarships",
 		"scholarQuality": "Postgraduate Innovation Scholarship (Current Students) ",
 		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
 		"levelStudy": "Postgraduate",
@@ -171,7 +171,7 @@
 		"govtStatus": "University scholarships",
 		"scholarQuality": "Faculty of Law International Asia Scholarship ",
 		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
-		"levelStudy": "Postgraduate, Undergraduate",
+		"levelStudy": " Undergraduate",
 		"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
 		"availableAward": "All eligible students",
 		"primaryImg": "https://i.postimg.cc/NMTtDWGH/monas.jpg"
@@ -212,7 +212,7 @@
 	},
 	{
 		"id": 19,
-		"govtStatus": "Government scholarships",
+		"govtStatus": "University scholarships",
 		"uniName": "University of Newcastle",
 		"scholarQuality": "Fellowship scholarship ",
 		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
@@ -228,14 +228,14 @@
 		"uniName": "UNSW Sydney",
 		"scholarQuality": "Fellowship scholarship ",
 		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
-		"levelStudy": "Postgraduate",
+		"levelStudy": "Undergraduate",
 		"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
 		"availableAward": "All eligible students",
 		"primaryImg": "https://i.ibb.co/0sF39Cr/unsw-removebg-preview.png"
 	},
 	{
 		"id": 21,
-
+		"govtStatus": "University scholarships",
 		"uniName": "Charles Sturt University",
 		"scholarQuality": "Fellowship scholarship ",
 		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
@@ -247,11 +247,11 @@
 
 	{
 		"id": 22,
-		"govtStatus": "Government scholarships",
+		"govtStatus": "University scholarships",
 		"uniName": "University of Wollongong",
 		"scholarQuality": "Fellowship scholarship ",
 		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
-		"levelStudy": "Postgraduate",
+		"levelStudy": "Undergraduate",
 		"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
 		"availableAward": "All eligible students",
 		"primaryImg": "https://i.ibb.co/X80TPKF/wolongong-university.png"

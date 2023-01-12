@@ -37,9 +37,11 @@ function Navbar() {
 	];
 
 	return (
-		<div className="bg-[#1E282D] sticky top-0 z-10">
+		<div className=" bg-[#1E282D]">
+			<div className="max-w-7xl mx-auto ">
+			<div className=" sticky top-0 z-10 lg:mx-28 ">
 			<div className="">
-				<div className="flex justify-around  w-full items-center h-20 text-white  px-4  ">
+				<div className="flex justify-between w-full items-center h-20 text-white   ">
 					<Link to={"/"}>
 						<img src={image} className="lg:w-[180px] h-10 cursor-pointer" alt="" />
 					</Link>
@@ -82,6 +84,8 @@ function Navbar() {
 						</ul>
 					)}
 				</div>
+			</div>
+		</div>
 			</div>
 		</div>
 		
