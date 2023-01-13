@@ -4,7 +4,7 @@ const Footer = () => {
 	return (
 		<div className="bg-[#1E282D]  mt-5">
 			<footer class="  text-white mx-28">
-				<div class="grid lg:grid-cols-2 grid-cols-2 py-8 px-6 md:grid-cols-3 mx-20 gap-20">
+				<div class="grid lg:grid-cols-3 grid-cols-2 py-8 px-6 md:grid-cols-3 mx-20 gap-20">
 					<div>
 						<h2 class="mb-6 text-sm font-bold text-white uppercase dark:text-white">
 							Search Universities

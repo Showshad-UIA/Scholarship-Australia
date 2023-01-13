@@ -14,7 +14,7 @@ import ExternalScholarships from "./components/Pages/ExternalScholarships";
 
 function App() {
   return (
-    <div className="max-w-7xl mx-auto bg:gray-500">
+    <div className="max-w-[1600px] mx-auto bg:gray-500 ">
       <SecondNavbar></SecondNavbar>
       <Navbar></Navbar>
       <Routes>

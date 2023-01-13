@@ -21,16 +21,16 @@
 
 import React from "react";
 
-import slider1 from "../Image/banner-01.png";
+import slider1 from "../Image/banner-02.png";
 import "../components/Banner.css";
 const Banner = () => {
 	return (
 		<div>
-			<div className="carousel lg:w-full  relative lg:h-[380px] h-[130px] md:h-[280px] bg-[#304F40] banner ">
+			<div className="carousel lg:w-full  relative lg:h-[425px] h-[115px] md:h-[280px] bg-[#304F40] banner ">
 				{/* Banner one added here  */}
 				<div
 					id="item2"
-					className="carousel-item w-full   bg-cover banner "
+					className="carousel-item w-full    bg-cover banner "
 					style={{ backgroundImage: `url(${slider1})` }}
 				></div>
 			</div>
