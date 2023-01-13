@@ -49,7 +49,7 @@ const SearchBox = ({ universityName }) => {
 				<div className="relative  lg:max-w-sm dropdown ">
 					<select
 						onChange={(e) => setSelectedScholarship(e.target.value)}
-						className=" lg:w-60 w-full  bg-white border-2 border-[#304F40] rounded-3xl shadow-sm  outline-none appearance-none  text-white"
+						className=" lg:w-60 sm:w-full  bg-white border-2 border-[#304F40] rounded-3xl shadow-sm  outline-none appearance-none  text-white"
 					>
 						<option className="font-bold dropdown inline ">
 							Select a scholarships{" "}
@@ -63,7 +63,7 @@ const SearchBox = ({ universityName }) => {
 				<div className="relative  lg:max-w-sm dropdown">
 					<select
 						onChange={(e) => setSelectedLevel(e.target.value)}
-						className="p-2.5 lg:w-60 w-full  bg-white border-2 border-[#304F40] rounded-3xl shadow-sm outline-none appearance-none  text-white"
+						className="p-2.5 lg:w-60 sm:w-full  bg-white border-2 border-[#304F40] rounded-3xl shadow-sm outline-none appearance-none  text-white"
 					>
 						<option className="font-bold">Select a study level</option>
 						<option>Undergraduate</option>
