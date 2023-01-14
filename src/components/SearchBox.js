@@ -41,14 +41,14 @@ const SearchBox = ({ universityName }) => {
 	return (
 		<div>
 			<h1 className="text-xl text-center text-[#304F40] items-center container mx-auto font-bold mt-5 rounded-3xl   ">
-				<p className="lg:mx-28 text-center px-2">
+				<p className="lg:mx-28 text-justify lg:text-center px-2">
 					Scholarship Australia is the first scholarship consultancy online
 					platform. Hire the best consultant for your scholarship application.
 					Get feedback from previous scholarship recipients.
 				</p>
 			</h1>
 			<div className="lg:flex md:flex  w-full justify-center mt-5 lg:gap-5 md:gap-3   ">
-				<div className="relative px-1.5 w-full lg:w-60 lg:max-w-sm dropdown ">
+				<div className="relative px-1.5 w-full md:w-32 lg:w-60 lg:max-w-sm dropdown ">
 					<select
 						onChange={(e) => setSelectedScholarship(e.target.value)}
 						className=" p-1  w-full  bg-white border-2 border-[#304F40] rounded-3xl shadow-sm outline-none appearance-none  text-white"
@@ -62,7 +62,7 @@ const SearchBox = ({ universityName }) => {
 					</select>
 				</div>
 
-				<div className="relative w-full px-1.5 lg:w-60 lg:max-w-sm dropdown">
+				<div className="relative w-full px-1.5 md:w-32 lg:w-60 lg:max-w-sm dropdown">
 					<select
 						onChange={(e) => setSelectedLevel(e.target.value)}
 						className="p-1  w-full  bg-white border-2 border-[#304F40] rounded-3xl shadow-sm outline-none appearance-none  text-white"
@@ -75,7 +75,7 @@ const SearchBox = ({ universityName }) => {
 
 				<button
 					onClick={() => setSearchButton(!searchButton)}
-					className="relative w-full lg:max-w-sm lg:w-60 p-1 ml-1 px-5    rounded-3xl shadow-sm outline-none appearance-none focus:border-indigo-600 text-white cursor-pointer bg-[#304F40]"
+					className="relative w-full lg:max-w-sm lg:w-60 md:w-32 p-1 ml-1 px-5    rounded-3xl shadow-sm outline-none appearance-none focus:border-indigo-600 text-white cursor-pointer bg-[#304F40]"
 				>
 					Search
 				</button>
@@ -97,20 +97,22 @@ const SearchBox = ({ universityName }) => {
 						<div className=" mx-auto shadow-sm ">
 							<div className="lg:mx-24 ">
 								<div className=" w-full flex flex-wrap p-3 mb-5 lg:gap-20 lg:mt-5">
-									<div className="lg:w-[15%] sm:w-full  ">
-										<div className="flex flex-wrap justify-center sm:w-full">
+									<div className="lg:w-[15%] w-full  ">
+										<div className="flex justify-center sm:w-full ">
+
 											<img
 												src={d.primaryImg}
 												alt=""
-												className="lg:h-28 lg:w-[120px] border-2  h-20 min-w-full   "
+												className="lg:h-28 lg:w-[120px] border-2  h-20  min-w-[150px] "
 											/>
+										</div>
+										
 										<p className="bg-[#304F40] rounded-2xl text-white text-center cursor-pointer  px-3 mt-2">
 											View courses
 										</p>
-										</div>
 									</div>
 
-									<div className="lg:w-[75%] sm:w-full   border-t-2 border-gray-400 py-2">
+									<div className="lg:w-[75%]  lg:border-t-2 border-gray-400 py-2">
 										<div className="text-xl mt-5 text-black  font-bold underline cursor-pointer ">
 											{d.scholarQuality}
 										</div>
@@ -120,12 +122,12 @@ const SearchBox = ({ universityName }) => {
 											</p>
 										</div>
 
-										<div className="flex w-full lg:gap-[120px] gap-3 md:gap-5">
+										<div className="lg:flex  w-full lg:gap-[210px] gap-3 md:gap-5 mb-3">
 											<p className=" text-black font-bold">Level of study:</p>
 											<p className=" text-black ">{d.levelStudy}</p>
 										</div>
-										<div className="flex  w-full lg:gap-[107px] gap-8 ">
-											<p className=" text-black font-bold ">
+										<div className="lg:flex justify-between w-full lg:gap-[75px] gap-8 ">
+											<p className=" text-black font-bold sm:w-[30%] ">
 												Scholarship inclusions:
 											</p>
 											<p className=" text-black  ">
@@ -143,8 +145,8 @@ const SearchBox = ({ universityName }) => {
 											</p>
 										</div>
 										<div className=" flex justify-between w-full">
-											<div className="flex lg:gap-[110px] gap-12">
-												<p className="mb-3 text-black font-bold ">
+											<div className="lg:flex lg:gap-[200px] gap-12">
+												<p className=" text-black font-bold ">
 													Who can apply?
 												</p>
 												<p className="mb-3 text-black ">
@@ -154,7 +156,7 @@ const SearchBox = ({ universityName }) => {
 											</div>
 										</div>
 										<div className=" flex justify-between w-full">
-											<div className="flex gap-5">
+											<div className="lg:flex gap-5">
 												<p className=" text-black font-bold lg:w-full ">
 													Need Help with Your Application:
 												</p>

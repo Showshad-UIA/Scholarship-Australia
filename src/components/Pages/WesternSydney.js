@@ -5,16 +5,16 @@ const WesternSydney = ({ d }) => {
 	return (
 		<div className="container mx-auto shadow-sm ">
 							<div className="lg:mx-24  ">
-								<div className="flex flex-wrap p-3 mb-5 lg:gap-24 lg:mt-5">
-									<div className="">
+								<div className="flex flex-wrap p-3 mb-5 lg:gap-20 lg:mt-5">
+									<div className="w-full">
 										<a>
 											<img
 												src={d.primaryImg}
 												alt=""
-												className="lg:h-28 lg:w-[120px] border-2  h-20  min-w-[150px] sm:text-center  w-full"
+												className="lg:h-28 lg:w-[120px] border-2  sm:h-5  min-w-[150px] sm:justify-center  w-full"
 											/>
 										</a>
-										<p className="bg-[#304F40] rounded-2xl text-white text-center cursor-pointer  px-3 mt-2">
+										<p className="bg-[#304F40] w-full rounded-2xl text-white text-center cursor-pointer  px-3 mt-2">
 											View courses
 										</p>
 									</div>
@@ -29,11 +29,11 @@ const WesternSydney = ({ d }) => {
 											</p>
 										</div>
 
-										<div className="flex w-full lg:gap-[120px]">
+										<div className="flex w-full lg:gap-[212px] gap-3 md:gap-5">
 											<p className=" text-black font-bold">Level of study:</p>
 											<p className=" text-black ">{d.levelStudy}</p>
 										</div>
-										<div className="flex  w-full lg:gap-[107px] ">
+										<div className="flex  w-full lg:gap-[175px] gap-8 ">
 											<p className=" text-black font-bold ">
 												Scholarship inclusions:
 											</p>
@@ -52,7 +52,7 @@ const WesternSydney = ({ d }) => {
 											</p>
 										</div>
 										<div className=" flex justify-between w-full">
-											<div className="flex lg:gap-[110px]">
+											<div className="flex lg:gap-[200px] gap-12">
 												<p className="mb-3 text-black font-bold ">
 													Who can apply?
 												</p>
@@ -67,14 +67,14 @@ const WesternSydney = ({ d }) => {
 												<p className=" text-black font-bold lg:w-full ">
 													Need Help with Your Application:
 												</p>
-												<p className=" text-md text-black">
+												<p className=" text-md text-justify text-black">
 													Would you like someone experienced to review and give
 													feedback prior to submitting your scholarship
 													application? Scholarships Australia can assist you to
 													get connected with consultants who are previous
 													scholarship recipients in your field to ensure you
 													submit a competitive application{" "}
-													<span className="bg-[#304F40] px-3 py-1 text-white rounded-2xl ">
+													<span className="bg-[#304F40] mx-7 px-2 lg:mx-3 py-1 text-white rounded-2xl ">
 														Enquiry now
 													</span>
 												</p>
