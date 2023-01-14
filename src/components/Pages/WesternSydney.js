@@ -3,7 +3,7 @@ import Western_Sydney from "../../Image/western sydney.jpg";
 
 const WesternSydney = ({ d }) => {
 	return (
-		<div className="container mx-auto shadow-sm">
+		<div className="container mx-auto shadow-sm ">
 							<div className="lg:mx-24  ">
 								<div className="flex flex-wrap p-3 mb-5 lg:gap-24 lg:mt-5">
 									<div className="">

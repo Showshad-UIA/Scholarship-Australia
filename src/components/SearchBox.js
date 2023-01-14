@@ -94,23 +94,23 @@ const SearchBox = ({ universityName }) => {
 			) : (
 				<>
 					{universityName.map((d) => (
-						<div className="container mx-auto shadow-sm">
-							<div className="lg:mx-24  ">
-								<div className="flex flex-wrap p-3 mb-5 lg:gap-20 lg:mt-5">
-									<div className="">
-										<a>
+						<div className=" mx-auto shadow-sm ">
+							<div className="lg:mx-24 ">
+								<div className=" w-full flex flex-wrap p-3 mb-5 lg:gap-20 lg:mt-5">
+									<div className="lg:w-[15%] sm:w-full  ">
+										<div className="flex flex-wrap justify-center sm:w-full">
 											<img
 												src={d.primaryImg}
 												alt=""
-												className="lg:h-28 lg:w-[120px] border-2  h-20  min-w-[150px] sm:justify-center  w-full"
+												className="lg:h-28 lg:w-[120px] border-2  h-20 min-w-full   "
 											/>
-										</a>
-										<p className="bg-[#304F40] w-full rounded-2xl text-white text-center cursor-pointer  px-3 mt-2">
+										<p className="bg-[#304F40] rounded-2xl text-white text-center cursor-pointer  px-3 mt-2">
 											View courses
 										</p>
+										</div>
 									</div>
 
-									<div className="lg:w-[75%]  border-t-2 border-gray-400 py-2">
+									<div className="lg:w-[75%] sm:w-full   border-t-2 border-gray-400 py-2">
 										<div className="text-xl mt-5 text-black  font-bold underline cursor-pointer ">
 											{d.scholarQuality}
 										</div>
