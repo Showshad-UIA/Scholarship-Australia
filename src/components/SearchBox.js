@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../components/Searchbox.css';
 import WesternSydney from './Pages/WesternSydney';
 
@@ -8,7 +9,7 @@ const SearchBox = ({ universityName }) => {
   const [yearSelect, setYearSelect] = useState([]);
   const [selectedScholarship, setSelectedScholarship] = useState('');
   const [selectedLevel, setSelectedLevel] = useState('');
-
+  const navigate = useNavigate();
   const selectedData = universityName?.filter(
     data =>
       data?.govtStatus === selectedScholarship &&
@@ -37,6 +38,13 @@ const SearchBox = ({ universityName }) => {
       });
   }, []);
 
+  const handleSearchScholarship = () => {
+    setSearchButton(!searchButton);
+    if (selectedScholarship === 'External Scholarships') {
+      navigate('/external');
+    }
+  };
+
   return (
     <div>
       <h1 className="text-xl text-center text-[#304F40] items-center container mx-auto font-bold mt-5 rounded-3xl   ">
@@ -55,9 +63,9 @@ const SearchBox = ({ universityName }) => {
             <option className="font-bold dropdown inline text-black  ">
               Select a scholarships{' '}
             </option>
-            <option>University scholarships</option>
-            <option>Government scholarships</option>
-            <option>External scholarships </option>
+            <option>University Scholarships</option>
+            <option>Government Scholarships</option>
+            <option>External Scholarships </option>
           </select>
         </div>
 
@@ -75,7 +83,8 @@ const SearchBox = ({ universityName }) => {
         </div>
 
         <button
-          onClick={() => setSearchButton(!searchButton)}
+          // onClick={() => setSearchButton(!searchButton)}
+          onClick={handleSearchScholarship}
           className="relative w-full lg:max-w-sm lg:w-60 md:w-32 p-1 ml-1 px-5    rounded-3xl shadow-sm outline-none appearance-none focus:border-indigo-600 text-white cursor-pointer bg-[#304F40]"
         >
           Search
@@ -96,7 +105,7 @@ const SearchBox = ({ universityName }) => {
           <div className="container mx-auto text-md mt-10">
             <p className="lg:mx-32">
               {' '}
-              All university postgraduate scholarships
+              All {selectedLevel} {selectedScholarship}
             </p>
           </div>{' '}
           {dataToShow.map(data => (
@@ -113,7 +122,7 @@ const SearchBox = ({ universityName }) => {
           </div>
           <div className="container mx-auto text-md mt-10">
             <p className="lg:mx-32 ">
-              All university postgraduate scholarships
+              Result of all scholarships and study levels
             </p>
           </div>
 
@@ -136,7 +145,7 @@ const SearchBox = ({ universityName }) => {
                   </div>
 
                   <div className="lg:w-[75%]   border-gray-400 py-2">
-                    <div className="text-xl mt-5 text-black  font-bold underline cursor-pointer ">
+                    <div className="text-xl mt-5 text-black  font-bold underline underline-offset-4 cursor-pointer ">
                       {d.scholarQuality}
                     </div>
                     <div>

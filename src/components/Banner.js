@@ -26,7 +26,7 @@ import '../components/Banner.css';
 const Banner = () => {
   return (
     <div>
-      <div className="carousel lg:w-full  relative lg:h-[470px] h-[115px] md:h-[280px] bg-[#304F40] banner ">
+      <div className="carousel lg:w-full  relative lg:h-[500px] h-[115px] md:h-[280px] bg-[#304F40] banner ">
         {/* Banner one added here  */}
         <div
           id="item2"

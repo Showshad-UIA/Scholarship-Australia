@@ -11,7 +11,7 @@ import WesternSydney from './components/Pages/WesternSydney';
 
 function App() {
   return (
-    <div className="max-w-[1600px] mx-auto bg:gray-500 ">
+    <div className="max-w-[1900px] mx-auto bg:gray-500 ">
       <SecondNavbar></SecondNavbar>
       <Navbar></Navbar>
       <Routes>
