@@ -1,21 +1,22 @@
-import React, { useEffect, useState } from "react";
-import WesternSydney from "./Pages/WesternSydney";
+import React, { useEffect, useState } from 'react';
+import '../components/Searchbox.css';
+import WesternSydney from './Pages/WesternSydney';
 
 const SearchBox = ({ universityName }) => {
-  const [selectUniversity, setSelectUniversity] = useState("");
+  const [selectUniversity, setSelectUniversity] = useState('');
   const [searchButton, setSearchButton] = useState(false);
   const [yearSelect, setYearSelect] = useState([]);
-  const [selectedScholarship, setSelectedScholarship] = useState("");
-  const [selectedLevel, setSelectedLevel] = useState("");
+  const [selectedScholarship, setSelectedScholarship] = useState('');
+  const [selectedLevel, setSelectedLevel] = useState('');
 
   const selectedData = universityName?.filter(
-    (data) =>
+    data =>
       data?.govtStatus === selectedScholarship &&
       data?.levelStudy === selectedLevel
   );
 
   const searchedData = universityName?.filter(
-    (data) =>
+    data =>
       data?.govtStatus
         ?.toLowerCase()
         ?.includes(selectedScholarship.toLowerCase()) &&
@@ -28,9 +29,9 @@ const SearchBox = ({ universityName }) => {
   console.log(dataToShow);
 
   useEffect(() => {
-    fetch("yearfakedata.json")
-      .then((res) => res.json())
-      .then((data) => {
+    fetch('yearfakedata.json')
+      .then(res => res.json())
+      .then(data => {
         // console.log(data)
         setYearSelect(data);
       });
@@ -48,11 +49,11 @@ const SearchBox = ({ universityName }) => {
       <div className="lg:flex md:flex  w-full justify-center mt-5 lg:gap-5 md:gap-3   ">
         <div className="relative px-1.5 w-full md:w-32 lg:w-60 lg:max-w-sm dropdown ">
           <select
-            onChange={(e) => setSelectedScholarship(e.target.value)}
-            className=" p-1  w-full  bg-white border-2 border-[#304F40] rounded-3xl shadow-sm outline-none appearance-none  text-white"
+            onChange={e => setSelectedScholarship(e.target.value)}
+            className=" p-1 px-2 w-full  bg-white  text-black border-2 border-[#304F40] rounded-3xl shadow-sm outline-none appearance-none  "
           >
-            <option className="font-bold dropdown inline text-black ">
-              Select a scholarships{" "}
+            <option className="font-bold dropdown inline text-black  ">
+              Select a scholarships{' '}
             </option>
             <option>University scholarships</option>
             <option>Government scholarships</option>
@@ -60,12 +61,14 @@ const SearchBox = ({ universityName }) => {
           </select>
         </div>
 
-        <div className="relative w-full px-1.5 md:w-32 lg:w-60 lg:max-w-sm dropdown">
+        <div className="relative w-full px-1.5 md:w-32 lg:w-60 lg:max-w-sm dropdown ">
           <select
-            onChange={(e) => setSelectedLevel(e.target.value)}
-            className="p-1  w-full  bg-white border-2 border-[#304F40] rounded-3xl shadow-sm outline-none appearance-none  text-white"
+            onChange={e => setSelectedLevel(e.target.value)}
+            className=" p-1 px-2 w-full  bg-white  text-black border-2 border-[#304F40] rounded-3xl shadow-sm outline-none appearance-none "
           >
-            <option className=" font-bold text-black">Select a study level</option>
+            <option className=" font-bold text-black">
+              Select a study level
+            </option>
             <option>Postgraduate</option>
             <option>Undergraduate</option>
           </select>
@@ -83,17 +86,40 @@ const SearchBox = ({ universityName }) => {
       </div>
 
       {searchButton ? (
-        <>
-          {" "}
-          {dataToShow.map((data) => (
+        <div>
+          <div className="container mx-auto ">
+            <p className="lg:mx-32 text-2xl font-extrabold lg:mt-10">
+              {' '}
+              Scholarship search results
+            </p>
+          </div>
+          <div className="container mx-auto text-md mt-10">
+            <p className="lg:mx-32">
+              {' '}
+              All university postgraduate scholarships
+            </p>
+          </div>{' '}
+          {dataToShow.map(data => (
             <WesternSydney d={data}></WesternSydney>
           ))}
-        </>
+        </div>
       ) : (
         <>
-          {universityName.map((d) => (
-            <div className="container mx-auto shadow-sm ">
-              <div className="lg:mx-24 ">
+          <div className="container mx-auto ">
+            <p className="lg:mx-32 text-2xl font-extrabold lg:mt-10">
+              {' '}
+              Scholarship search results
+            </p>
+          </div>
+          <div className="container mx-auto text-md mt-10">
+            <p className="lg:mx-32 ">
+              All university postgraduate scholarships
+            </p>
+          </div>
+
+          {universityName.map(d => (
+            <div className="container mx-auto  ">
+              <div className="lg:mx-24 lg:border-t-2 lg:border-mx-24  shadow-sm">
                 <div className=" w-full flex flex-wrap p-3 mb-5 lg:gap-20 lg:mt-5">
                   <div className="lg:w-[15%] w-full  ">
                     <div className="flex justify-center sm:w-full ">
@@ -109,7 +135,7 @@ const SearchBox = ({ universityName }) => {
                     </p>
                   </div>
 
-                  <div className="lg:w-[75%]  lg:border-t-2 border-gray-400 py-2">
+                  <div className="lg:w-[75%]   border-gray-400 py-2">
                     <div className="text-xl mt-5 text-black  font-bold underline cursor-pointer ">
                       {d.scholarQuality}
                     </div>
@@ -151,7 +177,7 @@ const SearchBox = ({ universityName }) => {
                           Who can apply?
                         </p>
                         <p className="mb-3 text-black lg:w-3/5 ">
-                          Domestic and international applicants{" "}
+                          Domestic and international applicants{' '}
                           <span className="underline">Find out more</span>
                         </p>
                       </div>
@@ -167,17 +193,20 @@ const SearchBox = ({ universityName }) => {
                           application? Scholarships Australia can assist you to
                           get connected with consultants who are previous
                           scholarship recipients in your field to ensure you
-                          submit a competitive application{" "}
+                          submit a competitive application{' '}
+                          <span className=" center bg-[#304F40] my-2 cursor-pointer px-2  py-1 text-white rounded-2xl ">
+                            Enquiry now
+                          </span>
                         </p>
                       </div>
-                      <div className="flex w-full">
+                      {/* <div className="flex w-full">
                         <div className="lg:w-2/5"></div>
                         <div className="lg:w-3/5 sm:w-full">
                           <span className=" center bg-[#304F40] my-2 cursor-pointer px-2  py-1 text-white rounded-2xl ">
                             Enquiry now
                           </span>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
