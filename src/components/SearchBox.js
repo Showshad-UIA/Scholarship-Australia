@@ -4,7 +4,6 @@ import '../components/Searchbox.css';
 import WesternSydney from './Pages/WesternSydney';
 
 const SearchBox = ({ universityName }) => {
-  const [selectUniversity, setSelectUniversity] = useState('');
   const [searchButton, setSearchButton] = useState(false);
   const [yearSelect, setYearSelect] = useState([]);
   const [selectedScholarship, setSelectedScholarship] = useState('');
@@ -55,7 +54,7 @@ const SearchBox = ({ universityName }) => {
         </p>
       </h1>
       <div className="lg:flex md:flex  w-full justify-center mt-5 lg:gap-5 md:gap-3   ">
-        <div className="relative px-1.5 w-full md:w-32 lg:w-60 lg:max-w-sm dropdown ">
+        <div className="relative px-1.5 w-full  lg:w-60 md:w-52 lg:max-w-sm dropdown ">
           <select
             onChange={e => setSelectedScholarship(e.target.value)}
             className=" p-1 px-2 w-full  bg-white  text-black border-2 border-[#304F40] rounded-3xl shadow-sm outline-none appearance-none  "
@@ -69,7 +68,7 @@ const SearchBox = ({ universityName }) => {
           </select>
         </div>
 
-        <div className="relative w-full px-1.5 md:w-32 lg:w-60 lg:max-w-sm dropdown ">
+        <div className="relative w-full px-1.5  lg:w-60 md:w-52 lg:max-w-sm dropdown ">
           <select
             onChange={e => setSelectedLevel(e.target.value)}
             className=" p-1 px-2 w-full  bg-white  text-black border-2 border-[#304F40] rounded-3xl shadow-sm outline-none appearance-none "
@@ -85,7 +84,7 @@ const SearchBox = ({ universityName }) => {
         <button
           // onClick={() => setSearchButton(!searchButton)}
           onClick={handleSearchScholarship}
-          className="relative w-full lg:max-w-sm lg:w-60 md:w-32 p-1 ml-1 px-5    rounded-3xl shadow-sm outline-none appearance-none focus:border-indigo-600 text-white cursor-pointer bg-[#304F40]"
+          className="relative w-full lg:max-w-sm lg:w-60 md:w-52 p-1 ml-1 px-5    rounded-3xl shadow-sm outline-none appearance-none focus:border-indigo-600 text-white cursor-pointer bg-[#304F40]"
         >
           Search
         </button>
@@ -96,14 +95,8 @@ const SearchBox = ({ universityName }) => {
 
       {searchButton ? (
         <div>
-          <div className="container mx-auto ">
-            <p className="lg:mx-32 text-2xl font-extrabold lg:mt-10">
-              {' '}
-              Scholarship search results
-            </p>
-          </div>
           <div className="container mx-auto text-md mt-10">
-            <p className="lg:mx-32">
+            <p className="lg:mx-32 text-2xl font-extrabold lg:mt-10">
               {' '}
               All {selectedLevel} {selectedScholarship}
             </p>
@@ -114,14 +107,8 @@ const SearchBox = ({ universityName }) => {
         </div>
       ) : (
         <>
-          <div className="container mx-auto ">
-            <p className="lg:mx-32 text-2xl font-extrabold lg:mt-10">
-              {' '}
-              Scholarship search results
-            </p>
-          </div>
           <div className="container mx-auto text-md mt-10">
-            <p className="lg:mx-32 ">
+            <p className="lg:mx-32 lg:text-2xl text-md font-bold lg:mt-10 px-2 sm:mb-5">
               Result of all scholarships and study levels
             </p>
           </div>
