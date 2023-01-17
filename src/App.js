@@ -33,7 +33,7 @@ function App() {
           element={<ExternalScholarships></ExternalScholarships>}
         ></Route>
         <Route
-          path="/findScholarship"
+          path="/searchScholarships/:schol/:grad"
           element={<WesternSydney></WesternSydney>}
         ></Route>
         <Route

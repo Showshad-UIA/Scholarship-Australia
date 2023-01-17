@@ -9,6 +9,7 @@ const SearchBox = ({ universityName }) => {
   const [selectedScholarship, setSelectedScholarship] = useState('');
   const [selectedLevel, setSelectedLevel] = useState('');
   const navigate = useNavigate();
+
   const selectedData = universityName?.filter(
     data =>
       data?.govtStatus === selectedScholarship &&
@@ -38,7 +39,8 @@ const SearchBox = ({ universityName }) => {
   }, []);
 
   const handleSearchScholarship = () => {
-    setSearchButton(!searchButton);
+  console.log(selectedScholarship, selectedLevel);
+  navigate(`/searchScholarships/${selectedScholarship}/${selectedLevel}`);
     if (selectedScholarship === 'External Scholarships') {
       navigate('/external');
     }
@@ -62,9 +64,15 @@ const SearchBox = ({ universityName }) => {
             <option className="font-bold dropdown inline text-black  ">
               Select a scholarships{' '}
             </option>
-            <option>University Scholarships</option>
-            <option>Government Scholarships</option>
-            <option>External Scholarships </option>
+            <option value="University scholarships">
+              University scholarships
+            </option>
+            <option value="Government scholarships">
+              Government scholarships
+            </option>
+            <option value="External scholarships">
+              External scholarships{' '}
+            </option>
           </select>
         </div>
 
@@ -76,8 +84,8 @@ const SearchBox = ({ universityName }) => {
             <option className=" font-bold text-black">
               Select a study level
             </option>
-            <option>Postgraduate</option>
-            <option>Undergraduate</option>
+            <option value="Postgraduate">Postgraduate</option>
+            <option value="Undergraduate">Undergraduate</option>
           </select>
         </div>
 
