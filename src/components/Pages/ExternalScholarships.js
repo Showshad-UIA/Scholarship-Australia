@@ -8,13 +8,13 @@ import React from 'react';
 const ExternalScholarships = () => {
   return (
     <div className="max-w-7xl mx-auto  lg:mb-16 lg:mt-7 ">
-      <div className=" lg:mx-20 shadow-sm mb-5">
+      <div className="  shadow-sm mb-5">
         <div className="">
           <div className=" ">
             <div className=" pb-10  ">
-              <div className="  lg:mx-24">
+              <div className="  lg:mx-5">
                 <h1 className="mb-3 border-t-4 mx-2 border-[#1E282D]"></h1>
-                <h1 className=" px-3 text-2xl text-[#304F40] text-center font-extrabold ">
+                <h1 className=" px-3 text-2xl text-[#304F40]  font-extrabold ">
                   External Scholarships
                 </h1>
                 <p className=" px-3 text-justify mb-5 text-md my-3 ">
@@ -24,7 +24,7 @@ const ExternalScholarships = () => {
                 </p>
               </div>
 
-              <div className="lg:mx-24 ">
+              <div className="lg:mx-5">
                 <div className="flex gap-2 px-2 ">
                   <FontAwesomeIcon
                     icon={faChevronRight}

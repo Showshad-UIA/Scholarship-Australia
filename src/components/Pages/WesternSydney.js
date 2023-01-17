@@ -25,9 +25,10 @@ const WesternSydney = () => {
       {/* <Banner></Banner>
       <SearchBox></SearchBox> */}
 
-
       <div className="container mx-auto ">
-      <p > {scholarship} {graduation}</p>
+        <p className="lg:mx-32 lg:text-xl text-md font-bold lg:mt-10 px-2 sm:mb-5">
+          {graduation} {scholarship}
+        </p>
         {dataShow.map(d => (
           <div className="lg:mx-24 lg:border-t-2 shadow-sm">
             <div className=" w-full flex flex-wrap p-3 mb-5 lg:gap-[57px] lg:mt-5">
