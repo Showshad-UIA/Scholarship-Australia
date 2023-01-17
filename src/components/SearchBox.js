@@ -116,7 +116,7 @@ const SearchBox = ({ universityName }) => {
           {universityName.map(d => (
             <div className="container mx-auto  ">
               <div className="lg:mx-24 lg:border-t-2 lg:border-mx-24  shadow-sm">
-                <div className=" w-full flex flex-wrap p-3 mb-5 lg:gap-20 lg:mt-5">
+                <div className=" w-full flex flex-wrap p-3 mb-5 lg:gap-[57px] lg:mt-5">
                   <div className="lg:w-[15%] w-full  ">
                     <div className="flex justify-center sm:w-full ">
                       <img
@@ -131,7 +131,7 @@ const SearchBox = ({ universityName }) => {
                     </p>
                   </div>
 
-                  <div className="lg:w-[75%]   border-gray-400 py-2">
+                  <div className="lg:w-[70%]   border-gray-400 py-2">
                     <div className="text-xl mt-5 text-black  font-bold underline underline-offset-4 cursor-pointer ">
                       {d.scholarQuality}
                     </div>
