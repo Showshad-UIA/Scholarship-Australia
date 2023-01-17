@@ -12,12 +12,17 @@ import UniversityScolarships from './components/Pages/UniversityScolarships';
 import GovernmentScholarships from './components/Pages/GovernmentScholarships';
 import Resources from './components/Pages/Resources';
 import OurServices from './components/Pages/OurServices';
+import Banner from './components/Banner';
+import SearchBox from './components/SearchBox';
+import FindScolarships from './components/Pages/FindScolarships';
 
 function App() {
   return (
     <div className="max-w-[1900px] mx-auto bg:gray-500 ">
       <SecondNavbar></SecondNavbar>
       <Navbar></Navbar>
+      {/* <Banner></Banner>
+      <SearchBox></SearchBox> */}
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route
@@ -36,6 +41,10 @@ function App() {
           path="/searchScholarships/:schol/:grad"
           element={<WesternSydney></WesternSydney>}
         ></Route>
+        {/* <Route
+          path="/scholarships"
+          element={<FindScolarships></FindScolarships>}
+        ></Route> */}
         <Route
           path="/ourServices"
           element={<OurServices></OurServices>}

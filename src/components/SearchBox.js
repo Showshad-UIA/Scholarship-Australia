@@ -39,8 +39,8 @@ const SearchBox = ({ universityName }) => {
   }, []);
 
   const handleSearchScholarship = () => {
-  console.log(selectedScholarship, selectedLevel);
-  navigate(`/searchScholarships/${selectedScholarship}/${selectedLevel}`);
+    console.log(selectedScholarship, selectedLevel);
+    navigate(`/searchScholarships/${selectedScholarship}/${selectedLevel}`);
     if (selectedScholarship === 'External Scholarships') {
       navigate('/external');
     }
@@ -61,7 +61,7 @@ const SearchBox = ({ universityName }) => {
             onChange={e => setSelectedScholarship(e.target.value)}
             className=" p-1 px-2 w-full  bg-white  text-black border-2 border-[#304F40] rounded-3xl shadow-sm outline-none appearance-none  "
           >
-            <option className="font-bold dropdown inline text-black  ">
+            <option className="font-bold dropdown inline text-black disabled ">
               Select a scholarships{' '}
             </option>
             <option value="University scholarships">
@@ -81,7 +81,7 @@ const SearchBox = ({ universityName }) => {
             onChange={e => setSelectedLevel(e.target.value)}
             className=" p-1 px-2 w-full  bg-white  text-black border-2 border-[#304F40] rounded-3xl shadow-sm outline-none appearance-none "
           >
-            <option className=" font-bold text-black">
+            <option className=" font-bold text-black disabled">
               Select a study level
             </option>
             <option value="Postgraduate">Postgraduate</option>

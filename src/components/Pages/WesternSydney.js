@@ -22,9 +22,6 @@ const WesternSydney = ({ d }) => {
   }, []);
   return (
     <>
-      {/* <Banner></Banner>
-      <SearchBox></SearchBox> */}
-
       <div className="container mx-auto ">
         {dataShow.map(d => (
           <div className="lg:mx-24 lg:border-t-2 shadow-sm">
