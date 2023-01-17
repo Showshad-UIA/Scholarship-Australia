@@ -3,24 +3,17 @@ import Banner from '../Banner';
 import ExternalScholarships from '../Pages/ExternalScholarships';
 import WesternSydney from '../Pages/WesternSydney';
 import SearchBox from '../SearchBox';
+import AllScholarships from './AllScholarships';
 import Intro from './Intro';
 
 const Home = () => {
-  const [universityName, setUniversityName] = useState([]);
-  useEffect(() => {
-    fetch('fakedata.json')
-      .then(res => res.json())
-      .then(data => {
-        // console.log(data)
-        setUniversityName(data);
-      });
-  }, []);
+ 
 
   return (
     <div className="">
-      <Banner></Banner>
-
-      <SearchBox universityName={universityName}></SearchBox>
+      {/* <Banner></Banner> */}
+      {/* <SearchBox ></SearchBox> */}
+	  <AllScholarships/>
       {/* <ExternalScholarships></ExternalScholarships> */}
     </div>
   );

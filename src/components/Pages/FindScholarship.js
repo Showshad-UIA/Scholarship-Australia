@@ -15,9 +15,9 @@ const FindScholarship = () => {
           All courses and institutions listed are CRICOS registered
         </p>
       </div>{' '}
-      {dataToShow.map(data => (
+      {/* {dataToShow.map(data => (
         <WesternSydney d={data}></WesternSydney>
-      ))}
+      ))} */}
     </div>
   );
 };

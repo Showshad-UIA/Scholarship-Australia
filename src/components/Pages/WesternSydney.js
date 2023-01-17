@@ -4,13 +4,13 @@ import Western_Sydney from '../../Image/western sydney.jpg';
 import Banner from '../Banner';
 import SearchBox from '../SearchBox';
 
-const WesternSydney = ({ d }) => {
-  const { schol, grad } = useParams();
+const WesternSydney = () => {
+  const { scholarship, graduation } = useParams();
   const [universityName, setUniversityName] = useState([]);
   console.log(universityName);
 
   const dataShow = universityName.filter(
-    u => u.govtStatus === schol && u.levelStudy === grad
+    u => u.govtStatus === scholarship && u.levelStudy === graduation
   );
 
   useEffect(() => {
@@ -22,7 +22,12 @@ const WesternSydney = ({ d }) => {
   }, []);
   return (
     <>
+      {/* <Banner></Banner>
+      <SearchBox></SearchBox> */}
+
+
       <div className="container mx-auto ">
+      <p > {scholarship} {graduation}</p>
         {dataShow.map(d => (
           <div className="lg:mx-24 lg:border-t-2 shadow-sm">
             <div className=" w-full flex flex-wrap p-3 mb-5 lg:gap-[57px] lg:mt-5">
