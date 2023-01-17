@@ -1,304 +1,304 @@
 [
-	{
-		"id": 1,
-		"uniName": " Western Sydney University",
-		"govtStatus": " Government scholarships",
-		"scholarQuality": "China Scholarship Council Research Scholarships",
-		"Scholarship inclusions": "Step 1: Find a supervisor You need to find a supervisor at Western Sydney University and acquire a supervisor letter of support to include in your application. Step 2: Submit an application for admission You need to submit an&..",
-		"levelStudy": "Postgraduate",
-		"ScholarshipValue": "The CSC Research Scholarship may provide funding to cover a living...",
-		"availableAward": "All eligible students",
-		"primaryImg": "https://i.ibb.co/121StQB/myhc-285246.jpg"
-	},
-	{
-		"id": 2,
-		"uniName": " Western Sydney University",
-		"govtStatus": "University scholarships",
-		"scholarQuality": "Vice-Chancellor's Academic Excellence Postgraduate Scholarships",
-		"Scholarship inclusions": "Step 1: Find a supervisor You need to find a supervisor at Western Sydney University and acquire a supervisor letter of support to include in your application. Step 2: Submit an application for admission You need to submit an&..",
-		"levelStudy": "Postgraduate",
-		"ScholarshipValue": "The CSC Research Scholarship may provide funding to cover a living...",
-		"availableAward": "All eligible students",
-		"primaryImg": "https://i.ibb.co/121StQB/myhc-285246.jpg"
-	},
+  {
+    "id": 1,
+    "uniName": " Western Sydney University",
+    "govtStatus": " University scholarships",
+    "scholarQuality": "China Scholarship Council Research Scholarships",
+    "Scholarship inclusions": "Step 1: Find a supervisor You need to find a supervisor at Western Sydney University and acquire a supervisor letter of support to include in your application. Step 2: Submit an application for admission You need to submit an&..",
+    "levelStudy": "Postgraduate",
+    "ScholarshipValue": "The CSC Research Scholarship may provide funding to cover a living...",
+    "availableAward": "All eligible students",
+    "primaryImg": "https://i.ibb.co/121StQB/myhc-285246.jpg"
+  },
+  {
+    "id": 2,
+    "uniName": " Western Sydney University",
+    "govtStatus": "University scholarships",
+    "scholarQuality": "Vice-Chancellor's Academic Excellence Postgraduate Scholarships",
+    "Scholarship inclusions": "Step 1: Find a supervisor You need to find a supervisor at Western Sydney University and acquire a supervisor letter of support to include in your application. Step 2: Submit an application for admission You need to submit an&..",
+    "levelStudy": "Postgraduate",
+    "ScholarshipValue": "The CSC Research Scholarship may provide funding to cover a living...",
+    "availableAward": "All eligible students",
+    "primaryImg": "https://i.ibb.co/121StQB/myhc-285246.jpg"
+  },
 
-	{
-		"id": 3,
-		"uniName": "The University of Melbourne",
-		"govtStatus": " Government scholarships",
-		"scholarQuality": "Eve Landman Scholarship ",
-		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
-		"levelStudy": "Undergraduate",
-		"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
-		"availableAward": "All eligible students",
-		"primaryImg": "https://i.ibb.co/qdRW3C2/melbourn-removebg-preview.png"
-	},
+  {
+    "id": 3,
+    "uniName": "The University of Melbourne",
+    "govtStatus": " University scholarships",
+    "scholarQuality": "Eve Landman Scholarship ",
+    "courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
+    "levelStudy": "Undergraduate",
+    "ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
+    "availableAward": "All eligible students",
+    "primaryImg": "https://i.ibb.co/qdRW3C2/melbourn-removebg-preview.png"
+  },
 
-	{
-		"id": 4,
-		"uniName": " Victoria University",
-		"govtStatus": " University scholarships",
-		"scholarQuality": "China Scholarship Council Research Scholarships",
-		"courseDetails": "Step 1: Find a supervisor You need to find a supervisor at Western Sydney University and acquire a supervisor letter of support to include in your application. Step 2: Submit an application for admission You need to submit an&..",
-		"levelStudy": "Postgraduate",
-		"ScholarshipValue": "The CSC Research Scholarship may provide funding to cover a living...",
-		"availableAward": "All eligible students",
-		"primaryImg": "https://i.postimg.cc/YCDjsGYB/victoria.jpg"
-	},
+  {
+    "id": 4,
+    "uniName": " Victoria University",
+    "govtStatus": " University scholarships",
+    "scholarQuality": "China Scholarship Council Research Scholarships",
+    "courseDetails": "Step 1: Find a supervisor You need to find a supervisor at Western Sydney University and acquire a supervisor letter of support to include in your application. Step 2: Submit an application for admission You need to submit an&..",
+    "levelStudy": "Postgraduate",
+    "ScholarshipValue": "The CSC Research Scholarship may provide funding to cover a living...",
+    "availableAward": "All eligible students",
+    "primaryImg": "https://i.postimg.cc/YCDjsGYB/victoria.jpg"
+  },
 
-	{
-		"id": 5,
-		"uniName": "University of Tasmania",
-		"govtStatus": " University scholarships",
-		"scholarQuality": "Destination Australia Scholarship ",
-		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
-		"levelStudy": "Undergraduate",
-		"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
-		"availableAward": "All eligible students",
-		"primaryImg": "https://i.postimg.cc/G2h3QbgS/tasmania.jpg"
-	},
+  {
+    "id": 5,
+    "uniName": "University of Tasmania",
+    "govtStatus": " University scholarships",
+    "scholarQuality": "Destination Australia Scholarship ",
+    "courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
+    "levelStudy": "Undergraduate",
+    "ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
+    "availableAward": "All eligible students",
+    "primaryImg": "https://i.postimg.cc/G2h3QbgS/tasmania.jpg"
+  },
 
-	{
-		"id": 6,
-		"uniName": "Macquarie University",
-		"govtStatus": " University scholarships",
-		"scholarQuality": "ACU International Student Scholarship ",
-		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
-		"levelStudy": "Postgraduate",
-		"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
-		"availableAward": "All eligible students",
-		"primaryImg": "https://i.ibb.co/SVFxsh1/macquarie.jpg"
-	},
+  {
+    "id": 6,
+    "uniName": "Macquarie University",
+    "govtStatus": " University scholarships",
+    "scholarQuality": "ACU International Student Scholarship ",
+    "courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
+    "levelStudy": "Postgraduate",
+    "ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
+    "availableAward": "All eligible students",
+    "primaryImg": "https://i.ibb.co/SVFxsh1/macquarie.jpg"
+  },
 
-	{
-		"id": 7,
-		"uniName": "Flinders University",
-		"scholarQuality": "Fellowship scholarship ",
-		"govtStatus": "University scholarships",
-		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
-		"levelStudy": "Postgraduate",
-		"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
-		"availableAward": "All eligible students",
-		"primaryImg": "https://i.postimg.cc/yYh5V08c/flinders.jpg"
-	},
+  {
+    "id": 7,
+    "uniName": "Flinders University",
+    "scholarQuality": "Fellowship scholarship ",
+    "govtStatus": "University scholarships",
+    "courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
+    "levelStudy": "Postgraduate",
+    "ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
+    "availableAward": "All eligible students",
+    "primaryImg": "https://i.postimg.cc/yYh5V08c/flinders.jpg"
+  },
 
-	{
-		"id": 8,
-		"uniName": "University of South Australia ",
-		"govtStatus": "University scholarships",
-		"scholarQuality": "Elise & Jack Middleditch PGCW Scholarship ",
-		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
-		"levelStudy": "Postgraduate",
-		"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
-		"availableAward": "All eligible students",
-		"primaryImg": "https://i.postimg.cc/RC2931mY/south-australia.jpg"
-	},
-	{
-		"id": 9,
-		"uniName": "The University of Western Australia",
-		"govtStatus": "University scholarships",
-		"scholarQuality": "Fellowship scholarship ",
-		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
-		"levelStudy": "Undergraduate",
-		"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
-		"availableAward": "All eligible students",
-		"primaryImg": "https://i.postimg.cc/7YXG8Q0z/Western.jpg"
-	},
+  {
+    "id": 8,
+    "uniName": "University of South Australia ",
+    "govtStatus": "University scholarships",
+    "scholarQuality": "Elise & Jack Middleditch PGCW Scholarship ",
+    "courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
+    "levelStudy": "Postgraduate",
+    "ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
+    "availableAward": "All eligible students",
+    "primaryImg": "https://i.postimg.cc/RC2931mY/south-australia.jpg"
+  },
+  {
+    "id": 9,
+    "uniName": "The University of Western Australia",
+    "govtStatus": "University scholarships",
+    "scholarQuality": "Fellowship scholarship ",
+    "courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
+    "levelStudy": "Undergraduate",
+    "ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
+    "availableAward": "All eligible students",
+    "primaryImg": "https://i.postimg.cc/7YXG8Q0z/Western.jpg"
+  },
 
-	{
-		"id": 10,
-		"uniName": "University of Southern Queensland",
-		"govtStatus": "University scholarships",
-		"scholarQuality": "Incoming Study Abroad International Travel Grant ",
-		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
-		"levelStudy": "Postgraduate/ Undergraduate",
-		"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
-		"availableAward": "All eligible students",
-		"primaryImg": "https://i.postimg.cc/Hn9JL6Nf/quensland.jpg"
-	},
+  {
+    "id": 10,
+    "uniName": "University of Southern Queensland",
+    "govtStatus": "University scholarships",
+    "scholarQuality": "Incoming Study Abroad International Travel Grant ",
+    "courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
+    "levelStudy": " Undergraduate",
+    "ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
+    "availableAward": "All eligible students",
+    "primaryImg": "https://i.postimg.cc/Hn9JL6Nf/quensland.jpg"
+  },
 
-	{
-		"id": 11,
-		"uniName": "La Trobe University ",
-		"govtStatus": "University scholarships",
-		"scholarQuality": "Postgraduate Innovation Scholarship (Current Students) ",
-		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
-		"levelStudy": "Postgraduate",
-		"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
-		"availableAward": "All eligible students",
-		"primaryImg": "https://i.ibb.co/3TKsqWR/latrobe.jpg"
-	},
+  {
+    "id": 11,
+    "uniName": "La Trobe University ",
+    "govtStatus": "University scholarships",
+    "scholarQuality": "Postgraduate Innovation Scholarship (Current Students) ",
+    "courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
+    "levelStudy": "Postgraduate",
+    "ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
+    "availableAward": "All eligible students",
+    "primaryImg": "https://i.ibb.co/3TKsqWR/latrobe.jpg"
+  },
 
-	{
-		"id": 12,
-		"govtStatus": "University scholarships",
-		"uniName": "Charles Darwin University",
-		"scholarQuality": " Academic Excellence Scholarship ",
-		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
-		"levelStudy": "Undergraduate",
-		"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
-		"availableAward": "All eligible students",
-		"primaryImg": "https://i.ibb.co/SRJ7rnX/darwin.png"
-	},
+  {
+    "id": 12,
+    "govtStatus": "University scholarships",
+    "uniName": "Charles Darwin University",
+    "scholarQuality": " Academic Excellence Scholarship ",
+    "courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
+    "levelStudy": "Undergraduate",
+    "ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
+    "availableAward": "All eligible students",
+    "primaryImg": "https://i.ibb.co/SRJ7rnX/darwin.png"
+  },
 
-	{
-		"id": 13,
-		"uniName": "Central Queensland University",
-		"govtStatus": "University scholarships",
-		"scholarQuality": "SCU International Women in STEM Scholarship ",
-		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
-		"levelStudy": "Postgraduate",
-		"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
-		"availableAward": "All eligible students",
-		"primaryImg": "https://i.postimg.cc/nzd4dwdn/southern-cross-university.jpg"
-	},
+  {
+    "id": 13,
+    "uniName": "Central Queensland University",
+    "govtStatus": "University scholarships",
+    "scholarQuality": "SCU International Women in STEM Scholarship ",
+    "courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
+    "levelStudy": "Postgraduate",
+    "ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
+    "availableAward": "All eligible students",
+    "primaryImg": "https://i.postimg.cc/nzd4dwdn/southern-cross-university.jpg"
+  },
 
-	{
-		"id": 14,
-		"uniName": "University of Technology Sydney",
-		"govtStatus": "University scholarships",
-		"scholarQuality": "Fellowship scholarship ",
-		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
-		"levelStudy": "Postgraduate",
-		"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
-		"availableAward": "All eligible students",
-		"primaryImg": "https://i.postimg.cc/XJW1MhcF/UTS.jpg"
-	},
+  {
+    "id": 14,
+    "uniName": "University of Technology Sydney",
+    "govtStatus": "University scholarships",
+    "scholarQuality": "Fellowship scholarship ",
+    "courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
+    "levelStudy": "Postgraduate",
+    "ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
+    "availableAward": "All eligible students",
+    "primaryImg": "https://i.postimg.cc/XJW1MhcF/UTS.jpg"
+  },
 
-	{
-		"id": 15,
-		"uniName": "Monash University",
-		"govtStatus": "University scholarships",
-		"scholarQuality": "Faculty of Law International Asia Scholarship ",
-		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
-		"levelStudy": " Undergraduate",
-		"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
-		"availableAward": "All eligible students",
-		"primaryImg": "https://i.postimg.cc/NMTtDWGH/monas.jpg"
-	},
-	{
-		"id": 16,
-		"govtStatus": "Government scholarships",
-		"uniName": "The University of Adelaide",
-		"scholarQuality": "Alumni Scholarships (International) 2021-2025",
-		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
-		"levelStudy": "Postgraduate",
-		"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
-		"availableAward": "All eligible students",
-		"primaryImg": "https://i.postimg.cc/ZKmb7KdK/adelaide.jpg"
-	},
-	{
-		"id": 17,
-		"govtStatus": "University scholarships",
-		"uniName": "The Australian National University",
-		"scholarQuality": "Bok Honours Year Scholarship in Astrophysics ",
-		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
-		"levelStudy": "Postgraduate",
-		"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
-		"availableAward": "All eligible students",
-		"primaryImg": "https://i.postimg.cc/nVDrSPST/national-university.jpg"
-	},
+  {
+    "id": 15,
+    "uniName": "Monash University",
+    "govtStatus": "University scholarships",
+    "scholarQuality": "Faculty of Law International Asia Scholarship ",
+    "courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
+    "levelStudy": " Undergraduate",
+    "ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
+    "availableAward": "All eligible students",
+    "primaryImg": "https://i.postimg.cc/NMTtDWGH/monas.jpg"
+  },
+  {
+    "id": 16,
+    "govtStatus": "University scholarships",
+    "uniName": "The University of Adelaide",
+    "scholarQuality": "Alumni Scholarships (International) 2021-2025",
+    "courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
+    "levelStudy": "Postgraduate",
+    "ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
+    "availableAward": "All eligible students",
+    "primaryImg": "https://i.postimg.cc/ZKmb7KdK/adelaide.jpg"
+  },
+  {
+    "id": 17,
+    "govtStatus": "University scholarships",
+    "uniName": "The Australian National University",
+    "scholarQuality": "Bok Honours Year Scholarship in Astrophysics ",
+    "courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
+    "levelStudy": "Postgraduate",
+    "ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
+    "availableAward": "All eligible students",
+    "primaryImg": "https://i.postimg.cc/nVDrSPST/national-university.jpg"
+  },
 
-	{
-		"id": 18,
-		"govtStatus": "University scholarships",
-		"uniName": "RMIT University",
-		"scholarQuality": "Academic Excellence Scholarships for Onshore ",
-		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
-		"levelStudy": "Postgraduate",
-		"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
-		"availableAward": "All eligible students",
-		"primaryImg": "https://i.postimg.cc/Dy1W0Mqm/RMIT.jpg"
-	},
-	{
-		"id": 19,
-		"govtStatus": "University scholarships",
-		"uniName": "University of Newcastle",
-		"scholarQuality": "Fellowship scholarship ",
-		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
-		"levelStudy": "Postgraduate",
-		"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
-		"availableAward": "All eligible students",
-		"primaryImg": "https://i.ibb.co/FD9x7Wk/necastle.png"
-	},
+  {
+    "id": 18,
+    "govtStatus": "University scholarships",
+    "uniName": "RMIT University",
+    "scholarQuality": "Academic Excellence Scholarships for Onshore ",
+    "courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
+    "levelStudy": "Postgraduate",
+    "ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
+    "availableAward": "All eligible students",
+    "primaryImg": "https://i.postimg.cc/Dy1W0Mqm/RMIT.jpg"
+  },
+  {
+    "id": 19,
+    "govtStatus": "University scholarships",
+    "uniName": "University of Newcastle",
+    "scholarQuality": "Fellowship scholarship ",
+    "courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
+    "levelStudy": "Postgraduate",
+    "ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
+    "availableAward": "All eligible students",
+    "primaryImg": "https://i.ibb.co/FD9x7Wk/necastle.png"
+  },
 
-	{
-		"id": 20,
-		"govtStatus": "University scholarships",
-		"uniName": "UNSW Sydney",
-		"scholarQuality": "Fellowship scholarship ",
-		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
-		"levelStudy": "Undergraduate",
-		"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
-		"availableAward": "All eligible students",
-		"primaryImg": "https://i.ibb.co/0sF39Cr/unsw-removebg-preview.png"
-	},
-	{
-		"id": 21,
-		"govtStatus": "University scholarships",
-		"uniName": "Charles Sturt University",
-		"scholarQuality": "Fellowship scholarship ",
-		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
-		"levelStudy": "Postgraduate",
-		"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
-		"availableAward": "All eligible students",
-		"primaryImg": "https://i.postimg.cc/j51d5zgs/charles-strut-university.jpg"
-	},
+  {
+    "id": 20,
+    "govtStatus": "University scholarships",
+    "uniName": "UNSW Sydney",
+    "scholarQuality": "Fellowship scholarship ",
+    "courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
+    "levelStudy": "Undergraduate",
+    "ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
+    "availableAward": "All eligible students",
+    "primaryImg": "https://i.ibb.co/0sF39Cr/unsw-removebg-preview.png"
+  },
+  {
+    "id": 21,
+    "govtStatus": "University scholarships",
+    "uniName": "Charles Sturt University",
+    "scholarQuality": "Fellowship scholarship ",
+    "courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
+    "levelStudy": "Postgraduate",
+    "ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
+    "availableAward": "All eligible students",
+    "primaryImg": "https://i.postimg.cc/j51d5zgs/charles-strut-university.jpg"
+  },
 
-	{
-		"id": 22,
-		"govtStatus": "University scholarships",
-		"uniName": "University of Wollongong",
-		"scholarQuality": "Fellowship scholarship ",
-		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
-		"levelStudy": "Undergraduate",
-		"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
-		"availableAward": "All eligible students",
-		"primaryImg": "https://i.ibb.co/X80TPKF/wolongong-university.png"
-	},
-	{
-		"id": 23,
-		"govtStatus": "University scholarships",
-		"uniName": "Griffith University",
-		"scholarQuality": "CMU-A Strategic Partner Scholarship Program ",
-		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
-		"levelStudy": "Postgraduate",
-		"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
-		"availableAward": "All eligible students",
-		"primaryImg": "https://i.ibb.co/2jFTnDB/griffith.jpg"
-	},
+  {
+    "id": 22,
+    "govtStatus": "University scholarships",
+    "uniName": "University of Wollongong",
+    "scholarQuality": "Fellowship scholarship ",
+    "courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
+    "levelStudy": "Undergraduate",
+    "ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
+    "availableAward": "All eligible students",
+    "primaryImg": "https://i.ibb.co/X80TPKF/wolongong-university.png"
+  },
+  {
+    "id": 23,
+    "govtStatus": "University scholarships",
+    "uniName": "Griffith University",
+    "scholarQuality": "CMU-A Strategic Partner Scholarship Program ",
+    "courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
+    "levelStudy": "Postgraduate",
+    "ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
+    "availableAward": "All eligible students",
+    "primaryImg": "https://i.ibb.co/2jFTnDB/griffith.jpg"
+  },
 
-	{
-		"id": 24,
-		"govtStatus": "University scholarships",
-		"uniName": "Australian Catholic University",
-		"scholarQuality": "AIMS@JCU Scholarships",
-		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
-		"levelStudy": "Postgraduate",
-		"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
-		"availableAward": "All eligible students",
-		"primaryImg": "https://i.postimg.cc/Zqvxqhx2/catholic.jpg"
-	},
-	{
-		"id": 24,
-		"govtStatus": "University scholarships",
-		"uniName": "University of Adelaide",
-		"scholarQuality": "Vice-Chancellor's Academic Excellence Postgraduate Scholarships",
-		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
-		"levelStudy": "Postgraduate",
-		"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
-		"availableAward": "All eligible students",
-		"primaryImg": "https://i.ibb.co/5vCBFh8/adilade.png"
-	},
-	{
-		"id": 24,
-		"govtStatus": "University scholarships",
-		"uniName": "University of Adelaide",
-		"scholarQuality": "Vice-Chancellor's Academic Excellence Postgraduate Scholarships",
-		"courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
-		"levelStudy": "Undergraduate",
-		"ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
-		"availableAward": "All eligible students",
-		"primaryImg": "https://i.ibb.co/5vCBFh8/adilade.png"
-	}
+  {
+    "id": 24,
+    "govtStatus": "University scholarships",
+    "uniName": "Australian Catholic University",
+    "scholarQuality": "AIMS@JCU Scholarships",
+    "courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
+    "levelStudy": "Postgraduate",
+    "ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
+    "availableAward": "All eligible students",
+    "primaryImg": "https://i.postimg.cc/Zqvxqhx2/catholic.jpg"
+  },
+  {
+    "id": 24,
+    "govtStatus": "University scholarships",
+    "uniName": "University of Adelaide",
+    "scholarQuality": "Vice-Chancellor's Academic Excellence Postgraduate Scholarships",
+    "courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
+    "levelStudy": "Postgraduate",
+    "ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
+    "availableAward": "All eligible students",
+    "primaryImg": "https://i.ibb.co/5vCBFh8/adilade.png"
+  },
+  {
+    "id": 24,
+    "govtStatus": "University scholarships",
+    "uniName": "University of Adelaide",
+    "scholarQuality": "Vice-Chancellor's Academic Excellence Postgraduate Scholarships",
+    "courseDetails": "No application is necessary. All new applications to the University will be automatically considered for a scholarship. Short-listing will be carried out by a panel of officers from the University, 5-6 times each year.  Applicants are request...",
+    "levelStudy": "Undergraduate",
+    "ScholarshipValue": "Fifty percent (50%) of tuition fee per session for full-time enrolment...",
+    "availableAward": "All eligible students",
+    "primaryImg": "https://i.ibb.co/5vCBFh8/adilade.png"
+  }
 ]

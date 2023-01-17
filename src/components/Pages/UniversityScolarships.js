@@ -1,17 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 
-const WesternSydney = ({ dataToShow, selectedLevel, selectedScholarship ,d}) => {
+const UniversityScolarships = () => {
+  const [universityScolarship, setUniversityScolarship] = useState([]);
+  useEffect(() => {
+    fetch('fakedata.json')
+      .then(res => res.json())
+      .then(d => {
+        // console.log(d);
+        setUniversityScolarship(d);
+      });
+  }, []);
+
   return (
-    <div>
-      {/* <div className="container mx-auto text-md mt-10">
-        <p className="lg:mx-32 text-2xl font-extrabold lg:mt-10">
-          {" "}
-          All {selectedLevel} {selectedScholarship}
+    <>
+      <div className="container mx-auto text-md mt-10">
+        <p className="lg:mx-32 text-2xl font-bold ">
+          View all university available scholarships
         </p>
-      </div>{" "} */}
-      {dataToShow.map((d) => (
-        <div className="container mx-auto ">
-          <div className="lg:mx-24 lg:border-t-2 shadow-sm">
+      </div>
+      {universityScolarship.map(d => (
+        <div className="container mx-auto  ">
+          <div className="lg:mx-24 lg:border-t-2 lg:border-mx-24  shadow-sm">
             <div className=" w-full flex flex-wrap p-3 mb-5 lg:gap-[57px] lg:mt-5">
               <div className="lg:w-[15%] w-full  ">
                 <div className="flex justify-center sm:w-full ">
@@ -28,7 +37,7 @@ const WesternSydney = ({ dataToShow, selectedLevel, selectedScholarship ,d}) => 
               </div>
 
               <div className="lg:w-[70%]   border-gray-400 py-2">
-                <div className="text-xl mt-5 text-black  font-bold underline cursor-pointer ">
+                <div className="text-xl mt-5 text-black  font-bold underline underline-offset-4 cursor-pointer ">
                   {d.scholarQuality}
                 </div>
                 <div>
@@ -66,7 +75,7 @@ const WesternSydney = ({ dataToShow, selectedLevel, selectedScholarship ,d}) => 
                       Who can apply?
                     </p>
                     <p className="mb-3 text-black lg:w-3/5 ">
-                      Domestic and international applicants{" "}
+                      Domestic and international applicants{' '}
                       <span className="underline">Find out more</span>
                     </p>
                   </div>
@@ -82,28 +91,28 @@ const WesternSydney = ({ dataToShow, selectedLevel, selectedScholarship ,d}) => 
                       Scholarships Australia can assist you to get connected
                       with consultants who are previous scholarship recipients
                       in your field to ensure you submit a competitive
-                      application{" "}
+                      application{' '}
                       <span className=" center bg-[#304F40] my-2 cursor-pointer px-2  py-1 text-white rounded-2xl ">
                         Enquiry now
                       </span>
                     </p>
                   </div>
                   {/* <div className="flex w-full">
-                    <div className="lg:w-2/5"></div>
-                    <div className="lg:w-3/5 sm:w-full">
-                      <span className=" center bg-[#304F40] my-2 cursor-pointer px-2  py-1 text-white rounded-2xl ">
-                        Enquiry now
-                      </span>
-                    </div>
-                  </div> */}
+                        <div className="lg:w-2/5"></div>
+                        <div className="lg:w-3/5 sm:w-full">
+                          <span className=" center bg-[#304F40] my-2 cursor-pointer px-2  py-1 text-white rounded-2xl ">
+                            Enquiry now
+                          </span>
+                        </div>
+                      </div> */}
                 </div>
               </div>
             </div>
           </div>
         </div>
-       ))}
-    </div>
+      ))}
+    </>
   );
 };
 
-export default WesternSydney;
+export default UniversityScolarships;
