@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer/Footer';
@@ -12,14 +12,23 @@ import UniversityScolarships from './components/Pages/UniversityScolarships';
 import GovernmentScholarships from './components/Pages/GovernmentScholarships';
 import Resources from './components/Pages/Resources';
 import OurServices from './components/Pages/OurServices';
+import Banner from './components/Banner';
+import SearchBox from './components/SearchBox';
 
 function App() {
+  const [selectScholarships,setSelectScholarships]=useState(0)
+  console.log(selectScholarships)
   return (
     <div className="max-w-[1900px] mx-auto bg:gray-500 ">
       <SecondNavbar></SecondNavbar>
       <Navbar></Navbar>
+      <Banner/>
+      <SearchBox/>
+      
+      {/* <Home/> */}
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
+        <Route path="search" element={<SearchBox setSelectScholarships={setSelectScholarships}></SearchBox>}></Route>
         <Route
           path="/university"
           element={<UniversityScolarships></UniversityScolarships>}
@@ -32,10 +41,16 @@ function App() {
           path="/external"
           element={<ExternalScholarships></ExternalScholarships>}
         ></Route>
-        <Route
-          path="/findScholarship"
-          element={<WesternSydney></WesternSydney>}
-        ></Route>
+        {
+          selectScholarships === 1 || 2 ? <Route
+          path="/searchScholarships/:scholarship/:graduation"
+          element={<WesternSydney setSelectScholarships={setSelectScholarships}></WesternSydney>}
+        ></Route>: <Route
+        path="/external"
+        element={<ExternalScholarships></ExternalScholarships>}
+      ></Route>
+        }
+       
         <Route
           path="/ourServices"
           element={<OurServices></OurServices>}
