@@ -65,7 +65,9 @@ const SearchBox = ({ universityName }) => {
             onChange={(e) => setSelectedLevel(e.target.value)}
             className="p-1  w-full  bg-white border-2 border-[#304F40] rounded-3xl shadow-sm outline-none appearance-none  text-white"
           >
-            <option className=" font-bold text-black">Select a study level</option>
+            <option className=" font-bold text-black">
+              Select a study level
+            </option>
             <option>Postgraduate</option>
             <option>Undergraduate</option>
           </select>
@@ -83,12 +85,17 @@ const SearchBox = ({ universityName }) => {
       </div>
 
       {searchButton ? (
-        <>
-          {" "}
+        <div>
+          <div className="container mx-auto text-md mt-10">
+            <p className="lg:mx-32">
+              {" "}
+              All {selectedScholarship} {selectedLevel}
+            </p>
+          </div>{" "}
           {dataToShow.map((data) => (
             <WesternSydney d={data}></WesternSydney>
           ))}
-        </>
+        </div>
       ) : (
         <>
           {universityName.map((d) => (
