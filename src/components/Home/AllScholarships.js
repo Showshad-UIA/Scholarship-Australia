@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
+
 const AllScholarships = ({d}) => {
   const { schol, grad } = useParams();
   const [universityName, setUniversityName] = useState([]);
@@ -13,9 +14,8 @@ const AllScholarships = ({d}) => {
       });
   }, []);
     return (
-
       <div >
-        <p className='h-10 bg-red-500 text-black'> {schol} {grad}</p>
+        {/* <p className='h-10 bg-red-500 text-black'> {schol} {grad}</p> */}
       {
         universityName.map(d =>  <div className="container mx-auto  ">
         <div className="lg:mx-24 lg:border-t-2 lg:border-mx-24  shadow-sm">
