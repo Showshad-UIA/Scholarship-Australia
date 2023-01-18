@@ -14,6 +14,8 @@ import Resources from './components/Pages/Resources';
 import OurServices from './components/Pages/OurServices';
 import Banner from './components/Banner';
 import SearchBox from './components/SearchBox';
+import AllScholarships from './components/Home/AllScholarships';
+import FindScholarship from './components/Pages/FindScholarship';
 
 function App() {
   const [selectScholarships, setSelectScholarships] = useState(0);
@@ -22,8 +24,8 @@ function App() {
     <div className="max-w-[1900px] mx-auto bg:gray-500 ">
       <SecondNavbar></SecondNavbar>
       <Navbar></Navbar>
-      <Banner />
-      <SearchBox />
+      {/* <Banner/>
+      <SearchBox/> */}
 
       {/* <Home/> */}
       <Routes>
@@ -52,9 +54,9 @@ function App() {
           <Route
             path="/searchScholarships/:scholarship/:graduation"
             element={
-              <WesternSydney
+              <FindScholarship
                 setSelectScholarships={setSelectScholarships}
-              ></WesternSydney>
+              ></FindScholarship>
             }
           ></Route>
         ) : (

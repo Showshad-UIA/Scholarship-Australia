@@ -1,23 +1,14 @@
 import React from 'react';
+import Banner from '../Banner';
+import WesternSydney from '../Pages/WesternSydney';
+import SearchBox from '../SearchBox';
 
 const FindScholarship = () => {
   return (
     <div>
-      <div className="container mx-auto ">
-        <p className="lg:mx-32 text-2xl font-extrabold lg:mt-10">
-          {' '}
-          Scholarship search results
-        </p>
-      </div>
-      <div className="container mx-auto text-md mt-10">
-        <p className="lg:mx-32">
-          {' '}
-          All courses and institutions listed are CRICOS registered
-        </p>
-      </div>{' '}
-      {/* {dataToShow.map(data => (
-        <WesternSydney d={data}></WesternSydney>
-      ))} */}
+      <Banner/>
+      <SearchBox/>
+      <WesternSydney/>
     </div>
   );
 };
