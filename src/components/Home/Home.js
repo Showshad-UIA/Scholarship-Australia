@@ -12,8 +12,14 @@ const Home = () => {
   return (
     <div className="">
       <Banner></Banner>
+      
       <SearchBox ></SearchBox>
-	  <AllScholarships/>
+      {/* <div className="container mx-auto text-md mt-10">
+        <p className="lg:mx-20 font-sans lg:text-2xl text-md font-semibold text-gray-800 lg:mt-10 px-2 sm:mb-5">
+          Select your scholarships and study levels
+        </p>
+      </div> */}
+      <AllScholarships />
       {/* <ExternalScholarships></ExternalScholarships> */}
     </div>
   );

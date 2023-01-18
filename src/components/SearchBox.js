@@ -42,13 +42,19 @@ const SearchBox = ({ setSelectScholarships }) => {
 
   return (
     <div>
-      <h1 className="text-xl text-center text-[#304F40] items-center container mx-auto font-bold mt-5 rounded-3xl   ">
+      <h1 className="text-xl text-center text-[#304F40] items-center container mx-auto font-semibold mt-5 rounded-3xl lg:mb-12  ">
         <p className="lg:mx-28 text-justify lg:text-center px-2 font-sans">
-          Scholarship Australia is the first scholarship consultancy online
-          platform. Hire the best consultant for your scholarship application.
-          Get feedback from previous scholarship recipients.
+          Scholarships Australia is a scholarship consultancy platform. Our
+          consultants will assist you to submit a competitive scholarship
+          application that stands out. Our scholarship search tool will assist
+          in finding the right scholarship for you.
         </p>
       </h1>
+      {/* <div className="">
+        <p className=" font-sans lg:text-2xl text-md mt-10 font-bold text-[#304F40] lg:mt-10 px-2 sm:mb-5  text-center ">
+          Search for a scholarship
+        </p>
+      </div> */}
       <div className="lg:flex md:flex  w-full justify-center mt-5 lg:gap-5 md:gap-3   ">
         <div className="relative px-1.5 w-full  lg:w-60 md:w-52 lg:max-w-sm dropdown ">
           <select
@@ -56,7 +62,7 @@ const SearchBox = ({ setSelectScholarships }) => {
             className=" p-1 px-2 w-full  bg-white  text-black border-2 border-[#304F40] rounded-3xl shadow-sm outline-none appearance-none  "
           >
             <option className="font-bold dropdown inline text-black disabled ">
-              Select a scholarships{' '}
+              Select type of scholarship
             </option>
             {selectScholarships.map(({ option, value, id }) => (
               <option onClick={() => setSelectScholarships(id)} value={value}>
@@ -79,7 +85,7 @@ const SearchBox = ({ setSelectScholarships }) => {
             className=" p-1 px-2 w-full  bg-white  text-black border-2 border-[#304F40] rounded-3xl shadow-sm outline-none appearance-none "
           >
             <option className="font-sans font-bold text-black disabled">
-              Select a study level
+              Select a level of study
             </option>
             <option value="Postgraduate">Postgraduate</option>
             <option value="Undergraduate">Undergraduate</option>
@@ -98,11 +104,11 @@ const SearchBox = ({ setSelectScholarships }) => {
 				</button> */}
       </div>
       <div>
-        <div className="container mx-auto text-md mt-10">
+        {/* <div className="container mx-auto text-md mt-10">
           <p className="lg:mx-20 font-sans lg:text-2xl text-md font-semibold text-gray-800 lg:mt-10 px-2 sm:mb-5">
-            Result of all scholarships and study levels
+           Select your scholarships and study levels
           </p>
-        </div>
+        </div> */}
 
         {/* {universityName.map((d) => (
             <AllScholarships d={d} />

@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 const AllScholarships = ({ d }) => {
   const { schol, grad } = useParams();
   const [universityName, setUniversityName] = useState([]);
   useEffect(() => {
-    fetch("fakedata.json")
-      .then((res) => res.json())
-      .then((data) => {
+    fetch('fakedata.json')
+      .then(res => res.json())
+      .then(data => {
         // console.log(data)
         setUniversityName(data);
       });
@@ -16,9 +16,9 @@ const AllScholarships = ({ d }) => {
     <div>
       {/* <p className='h-10 bg-red-500 text-black'> {schol} {grad}</p> */}
       {universityName.map(d => (
-        <div className="container mx-auto  ">
-          <div className="lg:mx-10 lg:border-t-2  shadow-sm">
-            <div className=" w-full flex flex-wrap p-3 mb-5  lg:mt-5">
+        <div className="container mx-auto  mt-10 ">
+          <div className="lg:mx-10 lg:border-t-2  ">
+            <div className=" w-full flex flex-wrap px-3 mb-5  lg:mt-5">
               <div className="lg:w-[15%] w-full mr-5 ">
                 <div className="flex justify-center sm:w-full ">
                   <img
@@ -44,7 +44,7 @@ const AllScholarships = ({ d }) => {
                 </div>
 
                 <div className="lg:flex  w-full ">
-                  <p className=" text-gray-800  font-semibold lg:w-2/6 font-sans">
+                  <p className=" text-gray-800 mb-1 font-semibold lg:w-2/6 font-sans">
                     Level of study:
                   </p>
                   <p className=" text-black lg:w-5/6 start font-sans ">
@@ -73,16 +73,18 @@ const AllScholarships = ({ d }) => {
                     <p className=" text-gray-800 font-sans  font-semibold lg:w-2/6">
                       Who can apply?
                     </p>
-                    <p className="mb-3 font-sans lg:w-5/6 ">
+                    <p className="mb-1 font-sans lg:w-5/6 ">
                       Domestic and international applicants{' '}
-                      <span className="underline">Find out more</span>
+                      <span className="underline text-gray-800 font-sans  font-semibold">
+                        Find out more
+                      </span>
                     </p>
                   </div>
                 </div>
                 <div className="  justify-between w-full">
                   <div className="lg:flex w-full">
                     <p className=" text-gray-800 font-sans  font-semibold lg:w-2/6 ">
-                      Need Help with Your Application:
+                      Need help with your application:
                     </p>
                     <p className=" text-md font-sans text-justify  lg:w-5/6">
                       Would you like someone experienced to review and give
@@ -91,8 +93,8 @@ const AllScholarships = ({ d }) => {
                       with consultants who are previous scholarship recipients
                       in your field to ensure you submit a competitive
                       application{' '}
-                      <span className=" center bg-[#304F40] my-2 cursor-pointer px-2  py-1 text-white rounded-2xl ">
-                        Enquiry now
+                      <span className="  bg-[#304F40] my-2 cursor-pointer px-2  py-1 text-white rounded-2xl ">
+                        <a href="/enquire">Enquire now</a>
                       </span>
                     </p>
                   </div>

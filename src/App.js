@@ -16,6 +16,7 @@ import Banner from './components/Banner';
 import SearchBox from './components/SearchBox';
 import AllScholarships from './components/Home/AllScholarships';
 import FindScholarship from './components/Pages/FindScholarship';
+import Enquire from './components/Pages/Enquire';
 
 function App() {
   const [selectScholarships, setSelectScholarships] = useState(0);
@@ -42,6 +43,7 @@ function App() {
           path="/university"
           element={<UniversityScolarships></UniversityScolarships>}
         ></Route>
+        <Route path="/enquire" element={<Enquire></Enquire>}></Route>
         <Route
           path="/government"
           element={<GovernmentScholarships></GovernmentScholarships>}
