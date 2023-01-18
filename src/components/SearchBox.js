@@ -43,7 +43,7 @@ const SearchBox = ({ setSelectScholarships }) => {
   return (
     <div>
       <h1 className="text-xl text-center text-[#304F40] items-center container mx-auto font-bold mt-5 rounded-3xl   ">
-        <p className="lg:mx-28 text-justify lg:text-center px-2">
+        <p className="lg:mx-28 text-justify lg:text-center px-2 font-sans">
           Scholarship Australia is the first scholarship consultancy online
           platform. Hire the best consultant for your scholarship application.
           Get feedback from previous scholarship recipients.
@@ -78,7 +78,7 @@ const SearchBox = ({ setSelectScholarships }) => {
             onChange={e => setSelectedLevel(e.target.value)}
             className=" p-1 px-2 w-full  bg-white  text-black border-2 border-[#304F40] rounded-3xl shadow-sm outline-none appearance-none "
           >
-            <option className=" font-bold text-black disabled">
+            <option className="font-sans font-bold text-black disabled">
               Select a study level
             </option>
             <option value="Postgraduate">Postgraduate</option>
@@ -89,7 +89,7 @@ const SearchBox = ({ setSelectScholarships }) => {
         <button
           // onClick={() => setSearchButton(!searchButton)}
           onClick={handleSearchScholarship}
-          className="relative w-full lg:max-w-sm lg:w-60 md:w-52 p-1 ml-1 px-5    rounded-3xl shadow-sm outline-none appearance-none focus:border-indigo-600 text-white cursor-pointer bg-[#304F40]"
+          className="relative w-full lg:max-w-sm lg:w-60 md:w-52 p-1 ml-1 px-5    rounded-3xl shadow-sm outline-none appearance-none focus:border-indigo-600 text-white cursor-pointer bg-[#304F40] font-sans"
         >
           Search
         </button>
@@ -99,7 +99,7 @@ const SearchBox = ({ setSelectScholarships }) => {
       </div>
       <div>
         <div className="container mx-auto text-md mt-10">
-          <p className="lg:mx-32 lg:text-2xl text-md font-bold lg:mt-10 px-2 sm:mb-5">
+          <p className="lg:mx-20 font-sans lg:text-2xl text-md font-semibold text-gray-800 lg:mt-10 px-2 sm:mb-5">
             Result of all scholarships and study levels
           </p>
         </div>

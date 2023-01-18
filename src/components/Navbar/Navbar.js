@@ -36,7 +36,7 @@ function Navbar() {
   ];
 
   return (
-    <div className=" bg-[#1E282D] sticky top-0 z-10">
+    <div className=" bg-[#1E282D] font-sans sticky top-0 z-10">
       <div className="max-w-8xl mx-auto ">
         <div className=" sticky top-0 z-10 lg:mx-28 ">
           <div className="">

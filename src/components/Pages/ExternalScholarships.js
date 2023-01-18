@@ -12,19 +12,19 @@ const ExternalScholarships = () => {
         <div className="">
           <div className=" ">
             <div className=" pb-10  ">
-              <div className="  lg:mx-5">
+              <div className="  lg:mx-12">
                 <h1 className="mb-3 border-t-4 mx-2 border-[#1E282D]"></h1>
-                <h1 className=" px-3 text-2xl text-[#304F40]  font-extrabold ">
+                <h1 className=" px-3 text-2xl font-sans text-center text-[#304F40]  font-extrabold ">
                   External Scholarships
                 </h1>
-                <p className=" px-3 text-justify mb-5 text-md my-3 ">
+                <p className=" px-3 text-[18px] text-justify mb-5 text-md my-3 font-sans">
                   The following organisations offer scholarships to help support
                   research candidatures. Applications are made directly to the
                   relevant organisations.
                 </p>
               </div>
 
-              <div className="lg:mx-5">
+              <div className="lg:mx-12 ">
                 <div className="flex gap-2 px-2 ">
                   <FontAwesomeIcon
                     icon={faChevronRight}
@@ -33,7 +33,7 @@ const ExternalScholarships = () => {
 
                   <p className="text-justify  flex ">
                     <a href="https://aurorafoundation.com.au/">
-                      <span className="text-black border-b-[1px] border-[#1E282D] border-dotted  text-md  hover:text-[#304F40] ">
+                      <span className="text-black border-b-[1px] font-sans border-[#1E282D] border-dotted  text-md  hover:text-[#304F40] ">
                         Aurora Indigenous Scholarships Portal
                       </span>
                     </a>
@@ -52,7 +52,7 @@ const ExternalScholarships = () => {
 
                   <p className="text-justify mb-2">
                     <a href="https://www.dcceew.gov.au/science-research/abrs/grants">
-                      <span className="text-black border-b-[1px] border-[#304F40] border-dotted  text-md hover:text-[#304F40]  ">
+                      <span className="text-black border-b-[1px] border-[#304F40] border-dotted  text-md hover:text-[#304F40] font-sans ">
                         Australian Biological Resources Study (ABRS)
                       </span>
                     </a>
@@ -70,7 +70,7 @@ const ExternalScholarships = () => {
 
                   <p className="text-justify mb-2">
                     <a href="https://www.acn.edu.au/scholarships">
-                      <span className="text-black border-b-[1px] border-[#304F40] border-dotted text-md  hover:text-[#304F40]  ">
+                      <span className="text-black border-b-[1px] border-[#304F40] border-dotted text-md  hover:text-[#304F40] font-sans ">
                         Australian College of Nursing Scholarships
                       </span>
                     </a>
@@ -88,7 +88,7 @@ const ExternalScholarships = () => {
 
                   <p className="text-justify mb-2">
                     <a href="https://www.ainse.edu.au/postgraduate/">
-                      <span className="text-black border-b-[1px] border-[#304F40] border-dotted text-md  hover:text-[#304F40]  ">
+                      <span className="text-black border-b-[1px] border-[#304F40] border-dotted text-md  hover:text-[#304F40] font-sans ">
                         Australian Institute of Nuclear Science and Engineering
                         (AINSE)
                       </span>
@@ -107,7 +107,7 @@ const ExternalScholarships = () => {
 
                   <p className="text-justify mb-2">
                     <a href="https://www.appea.com.au/about/about-us/scholarships/">
-                      <span className="text-black border-b-[1px] border-[#304F40] border-dotted text-md  hover:text-[#304F40]  ">
+                      <span className="text-black border-b-[1px] border-[#304F40] border-dotted text-md  hover:text-[#304F40]  font-sans">
                         Australian Petroleum Production & Exploration
                         Association
                       </span>
@@ -126,7 +126,7 @@ const ExternalScholarships = () => {
 
                   <p className="text-justify mb-2">
                     <a href="https://australianrotaryhealth.org.au/research/current-research/current-research/">
-                      <span className="text-black border-b-[1px] border-[#304F40] border-dotted text-md  hover:text-[#304F40]  ">
+                      <span className="text-black border-b-[1px] border-[#304F40] border-dotted text-md  hover:text-[#304F40] font-sans  ">
                         Australian Rotary Health Opens in a new window
                       </span>
                     </a>
@@ -144,7 +144,7 @@ const ExternalScholarships = () => {
 
                   <p className="text-justify mb-2">
                     <a href="https://australiannursesmemorialcentre.org.au/index.php/scholarships/">
-                      <span className="text-black border-b-[1px] border-[#304F40] border-dotted  text-md hover:text-[#304F40]  ">
+                      <span className="text-black border-b-[1px] border-[#304F40] border-dotted  text-md hover:text-[#304F40]  font-sans">
                         Australian Nurses Memorial Centre Scholarships
                       </span>
                     </a>
@@ -162,7 +162,7 @@ const ExternalScholarships = () => {
 
                   <p className="text-justify mb-2">
                     <a href="https://www.avantdifference.org.au/dit-scholarship/">
-                      <span className="text-black border-b-[1px] border-[#304F40] border-dotted text-md  hover:text-[#304F40]  ">
+                      <span className="text-black border-b-[1px] border-[#304F40] border-dotted text-md  hover:text-[#304F40]  font-sans">
                         Avant Doctor in Training (DIT) Research Scholarship
                       </span>
                     </a>
@@ -180,7 +180,7 @@ const ExternalScholarships = () => {
 
                   <p className="text-justify mb-2">
                     <a href="https://cmcrc.com/education/phd-scholarships/phd-program/">
-                      <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40]  ">
+                      <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40] font-sans ">
                         Capital Markets Cooperative Research Centre (CMCRC)
                         Scholarships
                       </span>
@@ -199,7 +199,7 @@ const ExternalScholarships = () => {
 
                   <p className="text-justify mb-2">
                     <a href="https://www.csiro.au/en/careers/Scholarships-student-opportunities">
-                      <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40]  ">
+                      <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40] font-sans ">
                         CSIRO Scholarships
                       </span>
                     </a>
@@ -218,7 +218,7 @@ const ExternalScholarships = () => {
 
                   <p className="text-justify mb-2">
                     <a href="https://www.dementia.org.au/research/grants">
-                      <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40]  ">
+                      <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40]  font-sans">
                         Dementia Australia Research Foundation
                       </span>
                     </a>
@@ -236,7 +236,7 @@ const ExternalScholarships = () => {
 
                   <p className="text-justify mb-2">
                     <a href="https://internationaleducation.gov.au/Scholarships/Scholarships-and-Fellowships/Pages/default.aspx">
-                      <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40]  ">
+                      <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40]  font-sans">
                         Endeavour Leadership Program
                       </span>
                     </a>
@@ -254,7 +254,7 @@ const ExternalScholarships = () => {
 
                   <p className="text-justify mb-2">
                     <a href="https://www.fulbright.org.au/applicants/australian-applicants/">
-                      <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40]  ">
+                      <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40] font-sans ">
                         Fulbright Scholarships
                       </span>
                     </a>
@@ -273,7 +273,7 @@ const ExternalScholarships = () => {
 
                   <p className="text-justify mb-2">
                     <a href="https://www.daad-australia.org/en/">
-                      <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40]  ">
+                      <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40]  font-sans">
                         German Academic Exchange Service (DAAD)
                       </span>
                     </a>
@@ -291,7 +291,7 @@ const ExternalScholarships = () => {
 
                   <p className="text-justify mb-2">
                     <a href="https://www.heartfoundation.org.au/bundles/our-research/research/research-funding-application">
-                      <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40]  ">
+                      <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40] font-sans ">
                         Heart Foundation Research Funding
                       </span>
                     </a>
@@ -310,7 +310,7 @@ const ExternalScholarships = () => {
 
                   <p className="text-justify mb-2">
                     <a href="https://jade.finance/scholarship.php">
-                      <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40]  ">
+                      <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40] font-sans ">
                         Jade Finance Tertiary Studies Scholarship
                       </span>
                     </a>
@@ -328,7 +328,7 @@ const ExternalScholarships = () => {
 
                   <p className="text-justify mb-2">
                     <a href="https://www.kcl.ac.uk/menzies/study-with-us">
-                      <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40]  ">
+                      <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40] font-sans ">
                         Menzies Australia Institute
                       </span>
                     </a>
@@ -346,7 +346,7 @@ const ExternalScholarships = () => {
 
                   <p className="text-justify mb-2">
                     <a href="https://www.westernsydney.edu.au/schools/grs/scholarships">
-                      <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40]  ">
+                      <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40] font-sans ">
                         MOVE Muscle, Bone and Joint Health Scholarship Scheme
                       </span>
                     </a>
@@ -364,7 +364,7 @@ const ExternalScholarships = () => {
 
                   <p className="text-justify mb-2">
                     <a href="https://www.msaustralia.org.au/annual-funding-opportunities/">
-                      <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40]  ">
+                      <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40] font-sans ">
                         MS Research Australia (Multiple Sclerosis)
                       </span>
                     </a>
@@ -382,7 +382,7 @@ const ExternalScholarships = () => {
 
                   <p className="text-justify mb-2">
                     <a href="https://www.nhmrc.gov.au/funding/find-funding/postgraduate-scholarships">
-                      <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40]  ">
+                      <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40]  font-sans">
                         National Health and Medical Research Council (NHMRC)
                         Scholarships
                       </span>
@@ -401,7 +401,7 @@ const ExternalScholarships = () => {
 
                   <p className="text-justify mb-2">
                     <a href="https://www.statesuper.nsw.gov.au/about-us/scholarship">
-                      <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40]  ">
+                      <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40] font-sans  ">
                         State Super Academic Scholarship Programps
                       </span>
                     </a>
@@ -419,7 +419,7 @@ const ExternalScholarships = () => {
 
                   <p className="text-justify mb-2">
                     <a href="http://wentworthgroup.org/programs/science-program/">
-                      <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40]  ">
+                      <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40]  font-sans">
                         Wentworth Group Science Group Scholarships
                       </span>
                     </a>
@@ -437,7 +437,7 @@ const ExternalScholarships = () => {
 
                   <p className="text-justify mb-2">
                     <a href="https://www.wineaustralia.com/research/applying-for-funding/phd-and-masters-by-research-scholarships">
-                      <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40]  ">
+                      <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40]  font-sans">
                         Wine Australia PhD and Masters Scholarships
                       </span>
                     </a>
@@ -455,7 +455,7 @@ const ExternalScholarships = () => {
 
                   <p className="text-justify mb-2">
                     <a href="https://yta.se/blogg/scholarship/">
-                      <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40]  ">
+                      <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40]  font-sans">
                         yta.se Climate Scholarship
                       </span>
                     </a>
@@ -470,7 +470,7 @@ const ExternalScholarships = () => {
                   <p className="  text-black  ">
                     If you would like advice about applying for an external
                     scholarship, please talk to your{' '}
-                    <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40]  ">
+                    <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40] font-sans ">
                       {' '}
                       Associate Dean, HDR or HDR Director
                     </span>
@@ -479,7 +479,7 @@ const ExternalScholarships = () => {
                   <p className="  mb-5 ">
                     If you would like to promote a scholarship offered by your
                     organisation on this page, please email us at{' '}
-                    <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40]  ">
+                    <span className="text-md text-md text-md text-black border-b-[1px] border-[#304F40] border-dotted   hover:text-[#304F40] font-sans ">
                       scholarships@australia.edu.au.
                     </span>
                   </p>
