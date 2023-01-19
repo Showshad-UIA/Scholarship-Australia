@@ -27,13 +27,14 @@ const Enquire = () => {
                   className="block font-sans  tracking-wide text-gray-700 text-xs font-bold mb-2"
                   for="grid-first-name "
                 >
-                  First Name
+                  First Name<span className="text-red-500">*</span>
                 </label>
                 <input
                   className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-first-name"
                   type="text"
                   placeholder=""
+                  required
                 />
               </div>
               <div className="w-full md:w-1/2 px-3">
@@ -41,13 +42,14 @@ const Enquire = () => {
                   className="block  tracking-wide text-gray-700 text-xs font-bold mb-2"
                   for="grid-last-name"
                 >
-                  Last Name
+                  Last Name<span className="text-red-500">*</span>
                 </label>
                 <input
                   className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-last-name"
                   type="text"
                   placeholder=""
+                  required
                 />
               </div>
             </div>
@@ -57,7 +59,7 @@ const Enquire = () => {
                   className="block  tracking-wide text-gray-700 text-xs font-bold mb-2"
                   for="grid-first-name"
                 >
-                  Email*
+                  Email<span className="text-red-500">*</span>
                 </label>
                 <input
                   className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
@@ -79,7 +81,6 @@ const Enquire = () => {
                   id="grid-last-name"
                   type="text"
                   placeholder=""
-                  
                 />
               </div>
             </div>
@@ -89,7 +90,7 @@ const Enquire = () => {
                   className="block font-sans  tracking-wide text-gray-700 text-xs font-bold mb-2"
                   for="grid-last-name"
                 >
-                  Nationality*
+                  Nationality<span className="text-red-500">*</span>
                 </label>
                 <div className="relative">
                   <select
@@ -128,7 +129,7 @@ const Enquire = () => {
                   className="block font-sans  tracking-wide text-gray-700 text-xs font-bold mb-2"
                   for="grid-last-name"
                 >
-                  Highest qualification*
+                  Highest qualification<span className="text-red-500">*</span>
                 </label>
                 <input
                   className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
@@ -149,7 +150,7 @@ const Enquire = () => {
                   className="block font-sans tracking-wide text-gray-700 text-xs font-bold mb-2"
                   for="grid-password"
                 >
-                  Scholarship name*
+                  Scholarship name<span className="text-red-500">*</span>
                 </label>
                 <input
                   className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
@@ -167,7 +168,7 @@ const Enquire = () => {
                   className="block font-sans tracking-wide text-gray-700 text-xs font-bold mb-2"
                   for="grid-password"
                 >
-                  Type of scholarship*
+                  Type of scholarship<span className="text-red-500">*</span>
                 </label>
                 <input
                   className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
@@ -185,7 +186,7 @@ const Enquire = () => {
                   className="block font-sans  tracking-wide text-gray-700 text-xs font-bold mb-2"
                   for="grid-first-name"
                 >
-                  Level of study*
+                  Level of study<span className="text-red-500">*</span>
                 </label>
                 <input
                   className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
@@ -200,7 +201,7 @@ const Enquire = () => {
                   className="block font-sans tracking-wide text-gray-700 text-xs font-bold mb-2"
                   for="grid-last-name"
                 >
-                  Field of study*
+                  Field of study<span className="text-red-500">*</span>
                 </label>
                 <input
                   className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
@@ -225,9 +226,9 @@ const Enquire = () => {
                     <option className=" font-bold text-black disabled">
                       Select year
                     </option>
-                    <option>2021</option>
-                    <option>2022</option>
                     <option>2023</option>
+                    <option>2022</option>
+                    <option>2021</option>
                   </select>
                   <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                     <svg
@@ -286,7 +287,7 @@ const Enquire = () => {
               <textarea
                 id="message"
                 rows="4"
-                class="block p-2.5 lg:h-32 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                class="block p-2.5 lg:h-52 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Write your thoughts here..."
               ></textarea>
             </div>

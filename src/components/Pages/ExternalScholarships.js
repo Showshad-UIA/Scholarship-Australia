@@ -16,11 +16,11 @@ const ExternalScholarships = () => {
                 <h1 className="mb-3 border-t-4 mx-2 border-[#1E282D]"></h1>
                 <div className="text-center">
                   {' '}
-                  <h1 className=" px-3 text-xl  underline text-gray-800 font-sans  font-bold ">
+                  <h1 className=" px-3 text-xl text-[#304F40]  underline  font-sans  font-bold ">
                     External Scholarships
                   </h1>
                 </div>
-                <p className=" px-3  font-bold text-justify mb-5  my-3 font-sans">
+                <p className=" px-3 text-[#304F40] font-semibold   text-justify mb-5  my-3 font-sans">
                   The following organisations offer scholarships to help support
                   research candidatures. Applications are made directly to the
                   relevant organisations.
@@ -470,7 +470,7 @@ const ExternalScholarships = () => {
                 </div>
 
                 <div className=" text-justify mt-7">
-                  <p className="  text-black  ">
+                  <p className="  text-[#304F40]  ">
                     If you would like advice about applying for an external
                     scholarship, please talk to your{' '}
                     <span className="border-b-[1px] text-gray-800 font-sans  font-semibold border-[#1E282D] border-dotted    hover:text-red-600 ">
@@ -479,7 +479,7 @@ const ExternalScholarships = () => {
                     </span>
                     .
                   </p>
-                  <p className="  mt-3 ">
+                  <p className="  mt-3 text-[#304F40] ">
                     If you would like to promote a scholarship offered by your
                     organisation on this page, please email us at{' '}
                     <span className="border-b-[1px] text-gray-800 font-sans  font-semibold border-[#1E282D] border-dotted    hover:text-red-600 ">
