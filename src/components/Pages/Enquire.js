@@ -2,221 +2,283 @@ import React from 'react';
 
 const Enquire = () => {
   return (
-    <div className="mx-auto container">
-      <div className="lg:mx-28 flex flex-col items-center  pt-6 sm:justify-center sm:pt-0 ">
-        <div className="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md">
-          <form>
+    <div className=" lg:mb-28 ">
+      <div className="mx-auto container">
+        <div className="w-full  py-4 mt-6 items-center lg:justify-center overflow-hidden bg-white  flex flex-col    pt-6  sm:justify-center sm:pt-0 ">
+          <form className="border-t-4 border-[#304F40] w-full lg:w-[60%] shadow-md px-5 py-3 font-sans">
             <div>
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium text-gray-700 undefined"
-              >
-                First Name
-              </label>
-              <div className="flex flex-col items-start">
-                <input
-                  type="text"
-                  name="name"
-                  className="block w-full mt-1 border-gray-300 bg-[#F5F8FA]  border-2  p-3 focus:border-blue-700 required"
-                />
-              </div>
+              <h1 className=" text-xl text-[#304F40] font-sans font-bold">
+                Scholarship Application Assistance Enquiry
+              </h1>
+              <p className="font-sans font-semibold text-[#304F40]">
+                Please answer the following questions. Click on the &quot;Submit
+                Final Application&quot; link to submit your application. Fields
+                marked with * are required.
+              </p>
             </div>
             <div>
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium text-gray-700 undefined"
-              >
-                Last Name
-              </label>
-              <div className="flex flex-col items-start">
-                <input
-                  type="text"
-                  name="name"
-                  className="block w-full mt-1 border-gray-300 bg-[#F5F8FA]  border-2  p-3 focus:border-blue-700"
-                />
-              </div>
+              <p className="mt-6 mb-3 text-[#304F40] text-md font-bold font-sans">
+                YOUR DETAILS
+              </p>
             </div>
-            <div className="mt-4">
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700 undefined"
-              >
-                Email
-              </label>
-              <div className="flex flex-col items-start">
-                <input
-                  type="email"
-                  name="email"
-                  className="block w-full mt-1 border-gray-300 bg-[#F5F8FA]  border-2  p-3 focus:border-blue-700"
-                />
-              </div>
-            </div>
-            <div className="mt-4">
-              <label
-                htmlFor="password"
-                className="block text-sm font-medium text-gray-700 undefined"
-              >
-                Mobile phone number
-              </label>
-              <div className="flex flex-col items-start">
-                <input
-                  type="password"
-                  name="password"
-                  className="block w-full mt-1 border-gray-300 bg-[#F5F8FA]  border-2  p-3 focus:border-blue-700"
-                />
-              </div>
-            </div>
-            {/* <div className="   ">
-              <label
-                htmlFor="password"
-                className="block text-sm font-medium mt-3 text-gray-700 undefined"
-              >
-                Country
-              </label>
-
-              <div className="relative w-full px-1.5  lg:w-60 md:w-52 lg:max-w-sm dropdown block  mt-1 border-gray-300 bg-[#F5F8FA]  border-2   focus:border-blue-700 ">
-                <select className=" p-1 px-2 w-full    border-gray-300 bg-[#F5F8FA]  shadow-sm outline-none appearance-none ">
-                  <option className="font-sans font-bold text-black disabled">
-                    Select a country
-                  </option>
-                  <option value="a">Australia</option>
-                  <option value="b">Bangladesh</option>
-                  <option value="c">Canada</option>
-                  <option value="d">Denmark</option>
-                  <option value="e">Ethiopia</option>
-                  <option value="f">Germany</option>
-                  <option value="g">UK</option>
-                  <option value="h">India</option>
-                  <option value="i">Sweden</option>
-                  <option value="k">Usa</option>
-                  <option value="l">Norway</option>
-                  <option value="m">Denmark</option>
-                </select>
-              </div>
-            </div> */}
-
-            <div className="mt-4">
-              <label
-                htmlFor="password_confirmation"
-                className="block text-sm font-medium text-gray-700 undefined"
-              >
-                Highest qualification*
-              </label>
-              <div className="flex flex-col items-start">
-                <input
-                  type="password"
-                  name="password_confirmation"
-                  className="block w-full mt-1 border-gray-300 bg-[#F5F8FA]  border-2  p-3 focus:border-blue-700"
-                />
-              </div>
-            </div>
-            <div className="mt-4">
-              <label
-                htmlFor="password_confirmation"
-                className="block text-sm font-medium text-gray-700 undefined"
-              >
-                YOUR SCHOLARSHIP PREFERENCES
-                <p>Type of scholarship</p>
-              </label>
-              <div className="flex flex-col items-start">
-                <input
-                  type="password"
-                  name="password_confirmation"
-                  className="block w-full mt-1 border-gray-300 bg-[#F5F8FA]  border-2  p-3 focus:border-blue-700"
-                />
-              </div>
-            </div>
-            <div className="mt-4">
-              <label
-                htmlFor="password_confirmation"
-                className="block text-sm font-medium text-gray-700 undefined"
-              >
-                Level of study*
-              </label>
-              <div className="flex flex-col items-start">
-                <input
-                  type="password"
-                  name="password_confirmation"
-                  className="block w-full mt-1 border-gray-300 bg-[#F5F8FA]  border-2  p-3 focus:border-blue-700"
-                />
-              </div>
-            </div>
-            <div className="mt-4">
-              <label
-                htmlFor="password_confirmation"
-                className="block text-sm font-medium text-gray-700 undefined"
-              >
-                Field of study*
-              </label>
-              <div className="flex flex-col items-start">
-                <input
-                  type="password"
-                  name="password_confirmation"
-                  className="block w-full mt-1 border-gray-300 bg-[#F5F8FA]  border-2  p-3 focus:border-blue-700"
-                />
-              </div>
-            </div>
-            <div className="mt-4">
-              <label
-                htmlFor="password_confirmation"
-                className="block text-sm font-medium text-gray-700 undefined"
-              >
-                Scholarship name*
-              </label>
-              <div className="flex flex-col items-start">
-                <input
-                  type="password"
-                  name="password_confirmation"
-                  className="block w-full mt-1 border-gray-300 bg-[#F5F8FA]  border-2  p-3 focus:border-blue-700"
-                />
-              </div>
-            </div>
-
-            {/* <div>
-              <div className="mt-4">
+            <div className="  flex flex-wrap -mx-3 mb-6 ">
+              <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                 <label
-                  htmlFor="password_confirmation"
-                  className="block text-sm font-medium text-gray-700 undefined"
+                  className="block font-sans  tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  for="grid-first-name "
                 >
-                  When do you intend to apply for the scholarship?
+                  First Name
                 </label>
+                <input
+                  className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  id="grid-first-name"
+                  type="text"
+                  placeholder=""
+                />
               </div>
+              <div className="w-full md:w-1/2 px-3">
+                <label
+                  className="block  tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  for="grid-last-name"
+                >
+                  Last Name
+                </label>
+                <input
+                  className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  id="grid-last-name"
+                  type="text"
+                  placeholder=""
+                />
+              </div>
+            </div>
+            <div className="flex flex-wrap -mx-3 mb-6">
+              <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                <label
+                  className="block  tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  for="grid-first-name"
+                >
+                  Email*
+                </label>
+                <input
+                  className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  id="grid-first-name"
+                  type="text"
+                  placeholder=""
+                  required
+                />
+              </div>
+              <div className="w-full md:w-1/2 px-3">
+                <label
+                  className="block font-sans  tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  for="grid-last-name"
+                >
+                  Mobile phone number
+                </label>
+                <input
+                  className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  id="grid-last-name"
+                  type="text"
+                  placeholder=""
+                  
+                />
+              </div>
+            </div>
+            <div className="flex flex-wrap -mx-3 ">
+              <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                <label
+                  className="block font-sans  tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  for="grid-last-name"
+                >
+                  Nationality*
+                </label>
+                <div className="relative">
+                  <select
+                    className="block appearance-none w-full text-xs bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 font-sans"
+                    id="grid-state"
+                  >
+                    <option className=" font-bold text-black disabled">
+                      Select country
+                    </option>
+                    <option>Australia</option>
+                    <option>Usa</option>
+                    <option>Japan</option>
+                    <option>Canada</option>
+                    <option>Sweden</option>
+                    <option>Norway</option>
+                    <option>New zealand</option>
+                    <option>Bangladesh</option>
+                    <option>India</option>
+                    <option>Malaysia</option>
+                    <option>Uk</option>
+                    <option>Germany</option>
+                  </select>
+                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                    <svg
+                      className="fill-current h-4 w-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div className="w-full md:w-1/2 px-3">
+                <label
+                  className="block font-sans  tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  for="grid-last-name"
+                >
+                  Highest qualification*
+                </label>
+                <input
+                  className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  id="grid-last-name"
+                  type="text"
+                  placeholder=""
+                  required
+                />
+              </div>
+            </div>
+            <div className=" font-sans text-[#304F40] font-bold text-md mt-6 mb-3 ">
+              YOUR SCHOLARSHIP PREFERENCES
+            </div>
 
-              <div className="lg:flex md:flex  w-full lg:w-2/5 border-gray-300 bg-[#F5F8FA] mt-5 lg:gap-5 md:gap-3 border-2 ">
-                <div className="relative w-full    lg:w-60 md:w-52 lg:max-w-sm dropdown ">
-                  <select className=" p-1 px-2 w-full   text-black shadow-sm outline-none appearance-none border-gray-300 bg-[#F5F8FA] ">
-                    <option className="font-sans font-bold text-black disabled">
-                      Select a year
+            <div className="flex flex-wrap -mx-3 mb-6">
+              <div className="w-full px-3">
+                <label
+                  className="block font-sans tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  for="grid-password"
+                >
+                  Scholarship name*
+                </label>
+                <input
+                  className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  id="grid-password"
+                  type="password"
+                  placeholder=""
+                  required
+                />
+                <p className="text-gray-600 text-xs italic"></p>
+              </div>
+            </div>
+            <div className="flex flex-wrap -mx-3 mb-6">
+              <div className="w-full px-3">
+                <label
+                  className="block font-sans tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  for="grid-password"
+                >
+                  Type of scholarship*
+                </label>
+                <input
+                  className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  id="grid-password"
+                  type="password"
+                  placeholder=""
+                  required
+                />
+                <p className="text-gray-600 text-xs italic"></p>
+              </div>
+            </div>
+            <div className="flex flex-wrap -mx-3 mb-6">
+              <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                <label
+                  className="block font-sans  tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  for="grid-first-name"
+                >
+                  Level of study*
+                </label>
+                <input
+                  className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  id="grid-first-name"
+                  type="text"
+                  placeholder=""
+                  required
+                />
+              </div>
+              <div className="w-full md:w-1/2 px-2">
+                <label
+                  className="block font-sans tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  for="grid-last-name"
+                >
+                  Field of study*
+                </label>
+                <input
+                  className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  id="grid-last-name"
+                  type="text"
+                  placeholder=""
+                  required
+                />
+              </div>
+            </div>
+            <div className="text-[#304F40] my-3 font-sans text-md font-bold">
+              When do you intend to apply for the scholarship?
+            </div>
+            <div className="flex flex-wrap -mx-3 mb-6">
+              <div className="w-full  md:w-1/2  mb-6  px-3 md:mb-0  ">
+                <div className="relative">
+                  <select
+                    className="block appearance-none w-full bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white text-xs focus:border-gray-500 font-sans"
+                    id="grid-state"
+                    required
+                  >
+                    <option className=" font-bold text-black disabled">
+                      Select year
                     </option>
-                    <option value="Postgraduate">2022</option>
-                    <option value="Undergraduate">2023</option>
+                    <option>2021</option>
+                    <option>2022</option>
+                    <option>2023</option>
                   </select>
-                </div>
-                <div className="relative w-full px-1.5  lg:w-60 md:w-52 lg:max-w-sm dropdown ">
-                  <select className=" p-1 px-2 w-full    border-gray-300 bg-[#F5F8FA]  shadow-sm outline-none appearance-none ">
-                    <option className="font-sans font-bold text-black disabled">
-                      Select a month
-                    </option>
-                    <option value="january">January</option>
-                    <option value="january">February</option>
-                    <option value="january">March</option>
-                    <option value="january">April</option>
-                    <option value="january">May</option>
-                    <option value="january">June</option>
-                    <option value="january">July</option>
-                    <option value="january">August</option>
-                    <option value="january">September</option>
-                    <option value="january">October</option>
-                    <option value="january">November</option>
-                    <option value="january">December</option>
-                  </select>
+                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                    <svg
+                      className="fill-current h-4 w-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                    </svg>
+                  </div>
                 </div>
               </div>
-            </div> */}
-            <div className="">
+              <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                <div className="relative">
+                  <select
+                    className="block appearance-none w-full bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white text-xs focus:border-gray-500 font-sans"
+                    id="grid-state"
+                    required
+                  >
+                    <option className="font-bold text-black disabled">
+                      Select month
+                    </option>
+                    <option>January</option>
+                    <option>February</option>
+                    <option>March</option>
+                    <option>April</option>
+                    <option>May</option>
+                    <option>June</option>
+                    <option>July</option>
+                    <option>August</option>
+                    <option>September</option>
+                    <option>October</option>
+                    <option>November</option>
+                    <option>December</option>
+                  </select>
+                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                    <svg
+                      className="fill-current h-4 w-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
               <label
                 for="message"
-                class="block mb-2 text-sm font-medium text-gray-900 my-3 dark:text-white"
+                class="block text-[#304F40] mb-2 text-sm  font-sans font-bold dark:text-white"
               >
                 Message to scholarship consultant. Please detail what assistance
                 you are seeking for your scholarship application.
@@ -224,25 +286,13 @@ const Enquire = () => {
               <textarea
                 id="message"
                 rows="4"
-                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                class="block p-2.5 lg:h-32 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Write your thoughts here..."
               ></textarea>
             </div>
-
-            <div className="flex  justify-start mt-4">
-              <a
-                className="inline-flex  px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out bg-[#304F40] border border-transparent rounded-md active:bg-[#304F40] false"
-                href="#"
-              >
-                Send Email
-              </a>
-              <button
-                type="submit"
-                className="inline-flex  px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out bg-blue-500 border border-transparent rounded-md active:bg-[#304F40] false"
-              >
-                Submit
-              </button>
-            </div>
+            <button className="px-5 py-3 mt-3 bg-[#304F40] text-white rounded">
+              Send Email
+            </button>
           </form>
         </div>
       </div>

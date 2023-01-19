@@ -16,7 +16,7 @@ const AllScholarships = ({ d }) => {
     <div>
       {/* <p className='h-10 bg-red-500 text-black'> {schol} {grad}</p> */}
       {universityName.map(d => (
-        <div className="container mx-auto  mt-10 ">
+        <div className="container mx-auto  mt-10 lg:mb-24 mb-5">
           <div className="lg:mx-10 lg:border-t-2  ">
             <div className=" w-full flex flex-wrap px-3 mb-5  lg:mt-5">
               <div className="lg:w-[15%] w-full mr-5 ">

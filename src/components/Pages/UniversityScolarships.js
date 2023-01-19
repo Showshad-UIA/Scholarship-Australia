@@ -19,7 +19,7 @@ const UniversityScolarships = () => {
         </p>
       </div>
       {universityScolarship.map(d => (
-        <div className="container mx-auto  mt-10 ">
+        <div className="container mx-auto  mt-10 mb-5 lg:mb-24 ">
           <div className="lg:mx-10 lg:border-t-2  ">
             <div className=" w-full flex flex-wrap px-3 mb-5  lg:mt-5">
               <div className="lg:w-[15%] w-full mr-5 ">
@@ -101,14 +101,7 @@ const UniversityScolarships = () => {
                       </span>
                     </p>
                   </div>
-                  {/* <div className="flex w-full">
-                  <div className="lg:w-2/5"></div>
-                  <div className="lg:w-3/5 sm:w-full">
-                    <span className=" center bg-[#304F40] my-2 cursor-pointer px-2  py-1 text-white rounded-2xl ">
-                      Enquiry now
-                    </span>
-                  </div>
-                </div> */}
+                
                 </div>
               </div>
             </div>
