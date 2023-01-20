@@ -1,11 +1,38 @@
-import React from 'react';
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Enquire = () => {
+  const form = useRef();
+  const sendEmail = e => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        'service_5ks7xlu',
+        'template_zq77qvv',
+        form.current,
+        'Ep_VjQV8xTJcGJlYa'
+      )
+      .then(
+        result => {
+          console.log(result.text);
+        },
+        error => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  };
+
   return (
     <div className=" lg:mb-28 ">
       <div className="mx-auto container">
         <div className="w-full  py-4 mt-6 items-center lg:justify-center overflow-hidden bg-white  flex flex-col    pt-6  sm:justify-center sm:pt-0 ">
-          <form className="border-t-4 border-[#304F40] w-full lg:w-[60%] shadow-md px-5 py-3 font-sans">
+          <form
+            ref={form}
+            onSubmit={sendEmail}
+            className="border-t-4 border-[#304F40] w-full lg:w-[60%] shadow-md px-5 py-3 font-sans"
+          >
             <div>
               <h1 className=" text-xl text-[#304F40] font-sans font-bold">
                 Scholarship Application Assistance Enquiry
@@ -72,13 +99,13 @@ const Enquire = () => {
               <div className="w-full md:w-1/2 px-3">
                 <label
                   className="block font-sans  tracking-wide text-gray-700 text-xs font-bold mb-2"
-                  for="grid-last-name"
+                  for="grid-phone-number"
                 >
                   Mobile phone number
                 </label>
                 <input
                   className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                  id="grid-last-name"
+                  id="grid-phone-number"
                   type="text"
                   placeholder=""
                 />
@@ -147,15 +174,15 @@ const Enquire = () => {
             <div className="flex flex-wrap -mx-3 mb-6">
               <div className="w-full px-3">
                 <label
-                  className="block font-sans tracking-wide text-gray-700 text-xs font-bold mb-2"
-                  for="grid-password"
+                  className="block font-sans  tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  for="grid-last-name"
                 >
-                  Scholarship name<span className="text-red-500">*</span>
+                  Scholarship Name<span className="text-red-500">*</span>
                 </label>
                 <input
                   className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-password"
-                  type="password"
+                  type="text"
                   placeholder=""
                   required
                 />
@@ -173,7 +200,7 @@ const Enquire = () => {
                 <input
                   className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-password"
-                  type="password"
+                  type="text"
                   placeholder=""
                   required
                 />
@@ -199,13 +226,13 @@ const Enquire = () => {
               <div className="w-full md:w-1/2 px-2">
                 <label
                   className="block font-sans tracking-wide text-gray-700 text-xs font-bold mb-2"
-                  for="grid-last-name"
+                  for="grid-field-study"
                 >
                   Field of study<span className="text-red-500">*</span>
                 </label>
                 <input
                   className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                  id="grid-last-name"
+                  id="grid-field-study"
                   type="text"
                   placeholder=""
                   required
@@ -220,7 +247,7 @@ const Enquire = () => {
                 <div className="relative">
                   <select
                     className="block appearance-none w-full bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white text-xs focus:border-gray-500 font-sans"
-                    id="grid-state"
+                    id="grid-year"
                     required
                   >
                     <option className=" font-bold text-black disabled">
@@ -245,7 +272,7 @@ const Enquire = () => {
                 <div className="relative">
                   <select
                     className="block appearance-none w-full bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white text-xs focus:border-gray-500 font-sans"
-                    id="grid-state"
+                    id="grid-month"
                     required
                   >
                     <option className="font-bold text-black disabled">
@@ -291,7 +318,10 @@ const Enquire = () => {
                 placeholder="Write your thoughts here..."
               ></textarea>
             </div>
-            <button className="px-5 py-3 mt-3 bg-[#304F40] text-white rounded">
+            <button
+              type="submit"
+              className="px-5 py-3 mt-3 bg-[#304F40] text-white rounded"
+            >
               Send Email
             </button>
           </form>
