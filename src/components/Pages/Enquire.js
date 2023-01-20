@@ -1,14 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 const Enquire = () => {
+  const {enquireId}=useParams()
+  const NumberEnq= parseInt(enquireId)
+  const [specificData,setSpecificData]=useState([])
+
+
+  const { uniName}=specificData
+  // console.log(enquireId)
+  
+// const fakedaSpecific =JSON.parse("fakedata.json")
+// console.log(fakedaSpecific)
+  useEffect(()=>{
+    fetch(`https://raw.githubusercontent.com/Masum-WebD/my-fakedata-json/main/scholarshipsUniversity.json`)
+    .then(res => res.json())
+    .then(data =>
+      setSpecificData(data.filter(d => d.id === NumberEnq ) )
+    )
+  },[NumberEnq])
+  console.log(specificData)
   return (
-    <div className=" lg:mb-28 ">
+    <>
+    {
+      specificData.map(({uniName})=>
+      <div className=" lg:mb-28 ">
       <div className="mx-auto container">
         <div className="w-full  py-4 mt-6 items-center lg:justify-center overflow-hidden bg-white  flex flex-col    pt-6  sm:justify-center sm:pt-0 ">
           <form className="border-t-4 border-[#304F40] w-full lg:w-[60%] shadow-md px-5 py-3 font-sans">
             <div>
               <h1 className=" text-xl text-[#304F40] font-sans font-bold">
-                Scholarship Application Assistance Enquiry
+                Scholarship Application Assistance Enquiry   {uniName}
               </h1>
               <p className="font-sans font-semibold text-[#304F40]">
                 Please answer the following questions. Click on the &quot;Submit
@@ -18,8 +40,10 @@ const Enquire = () => {
             </div>
             <div>
               <p className="mt-6 mb-3 text-[#304F40] text-md font-bold font-sans">
-                YOUR DETAILS
+                YOUR DETAILS 
+                
               </p>
+              
             </div>
             <div className="  flex flex-wrap -mx-3 mb-6 ">
               <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -193,6 +217,7 @@ const Enquire = () => {
                   id="grid-first-name"
                   type="text"
                   placeholder=""
+               
                   required
                 />
               </div>
@@ -297,7 +322,9 @@ const Enquire = () => {
           </form>
         </div>
       </div>
-    </div>
+    </div>)
+    }
+    </>
   );
 };
 
