@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Western_Sydney from '../../Image/western sydney.jpg';
 import Banner from '../Banner';
 import SearchBox from '../SearchBox';
@@ -7,6 +7,7 @@ import SearchBox from '../SearchBox';
 const WesternSydney = () => {
   const { scholarship, graduation } = useParams();
   const [universityName, setUniversityName] = useState([]);
+  const navigate = useNavigate();
   console.log(universityName);
 
   const dataShow = universityName.filter(
@@ -107,12 +108,15 @@ const WesternSydney = () => {
                         get connected with consultants who are previous
                         scholarship recipients in your field to ensure you
                         submit a competitive application{' '}
-                        <span className="  bg-[#304F40] my-2 cursor-pointer px-2  py-1 text-white rounded-2xl ">
-                          <a href='/enquire'>Enquire now</a>
+                        <span
+                          onClick={() => navigate(`/enquire/${d.id}`)}
+                          className="  bg-[#304F40] my-2 cursor-pointer px-2  py-1 text-white rounded-2xl "
+                        >
+                          {/* <a href=' '>Enquire now</a> */}
+                          Enquire now
                         </span>
                       </p>
                     </div>
-                 
                   </div>
                 </div>
               </div>

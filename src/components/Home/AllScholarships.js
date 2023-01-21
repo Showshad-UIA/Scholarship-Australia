@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
 const AllScholarships = ({ d }) => {
   const { schol, grad } = useParams();
+  const navigate =useNavigate();
   const [universityName, setUniversityName] = useState([]);
+  
   useEffect(() => {
-    fetch('fakedata.json')
+    fetch('https://raw.githubusercontent.com/Masum-WebD/my-fakedata-json/main/scholarshipsUniversity.json')
       .then(res => res.json())
       .then(data => {
         // console.log(data)
@@ -93,9 +96,17 @@ const AllScholarships = ({ d }) => {
                       with consultants who are previous scholarship recipients
                       in your field to ensure you submit a competitive
                       application{' '}
-                      <span className="  bg-[#304F40] my-2 cursor-pointer px-2  py-1 text-white rounded-2xl ">
-                        <a href="/enquire">Enquire now</a>
+                      
+                      <span onClick={()=>navigate(`/enquire/${d.id}`)} className="  bg-[#304F40] my-2 cursor-pointer px-2  py-1 text-white rounded-2xl ">
+                        {/* <a href=' '>Enquire now</a> */}
+                        Enquire now 
                       </span>
+                      {/* <Link to={`/enquire_${d.id}`}>
+                        <span className="  bg-[#304F40] my-2 cursor-pointer px-2  py-1 text-white rounded-2xl ">
+                        Enquire now
+                         
+                        </span>
+                      </Link> */}
                     </p>
                   </div>
                   {/* <div className="flex w-full">
