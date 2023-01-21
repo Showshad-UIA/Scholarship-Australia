@@ -56,8 +56,11 @@ const Enquire = () => {
               >
                 <div>
                   <h1 className=" text-xl text-[#304F40] font-sans font-bold">
-                    Application Assistance Enquiry For
-                    <span> {scholarQuality}</span>
+                    Application Assistance Enquiry for
+                    <span className="font-bold text-[#304F40]">
+                      {' '}
+                      {scholarQuality}
+                    </span>
                   </h1>
                   <p className="font-sans mt-3 font-semibold text-[#304F40]">
                     Please answer the following questions. Click on the
@@ -173,21 +176,37 @@ const Enquire = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="w-full md:w-1/2 px-3">
+                  <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                     <label
                       className="block font-sans  tracking-wide text-gray-700 text-xs font-bold mb-2"
                       for="grid-last-name"
                     >
-                      Highest qualification
+                      Highest qualifications
                       <span className="text-red-500">*</span>
                     </label>
-                    <input
-                      className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                      id="grid-last-name"
-                      type="text"
-                      placeholder=""
-                      required
-                    />
+                    <div className="relative">
+                      <select
+                        className="block appearance-none w-full text-xs bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 font-sans"
+                        id="grid-state"
+                      >
+                        <option className=" font-bold text-black disabled">
+                          Select your qualifications
+                        </option>
+                        <option>Bachelor</option>
+                        <option>Master(research)</option>
+                        <option>Master(coursework)</option>
+                        <option>PHd</option>
+                      </select>
+                      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                        <svg
+                          className="fill-current h-4 w-4"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                        </svg>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div className=" font-sans text-[#304F40] font-bold text-md mt-6 mb-3 ">
@@ -206,13 +225,14 @@ const Enquire = () => {
                       className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                       id="grid-password"
                       type="text"
+                      value={scholarQuality}
                       placeholder=""
                       required
                     />
                     <p className="text-gray-600 text-xs italic"></p>
                   </div>
                 </div>
-                <div className="flex flex-wrap -mx-3 mb-6">
+                {/* <div className="flex flex-wrap -mx-3 mb-6">
                   <div className="w-full px-3">
                     <label
                       className="block font-sans tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -229,7 +249,7 @@ const Enquire = () => {
                     />
                     <p className="text-gray-600 text-xs italic"></p>
                   </div>
-                </div>
+                </div> */}
                 <div className="flex flex-wrap -mx-3 mb-6">
                   <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                     <label
@@ -243,24 +263,51 @@ const Enquire = () => {
                       id="grid-first-name"
                       type="text"
                       placeholder=""
-                      // value={levelStudy}
+                      value={levelStudy}
                       required
                     />
                   </div>
-                  <div className="w-full md:w-1/2 px-2">
+                  <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                     <label
-                      className="block font-sans tracking-wide text-gray-700 text-xs font-bold mb-2"
-                      for="grid-field-study"
+                      className="block font-sans  tracking-wide text-gray-700 text-xs font-bold mb-2"
+                      for="grid-last-name"
                     >
                       Field of study<span className="text-red-500">*</span>
                     </label>
-                    <input
-                      className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                      id="grid-field-study"
-                      type="text"
-                      placeholder=""
-                      required
-                    />
+                    <div className="relative">
+                      <select
+                        className="block appearance-none w-full text-xs bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 font-sans"
+                        id="grid-state"
+                      >
+                        <option className=" font-bold text-black disabled">
+                          Select your study
+                        </option>
+                        <option>Agriculture and Veterinary Medicine</option>
+                        <option>Applied and Pure Sciences</option>
+                        <option>Architecture and Construction</option>
+                        <option>Business and Management</option>
+                        <option>Computer Science and IT</option>
+                        <option>Creative Arts and Design</option>
+                        <option>Engineering</option>
+                        <option>Education and Training</option>
+                        <option>Humanities</option>
+                        <option>Health and Medicine</option>
+                        <option>Travel and Hospitality</option>
+                        <option>Social Studies and Media</option>
+
+                        <option>Law</option>
+                        <option>MBA</option>
+                      </select>
+                      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                        <svg
+                          className="fill-current h-4 w-4"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                        </svg>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div className="text-[#304F40] my-3 font-sans text-md font-bold">

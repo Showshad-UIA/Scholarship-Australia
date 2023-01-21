@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const UniversityScolarships = () => {
+  const navigate = useNavigate();
   const [universityScolarship, setUniversityScolarship] = useState([]);
   useEffect(() => {
     fetch('fakedata.json')
@@ -96,8 +98,12 @@ const UniversityScolarships = () => {
                       with consultants who are previous scholarship recipients
                       in your field to ensure you submit a competitive
                       application{' '}
-                      <span className="  bg-[#304F40] my-2 cursor-pointer px-2  py-1 text-white rounded-2xl ">
-                        <a href="/enquire"> Enquire now</a>
+                      <span
+                        onClick={() => navigate(`/enquire/${d.id}`)}
+                        className="  bg-[#304F40] my-2 cursor-pointer px-2  py-1 text-white rounded-2xl "
+                      >
+                        {/* <a href=' '>Enquire now</a> */}
+                        Enquire now
                       </span>
                     </p>
                   </div>
