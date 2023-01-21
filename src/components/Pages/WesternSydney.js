@@ -22,7 +22,7 @@ const WesternSydney = () => {
       .then(data => setUniversityName(data));
   }, []);
   return (
-    <>
+    <div>
       {/* <Banner></Banner>
       <SearchBox></SearchBox> */}
 
@@ -31,7 +31,7 @@ const WesternSydney = () => {
           {graduation} {scholarship}
         </p>
         {dataShow.map(d => (
-          <div className="container mx-auto  mt-10 mb-5 lg:mb-24 ">
+          <div className="  mt-10 mb-5  ">
             <div className="lg:mx-10 lg:border-t-2  ">
               <div className=" w-full flex flex-wrap px-3 mb-5  lg:mt-5">
                 <div className="lg:w-[15%] w-full mr-5 ">
@@ -123,8 +123,9 @@ const WesternSydney = () => {
             </div>
           </div>
         ))}
+        <div className="lg:mx-10 lg:mb-20 border-t-2"></div>
       </div>
-    </>
+    </div>
   );
 };
 

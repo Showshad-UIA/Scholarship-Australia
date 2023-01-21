@@ -12,14 +12,14 @@ const UniversityScolarships = () => {
   }, []);
 
   return (
-    <>
+    <div className="container mx-auto">
       <div className="container mx-auto text-md mt-10">
         <p className="lg:mx-20 text-2xl font-bold font-sans my-2 text-center ">
           View all university available scholarships
         </p>
       </div>
       {universityScolarship.map(d => (
-        <div className="container mx-auto  mt-10 mb-5 lg:mb-24 ">
+        <div className="  mt-10 mb-5  ">
           <div className="lg:mx-10 lg:border-t-2  ">
             <div className=" w-full flex flex-wrap px-3 mb-5  lg:mt-5">
               <div className="lg:w-[15%] w-full mr-5 ">
@@ -101,14 +101,14 @@ const UniversityScolarships = () => {
                       </span>
                     </p>
                   </div>
-                
                 </div>
               </div>
             </div>
           </div>
         </div>
       ))}
-    </>
+      <div className="lg:mx-10 lg:mb-20 border-t-2"></div>
+    </div>
   );
 };
 

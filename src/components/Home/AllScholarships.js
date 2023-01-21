@@ -16,10 +16,10 @@ const AllScholarships = ({ d }) => {
       });
   }, []);
   return (
-    <div>
+    <div className="container mx-auto  ">
       {/* <p className='h-10 bg-red-500 text-black'> {schol} {grad}</p> */}
       {universityName.map(d => (
-        <div className="container mx-auto  mt-10 lg:mb-24 mb-5">
+        <div className="mt-10 l mb-5">
           <div className="lg:mx-10 lg:border-t-2  ">
             <div className=" w-full flex flex-wrap px-3 mb-5  lg:mt-5">
               <div className="lg:w-[15%] w-full mr-5 ">
@@ -96,10 +96,12 @@ const AllScholarships = ({ d }) => {
                       with consultants who are previous scholarship recipients
                       in your field to ensure you submit a competitive
                       application{' '}
-                      
-                      <span onClick={()=>navigate(`/enquire/${d.id}`)} className="  bg-[#304F40] my-2 cursor-pointer px-2  py-1 text-white rounded-2xl ">
+                      <span
+                        onClick={() => navigate(`/enquire/${d.id}`)}
+                        className="  bg-[#304F40] my-2 cursor-pointer px-2  py-1 text-white rounded-2xl "
+                      >
                         {/* <a href=' '>Enquire now</a> */}
-                        Enquire now 
+                        Enquire now
                       </span>
                       {/* <Link to={`/enquire_${d.id}`}>
                         <span className="  bg-[#304F40] my-2 cursor-pointer px-2  py-1 text-white rounded-2xl ">
@@ -123,6 +125,7 @@ const AllScholarships = ({ d }) => {
           </div>
         </div>
       ))}
+      <div className="lg:border-t-2 mx-10 lg:mb-20"></div>
     </div>
   );
 };

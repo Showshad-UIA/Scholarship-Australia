@@ -56,10 +56,10 @@ const Enquire = () => {
               >
                 <div>
                   <h1 className=" text-xl text-[#304F40] font-sans font-bold">
-                    Scholarship Application Assistance Enquiry -
-                    <span>{scholarQuality}</span>
+                    Application Assistance Enquiry For
+                    <span> {scholarQuality}</span>
                   </h1>
-                  <p className="font-sans font-semibold text-[#304F40]">
+                  <p className="font-sans mt-3 font-semibold text-[#304F40]">
                     Please answer the following questions. Click on the
                     &quot;Submit Final Application&quot; link to submit your
                     application. Fields marked with * are required.
