@@ -1,7 +1,9 @@
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import { toast } from 'react-toastify';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Banner from '../Banner';
 
 const Enquire = () => {
   const form = useRef();
@@ -18,6 +20,7 @@ const Enquire = () => {
       .then(
         result => {
           console.log(result.text);
+          toast.success('Mail successfully sent');
         },
         error => {
           console.log(error.text);
@@ -45,6 +48,7 @@ const Enquire = () => {
   console.log(specificData);
   return (
     <>
+      <Banner></Banner>
       {specificData.map(({ uniName, scholarQuality, levelStudy }) => (
         <div className=" lg:mb-28 ">
           <div className="mx-auto container">
@@ -128,7 +132,7 @@ const Enquire = () => {
                       className="block font-sans  tracking-wide text-gray-700  font-bold mb-2"
                       for="grid-phone-number"
                     >
-                      Mobile phone number
+                      Mobile number
                     </label>
                     <input
                       className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
@@ -156,18 +160,18 @@ const Enquire = () => {
                         <option className="  text-black disabled">
                           Select Please
                         </option>
-                        <option className='my-1'>Australia</option>
-                        <option className='my-1'>Usa</option>
-                        <option className='my-1'>Japan</option>
-                        <option className='my-1'>Canada</option>
-                        <option className='my-1'>Sweden</option>
-                        <option className='my-1'>Norway</option>
-                        <option className='my-1'>New zealand</option>
-                        <option className='my-1'>Bangladesh</option>
-                        <option className='my-1'>India</option>
-                        <option className='my-1'>Malaysia</option>
-                        <option className='my-1'>Uk</option>
-                        <option className='my-1'>Germany</option>
+                        <option className="my-1">Australia</option>
+                        <option className="my-1">Usa</option>
+                        <option className="my-1">Japan</option>
+                        <option className="my-1">Canada</option>
+                        <option className="my-1">Sweden</option>
+                        <option className="my-1">Norway</option>
+                        <option className="my-1">New zealand</option>
+                        <option className="my-1">Bangladesh</option>
+                        <option className="my-1">India</option>
+                        <option className="my-1">Malaysia</option>
+                        <option className="my-1">Uk</option>
+                        <option className="my-1">Germany</option>
                       </select>
                       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                         <svg
