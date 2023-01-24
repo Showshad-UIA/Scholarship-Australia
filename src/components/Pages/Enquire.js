@@ -10,7 +10,7 @@ const Enquire = () => {
 
     emailjs
       .sendForm(
-        'service_5ks7xlu',
+        'service_ncu171w',
         'template_zq77qvv',
         form.current,
         'Ep_VjQV8xTJcGJlYa'
@@ -84,6 +84,7 @@ const Enquire = () => {
                     <input
                       className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                       id="grid-first-name"
+                      name="first_name"
                       type="text"
                       placeholder=""
                       required
@@ -99,6 +100,7 @@ const Enquire = () => {
                     <input
                       className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                       id="grid-last-name"
+                      name="last_name"
                       type="text"
                       placeholder=""
                       required
@@ -117,6 +119,7 @@ const Enquire = () => {
                       className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                       id="grid-first-name"
                       type="text"
+                      name="email"
                       placeholder=""
                       required
                     />
@@ -132,6 +135,7 @@ const Enquire = () => {
                       className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                       id="grid-phone-number"
                       type="text"
+                      name="mobile_number"
                       placeholder=""
                     />
                   </div>
@@ -148,6 +152,7 @@ const Enquire = () => {
                       <select
                         className="block appearance-none w-full text-xs bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 font-sans"
                         id="grid-state"
+                        name="nationality"
                       >
                         <option className=" font-bold text-black disabled">
                           Select country
@@ -188,6 +193,7 @@ const Enquire = () => {
                       <select
                         className="block appearance-none w-full text-xs bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 font-sans"
                         id="grid-state"
+                        name="highest_qualifications"
                       >
                         <option className=" font-bold text-black disabled">
                           Select your qualifications
@@ -223,7 +229,8 @@ const Enquire = () => {
                     </label>
                     <input
                       className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                      id="grid-password"
+                      id="grid-state"
+                      name="scholarship_name"
                       type="text"
                       value={scholarQuality}
                       placeholder=""
@@ -261,6 +268,7 @@ const Enquire = () => {
                     <input
                       className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                       id="grid-first-name"
+                      name="level_study"
                       type="text"
                       placeholder=""
                       value={levelStudy}
@@ -278,6 +286,7 @@ const Enquire = () => {
                       <select
                         className="block appearance-none w-full text-xs bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 font-sans"
                         id="grid-state"
+                        name="field_study"
                       >
                         <option className=" font-bold text-black disabled">
                           Select your study
@@ -294,7 +303,6 @@ const Enquire = () => {
                         <option>Health and Medicine</option>
                         <option>Travel and Hospitality</option>
                         <option>Social Studies and Media</option>
-
                         <option>Law</option>
                         <option>MBA</option>
                       </select>
@@ -313,17 +321,25 @@ const Enquire = () => {
                 <div className="text-[#304F40] my-3 font-sans text-md font-bold">
                   When do you intend to apply for the scholarship?
                 </div>
+
                 <div className="flex flex-wrap -mx-3 mb-6">
-                  <div className="w-full  md:w-1/2  mb-6  px-3 md:mb-0  ">
+                  <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label
+                      className="block font-sans  tracking-wide text-gray-700 text-xs font-bold mb-2"
+                      for="grid-year"
+                    >
+                    
+                    </label>
                     <div className="relative">
                       <select
-                        className="block appearance-none w-full bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white text-xs focus:border-gray-500 font-sans"
-                        id="grid-year"
-                        required
+                        className="block appearance-none w-full text-xs bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 font-sans"
+                        id="grid-state"
+                        name="year"
                       >
                         <option className=" font-bold text-black disabled">
-                          Select year
+                          Select a Year
                         </option>
+                        <option>2024</option>
                         <option>2023</option>
                         <option>2022</option>
                         <option>2021</option>
@@ -340,14 +356,21 @@ const Enquire = () => {
                     </div>
                   </div>
                   <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label
+                      className="block font-sans  tracking-wide text-gray-700 text-xs font-bold mb-2"
+                      for="grid-month"
+                    >
+                     
+                      
+                    </label>
                     <div className="relative">
                       <select
-                        className="block appearance-none w-full bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white text-xs focus:border-gray-500 font-sans"
-                        id="grid-month"
-                        required
+                        className="block appearance-none w-full text-xs bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 font-sans"
+                        id="grid-state"
+                        name="month"
                       >
-                        <option className="font-bold text-black disabled">
-                          Select month
+                        <option className=" font-bold text-black disabled">
+                          Select a month
                         </option>
                         <option>January</option>
                         <option>February</option>
@@ -374,6 +397,7 @@ const Enquire = () => {
                     </div>
                   </div>
                 </div>
+
                 <div>
                   <label
                     for="message"
@@ -384,6 +408,7 @@ const Enquire = () => {
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     rows="4"
                     class="block p-2.5 lg:h-52 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="Write your thoughts here..."
