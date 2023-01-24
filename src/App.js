@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useParams } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
@@ -21,6 +21,8 @@ import Enquire from './components/Pages/Enquire';
 function App() {
   const [selectScholarships, setSelectScholarships] = useState(0);
   console.log(selectScholarships);
+  // const [selectedScholarship, setSelectedScholarship] = useState('');
+  // const [selectedLevel, setSelectedLevel] = useState('');
   return (
     <div className="max-w-[1900px] mx-auto bg:gray-500 ">
       <SecondNavbar></SecondNavbar>
@@ -35,7 +37,7 @@ function App() {
           path="search"
           element={
             <SearchBox
-              setSelectScholarships={setSelectScholarships}
+              // setSelectScholarships={setSelectScholarships} setSelectedScholarship={setSelectedScholarship} setSelectedLevel={setSelectedLevel} selectedLevel={selectedLevel} selectedScholarship={selectedScholarship}
             ></SearchBox>
           }
         ></Route>
@@ -53,21 +55,26 @@ function App() {
           path="/external"
           element={<ExternalScholarships></ExternalScholarships>}
         ></Route>
-        {selectScholarships === 1 || 2 ? (
+      
           <Route
             path="/searchScholarships/:scholarship/:graduation"
             element={
               <FindScholarship
                 setSelectScholarships={setSelectScholarships}
+            // selectedLevel={selectedLevel}
+            // selectedScholarship={selectedScholarship}
               ></FindScholarship>
             }
           ></Route>
-        ) : (
-          <Route
+          {/* {
+            selectedScholarship === 'External scholarships' &&   <Route
             path="/external"
             element={<ExternalScholarships></ExternalScholarships>}
           ></Route>
-        )}
+          } */}
+        
+         
+     
 
         <Route
           path="/ourServices"

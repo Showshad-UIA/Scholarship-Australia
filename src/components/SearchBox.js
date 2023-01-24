@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import '../components/Searchbox.css';
 import AllScholarships from './Home/AllScholarships';
 import WesternSydney from './Pages/WesternSydney';
 
-const SearchBox = ({ setSelectScholarships }) => {
+const SearchBox = ({  }) => {
   const [searchButton, setSearchButton] = useState(false);
   const [yearSelect, setYearSelect] = useState([]);
   const [selectedScholarship, setSelectedScholarship] = useState('');
   const [selectedLevel, setSelectedLevel] = useState('');
+  
   const { scholarship, graduation } = useParams();
+  console.log(scholarship, graduation)
   const navigate = useNavigate();
 
   const selectScholarships = [
@@ -30,14 +33,34 @@ const SearchBox = ({ setSelectScholarships }) => {
     },
   ];
 
-  const handleSearchScholarship = () => {
+  const handleSearchScholarship = (e) => {
     console.log(selectedScholarship, selectedLevel);
+    e.preventDefault();
+    // if (selectedScholarship === 'External scholarships') {
+    //   navigate('/external');
+    // }else if( selectedScholarship==="Government scholarships"){
+    //   navigate('/government')
+    // }
+    //  else {
+    //   navigate(`/searchScholarships/${selectedScholarship}/${selectedLevel}`);
+    // }
 
-    if (scholarship === 'External Scholarships') {
+   if(selectedScholarship && selectedLevel ){
+    
+    if (selectedScholarship === 'External scholarships') {
       navigate('/external');
-    } else {
+    }else if( selectedScholarship==="Government scholarships"){
+      navigate('/government')
+    }
+     else {
       navigate(`/searchScholarships/${selectedScholarship}/${selectedLevel}`);
     }
+   }
+   else{
+    // navigate("/")
+    toast.error('Please select your options')
+    // alert("Please select two data")
+   }
   };
 
   return (
@@ -65,7 +88,8 @@ const SearchBox = ({ setSelectScholarships }) => {
               Select type of scholarship
             </option>
             {selectScholarships.map(({ option, value, id }) => (
-              <option onClick={() => setSelectScholarships(id)} value={value}>
+              <option 
+               value={value}>
                 {option}
               </option>
             ))}
