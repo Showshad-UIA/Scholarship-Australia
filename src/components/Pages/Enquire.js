@@ -52,13 +52,12 @@ const Enquire = () => {
               <form
                 ref={form}
                 onSubmit={sendEmail}
-                className="border-t-4 border-[#304F40] w-full lg:w-[60%] shadow-md px-5 py-3 font-sans"
+                className="border-t-4 border-[#304F40] w-full lg:w-[60%] shadow-md lg:px-10 py-3 font-sans"
               >
                 <div>
                   <h1 className=" text-xl text-[#304F40] font-sans font-bold">
                     Application Assistance Enquiry for
-                    <span className="font-bold text-[#304F40]">
-                      {' '}
+                    <span className="font-bold px-1 text-[#304F40]">
                       {scholarQuality}
                     </span>
                   </h1>
@@ -76,7 +75,7 @@ const Enquire = () => {
                 <div className="  flex flex-wrap -mx-3 mb-6 ">
                   <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                     <label
-                      className="block font-sans  tracking-wide text-gray-700 text-xs font-bold mb-2"
+                      className="block font-sans  tracking-wide text-gray-700  font-bold mb-2"
                       for="grid-first-name "
                     >
                       First Name<span className="text-red-500">*</span>
@@ -92,7 +91,7 @@ const Enquire = () => {
                   </div>
                   <div className="w-full md:w-1/2 px-3">
                     <label
-                      className="block  tracking-wide text-gray-700 text-xs font-bold mb-2"
+                      className="block  tracking-wide text-gray-700  font-bold mb-2"
                       for="grid-last-name"
                     >
                       Last Name<span className="text-red-500">*</span>
@@ -110,7 +109,7 @@ const Enquire = () => {
                 <div className="flex flex-wrap -mx-3 mb-6">
                   <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                     <label
-                      className="block  tracking-wide text-gray-700 text-xs font-bold mb-2"
+                      className="block  tracking-wide text-gray-700  font-bold mb-2"
                       for="grid-first-name"
                     >
                       Email<span className="text-red-500">*</span>
@@ -126,7 +125,7 @@ const Enquire = () => {
                   </div>
                   <div className="w-full md:w-1/2 px-3">
                     <label
-                      className="block font-sans  tracking-wide text-gray-700 text-xs font-bold mb-2"
+                      className="block font-sans  tracking-wide text-gray-700  font-bold mb-2"
                       for="grid-phone-number"
                     >
                       Mobile phone number
@@ -143,32 +142,32 @@ const Enquire = () => {
                 <div className="flex flex-wrap -mx-3 ">
                   <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                     <label
-                      className="block font-sans  tracking-wide text-gray-700 text-xs font-bold mb-2"
+                      className="block font-sans  tracking-wide text-gray-700  font-bold mb-2"
                       for="grid-last-name"
                     >
                       Nationality<span className="text-red-500">*</span>
                     </label>
                     <div className="relative">
                       <select
-                        className="block appearance-none w-full text-xs bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 font-sans"
+                        className="block appearance-none w-full  bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 font-sans"
                         id="grid-state"
                         name="nationality"
                       >
-                        <option className=" font-bold text-black disabled">
-                          Select country
+                        <option className="  text-black disabled">
+                          Select Please
                         </option>
-                        <option>Australia</option>
-                        <option>Usa</option>
-                        <option>Japan</option>
-                        <option>Canada</option>
-                        <option>Sweden</option>
-                        <option>Norway</option>
-                        <option>New zealand</option>
-                        <option>Bangladesh</option>
-                        <option>India</option>
-                        <option>Malaysia</option>
-                        <option>Uk</option>
-                        <option>Germany</option>
+                        <option className='my-1'>Australia</option>
+                        <option className='my-1'>Usa</option>
+                        <option className='my-1'>Japan</option>
+                        <option className='my-1'>Canada</option>
+                        <option className='my-1'>Sweden</option>
+                        <option className='my-1'>Norway</option>
+                        <option className='my-1'>New zealand</option>
+                        <option className='my-1'>Bangladesh</option>
+                        <option className='my-1'>India</option>
+                        <option className='my-1'>Malaysia</option>
+                        <option className='my-1'>Uk</option>
+                        <option className='my-1'>Germany</option>
                       </select>
                       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                         <svg
@@ -183,7 +182,7 @@ const Enquire = () => {
                   </div>
                   <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                     <label
-                      className="block font-sans  tracking-wide text-gray-700 text-xs font-bold mb-2"
+                      className="block font-sans  tracking-wide text-gray-700  font-bold mb-2"
                       for="grid-last-name"
                     >
                       Highest qualifications
@@ -191,17 +190,17 @@ const Enquire = () => {
                     </label>
                     <div className="relative">
                       <select
-                        className="block appearance-none w-full text-xs bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 font-sans"
+                        className="block appearance-none w-full  bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 font-sans"
                         id="grid-state"
                         name="highest_qualifications"
                       >
                         <option className=" font-bold text-black disabled">
-                          Select your qualifications
+                          Select Please
                         </option>
                         <option>Bachelor</option>
-                        <option>Master(research)</option>
-                        <option>Master(coursework)</option>
-                        <option>PHd</option>
+                        <option>Master (Research)</option>
+                        <option>Master (Coursework)</option>
+                        <option>PhD</option>
                       </select>
                       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                         <svg
@@ -222,13 +221,13 @@ const Enquire = () => {
                 <div className="flex flex-wrap -mx-3 mb-6">
                   <div className="w-full px-3">
                     <label
-                      className="block font-sans  tracking-wide text-gray-700 text-xs font-bold mb-2"
+                      className="block font-sans  tracking-wide text-gray-700  font-bold mb-2"
                       for="grid-last-name"
                     >
                       Scholarship Name<span className="text-red-500">*</span>
                     </label>
                     <input
-                      className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 "
                       id="grid-state"
                       name="scholarship_name"
                       type="text"
@@ -236,13 +235,13 @@ const Enquire = () => {
                       placeholder=""
                       required
                     />
-                    <p className="text-gray-600 text-xs italic"></p>
+                    <p className="text-gray-600  italic"></p>
                   </div>
                 </div>
                 {/* <div className="flex flex-wrap -mx-3 mb-6">
                   <div className="w-full px-3">
                     <label
-                      className="block font-sans tracking-wide text-gray-700 text-xs font-bold mb-2"
+                      className="block font-sans tracking-wide text-gray-700  font-bold mb-2"
                       for="grid-password"
                     >
                       Type of scholarship<span className="text-red-500">*</span>
@@ -254,19 +253,19 @@ const Enquire = () => {
                       placeholder=""
                       required
                     />
-                    <p className="text-gray-600 text-xs italic"></p>
+                    <p className="text-gray-600  italic"></p>
                   </div>
                 </div> */}
                 <div className="flex flex-wrap -mx-3 mb-6">
                   <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                     <label
-                      className="block font-sans  tracking-wide text-gray-700 text-xs font-bold mb-2"
+                      className="block font-sans  tracking-wide text-gray-700  font-bold mb-2"
                       for="grid-first-name"
                     >
                       Level of study<span className="text-red-500">*</span>
                     </label>
                     <input
-                      className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 "
                       id="grid-first-name"
                       name="level_study"
                       type="text"
@@ -277,34 +276,48 @@ const Enquire = () => {
                   </div>
                   <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                     <label
-                      className="block font-sans  tracking-wide text-gray-700 text-xs font-bold mb-2"
+                      className="block font-sans  tracking-wide text-gray-700  font-bold mb-2"
                       for="grid-last-name"
                     >
                       Field of study<span className="text-red-500">*</span>
                     </label>
                     <div className="relative">
                       <select
-                        className="block appearance-none w-full text-xs bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 font-sans"
+                        className="block appearance-none w-full  bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 font-sans"
                         id="grid-state"
                         name="field_study"
                       >
-                        <option className=" font-bold text-black disabled">
-                          Select your study
+                        <option className="  text-black disabled">
+                          Select Please
                         </option>
-                        <option>Agriculture and Veterinary Medicine</option>
-                        <option>Applied and Pure Sciences</option>
-                        <option>Architecture and Construction</option>
-                        <option>Business and Management</option>
-                        <option>Computer Science and IT</option>
-                        <option>Creative Arts and Design</option>
-                        <option>Engineering</option>
-                        <option>Education and Training</option>
-                        <option>Humanities</option>
-                        <option>Health and Medicine</option>
-                        <option>Travel and Hospitality</option>
-                        <option>Social Studies and Media</option>
-                        <option>Law</option>
-                        <option>MBA</option>
+                        <option className="my-1">
+                          Agriculture and Veterinary Medicine
+                        </option>
+                        <option className="my-1">
+                          Applied and Pure Sciences
+                        </option>
+                        <option className="my-1">
+                          Architecture and Construction
+                        </option>
+                        <option className="my-1">
+                          Business and Management
+                        </option>
+                        <option className="my-1">
+                          Computer Science and IT
+                        </option>
+                        <option className="my-1">
+                          Creative Arts and Design
+                        </option>
+                        <option className="my-1">Engineering</option>
+                        <option className="my-1">Education and Training</option>
+                        <option className="my-1">Humanities</option>
+                        <option className="my-1">Health and Medicine</option>
+                        <option className="my-1">Travel and Hospitality</option>
+                        <option className="my-1">
+                          Social Studies and Media
+                        </option>
+                        <option className="my-1">Law</option>
+                        <option className="my-1">MBA</option>
                       </select>
                       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                         <svg
@@ -318,26 +331,24 @@ const Enquire = () => {
                     </div>
                   </div>
                 </div>
-                <div className="text-[#304F40] my-3 font-sans text-md font-bold">
+                <div className="text-[#304F40] my-3 font-sans text-md ">
                   When do you intend to apply for the scholarship?
                 </div>
 
                 <div className="flex flex-wrap -mx-3 mb-6">
                   <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                     <label
-                      className="block font-sans  tracking-wide text-gray-700 text-xs font-bold mb-2"
+                      className="block font-sans  tracking-wide text-gray-700  font-bold mb-2"
                       for="grid-year"
-                    >
-                    
-                    </label>
+                    ></label>
                     <div className="relative">
                       <select
-                        className="block appearance-none w-full text-xs bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 font-sans"
+                        className="block appearance-none w-full  bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 font-sans"
                         id="grid-state"
                         name="year"
                       >
-                        <option className=" font-bold text-black disabled">
-                          Select a Year
+                        <option className="  text-black disabled">
+                          Select Please
                         </option>
                         <option>2024</option>
                         <option>2023</option>
@@ -357,33 +368,30 @@ const Enquire = () => {
                   </div>
                   <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                     <label
-                      className="block font-sans  tracking-wide text-gray-700 text-xs font-bold mb-2"
+                      className="block font-sans  tracking-wide text-gray-700  font-bold mb-2"
                       for="grid-month"
-                    >
-                     
-                      
-                    </label>
+                    ></label>
                     <div className="relative">
                       <select
-                        className="block appearance-none w-full text-xs bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 font-sans"
+                        className="block appearance-none w-full  bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 font-sans"
                         id="grid-state"
                         name="month"
                       >
-                        <option className=" font-bold text-black disabled">
-                          Select a month
+                        <option className="  text-black disabled">
+                          Select Please
                         </option>
-                        <option>January</option>
-                        <option>February</option>
-                        <option>March</option>
-                        <option>April</option>
-                        <option>May</option>
-                        <option>June</option>
-                        <option>July</option>
-                        <option>August</option>
-                        <option>September</option>
-                        <option>October</option>
-                        <option>November</option>
-                        <option>December</option>
+                        <option className="my-1">January</option>
+                        <option className="my-1">February</option>
+                        <option className="my-1">March</option>
+                        <option className="my-1">April</option>
+                        <option className="my-1">May</option>
+                        <option className="my-1">June</option>
+                        <option className="my-1">July</option>
+                        <option className="my-1">August</option>
+                        <option className="my-1">September</option>
+                        <option className="my-1">October</option>
+                        <option className="my-1">November</option>
+                        <option className="my-1">December</option>
                       </select>
                       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                         <svg
@@ -401,7 +409,7 @@ const Enquire = () => {
                 <div>
                   <label
                     for="message"
-                    class="block text-[#304F40] mb-2 text-sm  font-sans font-bold dark:text-white"
+                    class="block text-[#304F40] mb-2   font-sans font-bold dark:text-white"
                   >
                     Message to scholarship consultant. Please detail what
                     assistance you are seeking for your scholarship application.
