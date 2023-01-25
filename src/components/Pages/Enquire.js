@@ -1,12 +1,23 @@
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
+
+import Select from 'react-select';
+import countryList from 'react-select-country-list';
 import { useParams } from 'react-router-dom';
-import Banner from '../Banner';
+import Enquiry_Banner from './Enquiry_Banner';
 
 const Enquire = () => {
   const form = useRef();
+
+  // const [value, setValue] = useState('');
+  // const options = useMemo(() => countryList().getData(), []);
+
+  // const changeHandler = value => {
+  //   setValue(value);
+  // };
+
   const sendEmail = e => {
     e.preventDefault();
 
@@ -48,7 +59,7 @@ const Enquire = () => {
   console.log(specificData);
   return (
     <>
-      <Banner></Banner>
+      <Enquiry_Banner></Enquiry_Banner>
       {specificData.map(({ uniName, scholarQuality, levelStudy }) => (
         <div className=" lg:mb-28 ">
           <div className="mx-auto container">
@@ -56,19 +67,20 @@ const Enquire = () => {
               <form
                 ref={form}
                 onSubmit={sendEmail}
-                className="border-t-4 border-[#304F40] w-full lg:w-[60%] shadow-md lg:px-10 py-3 font-sans"
+                className="border-t-4 border-[#304F40] w-full lg:w-[65%] shadow-md lg:px-10 py-3 font-sans"
               >
                 <div>
-                  <h1 className=" text-xl text-[#304F40] font-sans font-bold">
-                    Application Assistance Enquiry for
-                    <span className="font-bold px-1 text-[#304F40]">
+                  <h1 className=" text-xl  text-[#304F40] font-sans gap-1 flex font-bold">
+                    Application Assistance for
+                    <span className="font-bold  text-white px-0.5 rounded bg-[#304F40]">
                       {scholarQuality}
                     </span>
                   </h1>
                   <p className="font-sans mt-3 font-semibold text-[#304F40]">
-                    Please answer the following questions. Click on the
-                    &quot;Submit Final Application&quot; link to submit your
-                    application. Fields marked with * are required.
+                    Please answer the following questions and click on "Send
+                    email" to submit your enquiry to our consultants. Fields
+                    marked with * are required. You should receive a reply
+                    within 72 hours.
                   </p>
                 </div>
                 <div>
@@ -158,7 +170,7 @@ const Enquire = () => {
                         name="nationality"
                       >
                         <option className="  text-black disabled">
-                          Select Please
+                          Please select
                         </option>
                         <option className="my-1">Australia</option>
                         <option className="my-1">Usa</option>
@@ -198,8 +210,8 @@ const Enquire = () => {
                         id="grid-state"
                         name="highest_qualifications"
                       >
-                        <option className=" font-bold text-black disabled">
-                          Select Please
+                        <option className="  text-black disabled">
+                          Please select
                         </option>
                         <option>Bachelor</option>
                         <option>Master (Research)</option>
@@ -292,7 +304,7 @@ const Enquire = () => {
                         name="field_study"
                       >
                         <option className="  text-black disabled">
-                          Select Please
+                          Please select
                         </option>
                         <option className="my-1">
                           Agriculture and Veterinary Medicine
@@ -352,7 +364,7 @@ const Enquire = () => {
                         name="year"
                       >
                         <option className="  text-black disabled">
-                          Select Please
+                         Select year
                         </option>
                         <option>2024</option>
                         <option>2023</option>
@@ -382,7 +394,7 @@ const Enquire = () => {
                         name="month"
                       >
                         <option className="  text-black disabled">
-                          Select Please
+                          Select month
                         </option>
                         <option className="my-1">January</option>
                         <option className="my-1">February</option>

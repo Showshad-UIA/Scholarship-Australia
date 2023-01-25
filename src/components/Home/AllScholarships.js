@@ -31,7 +31,7 @@ const AllScholarships = ({ d }) => {
                   />
                 </div>
 
-                <p className="bg-[#304F40] rounded-2xl text-white text-center cursor-pointer  px-3 mt-2">
+                <p className="bg-[#304F40] lg:ml-[32px] lg:w-[120px] min-w-[150px] rounded-2xl text-white text-center cursor-pointer  px-3 mt-2">
                   View courses
                 </p>
               </div>

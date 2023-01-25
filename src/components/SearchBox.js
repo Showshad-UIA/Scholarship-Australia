@@ -5,14 +5,14 @@ import '../components/Searchbox.css';
 import AllScholarships from './Home/AllScholarships';
 import WesternSydney from './Pages/WesternSydney';
 
-const SearchBox = ({  }) => {
+const SearchBox = ({}) => {
   const [searchButton, setSearchButton] = useState(false);
   const [yearSelect, setYearSelect] = useState([]);
   const [selectedScholarship, setSelectedScholarship] = useState('');
   const [selectedLevel, setSelectedLevel] = useState('');
-  
+
   const { scholarship, graduation } = useParams();
-  console.log(scholarship, graduation)
+  console.log(scholarship, graduation);
   const navigate = useNavigate();
 
   const selectScholarships = [
@@ -31,9 +31,14 @@ const SearchBox = ({  }) => {
       option: 'External Scholarships',
       value: 'External scholarships',
     },
+    {
+      id: 4,
+      option: 'Project Scholarships',
+      value: 'Project scholarships',
+    },
   ];
 
-  const handleSearchScholarship = (e) => {
+  const handleSearchScholarship = e => {
     console.log(selectedScholarship, selectedLevel);
     e.preventDefault();
     // if (selectedScholarship === 'External scholarships') {
@@ -45,22 +50,21 @@ const SearchBox = ({  }) => {
     //   navigate(`/searchScholarships/${selectedScholarship}/${selectedLevel}`);
     // }
 
-   if(selectedScholarship && selectedLevel ){
-    
-    if (selectedScholarship === 'External scholarships') {
-      navigate('/external');
-    }else if( selectedScholarship==="Government scholarships"){
-      navigate('/government')
+    if (selectedScholarship && selectedLevel) {
+      if (selectedScholarship === 'External scholarships') {
+        navigate('/external');
+      } else if (selectedScholarship === 'Government scholarships') {
+        navigate('/government');
+      } else if (selectedScholarship === 'Project scholarships') {
+        navigate('/project');
+      } else {
+        navigate(`/searchScholarships/${selectedScholarship}/${selectedLevel}`);
+      }
+    } else {
+      // navigate("/")
+      toast.error('Please select your options');
+      // alert("Please select two data")
     }
-     else {
-      navigate(`/searchScholarships/${selectedScholarship}/${selectedLevel}`);
-    }
-   }
-   else{
-    // navigate("/")
-    toast.error('Please select your options')
-    // alert("Please select two data")
-   }
   };
 
   return (
@@ -88,10 +92,7 @@ const SearchBox = ({  }) => {
               Select type of scholarship
             </option>
             {selectScholarships.map(({ option, value, id }) => (
-              <option 
-               value={value}>
-                {option}
-              </option>
+              <option value={value}>{option}</option>
             ))}
 
             {/* <option value="Government scholarships">

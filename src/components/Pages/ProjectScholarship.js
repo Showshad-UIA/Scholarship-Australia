@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const UniversityScolarships = () => {
+const ProjectScholarship = () => {
   const navigate = useNavigate();
-  const [universityScolarship, setUniversityScolarship] = useState([]);
+  const [projectScolarships, setProjectScolarships] = useState([]);
   useEffect(() => {
-    fetch('fakedata.json')
+    fetch('projectfakedata.json')
       .then(res => res.json())
       .then(d => {
         // console.log(d);
-        setUniversityScolarship(d);
+        setProjectScolarships(d);
       });
   }, []);
 
@@ -17,12 +17,12 @@ const UniversityScolarships = () => {
     <div className="container mx-auto">
       <div className="container mx-auto text-md mt-10">
         <p className="lg:mx-20 text-2xl  font-bold font-sans my-2 text-center ">
-          <span className="bg-[#304F40] text-white rounded-3xl px-3 p-2">
-            View all available university scholarships
+          <span className="bg-[#304F40]  text-white rounded-3xl px-3 p-2">
+            View all available project scholarships
           </span>
         </p>
       </div>
-      {universityScolarship.map(d => (
+      {projectScolarships.map(d => (
         <div className="  mt-10 mb-5  ">
           <div className="lg:mx-10 lg:border-t-2  ">
             <div className=" w-full flex flex-wrap px-3 mb-5  lg:mt-5">
@@ -35,7 +35,7 @@ const UniversityScolarships = () => {
                   />
                 </div>
 
-                <p className="bg-[#304F40] lg:ml-[32px] lg:w-[120px] min-w-[150px]  rounded-2xl text-white text-center cursor-pointer  px-3 mt-2">
+                <p className="bg-[#304F40] lg:ml-[32px] lg:w-[120px] min-w-[150px] rounded-2xl text-white text-center cursor-pointer  px-3 mt-2">
                   View courses
                 </p>
               </div>
@@ -120,4 +120,4 @@ const UniversityScolarships = () => {
   );
 };
 
-export default UniversityScolarships;
+export default ProjectScholarship;

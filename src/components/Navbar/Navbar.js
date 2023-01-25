@@ -15,21 +15,26 @@ function Navbar() {
     },
     {
       id: 2,
+      title: 'Project Scholarships',
+      link: '/project',
+    },
+    {
+      id: 3,
       title: 'Government Scholarships',
       link: '/government',
     },
     {
-      id: 3,
+      id: 4,
       title: 'External Scholarships',
       link: '/external',
     },
     {
-      id: 4,
+      id: 5,
       title: 'Resources',
       link: '/resources',
     },
     {
-      id: 5,
+      id: 6,
       title: 'Our Services',
       link: '/ourServices',
     },
