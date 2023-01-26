@@ -471,11 +471,17 @@ const ExternalScholarships = () => {
 
                 <div className=" text-justify mt-7">
                   <p className="  text-[#304F40]  ">
-                    If you would like advice about applying for an external
-                    scholarship, please talk to your{' '}
-                    <span className="border-b-[1px] text-gray-800 font-sans  font-semibold border-[#1E282D] border-dotted    hover:text-red-600 ">
-                      {' '}
-                      Associate Dean, HDR or HDR Director
+                    Would you like someone experienced to review and give
+                    feedback prior to submitting your scholarship application?
+                    Scholarships Australia can assist you to get connected with
+                    consultants who are previous scholarship recipients in your
+                    field to ensure you submit a competitive application
+                    <span
+                     
+                      className="  bg-[#304F40] my-2 cursor-pointer px-2  py-1 text-white rounded-2xl "
+                    >
+                      {/* <a href=' '>Enquire now</a> */}
+                      Enquire now
                     </span>
                     .
                   </p>
