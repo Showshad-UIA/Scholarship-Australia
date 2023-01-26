@@ -10,8 +10,8 @@ const UniversityScolarshipBanner = () => {
           className="carousel-item  w-full bg:[#304F40]   bg-cover banner "
           style={{ backgroundImage: `url(${banner_1})` }}
         >
-          <p className="text-4xl flex justify-center items-center text-center font-bold w-full font-sans text-[#1E282D] uppercase">
-            University scholarships
+          <p className="text-3xl flex justify-center items-center text-center font-bold w-full font-sans text-white uppercase">
+            University Scholarships
           </p>
         </div>
       </div>

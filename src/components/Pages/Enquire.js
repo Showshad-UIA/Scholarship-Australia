@@ -78,9 +78,9 @@ const Enquire = ({ external }) => {
                 <div>
                   <h1 className=" text-xl  text-[#304F40] font-sans gap-1 flex font-bold">
                     Application Assistance for
-                    <span className="font-bold  text-white px-0.5 rounded bg-[#304F40]">
-                      {' '}
-                      {external ? 'External Scholarship ' : { scholarQuality }}
+                    <span className="font-bold  text-white px-0.5 rounded bg-[#304F40]">  {scholarQuality}
+                  
+                     
                     </span>
                   </h1>
                   <p className="font-sans mt-3 font-semibold text-[#304F40]">
@@ -257,7 +257,7 @@ const Enquire = ({ external }) => {
                       id="grid-state"
                       name="scholarship_name"
                       type="text"
-                      value={!external && { scholarQuality }}
+                      value= {scholarQuality} 
                       placeholder=""
                       required
                     />
@@ -296,7 +296,7 @@ const Enquire = ({ external }) => {
                       name="level_study"
                       type="text"
                       placeholder=""
-                      value={!external && { levelStudy }}
+                      value={levelStudy}
                       required
                     />
                   </div>
