@@ -18,10 +18,11 @@ import AllScholarships from './components/Home/AllScholarships';
 import FindScholarship from './components/Pages/FindScholarship';
 import Enquire from './components/Pages/Enquire';
 import ProjectScholarship from './components/Pages/ProjectScholarship';
+import ExternalEnquireFrom from './components/Pages/ExternalEnquireFrom';
 
 function App() {
   const [selectScholarships, setSelectScholarships] = useState(0);
-  console.log(selectScholarships);
+  // console.log(selectScholarships);
   // const [selectedScholarship, setSelectedScholarship] = useState('');
   // const [selectedLevel, setSelectedLevel] = useState('');
   return (
@@ -48,6 +49,7 @@ function App() {
         ></Route>
         {/* <Route path="/enquire" element={<Enquire></Enquire>}></Route> */}
         <Route path="/enquire/:enquireId" element={<Enquire></Enquire>}></Route>
+        <Route path='/external_enquire' element={<ExternalEnquireFrom/>}/>
         <Route
           path="/government"
           element={<GovernmentScholarships></GovernmentScholarships>}

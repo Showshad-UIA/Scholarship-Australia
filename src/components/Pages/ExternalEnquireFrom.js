@@ -1,73 +1,54 @@
+import React, { useEffect, useState, useMemo,useRef  } from 'react';
 import emailjs from '@emailjs/browser';
-import { toast } from 'react-toastify';
-import React, { useEffect, useState, useMemo, useRef } from 'react';
-
-import Select from 'react-select';
-import countryList from 'react-select-country-list';
 import { useParams } from 'react-router-dom';
 import Enquiry_Banner from './Enquiry_Banner';
+import { toast } from 'react-toastify';
 
-const Enquire = ({ external }) => {
-  const form = useRef();
-  const [countryName, setCountryName] = useState([]);
+const ExternalEnquireFrom = () => {
+    const form = useRef();
+    const [countryName,setCountryName]=useState([])
+  
+    // const [value, setValue] = useState('');
+    // const options = useMemo(() => countryList().getData(), []);
+  
+    // const changeHandler = value => {
+    //   setValue(value);
+    // };
+  
+    const sendEmail = e => {
+      e.preventDefault();
+  
+      emailjs
+        .sendForm(
+          'service_ncu171w',
+          'template_zq77qvv',
+          form.current,
+          'Ep_VjQV8xTJcGJlYa'
+        )
+        .then(
+          result => {
+            console.log(result.text);
+            toast.success('Mail successfully sent');
+          },
+          error => {
+            console.log(error.text);
+          }
+        );
+      e.target.reset();
+    };
+  
+    const { enquireId } = useParams();
+    const NumberEnq = parseInt(enquireId);
 
-  // const [value, setValue] = useState('');
-  // const options = useMemo(() => countryList().getData(), []);
-
-  // const changeHandler = value => {
-  //   setValue(value);
-  // };
-
-  const sendEmail = e => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm(
-        'service_ncu171w',
-        'template_zq77qvv',
-        form.current,
-        'Ep_VjQV8xTJcGJlYa'
-      )
-      .then(
-        result => {
-          console.log(result.text);
-          toast.success('Mail successfully sent');
-        },
-        error => {
-          console.log(error.text);
-        }
-      );
-    e.target.reset();
-  };
-
-  const { enquireId } = useParams();
-  const NumberEnq = parseInt(enquireId);
-  const [specificData, setSpecificData] = useState([]);
-
-  // const { uniName } = specificData;
-  // console.log(enquireId)
-
-  // const fakedaSpecific =JSON.parse("fakedata.json")
-  // console.log(fakedaSpecific)
-  useEffect(() => {
-    fetch(
-      `https://raw.githubusercontent.com/Masum-WebD/my-fakedata-json/main/scholarshipsUniversity.json`
-    )
-      .then(res => res.json())
-      .then(data => setSpecificData(data.filter(d => d.id === NumberEnq)));
-  }, [NumberEnq]);
-
-  useEffect(() => {
-    fetch('https://restcountries.com/v3.1/all')
-      .then(res => res.json())
-      .then(data => setCountryName(data));
-  }, []);
-  console.log(countryName);
-  return (
-    <>
-      <Enquiry_Banner></Enquiry_Banner>
-      {specificData.map(({ uniName, scholarQuality, levelStudy }) => (
-        <div className=" lg:mb-28 ">
+    useEffect(()=>{
+        fetch('https://restcountries.com/v3.1/all')
+        .then(res => res.json())
+        .then(data=>setCountryName(data))
+      },[])
+    return (
+      <>
+        <Enquiry_Banner></Enquiry_Banner>
+        <div className=" lg:mb-28 px-2 ">
           <div className="mx-auto container">
             <div className="w-full  py-4 mt-6 items-center lg:justify-center overflow-hidden bg-white  flex flex-col    pt-6  sm:justify-center sm:pt-0 ">
               <form
@@ -76,11 +57,10 @@ const Enquire = ({ external }) => {
                 className="border-t-4 border-[#304F40] w-full lg:w-[65%] shadow-md lg:px-10 py-3 font-sans"
               >
                 <div>
-                  <h1 className=" text-xl  text-[#304F40] font-sans gap-1 flex font-bold">
+                  <h1 className=" text-xl w-full text-[#304F40] font-sans lg:gap-1 lg:flex font-bold ">
                     Application Assistance for
-                    <span className="font-bold  text-white px-0.5 rounded bg-[#304F40]">
-                      {' '}
-                      {external ? 'External Scholarship ' : { scholarQuality }}
+                    <span className="font-bold  text-white  rounded  bg-[#304F40]">
+                      External Scholarship
                     </span>
                   </h1>
                   <p className="font-sans mt-3 font-semibold text-[#304F40]">
@@ -179,8 +159,8 @@ const Enquire = ({ external }) => {
                         <option className="  text-black disabled">
                           Please select
                         </option>
-                        {countryName.map((name) => (
-                          <option key={name.id}>{name?.name?.common}</option>
+                        {countryName.map(name => (
+                          <option>{name?.name?.common}</option>
                         ))}
                         {/* <option className="my-1">Australia</option>
                         <option className="my-1">Usa</option>
@@ -257,7 +237,6 @@ const Enquire = ({ external }) => {
                       id="grid-state"
                       name="scholarship_name"
                       type="text"
-                      value={!external && { scholarQuality }}
                       placeholder=""
                       required
                     />
@@ -296,7 +275,6 @@ const Enquire = ({ external }) => {
                       name="level_study"
                       type="text"
                       placeholder=""
-                      value={!external && { levelStudy }}
                       required
                     />
                   </div>
@@ -458,9 +436,8 @@ const Enquire = ({ external }) => {
             </div>
           </div>
         </div>
-      ))}
-    </>
-  );
+      </>
+    );
 };
 
-export default Enquire;
+export default ExternalEnquireFrom;

@@ -4,25 +4,36 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Enquire from './Enquire';
 import ExternalBanner from './ExternalBanner';
 
 const ExternalScholarships = () => {
+  const [externalToFrom, setExternalToFrom] = useState();
+  const navigate = useNavigate();
+  const id = 55;
+
   return (
-    <>
+    <div>
       <ExternalBanner></ExternalBanner>
-      <div className="max-w-7xl mx-auto  lg:mb-24 lg:mt-7 ">
+      <div
+        className={
+          externalToFrom ? 'hidden' : 'max-w-7xl mx-auto  lg:mb-24 lg:mt-7 '
+        }
+      >
         <div className="  shadow-sm mb-5">
           <div className="">
             <div className=" ">
               <div className=" pb-10  ">
-                <div className="  lg:mx-12">
+                <div className=" lg:mx-10 ">
+                  <p className="    font-sans   ">
+                    <span className="  text-[#1E282D] font-sans text-xl font-bold p-2 px-3 ">
+                      View All Available External Scholarships
+                    </span>
+                  </p>
                   <h1 className="mb-3 border-t-4 mx-2 border-[#1E282D]"></h1>
-                  <div className="text-center">
-                    {' '}
-                    <h1 className=" px-3 text-xl text-[#304F40]  underline  font-sans  font-bold ">
-                      External Scholarships
-                    </h1>
-                  </div>
+
                   <p className=" px-3 text-[#304F40] font-semibold   text-justify mb-5  my-3 font-sans">
                     The following organisations offer scholarships to help
                     support research candidatures. Applications are made
@@ -480,7 +491,11 @@ const ExternalScholarships = () => {
                       with consultants who are previous scholarship recipients
                       in your field to ensure you submit a competitive
                       application
-                      <span className="  bg-[#304F40] my-2 cursor-pointer px-2  py-1 text-white rounded-2xl ">
+                      <span
+                        className="  bg-[#304F40] my-2 cursor-pointer px-2  py-1 text-white rounded-2xl "
+                        // onClick={()=>setExternalToFrom(!externalToFrom)}
+                        onClick={() => navigate(`/external_enquire`)}
+                      >
                         {/* <a href=' '>Enquire now</a> */}
                         Enquire now
                       </span>
@@ -500,7 +515,10 @@ const ExternalScholarships = () => {
           </div>
         </div>
       </div>
-    </>
+      {
+        // externalToFrom && <Enquire external={true}/>
+      }
+    </div>
   );
 };
 
