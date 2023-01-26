@@ -4,10 +4,18 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Enquire from './Enquire';
 
 const ExternalScholarships = () => {
+  const [externalToFrom,setExternalToFrom]=useState()
+  const navigate =useNavigate()
+  const id=55
+
   return (
-    <div className="max-w-7xl mx-auto  lg:mb-24 lg:mt-7 ">
+    <>
+    <div className={ externalToFrom ? "hidden": "max-w-7xl mx-auto  lg:mb-24 lg:mt-7 "}>
       <div className="  shadow-sm mb-5">
         <div className="">
           <div className=" ">
@@ -478,7 +486,9 @@ const ExternalScholarships = () => {
                     field to ensure you submit a competitive application
                     <span
                      
-                      className="  bg-[#304F40] my-2 cursor-pointer px-2  py-1 text-white rounded-2xl "
+                      className="  bg-[#304F40] my-2 cursor-pointer px-2  py-1 text-white rounded-2xl " 
+                      // onClick={()=>setExternalToFrom(!externalToFrom)}  
+                      onClick={()=>navigate(`/external_enquire`)}
                     >
                       {/* <a href=' '>Enquire now</a> */}
                       Enquire now
@@ -499,6 +509,10 @@ const ExternalScholarships = () => {
         </div>
       </div>
     </div>
+    {
+      // externalToFrom && <Enquire external={true}/>
+    }
+    </>
   );
 };
 
