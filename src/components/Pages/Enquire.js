@@ -10,6 +10,7 @@ import Enquiry_Banner from './Enquiry_Banner';
 
 const Enquire = () => {
   const form = useRef();
+  const [countryName,setCountryName]=useState([])
 
   // const [value, setValue] = useState('');
   // const options = useMemo(() => countryList().getData(), []);
@@ -56,7 +57,13 @@ const Enquire = () => {
       .then(res => res.json())
       .then(data => setSpecificData(data.filter(d => d.id === NumberEnq)));
   }, [NumberEnq]);
-  console.log(specificData);
+
+  useEffect(()=>{
+    fetch('https://restcountries.com/v3.1/all')
+    .then(res => res.json())
+    .then(data=>setCountryName(data))
+  },[])
+  console.log(countryName);
   return (
     <>
       <Enquiry_Banner></Enquiry_Banner>
@@ -172,7 +179,12 @@ const Enquire = () => {
                         <option className="  text-black disabled">
                           Please select
                         </option>
-                        <option className="my-1">Australia</option>
+                        {
+                          countryName.map((name)=> <option>
+                            {name?.name?.common}
+                          </option>)
+                        }
+                        {/* <option className="my-1">Australia</option>
                         <option className="my-1">Usa</option>
                         <option className="my-1">Japan</option>
                         <option className="my-1">Canada</option>
@@ -183,7 +195,7 @@ const Enquire = () => {
                         <option className="my-1">India</option>
                         <option className="my-1">Malaysia</option>
                         <option className="my-1">Uk</option>
-                        <option className="my-1">Germany</option>
+                        <option className="my-1">Germany</option> */}
                       </select>
                       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                         <svg
