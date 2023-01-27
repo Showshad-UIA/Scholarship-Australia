@@ -104,8 +104,8 @@ const Enquire = ({ external }) => {
                       id="grid-first-name"
                       name="first_name"
                       type="text"
-                      placeholder=""
-                      required
+                      placeholder="First Name"
+                      required="required"
                     />
                   </div>
                   <div className="w-full md:w-1/2 px-3">
@@ -120,8 +120,7 @@ const Enquire = ({ external }) => {
                       id="grid-last-name"
                       name="last_name"
                       type="text"
-                      placeholder=""
-                      required
+                      required="required"
                     />
                   </div>
                 </div>
@@ -138,8 +137,7 @@ const Enquire = ({ external }) => {
                       id="grid-first-name"
                       type="text"
                       name="email"
-                      placeholder=""
-                      required
+                      required="required"
                     />
                   </div>
                   <div className="w-full md:w-1/2 px-3">
@@ -154,7 +152,6 @@ const Enquire = ({ external }) => {
                       id="grid-phone-number"
                       type="text"
                       name="mobile_number"
-                      placeholder=""
                     />
                   </div>
                 </div>
@@ -171,13 +168,17 @@ const Enquire = ({ external }) => {
                         className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                         id="grid-state"
                         name="nationality"
-                        required
+                        required="required"
                       >
-                        <option className="  text-black disabled">
+                        <option
+                          value=""
+                          className="  text-black  "
+                        >
                           Please select
                         </option>
                         {countryName.map(name => (
                           <option
+                            
                             className="overflow-hidden overflow-y-scroll"
                             key={name.id}
                           >
@@ -209,15 +210,15 @@ const Enquire = ({ external }) => {
                         className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                         id="grid-state"
                         name="highest_qualifications"
-                        required
+                        required="required"
                       >
-                        <option className="  text-black disabled">
+                        <option value="" className="  text-black  ">
                           Please select
                         </option>
-                        <option>Bachelor</option>
-                        <option>Master (Research)</option>
-                        <option>Master (Coursework)</option>
-                        <option>PhD</option>
+                        <option >Bachelor</option>
+                        <option >Master (Research)</option>
+                        <option >Master (Coursework)</option>
+                        <option >PhD</option>
                       </select>
                       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                         <svg
@@ -249,8 +250,7 @@ const Enquire = ({ external }) => {
                       name="scholarship_name"
                       type="text"
                       value={scholarQuality}
-                      placeholder=""
-                      required
+                      required="required"
                     />
                     <p className="text-gray-600  italic"></p>
                   </div>
@@ -267,7 +267,7 @@ const Enquire = ({ external }) => {
                     <input
                       className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                       id="grid-first-name"
-                      required
+                      required="required"
                       name="level_study"
                       type="text"
                       placeholder=""
@@ -288,19 +288,19 @@ const Enquire = ({ external }) => {
                         required
                         name="field_study"
                       >
-                        <option className="  text-black disabled">
+                        <option value="" className="  text-black  ">
                           Please select
                         </option>
-                        <option className="my-1">
+                        <option  className="my-1">
                           Agriculture and Veterinary Medicine
                         </option>
-                        <option className="my-1">
+                        <option  className="my-1">
                           Applied and Pure Sciences
                         </option>
-                        <option className="my-1">
+                        <option  className="my-1">
                           Architecture and Construction
                         </option>
-                        <option className="my-1">
+                        <option  className="my-1">
                           Business and Management
                         </option>
                         <option className="my-1">
@@ -309,16 +309,30 @@ const Enquire = ({ external }) => {
                         <option className="my-1">
                           Creative Arts and Design
                         </option>
-                        <option className="my-1">Engineering</option>
-                        <option className="my-1">Education and Training</option>
-                        <option className="my-1">Humanities</option>
-                        <option className="my-1">Health and Medicine</option>
-                        <option className="my-1">Travel and Hospitality</option>
+                        <option  className="my-1">
+                          Engineering
+                        </option>
+                        <option  className="my-1">
+                          Education and Training
+                        </option>
                         <option className="my-1">
+                          Humanities
+                        </option>
+                        <option  className="my-1">
+                          Health and Medicine
+                        </option>
+                        <option className="my-1">
+                          Travel and Hospitality
+                        </option>
+                        <option  className="my-1">
                           Social Studies and Media
                         </option>
-                        <option className="my-1">Law</option>
-                        <option className="my-1">MBA</option>
+                        <option className="my-1">
+                          Law
+                        </option>
+                        <option  className="my-1">
+                          MBA
+                        </option>
                       </select>
                       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                         <svg
@@ -347,8 +361,12 @@ const Enquire = ({ external }) => {
                         className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                         id="grid-state"
                         name="year"
+                        required
                       >
-                        <option className="  text-black disabled">
+                        <option
+                          value="undefined"
+                          className="  text-black disabled selected"
+                        >
                           Select year
                         </option>
                         <option>2024</option>
@@ -377,10 +395,10 @@ const Enquire = ({ external }) => {
                         className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                         id="grid-state"
                         name="month"
+                        required
+                        placeholder="Please select"
                       >
-                        <option className="  text-black disabled">
-                          Select month
-                        </option>
+                        <option className="  text-black ">Select month</option>
                         <option className="my-1">January</option>
                         <option className="my-1">February</option>
                         <option className="my-1">March</option>
