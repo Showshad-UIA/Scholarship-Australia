@@ -43,8 +43,6 @@ const Enquire = ({ external }) => {
     e.target.reset();
   };
 
-
-
   useEffect(() => {
     fetch(
       `https://raw.githubusercontent.com/Masum-WebD/my-fakedata-json/main/scholarshipsUniversity.json`
@@ -54,10 +52,12 @@ const Enquire = ({ external }) => {
   }, [NumberEnq]);
 
   useEffect(() => {
-    fetch('https://raw.githubusercontent.com/Masum-WebD/my-fakedata-json/main/allCountryNameWithAlphabetical.json')
-    .then(res => res.json())
-    .then(data=>setCountryName(data))
-  },[])
+    fetch(
+      'https://raw.githubusercontent.com/Masum-WebD/my-fakedata-json/main/allCountryNameWithAlphabetical.json'
+    )
+      .then(res => res.json())
+      .then(data => setCountryName(data));
+  }, []);
   // console.log(countryName);
   return (
     <>
@@ -74,9 +74,9 @@ const Enquire = ({ external }) => {
                 <div>
                   <h1 className=" text-xl  text-[#304F40] font-sans gap-1 flex font-bold">
                     Application Assistance for
-                    <span className="font-bold  text-white px-0.5 rounded bg-[#304F40]">  {scholarQuality}
-                  
-                     
+                    <span className="font-bold  text-white px-0.5 rounded bg-[#304F40]">
+                      {' '}
+                      {scholarQuality}
                     </span>
                   </h1>
                   <p className="font-sans mt-3 font-semibold text-[#304F40]">
@@ -162,23 +162,28 @@ const Enquire = ({ external }) => {
                   <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                     <label
                       className="block font-sans  tracking-wide text-gray-700  font-bold mb-2"
-                      for="grid-last-name"
+                      for="grid-nationality"
                     >
                       Nationality<span className="text-red-500">*</span>
                     </label>
                     <div className="relative">
                       <select
-                        className="block appearance-none w-full  bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 font-sans"
+                        className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                         id="grid-state"
                         name="nationality"
+                        required
                       >
                         <option className="  text-black disabled">
                           Please select
                         </option>
-                        {countryName.map((name) => (
-                          <option className='overflow-hidden overflow-y-scroll' key={name.id}>{name?.name}</option>
+                        {countryName.map(name => (
+                          <option
+                            className="overflow-hidden overflow-y-scroll"
+                            key={name.id}
+                          >
+                            {name?.name}
+                          </option>
                         ))}
-                      
                       </select>
                       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                         <svg
@@ -201,9 +206,10 @@ const Enquire = ({ external }) => {
                     </label>
                     <div className="relative">
                       <select
-                        className="block appearance-none w-full  bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 font-sans"
+                        className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                         id="grid-state"
                         name="highest_qualifications"
+                        required
                       >
                         <option className="  text-black disabled">
                           Please select
@@ -242,14 +248,14 @@ const Enquire = ({ external }) => {
                       id="grid-state"
                       name="scholarship_name"
                       type="text"
-                      value= {scholarQuality} 
+                      value={scholarQuality}
                       placeholder=""
                       required
                     />
                     <p className="text-gray-600  italic"></p>
                   </div>
                 </div>
-              
+
                 <div className="flex flex-wrap -mx-3 mb-6">
                   <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                     <label
@@ -259,13 +265,13 @@ const Enquire = ({ external }) => {
                       Level of study<span className="text-red-500">*</span>
                     </label>
                     <input
-                      className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 "
+                      className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                       id="grid-first-name"
+                      required
                       name="level_study"
                       type="text"
                       placeholder=""
                       value={levelStudy}
-                      required
                     />
                   </div>
                   <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -277,8 +283,9 @@ const Enquire = ({ external }) => {
                     </label>
                     <div className="relative">
                       <select
-                        className="block appearance-none w-full  bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 font-sans"
+                        className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                         id="grid-state"
+                        required
                         name="field_study"
                       >
                         <option className="  text-black disabled">
@@ -337,7 +344,7 @@ const Enquire = ({ external }) => {
                     ></label>
                     <div className="relative">
                       <select
-                        className="block appearance-none w-full  bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 font-sans"
+                        className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                         id="grid-state"
                         name="year"
                       >
@@ -367,7 +374,7 @@ const Enquire = ({ external }) => {
                     ></label>
                     <div className="relative">
                       <select
-                        className="block appearance-none w-full  bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 font-sans"
+                        className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                         id="grid-state"
                         name="month"
                       >
