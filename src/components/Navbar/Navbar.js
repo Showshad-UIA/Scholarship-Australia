@@ -45,11 +45,11 @@ function Navbar() {
       <div className="max-w-8xl mx-auto ">
         <div className=" sticky top-0 z-10 lg:mx-28 ">
           <div className="">
-            <div className="flex justify-between w-full items-center h-20 text-white   ">
+            <div className="flex justify-between w-full items-center h-20 lg:text-[16px] text-white md:text-[11px]   ">
               <Link to={'/'}>
                 <img
                   src={image}
-                  className="lg:w-[180px] h-10 cursor-pointer"
+                  className="lg:w-[180px] md:w-[155px] md:h-9 lg:h-10 cursor-pointer"
                   alt=""
                 />
               </Link>

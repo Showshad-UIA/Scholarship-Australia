@@ -1,15 +1,18 @@
 import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
-import React, { useEffect, useState, useMemo,useRef  } from 'react';
+import React, { useEffect, useState, useMemo, useRef } from 'react';
 
 import Select from 'react-select';
 import countryList from 'react-select-country-list';
 import { useParams } from 'react-router-dom';
 import Enquiry_Banner from './Enquiry_Banner';
 
-const Enquire = ({external}) => {
+const Enquire = ({ external }) => {
   const form = useRef();
-  const [countryName,setCountryName]=useState([])
+  const [countryName, setCountryName] = useState([]);
+  const { enquireId } = useParams();
+  const NumberEnq = parseInt(enquireId);
+  const [specificData, setSpecificData] = useState([]);
 
   // const [value, setValue] = useState('');
   // const options = useMemo(() => countryList().getData(), []);
@@ -40,15 +43,8 @@ const Enquire = ({external}) => {
     e.target.reset();
   };
 
-  const { enquireId } = useParams();
-  const NumberEnq = parseInt(enquireId);
-  const [specificData, setSpecificData] = useState([]);
 
-  // const { uniName } = specificData;
-  // console.log(enquireId)
 
-  // const fakedaSpecific =JSON.parse("fakedata.json")
-  // console.log(fakedaSpecific)
   useEffect(() => {
     fetch(
       `https://raw.githubusercontent.com/Masum-WebD/my-fakedata-json/main/scholarshipsUniversity.json`
@@ -57,12 +53,12 @@ const Enquire = ({external}) => {
       .then(data => setSpecificData(data.filter(d => d.id === NumberEnq)));
   }, [NumberEnq]);
 
-  useEffect(()=>{
-    fetch('https://restcountries.com/v3.1/all')
+  useEffect(() => {
+    fetch('https://raw.githubusercontent.com/Masum-WebD/my-fakedata-json/main/allCountryNameWithAlphabetical.json')
     .then(res => res.json())
     .then(data=>setCountryName(data))
   },[])
-  // console.log(countryName.sort());
+  // console.log(countryName);
   return (
     <>
       <Enquiry_Banner></Enquiry_Banner>
@@ -179,23 +175,10 @@ const Enquire = ({external}) => {
                         <option className="  text-black disabled">
                           Please select
                         </option>
-                        {
-                          countryName.map((name)=> <option>
-                            {name?.name?.common}
-                          </option>)
-                        }
-                        {/* <option className="my-1">Australia</option>
-                        <option className="my-1">Usa</option>
-                        <option className="my-1">Japan</option>
-                        <option className="my-1">Canada</option>
-                        <option className="my-1">Sweden</option>
-                        <option className="my-1">Norway</option>
-                        <option className="my-1">New zealand</option>
-                        <option className="my-1">Bangladesh</option>
-                        <option className="my-1">India</option>
-                        <option className="my-1">Malaysia</option>
-                        <option className="my-1">Uk</option>
-                        <option className="my-1">Germany</option> */}
+                        {countryName.map((name) => (
+                          <option className='overflow-hidden overflow-y-scroll' key={name.id}>{name?.name}</option>
+                        ))}
+                      
                       </select>
                       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                         <svg
@@ -266,24 +249,7 @@ const Enquire = ({external}) => {
                     <p className="text-gray-600  italic"></p>
                   </div>
                 </div>
-                {/* <div className="flex flex-wrap -mx-3 mb-6">
-                  <div className="w-full px-3">
-                    <label
-                      className="block font-sans tracking-wide text-gray-700  font-bold mb-2"
-                      for="grid-password"
-                    >
-                      Type of scholarship<span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                      id="grid-password"
-                      type="text"
-                      placeholder=""
-                      required
-                    />
-                    <p className="text-gray-600  italic"></p>
-                  </div>
-                </div> */}
+              
                 <div className="flex flex-wrap -mx-3 mb-6">
                   <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                     <label
@@ -376,7 +342,7 @@ const Enquire = ({external}) => {
                         name="year"
                       >
                         <option className="  text-black disabled">
-                         Select year
+                          Select year
                         </option>
                         <option>2024</option>
                         <option>2023</option>

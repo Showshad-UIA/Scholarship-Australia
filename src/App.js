@@ -22,7 +22,7 @@ import ExternalEnquireFrom from './components/Pages/ExternalEnquireFrom';
 
 function App() {
   const [selectScholarships, setSelectScholarships] = useState(0);
-  console.log(selectScholarships);
+  // console.log(selectScholarships);
   // const [selectedScholarship, setSelectedScholarship] = useState('');
   // const [selectedLevel, setSelectedLevel] = useState('');
   return (
