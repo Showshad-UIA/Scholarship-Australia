@@ -62,7 +62,7 @@ const Enquire = ({external}) => {
     .then(res => res.json())
     .then(data=>setCountryName(data))
   },[])
-  console.log(countryName);
+  // console.log(countryName.sort());
   return (
     <>
       <Enquiry_Banner></Enquiry_Banner>
