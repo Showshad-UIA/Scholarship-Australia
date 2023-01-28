@@ -50,6 +50,7 @@ const ExternalEnquireFrom = () => {
                 ref={form}
                 onSubmit={sendEmail}
                 className="border-t-4 border-[#304F40] w-full lg:w-[65%] shadow-md lg:px-10 py-3 font-sans"
+                method="post"
               >
                 <div>
                   <h1 className=" text-xl w-full text-[#304F40] font-sans lg:gap-1 lg:flex font-bold ">
@@ -83,7 +84,7 @@ const ExternalEnquireFrom = () => {
                       id="grid-first-name"
                       name="first_name"
                       type="text"
-                      placeholder=""
+                      // placeholder=""
                       required
                     />
                   </div>
@@ -99,7 +100,7 @@ const ExternalEnquireFrom = () => {
                       id="grid-last-name"
                       name="last_name"
                       type="text"
-                      placeholder=""
+                      // placeholder=""
                       required
                     />
                   </div>
@@ -117,7 +118,7 @@ const ExternalEnquireFrom = () => {
                       id="grid-first-name"
                       type="text"
                       name="email"
-                      placeholder=""
+                      // placeholder=""
                       required
                     />
                   </div>
@@ -133,7 +134,7 @@ const ExternalEnquireFrom = () => {
                       id="grid-phone-number"
                       type="text"
                       name="mobile_number"
-                      placeholder=""
+                      // placeholder=""
                     />
                   </div>
                 </div>
@@ -181,8 +182,9 @@ const ExternalEnquireFrom = () => {
                     <div className="relative">
                       <select
                         className="block appearance-none w-full  bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 font-sans"
-                        id="grid-state"
+                        // id="grid-state"
                         name="highest_qualifications"
+                        required
                       >
                         <option className="  text-black disabled">
                           Please select
@@ -221,7 +223,7 @@ const ExternalEnquireFrom = () => {
                       id="grid-state"
                       name="scholarship_name"
                       type="text"
-                      placeholder=""
+                      // placeholder=""
                       required
                     />
                     <p className="text-gray-600  italic"></p>
@@ -241,7 +243,7 @@ const ExternalEnquireFrom = () => {
                       id="grid-first-name"
                       name="level_study"
                       type="text"
-                      placeholder=""
+                      // placeholder=""
                       required
                     />
                   </div>
@@ -249,6 +251,7 @@ const ExternalEnquireFrom = () => {
                     <label
                       className="block font-sans  tracking-wide text-gray-700  font-bold mb-2"
                       for="grid-last-name"
+                     
                     >
                       Field of study<span className="text-red-500">*</span>
                     </label>
@@ -257,6 +260,8 @@ const ExternalEnquireFrom = () => {
                         className="block appearance-none w-full  bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 font-sans"
                         id="grid-state"
                         name="field_study"
+                        required 
+                      
                       >
                         <option className="  text-black disabled">
                           Please select
@@ -390,7 +395,7 @@ const ExternalEnquireFrom = () => {
                     name="message"
                     rows="4"
                     class="block p-2.5 lg:h-52 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Write your thoughts here..."
+                    // placeholder="Write your thoughts here..."
                   ></textarea>
                 </div>
                 <button
