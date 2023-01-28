@@ -69,21 +69,20 @@ const Enquire = ({ external }) => {
               <form
                 ref={form}
                 onSubmit={sendEmail}
-                className="border-t-4 border-[#304F40] w-full lg:w-[65%] shadow-md lg:px-10 py-3 font-sans"
+                className=" w-full lg:w-[65%] shadow-md lg:px-10 font-sans"
               >
                 <div>
-                  <h1 className=" text-xl  text-[#304F40] font-sans gap-1 flex font-bold">
+                  <h1 className=" text-xl border-b-4 pb-2 border-[#304F40]  text-[#304F40] font-sans gap-1 flex font-bold ">
                     Application Assistance for
                     <span className="font-bold  text-white px-0.5 rounded bg-[#304F40]">
                       {' '}
                       {scholarQuality}
                     </span>
                   </h1>
-                  <p className="font-sans mt-3 font-semibold text-[#304F40]">
+                  <p className="font-sans mt-2 font-semibold text-[#304F40]">
                     Please answer the following questions and click on "Send
                     email" to submit your enquiry to our consultants. Fields
-                    marked with * are required. You should receive a reply
-                    within 72 hours.
+                    marked with * are required. 
                   </p>
                 </div>
                 <div>
@@ -104,7 +103,7 @@ const Enquire = ({ external }) => {
                       id="grid-first-name"
                       name="first_name"
                       type="text"
-                      placeholder="First Name"
+                      placeholder=""
                       required="required"
                     />
                   </div>
@@ -170,15 +169,11 @@ const Enquire = ({ external }) => {
                         name="nationality"
                         required="required"
                       >
-                        <option
-                          value=""
-                          className="  text-black  "
-                        >
+                        <option value="" className="  text-black  ">
                           Please select
                         </option>
                         {countryName.map(name => (
                           <option
-                            
                             className="overflow-hidden overflow-y-scroll"
                             key={name.id}
                           >
@@ -215,10 +210,10 @@ const Enquire = ({ external }) => {
                         <option value="" className="  text-black  ">
                           Please select
                         </option>
-                        <option >Bachelor</option>
-                        <option >Master (Research)</option>
-                        <option >Master (Coursework)</option>
-                        <option >PhD</option>
+                        <option>Bachelor</option>
+                        <option>Master (Research)</option>
+                        <option>Master (Coursework)</option>
+                        <option>PhD</option>
                       </select>
                       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                         <svg
@@ -291,16 +286,16 @@ const Enquire = ({ external }) => {
                         <option value="" className="  text-black  ">
                           Please select
                         </option>
-                        <option  className="my-1">
+                        <option className="my-1">
                           Agriculture and Veterinary Medicine
                         </option>
-                        <option  className="my-1">
+                        <option className="my-1">
                           Applied and Pure Sciences
                         </option>
-                        <option  className="my-1">
+                        <option className="my-1">
                           Architecture and Construction
                         </option>
-                        <option  className="my-1">
+                        <option className="my-1">
                           Business and Management
                         </option>
                         <option className="my-1">
@@ -309,30 +304,16 @@ const Enquire = ({ external }) => {
                         <option className="my-1">
                           Creative Arts and Design
                         </option>
-                        <option  className="my-1">
-                          Engineering
-                        </option>
-                        <option  className="my-1">
-                          Education and Training
-                        </option>
+                        <option className="my-1">Engineering</option>
+                        <option className="my-1">Education and Training</option>
+                        <option className="my-1">Humanities</option>
+                        <option className="my-1">Health and Medicine</option>
+                        <option className="my-1">Travel and Hospitality</option>
                         <option className="my-1">
-                          Humanities
-                        </option>
-                        <option  className="my-1">
-                          Health and Medicine
-                        </option>
-                        <option className="my-1">
-                          Travel and Hospitality
-                        </option>
-                        <option  className="my-1">
                           Social Studies and Media
                         </option>
-                        <option className="my-1">
-                          Law
-                        </option>
-                        <option  className="my-1">
-                          MBA
-                        </option>
+                        <option className="my-1">Law</option>
+                        <option className="my-1">MBA</option>
                       </select>
                       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                         <svg
@@ -369,10 +350,12 @@ const Enquire = ({ external }) => {
                         >
                           Select year
                         </option>
+                        <option>2026</option>
+                        <option>2025</option>
                         <option>2024</option>
                         <option>2023</option>
-                        <option>2022</option>
-                        <option>2021</option>
+                       
+                    
                       </select>
                       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                         <svg
@@ -443,7 +426,7 @@ const Enquire = ({ external }) => {
                 </div>
                 <button
                   type="submit"
-                  className="px-5 py-3 mt-3 bg-[#304F40] text-white rounded"
+                  className="px-5 py-3 mt-3 mb-2 bg-[#304F40] text-white rounded"
                 >
                   Send Email
                 </button>
