@@ -11,7 +11,7 @@ const SecondNavbar = () => {
         <div className='md:flex hidden '>
             <p className='mx-2  font-bold cursor-pointer'>Login</p>
             <p className='mx-2  font-bold cursor-pointer'>Sign Up</p>
-            <p className='mx-2  font-bold cursor-pointer'>Post your Scholarship Query</p>
+            
            
         </div>
         <div className='md:flex hidden'>
