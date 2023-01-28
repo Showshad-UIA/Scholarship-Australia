@@ -61,8 +61,7 @@ const ExternalEnquireFrom = () => {
                   <p className="font-sans mt-3 font-semibold text-[#304F40]">
                     Please answer the following questions and click on "Send
                     email" to submit your enquiry to our consultants. Fields
-                    marked with * are required. You should receive a reply
-                    within 72 hours.
+                    marked with * are required. 
                   </p>
                 </div>
                 <div>

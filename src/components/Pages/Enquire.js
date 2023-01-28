@@ -14,12 +14,7 @@ const Enquire = ({ external }) => {
   const NumberEnq = parseInt(enquireId);
   const [specificData, setSpecificData] = useState([]);
 
-  // const [value, setValue] = useState('');
-  // const options = useMemo(() => countryList().getData(), []);
-
-  // const changeHandler = value => {
-  //   setValue(value);
-  // };
+  
 
   const sendEmail = e => {
     e.preventDefault();
@@ -69,11 +64,11 @@ const Enquire = ({ external }) => {
               <form
                 ref={form}
                 onSubmit={sendEmail}
-                className=" w-full lg:w-[65%] shadow-md lg:px-10 font-sans"
+                className=" w-full lg:w-[70%] shadow-md lg:px-10 font-sans"
               >
                 <div>
                   <h1 className=" text-xl border-b-4 pb-2 border-[#304F40]  text-[#304F40] font-sans gap-1 flex font-bold ">
-                    Application Assistance for
+                    Application Assistance Enquire for
                     <span className="font-bold  text-white px-0.5 rounded bg-[#304F40]">
                       {' '}
                       {scholarQuality}
@@ -82,11 +77,11 @@ const Enquire = ({ external }) => {
                   <p className="font-sans mt-2 font-semibold text-[#304F40]">
                     Please answer the following questions and click on "Send
                     email" to submit your enquiry to our consultants. Fields
-                    marked with * are required. 
+                    marked with * are required.
                   </p>
                 </div>
                 <div>
-                  <p className="mt-6 mb-3 text-[#304F40] text-md font-bold font-sans">
+                  <p className=" mt-6 mb-2 text-[14px]  font-sans  tracking-wide text-gray-700  font-bold">
                     YOUR DETAILS
                   </p>
                 </div>
@@ -96,10 +91,10 @@ const Enquire = ({ external }) => {
                       className="block font-sans  tracking-wide text-gray-700  font-bold mb-2"
                       for="grid-first-name "
                     >
-                      First Name<span className="text-red-500">*</span>
+                      First name<span className="text-red-500">*</span>
                     </label>
                     <input
-                      className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      className=" border border-gray-300 appearance-none block w-full bg-gray-50 text-gray-700  rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-red-400"
                       id="grid-first-name"
                       name="first_name"
                       type="text"
@@ -112,10 +107,10 @@ const Enquire = ({ external }) => {
                       className="block  tracking-wide text-gray-700  font-bold mb-2"
                       for="grid-last-name"
                     >
-                      Last Name<span className="text-red-500">*</span>
+                      Last name<span className="text-red-500">*</span>
                     </label>
                     <input
-                      className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-red-400"
                       id="grid-last-name"
                       name="last_name"
                       type="text"
@@ -132,7 +127,7 @@ const Enquire = ({ external }) => {
                       Email<span className="text-red-500">*</span>
                     </label>
                     <input
-                      className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-red-400"
                       id="grid-first-name"
                       type="text"
                       name="email"
@@ -147,14 +142,14 @@ const Enquire = ({ external }) => {
                       Mobile number
                     </label>
                     <input
-                      className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-red-400"
                       id="grid-phone-number"
                       type="text"
                       name="mobile_number"
                     />
                   </div>
                 </div>
-                <div className="flex flex-wrap -mx-3 ">
+                <div className="flex flex-wrap -mx-3 mb-6">
                   <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                     <label
                       className="block font-sans  tracking-wide text-gray-700  font-bold mb-2"
@@ -164,7 +159,7 @@ const Enquire = ({ external }) => {
                     </label>
                     <div className="relative">
                       <select
-                        className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                        className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-red-400"
                         id="grid-state"
                         name="nationality"
                         required="required"
@@ -202,7 +197,7 @@ const Enquire = ({ external }) => {
                     </label>
                     <div className="relative">
                       <select
-                        className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                        className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-red-400"
                         id="grid-state"
                         name="highest_qualifications"
                         required="required"
@@ -227,7 +222,7 @@ const Enquire = ({ external }) => {
                     </div>
                   </div>
                 </div>
-                <div className=" font-sans text-[#304F40] font-bold text-md mt-6 mb-3 ">
+                <div className=" mt-6 mb-2  text-[14px]  font-sans  tracking-wide text-gray-700  font-bold  ">
                   YOUR SCHOLARSHIP PREFERENCES
                 </div>
 
@@ -240,7 +235,7 @@ const Enquire = ({ external }) => {
                       Scholarship Name<span className="text-red-500">*</span>
                     </label>
                     <input
-                      className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 "
+                      className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-red-400 "
                       id="grid-state"
                       name="scholarship_name"
                       type="text"
@@ -251,7 +246,7 @@ const Enquire = ({ external }) => {
                   </div>
                 </div>
 
-                <div className="flex flex-wrap -mx-3 mb-6">
+                <div className="flex flex-wrap -mx-3 mb-6 mt-6">
                   <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                     <label
                       className="block font-sans  tracking-wide text-gray-700  font-bold mb-2"
@@ -260,7 +255,7 @@ const Enquire = ({ external }) => {
                       Level of study<span className="text-red-500">*</span>
                     </label>
                     <input
-                      className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-red-400"
                       id="grid-first-name"
                       required="required"
                       name="level_study"
@@ -278,7 +273,7 @@ const Enquire = ({ external }) => {
                     </label>
                     <div className="relative">
                       <select
-                        className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                        className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-red-400"
                         id="grid-state"
                         required
                         name="field_study"
@@ -327,7 +322,7 @@ const Enquire = ({ external }) => {
                     </div>
                   </div>
                 </div>
-                <div className="text-[#304F40] my-3 font-sans text-md ">
+                <div className="  font-sans  tracking-wide text-gray-700  font-bold  ">
                   When do you intend to apply for the scholarship?
                 </div>
 
@@ -339,23 +334,18 @@ const Enquire = ({ external }) => {
                     ></label>
                     <div className="relative">
                       <select
-                        className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                        className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-red-400"
                         id="grid-state"
                         name="year"
                         required
                       >
-                        <option
-                          value="undefined"
-                          className="  text-black disabled selected"
-                        >
+                        <option value="" className="  text-black  ">
                           Select year
                         </option>
                         <option>2026</option>
                         <option>2025</option>
                         <option>2024</option>
                         <option>2023</option>
-                       
-                    
                       </select>
                       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                         <svg
@@ -375,13 +365,14 @@ const Enquire = ({ external }) => {
                     ></label>
                     <div className="relative">
                       <select
-                        className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                        className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-red-400"
                         id="grid-state"
                         name="month"
                         required
-                        placeholder="Please select"
                       >
-                        <option className="  text-black ">Select month</option>
+                        <option value="" className="  text-black  ">
+                          Select month
+                        </option>
                         <option className="my-1">January</option>
                         <option className="my-1">February</option>
                         <option className="my-1">March</option>
@@ -411,22 +402,24 @@ const Enquire = ({ external }) => {
                 <div>
                   <label
                     for="message"
-                    class="block text-[#304F40] mb-2   font-sans font-bold dark:text-white"
+                    class="block font-sans  tracking-wide text-gray-700  font-bold mb-2"
                   >
                     Message to scholarship consultant. Please detail what
                     assistance you are seeking for your scholarship application.
                   </label>
                   <textarea
+                    value=""
+                    required
                     id="message"
                     name="message"
                     rows="4"
-                    class="block p-2.5 lg:h-52 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    class="block p-2.5 lg:h-52 w-full text-sm appearance-none  bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-red-400"
                     placeholder="Write your thoughts here..."
                   ></textarea>
                 </div>
                 <button
                   type="submit"
-                  className="px-5 py-3 mt-3 mb-2 bg-[#304F40] text-white rounded"
+                  className="px-5 py-3 mt-3 mb-4 bg-[#304F40] text-white rounded"
                 >
                   Send Email
                 </button>
