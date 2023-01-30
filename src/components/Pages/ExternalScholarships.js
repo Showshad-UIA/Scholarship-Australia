@@ -6,8 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import ExternalBanner from '../Banner/ExternalBanner';
 import Enquire from './Enquire';
-import ExternalBanner from './ExternalBanner';
 
 const ExternalScholarships = () => {
   const [externalToFrom, setExternalToFrom] = useState();

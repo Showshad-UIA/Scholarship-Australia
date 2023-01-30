@@ -19,12 +19,12 @@ import FindScholarship from './components/Pages/FindScholarship';
 import Enquire from './components/Pages/Enquire';
 import ProjectScholarship from './components/Pages/ProjectScholarship';
 import ExternalEnquireFrom from './components/Pages/ExternalEnquireFrom';
+import SignUp from './components/Navbar/SignUp';
+
 
 function App() {
   const [selectScholarships, setSelectScholarships] = useState(0);
-  // console.log(selectScholarships);
-  // const [selectedScholarship, setSelectedScholarship] = useState('');
-  // const [selectedLevel, setSelectedLevel] = useState('');
+
   return (
     <div className="max-w-[1900px] mx-auto bg:gray-500 ">
       <SecondNavbar></SecondNavbar>
@@ -34,22 +34,16 @@ function App() {
 
       {/* <Home/> */}
       <Routes>
+        <Route path="/signup" element={<SignUp></SignUp>}></Route>
         <Route path="/" element={<Home></Home>}></Route>
-        <Route
-          path="search"
-          element={
-            <SearchBox
-              // setSelectScholarships={setSelectScholarships} setSelectedScholarship={setSelectedScholarship} setSelectedLevel={setSelectedLevel} selectedLevel={selectedLevel} selectedScholarship={selectedScholarship}
-            ></SearchBox>
-          }
-        ></Route>
+        <Route path="search" element={<SearchBox></SearchBox>}></Route>
         <Route
           path="/university"
           element={<UniversityScolarships></UniversityScolarships>}
         ></Route>
-        {/* <Route path="/enquire" element={<Enquire></Enquire>}></Route> */}
+
         <Route path="/enquire/:enquireId" element={<Enquire></Enquire>}></Route>
-        <Route path='/external_enquire' element={<ExternalEnquireFrom/>}/>
+        <Route path="/external_enquire" element={<ExternalEnquireFrom />} />
         <Route
           path="/government"
           element={<GovernmentScholarships></GovernmentScholarships>}
@@ -62,26 +56,15 @@ function App() {
           path="/external"
           element={<ExternalScholarships></ExternalScholarships>}
         ></Route>
-      
-          <Route
-            path="/searchScholarships/:scholarship/:graduation"
-            element={
-              <FindScholarship
-                setSelectScholarships={setSelectScholarships}
-            // selectedLevel={selectedLevel}
-            // selectedScholarship={selectedScholarship}
-              ></FindScholarship>
-            }
-          ></Route>
-          {/* {
-            selectedScholarship === 'External scholarships' &&   <Route
-            path="/external"
-            element={<ExternalScholarships></ExternalScholarships>}
-          ></Route>
-          } */}
-        
-         
-     
+
+        <Route
+          path="/searchScholarships/:scholarship/:graduation"
+          element={
+            <FindScholarship
+              setSelectScholarships={setSelectScholarships}
+            ></FindScholarship>
+          }
+        ></Route>
 
         <Route
           path="/ourServices"

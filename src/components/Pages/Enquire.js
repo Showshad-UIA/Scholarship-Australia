@@ -1,9 +1,8 @@
 import emailjs from '@emailjs/browser';
 import React, { useEffect, useRef, useState } from 'react';
 import { toast } from 'react-toastify';
-
 import { useNavigate, useParams } from 'react-router-dom';
-import Enquiry_Banner from './Enquiry_Banner';
+import Enquiry_Banner from '../Banner/Enquiry_Banner';
 
 const Enquire = ({ external }) => {
   const form = useRef();
@@ -26,7 +25,6 @@ const Enquire = ({ external }) => {
       )
       .then(
         result => {
-
           toast.success('Mail successfully sent');
           setSentEmail(!sentEmail);
         },
@@ -419,7 +417,6 @@ const Enquire = ({ external }) => {
                     id=""
                     rows="4"
                     name="message"
-                    
                     class="block p-2 py-5 text-md h-[200px] w-full  font-sans bg-gray-50 rounded-lg border border-gray-300  focus:border-red-400 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="Please detail what assistance you are seeking for your scholarship application...."
                   ></textarea>

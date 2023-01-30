@@ -1,8 +1,7 @@
 import React from 'react';
-import banner_2 from '../../Image/project_scolarship.jpg';
 
 
-const ProjectScholarshipBanner = () => {
+const UniversityScolarshipBanner = () => {
   return (
     <div>
       <div className="carousel lg:w-full bg-[#304F40] relative lg:h-[320px] md:h-[200px] h-[115px]  opacity-90 ">
@@ -16,4 +15,4 @@ const ProjectScholarshipBanner = () => {
   );
 };
 
-export default ProjectScholarshipBanner;
+export default UniversityScolarshipBanner;

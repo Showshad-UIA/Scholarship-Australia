@@ -1,6 +1,7 @@
 import React from 'react';
-import slider from '../../Image/enquiry-banners.jpg';
-const Enquiry_Banner = () => {
+
+
+const ExternalBanner = () => {
   return (
     <div>
       <div className="carousel lg:w-full bg-[#304F40] relative lg:h-[320px] md:h-[200px] h-[115px]  opacity-90 ">
@@ -14,4 +15,4 @@ const Enquiry_Banner = () => {
   );
 };
 
-export default Enquiry_Banner;
+export default ExternalBanner;

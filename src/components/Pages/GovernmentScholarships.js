@@ -1,5 +1,5 @@
 import React from 'react';
-import GovernmentScolarshipBanner from './GovernmentScolarshipBanner';
+import GovernmentScolarshipBanner from '../Banner/GovernmentScolarshipBanner';
 
 const GovernmentScholarships = () => {
   return (

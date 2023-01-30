@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import UniversityScolarshipBanner from './UniversityScolarshipBanner';
-
-
-
-
+import UniversityScolarshipBanner from '../Banner/UniversityScolarshipBanner';
 
 const UniversityScolarships = () => {
   const navigate = useNavigate();

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ProjectScholarshipBanner from './ProjectScholarshipBanner';
+import ProjectScholarshipBanner from '../Banner/ProjectScholarshipBanner';
 
 const ProjectScholarship = () => {
   const navigate = useNavigate();
@@ -25,7 +25,6 @@ const ProjectScholarship = () => {
               View All Available Project Scholarships
             </span>
           </p>
-          
         </div>
         {projectScolarships.map(d => (
           <div className="   mb-5  ">
