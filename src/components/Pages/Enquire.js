@@ -1,9 +1,9 @@
-import emailjs from "@emailjs/browser";
-import React, { useEffect, useRef, useState } from "react";
-import { toast } from "react-toastify";
+import emailjs from '@emailjs/browser';
+import React, { useEffect, useRef, useState } from 'react';
+import { toast } from 'react-toastify';
 
-import { useNavigate, useParams } from "react-router-dom";
-import Enquiry_Banner from "./Enquiry_Banner";
+import { useNavigate, useParams } from 'react-router-dom';
+import Enquiry_Banner from './Enquiry_Banner';
 
 const Enquire = ({ external }) => {
   const form = useRef();
@@ -14,24 +14,24 @@ const Enquire = ({ external }) => {
   const [specificData, setSpecificData] = useState([]);
   const navigate = useNavigate();
 
-  const sendEmail = (e) => {
+  const sendEmail = e => {
     e.preventDefault();
 
     emailjs
       .sendForm(
-        "service_ncu171w",
-        "template_zq77qvv",
+        'service_ncu171w',
+        'template_zq77qvv',
         form.current,
-        "Ep_VjQV8xTJcGJlYa"
+        'Ep_VjQV8xTJcGJlYa'
       )
       .then(
-        (result) => {
-          console.log(result.text);
-          toast.success("Mail successfully sent");
+        result => {
+
+          toast.success('Mail successfully sent');
           setSentEmail(!sentEmail);
         },
-        (error) => {
-          console.log(error.text);
+        error => {
+          alert(error.message);
         }
       );
     e.target.reset();
@@ -41,22 +41,22 @@ const Enquire = ({ external }) => {
     fetch(
       `https://raw.githubusercontent.com/Masum-WebD/my-fakedata-json/main/scholarshipsUniversity.json`
     )
-      .then((res) => res.json())
-      .then((data) => setSpecificData(data.filter((d) => d.id === NumberEnq)));
+      .then(res => res.json())
+      .then(data => setSpecificData(data.filter(d => d.id === NumberEnq)));
   }, [NumberEnq]);
 
   useEffect(() => {
     fetch(
-      "https://raw.githubusercontent.com/Masum-WebD/my-fakedata-json/main/allCountryNameWithAlphabetical.json"
+      'https://raw.githubusercontent.com/Masum-WebD/my-fakedata-json/main/allCountryNameWithAlphabetical.json'
     )
-      .then((res) => res.json())
-      .then((data) => setCountryName(data));
+      .then(res => res.json())
+      .then(data => setCountryName(data));
   }, []);
   // console.log(countryName);
   return (
     <>
       {/* <div className={sentEmail && 'hidden'}> */}
-      <div className={sentEmail && "hidden"}>
+      <div className={sentEmail && 'hidden'}>
         <Enquiry_Banner></Enquiry_Banner>
       </div>
       {specificData.map(({ uniName, scholarQuality, levelStudy }) => (
@@ -65,8 +65,8 @@ const Enquire = ({ external }) => {
             <div
               className={
                 sentEmail
-                  ? "hidden"
-                  : "w-full  py-4 mt-6 items-center lg:justify-center overflow-hidden bg-white  flex flex-col    pt-6  sm:justify-center sm:pt-0 "
+                  ? 'hidden'
+                  : 'w-full  py-4 mt-6 items-center lg:justify-center overflow-hidden bg-white  flex flex-col    pt-6  sm:justify-center sm:pt-0 '
               }
             >
               <form
@@ -78,7 +78,7 @@ const Enquire = ({ external }) => {
                   <h1 className=" text-xl border-b-4 pb-2 border-[#304F40]  text-[#304F40] font-sans gap-1 flex font-bold ">
                     Application Assistance Enquire for
                     <span className="font-bold  text-white px-0.5 rounded bg-[#304F40]">
-                      {" "}
+                      {' '}
                       {scholarQuality}
                     </span>
                   </h1>
@@ -175,7 +175,7 @@ const Enquire = ({ external }) => {
                         <option value="" className="  text-black  ">
                           Please select
                         </option>
-                        {countryName.map((name) => (
+                        {countryName.map(name => (
                           <option
                             className="overflow-hidden overflow-y-scroll"
                             key={name.id}
@@ -331,7 +331,8 @@ const Enquire = ({ external }) => {
                   </div>
                 </div>
                 <div className="  font-sans  tracking-wide text-gray-700  font-bold  ">
-                  When do you intend to apply for the scholarship?
+                  When do you intend to apply for the scholarship?{' '}
+                  <span className="text-red-500">*</span>
                 </div>
 
                 <div className="flex flex-wrap -mx-3 mb-6">
@@ -407,38 +408,20 @@ const Enquire = ({ external }) => {
                   </div>
                 </div>
 
-                {/* <div>
-                    <label
-                      for="message"
-                      class="block font-sans  tracking-wide text-gray-700  font-bold mb-2"
-                    >
-                      Message to scholarship consultant. Please detail what
-                      assistance you are seeking for your scholarship
-                      application.
-                    </label>
-                    <textarea
-                      value=""
-                      required
-                      id="message"
-                      name="message"
-                      rows="4"
-                      class="block p-2.5 lg:h-52 w-full text-sm appearance-none  bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-red-400"
-                      placeholder="Write your thoughts here..."
-                    ></textarea>
-                  </div> */}
                 <div>
                   <label
                     for="message"
-                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    class="font-sans  tracking-wide text-gray-700  font-bold"
                   >
-                    Message to scholarship consultant. Please detail what
-                    assistance you are seeking for your scholarship application.
+                    Message to Scholarships Australia
                   </label>
                   <textarea
-                    id="message"
+                    id=""
                     rows="4"
-                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Write your thoughts here..."
+                    name="message"
+                    
+                    class="block p-2 py-5 text-md h-[200px] w-full  font-sans bg-gray-50 rounded-lg border border-gray-300  focus:border-red-400 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Please detail what assistance you are seeking for your scholarship application...."
                   ></textarea>
                 </div>
                 <button
@@ -451,20 +434,31 @@ const Enquire = ({ external }) => {
             </div>
 
             {/* this part for successfully sending mail */}
+
             {sentEmail && (
-              <div className="h-[400px] text-center items-center justify-center">
-                <div>
-                  <h1 className=" text-xl border-b-4 pb-2 border-[#304F40]  text-[#304F40] font-sans gap-1 flex font-bold ">
-                    Application Assistance Enquire for
-                    <span className="font-bold  text-white px-0.5 rounded bg-[#304F40]">
-                      {" "}
-                      {scholarQuality}
-                    </span>
+              <div className="h-[400px] mx-auto container items-center justify-center font-sans">
+                <div className="lg:mx-[280px] w-full">
+                  <h1 className=" text-xl   lg:mt-20  mt-5   gap-1 flex font-bold ">
+                    Application Assistance Enquire for {scholarQuality}
                   </h1>
                 </div>
-                <p>Thank you for your application</p>
+                <div className="lg:mx-[280px]  mt-5  border-2 p-3">
+                  <p className="my-5 text-[#304F40] font-sans font-bold ">
+                    Thank you
+                  </p>
+                  <p className="font-sans">
+                    Your enquiry has been sent to scholarship consultant. They
+                    will get back to you as soon as possible{' '}
+                  </p>
 
-                <button onClick={() => navigate("/")}> back to home </button>
+                  <button
+                    onClick={() => navigate('/')}
+                    className="my-3 text-[#304F40] font-sans font-bold"
+                  >
+                    {' '}
+                    Back to home page{' '}
+                  </button>
+                </div>
               </div>
             )}
           </div>

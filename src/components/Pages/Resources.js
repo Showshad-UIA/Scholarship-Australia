@@ -1,7 +1,10 @@
 import React from 'react';
+import ResourcesBanner from './ResourcesBanner';
 
 const Resources = () => {
   return (
+    <>
+      <ResourcesBanner></ResourcesBanner>
     <div className="mx-auto container">
       <h1 className="lg:mx-32 text-center my-10 text-xl font-bold font-sans">
         <marquee behavior="scroll" direction="left" scrollamount="10">
@@ -9,6 +12,7 @@ const Resources = () => {
         </marquee>
       </h1>
     </div>
+    </>
   );
 };
 
