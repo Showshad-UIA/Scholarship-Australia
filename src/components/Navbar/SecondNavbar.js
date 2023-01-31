@@ -11,7 +11,7 @@ const auth = getAuth(app);
 
 const SecondNavbar = () => {
   const [nav, setNav] = useState(false);
-  const [user] = useAuthState(auth);
+  const [user, signOut] = useAuthState(auth);
   
   return (
     <div className=" h-10  bg-[#fff] container mx-auto">

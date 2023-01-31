@@ -1,130 +1,160 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import icon from '../../Image/google_Icon.png';
 import useFirebase from '../../Hooks/useFirebase';
+import { useForm } from 'react-hook-form';
+
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { getAuth } from 'firebase/auth';
+import app from '../../firebase.init';
 
 // import app from './firebase.init';
-
+const auth = getAuth(app);
 const SignUp = () => {
   const { signInWithGoogle } = useFirebase();
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+    reset,
+  } = useForm();
+  const onSubmit = async data => {
+    await createUserWithEmailAndPassword(data.email, data.password);
+    // await updateProfile({ displayName: data.name });
+    reset();
+  };
 
   return (
-    <div className="">
-      <div className="flex flex-col items-center min-h-screen pt-6 sm:justify-center sm:pt-0 bg-gray-50">
-        <div>
-          <a href="/">
-            <h3 className="text-4xl font-bold font-sans text-[#304F40]">
-              SignUp
-            </h3>
-          </a>
-        </div>
+    <div className="flex flex-col items-center sm:justify-center sm:pt-0 bg-gray-50 font-sans ">
+      {/* <PageTitle title="Sign Up" /> */}
+      <div className="flex justify-center items-center  w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-lg sm:rounded-lg mb-10">
+        <div className="card flex-shrink-0 lg:w-96 w-80 mt-24 mb-12">
+          <p className="text-center font-bold mt-3 underline text-2xl underline-offset-4 font-sans">
+            Sign Up
+          </p>
 
-        <div className="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-lg sm:rounded-lg">
-          <form>
-            <div onClick={signInWithGoogle} className="my-6 space-y-2">
+          <div className="card-body ">
+            <div className="form-control">
               <button
-                aria-label="SignUp with Google"
-                type="button"
-                className="flex items-center justify-center  p-2 space-x-4 appearance-none w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-red-400"
+                onClick={() => signInWithGoogle()}
+                className="btn btn-outline text-neutral hover:text-neutral"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 32 32"
-                  className="w-5 h-5 fill-current text-red-400"
-                >
-                  <path d="M16.318 13.714v5.484h9.078c-0.37 2.354-2.745 6.901-9.078 6.901-5.458 0-9.917-4.521-9.917-10.099s4.458-10.099 9.917-10.099c3.109 0 5.193 1.318 6.38 2.464l4.339-4.182c-2.786-2.599-6.396-4.182-10.719-4.182-8.844 0-16 7.151-16 16s7.156 16 16 16c9.234 0 15.365-6.49 15.365-15.635 0-1.052-0.115-1.854-0.255-2.651z"></path>
-                </svg>
-                <p className="font-sans">SignUp with Google</p>
+                <img src={icon} className="w-5 mr-2 font-sans" alt="" />{' '}
+                Continue with google
               </button>
             </div>
-            <div className="flex items-center w-full my-4">
-              <hr className="w-full" />
-              <p className="px-3 font-sans">OR</p>
-              <hr className="w-full" />
-            </div>
-            <div>
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium font-sans text-gray-700 undefined"
-              >
-                Name
-              </label>
-              <div className="flex flex-col items-start">
+
+            <div className="divider font-sans">OR</div>
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text font-sans">Name</span>
+                </label>
                 <input
                   type="text"
-                  name="name"
-                  required
-                  className="  appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-red-400"
+                  placeholder="your name"
+                  className="input input-bordered text-black"
+                  {...register('name', {
+                    required: {
+                      value: true,
+                      message: 'Name is required',
+                    },
+                  })}
                 />
+                <label className="label">
+                  {errors.name?.type === 'required' && (
+                    <span className="label-text-alt text-red-500">
+                      {errors.name.message}
+                    </span>
+                  )}
+                </label>
               </div>
-            </div>
-            <div className="mt-4">
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium font-sans text-gray-700 undefined"
-              >
-                Email
-              </label>
-              <div className="flex flex-col items-start">
+
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text font-sans">Email</span>
+                </label>
                 <input
                   type="email"
-                  name="email"
-                  className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-red-400"
+                  placeholder="email"
+                  className="input input-bordered text-black "
+                  {...register('email', {
+                    required: {
+                      value: true,
+                      message: 'Email is required',
+                    },
+                    pattern: {
+                      value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                      message: 'Provide a valid email',
+                    },
+                  })}
                 />
+                <label className="label">
+                  {errors.email?.type === 'required' && (
+                    <span className="label-text-alt text-red-500">
+                      {errors.email.message}
+                    </span>
+                  )}
+                  {errors.email?.type === 'pattern' && (
+                    <span className="label-text-alt text-red-500">
+                      {errors.email.message}
+                    </span>
+                  )}
+                </label>
               </div>
-            </div>
-            <div className="mt-4">
-              <label
-                htmlFor="password"
-                className="block text-sm font-medium font-sans text-gray-700 undefined"
-              >
-                Password
-              </label>
-              <div className="flex flex-col items-start">
+
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text font-sans">Password</span>
+                </label>
                 <input
                   type="password"
-                  name="password"
-                  className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-red-400"
+                  placeholder="password"
+                  className="input input-bordered font-sans text-black"
+                  {...register('password', {
+                    required: {
+                      value: true,
+                      message: 'Password is required',
+                    },
+                    minLength: {
+                      value: 6,
+                      message: 'Minimum 6 characters required',
+                    },
+                  })}
                 />
+                <label className="label">
+                  {errors.password?.type === 'required' && (
+                    <span className="label-text-alt text-red-500">
+                      {errors.password.message}
+                    </span>
+                  )}
+                  {errors.password?.type === 'minLength' && (
+                    <span className="label-text-alt text-red-500">
+                      {errors.password.message}
+                    </span>
+                  )}
+                </label>
               </div>
-            </div>
-            <div className="mt-4">
-              <label
-                htmlFor="password_confirmation"
-                className="block text-sm font-medium font-sans text-gray-700 undefined"
+
+              <input
+                type="submit"
+                value="Sign Up"
+                className="bg-[#304F40] font-sans rounded-md text-white p-3 w-full mt-3"
+              />
+              <Link
+                to="/login"
+                className="text-center text-sm label-text-alt link link-hover mt-2 font-sans"
               >
-                Confirm Password
-              </label>
-              <div className="flex flex-col items-start">
-                <input
-                  type="password"
-                  name="password_confirmation"
-                  className="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-red-400"
-                />
-              </div>
-            </div>
-            <a
-              href="#"
-              className="text-xs font-sans text-[#304F40] hover:underline"
-            >
-              Forget Password?
-            </a>
-            <div className="flex items-center mt-4">
-              <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-[#304F40] font-sans rounded-md hover:bg-[#1E282D]  focus:outline-none focus:bg-purple-600">
-                Register
-              </button>
-            </div>
-          </form>
-          <div className="mt-4 text-[#304F40] font-sans">
-            Already have an account?{' '}
-            <span>
-              <Link className="text-[#304F40] font-sans hover:underline" to="/login">
-                Log in
+                Already have an account? Login
               </Link>
-            </span>
+            </form>
           </div>
         </div>
       </div>
+               
     </div>
   );
 };
