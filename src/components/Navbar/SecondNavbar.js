@@ -23,7 +23,7 @@ const SecondNavbar = () => {
               Sign out
             </button>
           ) : (
-            <Link className="mx-2  font-bold cursor-pointer">Login</Link>
+            <Link className="mx-2  font-bold cursor-pointer" to="/login">Login</Link>
           )}
           <Link to="/signup" className="mx-2  font-bold cursor-pointer">
             SignUp

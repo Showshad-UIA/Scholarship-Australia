@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import useFirebase from '../../Hooks/useFirebase';
 
@@ -117,9 +118,9 @@ const SignUp = () => {
           <div className="mt-4 text-[#304F40] font-sans">
             Already have an account?{' '}
             <span>
-              <a className="text-[#304F40] font-sans hover:underline" href="#">
+              <Link className="text-[#304F40] font-sans hover:underline" to="/login">
                 Log in
-              </a>
+              </Link>
             </span>
           </div>
         </div>
