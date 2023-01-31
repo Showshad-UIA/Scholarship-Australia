@@ -435,7 +435,7 @@ const Enquire = ({ external }) => {
             {sentEmail && (
               <div className="h-[400px] mx-auto container items-center justify-center font-sans">
                 <div className="lg:mx-[280px] w-full">
-                  <h1 className=" text-xl   lg:mt-20  mt-5   gap-1 flex font-bold ">
+                  <h1 className=" text-xl   lg:mt-20  mt-5   gap-1 flex font-bold   text-white px-0.5 rounded bg-[#304F40]">
                     Application Assistance Enquire for {scholarQuality}
                   </h1>
                 </div>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import { Route, Routes, useParams } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer/Footer';
@@ -20,7 +21,7 @@ import Enquire from './components/Pages/Enquire';
 import ProjectScholarship from './components/Pages/ProjectScholarship';
 import ExternalEnquireFrom from './components/Pages/ExternalEnquireFrom';
 import SignUp from './components/Navbar/SignUp';
-
+import Login from './components/Navbar/Login';
 
 function App() {
   const [selectScholarships, setSelectScholarships] = useState(0);
@@ -35,6 +36,7 @@ function App() {
       {/* <Home/> */}
       <Routes>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
+        <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="search" element={<SearchBox></SearchBox>}></Route>
         <Route
