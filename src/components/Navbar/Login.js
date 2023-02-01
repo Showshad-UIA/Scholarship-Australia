@@ -4,7 +4,8 @@ import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-fireba
 import { getAuth } from 'firebase/auth';
 import app from '../../firebase.init';
 import icon from '../../Image/google_Icon.png';
-const auth = getAuth(app);
+import auth from '../../firebase.init';
+
 
 const Login = () => {
   const [signInWithGoogle] = useSignInWithGoogle(auth);

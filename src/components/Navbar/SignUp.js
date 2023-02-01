@@ -11,9 +11,9 @@ import {
 } from 'react-firebase-hooks/auth';
 import { getAuth } from 'firebase/auth';
 import app from '../../firebase.init';
+import auth from '../../firebase.init';
 
 // import app from './firebase.init';
-const auth = getAuth(app);
 
 const SignUp = () => {
   // const { signInWithGoogle } = useFirebase();
@@ -35,9 +35,8 @@ const SignUp = () => {
   };
 
   if (gUser || user) {
-    navigate('/');
+    navigate('/jobChoices');
   }
-
   return (
     <div className="flex flex-col items-center sm:justify-center sm:pt-0 bg-gray-50 font-sans ">
       {/* <PageTitle title="Sign Up" /> */}

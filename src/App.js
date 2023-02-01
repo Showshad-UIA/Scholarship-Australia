@@ -22,6 +22,7 @@ import ProjectScholarship from './components/Pages/ProjectScholarship';
 import ExternalEnquireFrom from './components/Pages/ExternalEnquireFrom';
 import SignUp from './components/Navbar/SignUp';
 import Login from './components/Navbar/Login';
+import JobChoice from './components/Navbar/JobChoice';
 
 
 function App() {
@@ -38,7 +39,7 @@ function App() {
       <Routes>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
-        {/* <Route path="/jobChoices" element={<JobChoice></JobChoice>}></Route> */}
+        <Route path="/jobChoices" element={<JobChoice></JobChoice>}></Route>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="search" element={<SearchBox></SearchBox>}></Route>
         <Route

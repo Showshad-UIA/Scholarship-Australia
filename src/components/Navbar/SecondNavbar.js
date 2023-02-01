@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 import app from '../../firebase.init';
 import useFirebase from '../../Hooks/useFirebase';
 
-const auth = getAuth(app);
 
 const SecondNavbar = () => {
   const [nav, setNav] = useState(false);
