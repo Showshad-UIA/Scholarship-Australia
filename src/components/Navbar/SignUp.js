@@ -40,8 +40,8 @@ const SignUp = () => {
   return (
     <div className="flex flex-col items-center sm:justify-center sm:pt-0 bg-gray-50 font-sans ">
       {/* <PageTitle title="Sign Up" /> */}
-      <div className="flex justify-center items-center  w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-lg sm:rounded-lg mb-10">
-        <div className="card flex-shrink-0 lg:w-96 w-80 mt-24 mb-12">
+      <div className="flex justify-center items-center lg:mt-20 w-full px-6 py-4  overflow-hidden bg-white shadow-md sm:max-w-lg sm:rounded-lg mb-5">
+        <div className="card flex-shrink-0 lg:w-96 w-80  mb-5">
           <p className="text-center font-bold mt-3 underline text-2xl underline-offset-4 font-sans">
             Sign Up
           </p>
@@ -65,7 +65,7 @@ const SignUp = () => {
                 </label>
                 <input
                   type="text"
-                  placeholder="your name"
+                  placeholder="Your name"
                   className="input input-bordered text-black"
                   {...register('name', {
                     required: {
@@ -89,7 +89,7 @@ const SignUp = () => {
                 </label>
                 <input
                   type="email"
-                  placeholder="email"
+                  placeholder="Your email"
                   className="input input-bordered text-black "
                   {...register('email', {
                     required: {
@@ -154,12 +154,16 @@ const SignUp = () => {
                 value="Sign Up"
                 className="bg-[#304F40] font-sans rounded-md text-white p-3 w-full mt-3"
               />
-              <Link
-                to="/login"
-                className="text-center text-sm label-text-alt link link-hover mt-2 font-sans"
-              >
-                Already have an account? Login
-              </Link>
+
+              <p className=" text-sm label-text-alt  mb-3 font-sans">
+                Already have an account?{' '}
+                <Link
+                  to="/login"
+                  className="hover:underline font-sans text-[#304F40]"
+                >
+                  Log In
+                </Link>
+              </p>
             </form>
           </div>
         </div>
