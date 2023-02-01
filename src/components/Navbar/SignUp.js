@@ -1,20 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import icon from '../../Image/google_Icon.png';
 import useFirebase from '../../Hooks/useFirebase';
 import { useForm } from 'react-hook-form';
 
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import {
+  useCreateUserWithEmailAndPassword,
+  useSignInWithGoogle,
+} from 'react-firebase-hooks/auth';
 import { getAuth } from 'firebase/auth';
 import app from '../../firebase.init';
 
 // import app from './firebase.init';
 const auth = getAuth(app);
+
 const SignUp = () => {
-  const { signInWithGoogle } = useFirebase();
+  // const { signInWithGoogle } = useFirebase();
+  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+  const navigate = useNavigate();
+
   const {
     register,
     formState: { errors },
@@ -26,6 +33,13 @@ const SignUp = () => {
     // await updateProfile({ displayName: data.name });
     reset();
   };
+  if (gUser || user) {
+    navigate('/resources');
+  }
+
+  //   useEffect(() => {
+
+  //  },[user,gUser])
 
   return (
     <div className="flex flex-col items-center sm:justify-center sm:pt-0 bg-gray-50 font-sans ">
