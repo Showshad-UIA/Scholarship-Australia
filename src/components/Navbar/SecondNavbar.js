@@ -11,19 +11,25 @@ const auth = getAuth(app);
 
 const SecondNavbar = () => {
   const [nav, setNav] = useState(false);
-  const [user, signOut] = useAuthState(auth);
-  
+  // const [user, signOut] = useAuthState(auth);
+  const { user, handleSignOut } = useFirebase();
+
   return (
     <div className=" h-10  bg-[#fff] container mx-auto">
       <div className="flex justify-between items-center    py-2 lg:mx-32">
         <div className="md:flex hidden ">
           <span> {user?.displayName && user.displayName}</span>
           {user?.uid ? (
-            <button className="shadow px-1 font-bold" onClick={()=>signOut()}>
+            <button
+              className="shadow px-1 font-bold"
+              onClick={() => handleSignOut()}
+            >
               Sign out
             </button>
           ) : (
-            <Link className="mx-2  font-bold cursor-pointer" to="/login">Login</Link>
+            <Link className="mx-2  font-bold cursor-pointer" to="/login">
+              Login
+            </Link>
           )}
           <Link to="/signup" className="mx-2  font-bold cursor-pointer">
             SignUp

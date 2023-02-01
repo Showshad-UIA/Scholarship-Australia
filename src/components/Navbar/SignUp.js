@@ -40,7 +40,7 @@ const SignUp = () => {
             <div className="form-control">
               <button
                 onClick={() => signInWithGoogle()}
-                className="btn btn-outline text-neutral hover:text-neutral"
+                className="btn btn-outline font-sans normal-case"
               >
                 <img src={icon} className="w-5 mr-2 font-sans" alt="" />{' '}
                 Continue with google
