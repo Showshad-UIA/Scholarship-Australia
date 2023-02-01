@@ -11,9 +11,10 @@ import {
 } from 'react-firebase-hooks/auth';
 import { getAuth } from 'firebase/auth';
 import app from '../../firebase.init';
+import auth from '../../firebase.init';
 
 // import app from './firebase.init';
-const auth = getAuth(app);
+
 
 const SignUp = () => {
   // const { signInWithGoogle } = useFirebase();
