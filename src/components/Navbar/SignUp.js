@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import icon from '../../Image/google_Icon.png';
@@ -33,13 +33,10 @@ const SignUp = () => {
     // await updateProfile({ displayName: data.name });
     reset();
   };
+
   if (gUser || user) {
-    navigate('/resources');
+    navigate('/');
   }
-
-  //   useEffect(() => {
-
-  //  },[user,gUser])
 
   return (
     <div className="flex flex-col items-center sm:justify-center sm:pt-0 bg-gray-50 font-sans ">
