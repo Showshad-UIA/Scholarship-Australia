@@ -1,24 +1,32 @@
 import React from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const JobChoice = () => {
   const [dataValue, setDataValue] = useState('');
+  const navigate = useNavigate();
   console.log(dataValue);
   const chooseOptions = [
     {
       id: 1,
       img: 'https://i.postimg.cc/yxKDL9QJ/consultant.png',
       option: 'I’m a Consultant to help the students',
-      value: 'Consultant',
+      value: 'Join as consultant',
     },
     {
       id: 2,
       img: 'https://i.postimg.cc/qvPBR1Mn/student.jpg',
       option: ' I’m a Student, I need help for application',
-      value: 'Student',
+      value: 'Apply as Student',
     },
   ];
+  const handleService = () => {
+    if (dataValue === 'Join as consultant') {
+      navigate('/ourServices');
+    } else if (dataValue === 'Apply as Student') {
+      navigate('/');
+    }
+  };
   return (
     <div className="container mx-auto">
       <div className="shadow-md rounded-md border-2 lg:mx-60 my-20">
@@ -31,7 +39,7 @@ const JobChoice = () => {
             {chooseOptions.map(({ img, option, value }) => (
               <div
                 onClick={() => setDataValue(value)}
-                className="shadow-md p-5 border-2  hover:border-[#304F40] active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 
+                className="shadow-md p-5 border-2  hover:border-[#304F40] focus:outline-none focus:ring focus:ring-violet-300 
       "
               >
                 <img
@@ -50,9 +58,9 @@ const JobChoice = () => {
               </div>
             ))}
           </div>
-          <div className="flex justify-center ">
+          <div className="flex justify-center " onClick={handleService}>
             <button className="bg-[#304F40] w-md font-sans rounded-md text-white p-3  mt-3 px-10   mb-3">
-              Join as {dataValue}
+              {dataValue ? { dataValue } : <p> Create Account</p>}
             </button>
           </div>
           <p>
