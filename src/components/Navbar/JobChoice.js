@@ -38,7 +38,7 @@ const JobChoice = () => {
             src={img}
             className="w-24 h-20 flex justify-center text-white"
           ></img>
-          <input type="radio" name="topping" value="Regular" id="regular"  />
+          <input type="radio" name="topping" value="Regular" id="regular" />
           <label htmlFor="regular" className="px-2 font-sans">
            {option}
           </label>
