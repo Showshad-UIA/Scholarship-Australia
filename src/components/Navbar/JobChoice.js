@@ -24,7 +24,7 @@ const JobChoice = () => {
     if (dataValue === 'Join as consultant') {
       navigate('/ourServices');
     } else if (dataValue === 'Apply as Student') {
-      navigate('/');
+      navigate('');
     }
   };
   return (
@@ -47,8 +47,8 @@ const JobChoice = () => {
                   className="w-20 h-20 flex justify-center font-sans mb-4 text-white"
                 ></img>
                 <input
-                  type="radio"
-                  name="topping"
+                  type="radio"       
+                  name="topping"        
                   value="Regular"
                   id="regular"
                 />
@@ -59,9 +59,18 @@ const JobChoice = () => {
             ))}
           </div>
           <div className="flex justify-center " onClick={handleService}>
-            <button className="bg-[#304F40] w-md font-sans rounded-md text-white p-3  mt-3 px-10   mb-3">
-              {dataValue ? { dataValue } : <p> Create Account</p>}
-            </button>
+            {dataValue ? (
+              <button className="bg-[#304F40] w-md font-sans rounded-md text-white p-3  mt-3 px-10   mb-3">
+                {dataValue}
+              </button>
+            ) : (
+              <button
+                disabled
+                className="bg-[#304F40] cursor-not-allowed opacity-60 w-md font-sans rounded-md text-white p-3  mt-3 px-10   mb-3"
+              >
+                Create Account
+              </button>
+            )}
           </div>
           <p>
             <Link to="/signin">
