@@ -22,9 +22,9 @@ const JobChoice = () => {
   ];
   const handleService = () => {
     if (dataValue === 'Join as consultant') {
-      navigate('/ourServices');
+      navigate('/consultant');
     } else if (dataValue === 'Apply as Student') {
-      navigate('');
+      navigate('/');
     }
   };
   return (
@@ -47,8 +47,8 @@ const JobChoice = () => {
                   className="w-20 h-20 flex justify-center font-sans mb-4 text-white"
                 ></img>
                 <input
-                  type="radio"       
-                  name="topping"        
+                  type="radio"
+                  name="topping"
                   value="Regular"
                   id="regular"
                 />
