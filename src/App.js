@@ -30,7 +30,7 @@ function App() {
   const [selectScholarships, setSelectScholarships] = useState(0);
 
   return (
-    <div className="max-w-[1900px] mx-auto bg:gray-500 ">
+    <div className="max-w-[1900px] mx-auto bg:gray-500 relative ">
       <SecondNavbar></SecondNavbar>
       <Navbar></Navbar>
       {/* <Banner/>

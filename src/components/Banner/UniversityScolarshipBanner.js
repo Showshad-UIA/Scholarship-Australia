@@ -3,7 +3,7 @@ import React from 'react';
 
 const UniversityScolarshipBanner = () => {
   return (
-    <div>
+    <div className=''>
       <div className="carousel lg:w-full bg-[#304F40] relative lg:h-[320px] md:h-[200px] h-[115px]  opacity-90 ">
         <div
           id="item2"

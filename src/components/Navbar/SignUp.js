@@ -22,6 +22,7 @@ const SignUp = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const navigate = useNavigate();
+  console.log(gError,error)
 
   const {
     register,
@@ -33,11 +34,13 @@ const SignUp = () => {
     await createUserWithEmailAndPassword(data.email, data.password);
     // await updateProfile({ displayName: data.name });
     reset();
+   
   };
-
   if (gUser || user) {
     navigate('/jobChoices');
   }
+
+
   return (
     <div className="flex flex-col items-center sm:justify-center sm:pt-0 bg-gray-50 font-sans ">
       <div className="flex justify-center items-center lg:mt-20 w-full px-6 py-4  overflow-hidden bg-white shadow-md sm:max-w-lg sm:rounded-lg mb-5">
@@ -139,8 +142,8 @@ const SignUp = () => {
                       message: 'Password is required',
                     },
                     minLength: {
-                      value: 6,
-                      message: 'Minimum 6 characters required',
+                      value: 9,
+                      message: 'Minimum 9 characters required',
                     },
                   })}
                 />
