@@ -16,27 +16,30 @@ const SecondNavbar = () => {
   return (
     <div className=" h-10  bg-[#fff] container mx-auto">
       <div className="flex justify-between items-center    py-2 lg:mx-32">
+        <div className="md:flex hidden">
+          <p className="mx-2   cursor-pointer">Hire a Consultant</p>
+          <p className="mx-2   cursor-pointer">Become a Consultant </p>
+        </div>
         <div className="md:flex hidden ">
           <span> {user?.displayName && user.displayName}</span>
           {user?.uid ? (
             <button
-              className="shadow px-1 font-bold"
+              className="shadow px-1 "
               onClick={() => handleSignOut()}
             >
               Sign out
             </button>
           ) : (
-            <Link className="mx-2  font-bold cursor-pointer" to="/login">
-              Login
+            <Link className="mx-5   cursor-pointer" to="/login">
+              Log In
             </Link>
           )}
-          <Link to="/signup" className="mx-2  font-bold cursor-pointer">
-            SignUp
+          <Link to="/signup" className="mx-5   cursor-pointer">
+            Sign Up
           </Link>
-        </div>
-        <div className="md:flex hidden">
-          <p className="mx-2  font-bold cursor-pointer">Hire a Consultant</p>
-          <p className="mx-2  font-bold cursor-pointer">Become a consultant </p>
+          <button className="mx-2 px-1 rounded bg-[#304F40] text-white cursor-pointer">
+            Post a Project{' '}
+          </button>
         </div>
       </div>
       <div

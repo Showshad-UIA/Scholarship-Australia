@@ -2,12 +2,12 @@ import React from 'react';
 
 const Consultant = () => {
   return (
-    <div className="mx-auto container">
-      <div className="mx-60 ">
-        <p className="text-center font-sans font-bold text-2xl my-3">
-          Details from consultant{' '}
+    <div className="mx-auto container my-10 ">
+      <div className="mx-60 shadow-lg border-2 px-6">
+        <p className=" font-sans font-bold text-2xl my-3 text-[#304F40]">
+          Consultant Details{' '}
         </p>
-        <p className="font-bold font-sans text-xl">
+        <p className="font-bold font-sans text-xl mt-10">
           Tell us about your scholarship application assistance experience.
         </p>
         <p className="font-sans mt-3">
@@ -17,13 +17,7 @@ const Consultant = () => {
           qualification and experience with Australian scholarships. (word limit
           200 words)
         </p>
-        <div>
-          <label
-            for="message"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-          >
-            Your message
-          </label>
+        <div className="mt-5">
           <textarea
             id="message"
             rows="10"

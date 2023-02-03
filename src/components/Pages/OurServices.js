@@ -1,5 +1,4 @@
 import React from 'react';
-import Consultant from '../Navbar/Consultant';
 import Servicebanner from './Servicebanner';
 
 const OurServices = () => {
@@ -13,7 +12,6 @@ const OurServices = () => {
           </marquee>
         </h1>
       </div>
-      <Consultant></Consultant>
     </>
   );
 };

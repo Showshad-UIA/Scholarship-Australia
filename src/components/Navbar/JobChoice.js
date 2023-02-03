@@ -22,7 +22,7 @@ const JobChoice = () => {
   ];
   const handleService = () => {
     if (dataValue === 'Join as consultant') {
-      navigate('/ourServices');
+      navigate('/consultant');
     } else if (dataValue === 'Apply as Student') {
       navigate('/');
     }
@@ -60,9 +60,18 @@ const JobChoice = () => {
             ))}
           </div>
           <div className="flex justify-center " onClick={handleService}>
-            <button className="bg-[#304F40] w-md font-sans rounded-md text-white p-3  mt-3 px-10   mb-3">
-              {dataValue ? dataValue  : <p> Create Account</p>}
-            </button>
+            {dataValue ? (
+              <button className="bg-[#304F40] w-md font-sans rounded-md text-white p-3  mt-3 px-10   mb-3">
+                {dataValue}
+              </button>
+            ) : (
+              <button
+                disabled
+                className="bg-[#304F40] cursor-not-allowed opacity-60 w-md font-sans rounded-md text-white p-3  mt-3 px-10   mb-3"
+              >
+                Create Account
+              </button>
+            )}
           </div>
           <p>
             <Link to="/signin">
