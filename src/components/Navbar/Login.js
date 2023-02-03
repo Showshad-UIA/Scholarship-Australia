@@ -101,7 +101,7 @@ const Login = () => {
                 Remember me
               </label>
             </div>
-            <div className='font-sans'>Forgot password?</div>
+            <div className="font-sans">Forgot password?</div>
           </div>
           <button
             className=" bg-[#1E282D] font-sans rounded-md text-white p-3 w-full mt-10 mb-3"
