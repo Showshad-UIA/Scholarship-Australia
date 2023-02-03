@@ -20,8 +20,9 @@ const SecondNavbar = () => {
           <p className="mx-2   cursor-pointer">Hire a Consultant</p>
           <p className="mx-2   cursor-pointer">Become a Consultant </p>
         </div>
+
         <div className="md:flex hidden ">
-          <span> {user?.displayName && user.displayName}</span>
+          <span> {user?.displayName }</span>
           {user?.uid ? (
             <button
               className="shadow px-1 "
