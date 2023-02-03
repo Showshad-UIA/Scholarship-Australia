@@ -1,65 +1,81 @@
 import React from 'react';
 import { useState } from 'react';
-import consultant from "../../Image/consultant.png"
-import student from "../../Image/student.jpg"
+import { Link, useNavigate } from 'react-router-dom';
 
 const JobChoice = () => {
-  const [dataValue,setDataValue] =useState('')
-  console.log(dataValue)
-  const chooseOptions=[
+  const [dataValue, setDataValue] = useState('');
+  const navigate = useNavigate();
+  console.log(dataValue);
+  const chooseOptions = [
     {
-      id:1,
-      img:"https://i.postimg.cc/jSz6C7qg/consultant.jpg",
-      option:"I’m a Consultant to help the students",
-      value:"Consultant"
+      id: 1,
+      img: 'https://i.postimg.cc/yxKDL9QJ/consultant.png',
+      option: 'I’m a Consultant to help the students',
+      value: 'Join as consultant',
     },
     {
-      id:2,
-      img:"https://i.postimg.cc/jSz6C7qg/consultant.jpg",
-      option:" I’m a Student, I need help for application",
-      value:"Student"
+      id: 2,
+      img: 'https://i.postimg.cc/qvPBR1Mn/student.jpg',
+      option: ' I’m a Student, I need help for application',
+      value: 'Apply as Student',
+    },
+  ];
+  const handleService = () => {
+    if (dataValue === 'Join as consultant') {
+      navigate('/ourServices');
+    } else if (dataValue === 'Apply as Student') {
+      navigate('/');
     }
-  ]
+  };
   return (
-    <div className="shadow-md rounded border-2  my-20">
-      <h1 className="mt-3  mb-10 font-sans text-2xl ">
-        Join as a consultant or student
-      </h1>
+    <div className="container mx-auto">
+      <div className="shadow-md rounded-md border-2 lg:mx-60 my-20">
+        <div className="mt-10">
+          <h1 className="mt-3  mb-10 font-sans text-center  font-bold text-2xl ">
+            Join as a consultant or student
+          </h1>
 
-    
-      <div className="flex justify-around mb-5 pb-5 ">
-      {
-        chooseOptions.map(({img,option,value})=>
-        <div onClick={() =>setDataValue(value)}
-          className="shadow-md p-5 border-focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
+          <div className="flex flex-wrap  justify-around mb-5 pb-5 ">
+            {chooseOptions.map(({ img, option, value }) => (
+              <div
+                onClick={() => setDataValue(value)}
+                className="shadow-md p-5 border-2  hover:border-[#304F40] focus:outline-none focus:ring focus:ring-violet-300 
       "
-        >
-          <img
-            src={img}
-            className="w-24 h-20 flex justify-center text-white"
-          ></img>
-          <input type="radio" name="topping" value="Regular" id="regular" />
-          <label htmlFor="regular" className="px-2 font-sans">
-           {option}
-          </label>
-        </div>)
-      }
-        
-
-        {/* <div className="shadow-md p-5">
-          <img
-            src={student}
-            className="w-20 h-20 flex justify-center bg-[#304F40]"
-          ></img>
-          <input type="radio" name="topping" value="Medium" id="medium" />
-          <label htmlFor="medium" className="px-2 font-sans">
-            I’m a Student, I need help for application
-          </label>
-        </div> */}
+              >
+                <img
+                  src={img}
+                  className="w-20 h-20 flex justify-center font-sans mb-4 text-white"
+                ></img>
+                <input
+                  type="radio"
+                  name="topping"
+                  value="Regular"
+                  id="regular"
+                />
+                
+                <label htmlFor="regular" className="px-2 font-sans">
+                  <span className="">{option}</span>
+                </label>
+              </div>
+            ))}
+          </div>
+          <div className="flex justify-center " onClick={handleService}>
+            <button className="bg-[#304F40] w-md font-sans rounded-md text-white p-3  mt-3 px-10   mb-3">
+              {dataValue ? dataValue  : <p> Create Account</p>}
+            </button>
+          </div>
+          <p>
+            <Link to="/signin">
+              <p className=" text-sm label-text-alt  text-center mb-3 font-sans">
+                Don't have an account?{' '}
+                <span className="hover:underline text-[#304F40] font-sans">
+                  Sign In
+                </span>
+              </p>
+            </Link>
+          </p>
+        </div>
       </div>
-      <button className=" bg-[#304F40] font-sans rounded-md text-white p-3 mb-3">
-        Join as {dataValue}
-      </button>
     </div>
   );
 };
