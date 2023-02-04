@@ -8,10 +8,13 @@ import userProfile from '../../Image/User.jpg';
 
 const SecondNavbar = () => {
   const [nav, setNav] = useState(false);
-  // const [user] = useAuthState(auth);
   const [profileUser, setProfileUser] = useState(false);
   const [user, signOut] = useAuthState(auth);
-  // const { user, handleSignOut } = useFirebase();
+
+  // const handleOpen =()=>{
+  //   signOut(auth)
+  // }
+  
   console.log(user);
 
   return (
@@ -23,7 +26,7 @@ const SecondNavbar = () => {
             <p className="mx-2   cursor-pointer">Become a Consultant </p>
           </div>
 
-          <div className="md:flex hidden ">
+          <div className={user?.uid ? "flex flex-row-reverse items-center justify-center ":"md:flex hidden items-center justify-center "}>
             {user?.uid ? (
               <div x-data="{isOpen:true}" class="relative inline-block">
                 <button
@@ -31,7 +34,7 @@ const SecondNavbar = () => {
                   // OnClick="isOpen=!isOpen"
                   onClick={() => setProfileUser(!profileUser)}
                 >
-                  <div className="items-center">
+                  <div className="items-center justify-center">
                     <div class="avatar">
                       <div class="w-8 rounded-full">
                         <img
@@ -41,7 +44,7 @@ const SecondNavbar = () => {
                       </div>
                   
                         {' '}
-                        {user?.displayName}
+                        <p className='flex items-center justify-center'>{user?.displayName}</p>
                       
                     </div>
                     {/* <IoIosArrowDown className="text-lg font-bold ml-2" /> */}
@@ -56,21 +59,22 @@ const SecondNavbar = () => {
                     class="absolute left-2 mt-3 flex w-60 flex-col gap-3  text-black bg-white p-4   z-20"
                   >
                     <div className="flex-none">
-                      <ul className="menu menu-vertical px-1 font-sans hover:bg-none">
+                      <ul className="menu menu-vertical px-1 font-sans ">
                         <p className="px-4 font-sans font-bold">Account</p>
                         <li>
-                          <a className="font-sans">View profile</a>
+                          <a className="font-sans" href=' '>View profile</a>
                         </li>
                         <li>
-                          <a className="font-sans">Settings</a>
+                          <a className="font-sans" href=" ">Settings</a>
                         </li>
                         <li>
-                          <a className="font-sans">Memberships</a>
+                          <a className="font-sans" href=" ">Memberships</a>
                         </li>
                         <li>
                           <a
                             className="font-sans"
-                            onClick={() => signOut(auth)}
+                            // onClick={handleOpen}
+                            href=" "
                           >
                             Logout
                           </a>
@@ -81,19 +85,6 @@ const SecondNavbar = () => {
                 )}
               </div>
             ) : (
-              // <span
-              //   className="cursor-pointer "
-              //   onClick={() => setProfileUser(!profileUser)}
-              // >
-              //   {" "}
-              //   {user?.displayName}
-              // </span>
-              // <button
-              //   className="shadow px-1 "
-              //   onClick={() => handleSignOut()}
-              // >
-              //   Sign out
-              // </button>
               <>
                 <Link className="mx-5   cursor-pointer" to="/login">
                   Log In
@@ -104,7 +95,7 @@ const SecondNavbar = () => {
               </>
             )}
 
-            <button className="mx-2 px-1 rounded bg-[#DA2B81] text-white cursor-pointer">
+            <button className="mx-2 px-2 py-2 rounded bg-[#DA2B81] text-white cursor-pointer">
               Post a Project{' '}
             </button>
           </div>
