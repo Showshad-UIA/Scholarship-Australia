@@ -10,8 +10,8 @@ const SecondNavbar = () => {
   const [nav, setNav] = useState(false);
   // const [user] = useAuthState(auth);
   const [profileUser, setProfileUser] = useState(false);
-  const [user, signOut] = useAuthState(auth);
-  // const { user, handleSignOut } = useFirebase();
+  const [user] = useAuthState(auth);
+  const { handleSignOut } = useFirebase();
   console.log(user);
 
   return (
@@ -28,7 +28,6 @@ const SecondNavbar = () => {
               <div x-data="{isOpen:true}" class="relative inline-block">
                 <button
                   class="flex    items-center justify-content-center rounded-lg text-black transition overflow-hidden "
-                  // OnClick="isOpen=!isOpen"
                   onClick={() => setProfileUser(!profileUser)}
                 >
                   <div className="items-center">
@@ -38,14 +37,9 @@ const SecondNavbar = () => {
                           src={user?.photoURL ? user?.photoURL : userProfile}
                           alt=""
                         />
-                      </div>
-                  
-                        {' '}
-                        {user?.displayName}
-                      
+                      </div>{' '}
+                      {user?.displayName}
                     </div>
-                    {/* <IoIosArrowDown className="text-lg font-bold ml-2" /> */}
-                              
                   </div>
                 </button>
 
@@ -70,7 +64,7 @@ const SecondNavbar = () => {
                         <li>
                           <a
                             className="font-sans"
-                            onClick={() => signOut(auth)}
+                            onClick={() => handleSignOut()}
                           >
                             Logout
                           </a>

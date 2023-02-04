@@ -37,7 +37,7 @@ const Consultant = () => {
           type="submit"
           className="px-5 py-3 mt-3 mb-4 bg-[#304F40] text-white rounded"
         >
-          Send Email
+          Submit
         </button>
       </div>
     </div>
