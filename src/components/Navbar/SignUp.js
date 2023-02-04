@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import icon from '../../Image/google_Icon.png';
 import useFirebase from '../../Hooks/useFirebase';
 import { useForm } from 'react-hook-form';
-import image from '../../Image/logo.png';
+import image from '../../Image/logo-black.png';
 
 import {
   useCreateUserWithEmailAndPassword,
@@ -22,7 +22,7 @@ const SignUp = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const navigate = useNavigate();
-  console.log(gError,error)
+  console.log(gError, error);
 
   const {
     register,
@@ -34,12 +34,11 @@ const SignUp = () => {
     await createUserWithEmailAndPassword(data.email, data.password);
     // await updateProfile({ displayName: data.name });
     reset();
-   
   };
   if (gUser || user) {
     navigate('/jobChoices');
   }
-
+  console.log(user);
 
   return (
     <div className="flex flex-col items-center sm:justify-center sm:pt-0 bg-gray-50 font-sans ">
@@ -49,7 +48,7 @@ const SignUp = () => {
             {' '}
             <img
               src={image}
-              className="lg:w-[190px] md:w-[155px] md:h-9 lg:h-10 rounded cursor-pointer bg-[#1E282D] p-1 mt-5  lg:ml-[100px]"
+              className="lg:w-[190px] md:w-[155px] md:h-9 lg:h-10  p-1 mt-5  lg:ml-[100px]"
               alt=""
             />
           </div>
@@ -71,10 +70,11 @@ const SignUp = () => {
 
             <div className="divider my-5 font-sans">OR</div>
             <form onSubmit={handleSubmit(onSubmit)}>
-              {/* <div className="form-control">
+              <div className="form-control">
                 <label className="label">
                   <span className="label-text font-sans">Name</span>
                 </label>
+
                 <input
                   type="text"
                   placeholder="Your name"
@@ -93,7 +93,7 @@ const SignUp = () => {
                     </span>
                   )}
                 </label>
-              </div> */}
+              </div>
 
               <div className="form-control mt-5">
                 {/* <label className="label">

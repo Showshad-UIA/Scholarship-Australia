@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import image from '../../Image/logo.png';
+import image from '../../Image/logo-black.png';
 import {
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
@@ -11,29 +11,21 @@ import icon from '../../Image/google_Icon.png';
 import auth from '../../firebase.init';
 
 const Login = () => {
-  const [signInWithGoogle] = useSignInWithGoogle(auth);
+  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
 
-  if (error) {
-    return (
-      <div>
-        <p>Error: {error.message}</p>
-      </div>
-    );
+  // if (loading) {
+  //   return <p>Loading...</p>;
+  // }
+  if (gUser || user) {
+    navigate('/');
   }
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-  if (user) {
-    return (
-      <div>
-        <p>Signed In User: {user.email}</p>
-      </div>
-    );
-  }
+
+  console.log(gUser, user?.user?.email);
 
   return (
     <div className="App flex flex-col items-center sm:justify-center sm:pt-0 bg-gray-50 font-sans">
@@ -42,7 +34,7 @@ const Login = () => {
           {' '}
           <img
             src={image}
-            className="lg:w-[190px] md:w-[155px] md:h-9 lg:h-10 rounded cursor-pointer bg-[#1E282D] p-1 mt-10  lg:ml-[83px]"
+            className="lg:w-[190px] md:w-[155px] md:h-9 lg:h-10 p-1 mt-10  lg:ml-[83px]"
             alt=""
           />
         </div>
@@ -103,6 +95,7 @@ const Login = () => {
             </div>
             <div className="font-sans">Forgot password?</div>
           </div>
+          {error && <p className="text-red-500">Error: {error.message}</p>}
           <button
             className=" bg-[#1E282D] font-sans rounded-md text-white p-3 w-full mt-10 mb-3"
             onClick={() => signInWithEmailAndPassword(email, password)}
