@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import auth from '../../firebase.init';
 import useFirebase from '../../Hooks/useFirebase';
+import userProfile from '../../Image/User.jpg';
 
 const SecondNavbar = () => {
   const [nav, setNav] = useState(false);
+  // const [user] = useAuthState(auth);
   const [profileUser, setProfileUser] = useState(false);
-  // const [user, signOut] = useAuthState(auth);
-  const { user, handleSignOut } = useFirebase();
+  const [user, signOut] = useAuthState(auth);
+  // const { user, handleSignOut } = useFirebase();
+  console.log(user);
 
   return (
     <>
@@ -22,17 +27,33 @@ const SecondNavbar = () => {
             {user?.uid ? (
               <div x-data="{isOpen:true}" class="relative inline-block">
                 <button
-                  class="flex h-5   items-center justify-content-center rounded-lg text-black transition overflow-hidden "
+                  class="flex    items-center justify-content-center rounded-lg text-black transition overflow-hidden "
                   // OnClick="isOpen=!isOpen"
                   onClick={() => setProfileUser(!profileUser)}
                 >
-                  <span
+                  {/* <span
                     className="cursor-pointer px-10 py-5"
-                    //  onClick={() => setProfileUser(!profileUser)}
+                   
                   >
                     {' '}
                     {user?.displayName}
-                  </span>
+                  </span> */}
+                  <div className="items-center">
+                    <div class="avatar">
+                      <div class="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                        <img
+                          src={
+                            user?.user?.photoURL
+                              ? user?.user?.photoURL
+                              : userProfile
+                          }
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    {/* <IoIosArrowDown className="text-lg font-bold ml-2" /> */}
+                              
+                  </div>
                 </button>
 
                 {profileUser && (
@@ -56,7 +77,7 @@ const SecondNavbar = () => {
                         <li>
                           <a
                             className="font-sans"
-                            onClick={() => handleSignOut()}
+                            onClick={() => signOut(auth)}
                           >
                             Logout
                           </a>
