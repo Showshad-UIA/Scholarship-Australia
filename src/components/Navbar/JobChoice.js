@@ -16,7 +16,7 @@ const JobChoice = () => {
     {
       id: 2,
       img: 'https://i.postimg.cc/qvPBR1Mn/student.jpg',
-      option: ' I’m a Student, I need help for application',
+      option: 'I’m a student, I need application help ',
       value: 'Apply as Student',
     },
   ];
@@ -35,7 +35,7 @@ const JobChoice = () => {
             Join as a consultant or student
           </h1>
 
-          <div className="flex flex-wrap  justify-around mb-5 pb-5 ">
+          <div className="flex flex-wrap w-full justify-around mb-5 pb-5 ">
             {chooseOptions.map(({ img, option, value }) => (
               <div
                 onClick={() => setDataValue(value)}
@@ -46,13 +46,13 @@ const JobChoice = () => {
                   src={img}
                   className="w-20 h-20 flex justify-center font-sans mb-4 text-white"
                 ></img>
-                <input
+                {/* <input
                   type="radio"
                   name="topping"
                   value="Regular"
                   id="regular"
-                />
-                
+                /> */}
+
                 <label htmlFor="regular" className="px-2 font-sans">
                   <span className="">{option}</span>
                 </label>
@@ -74,7 +74,7 @@ const JobChoice = () => {
             )}
           </div>
           <p>
-            <Link to="/signin">
+            <Link to="/login">
               <p className=" text-sm label-text-alt  text-center mb-3 font-sans">
                 Don't have an account?{' '}
                 <span className="hover:underline text-[#304F40] font-sans">

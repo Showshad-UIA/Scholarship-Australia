@@ -18,9 +18,7 @@ const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
 
-  // if (loading) {
-  //   return <p>Loading...</p>;
-  // }
+  
   if (gUser || user) {
     navigate('/');
   }
@@ -31,14 +29,13 @@ const Login = () => {
     <div className="App flex flex-col items-center sm:justify-center sm:pt-0 bg-gray-50 font-sans">
       <div className="w-full lg:px-20 py-4 lg:mt-20  overflow-hidden bg-white shadow-md sm:max-w-lg sm:rounded-lg mb-16">
         <div>
-          {' '}
           <img
             src={image}
-            className="lg:w-[190px] md:w-[155px] md:h-9 lg:h-10 p-1 mt-10  lg:ml-[83px]"
+            className="lg:w-[230px] md:w-[155px] md:h-9 lg:h-[65px] p-1 mt-10  lg:ml-[72px]"
             alt=""
           />
         </div>
-        <p className="font-sans text-2xl my-5 font-semibold text-center">
+        <p className="font-sans text-2xl my-4 text-black text-center">
           Welcome Back
         </p>
 
@@ -48,19 +45,19 @@ const Login = () => {
             className="btn btn-outline font-sans bg-[#1E282D] text-white normal-case"
           >
             <img src={icon} className="w-5 mr-2 font-sans " alt="" />
-            Log In with google
+            <p className="text-lg font-normal">Log In with google</p>
           </button>
         </div>
         <div className="divider my-5 font-sans">OR</div>
 
-        <div className="my-10">
+        <div className="my-8">
           <div className="flex flex-col items-start">
             <input
               onChange={e => setEmail(e.target.value)}
               type="email"
               value={email}
               name="email"
-              placeholder="Email or user name"
+              placeholder="Email or User name"
               className="appearance-none block w-full  text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-red-400 input input-bordered "
             />
           </div>
@@ -93,11 +90,11 @@ const Login = () => {
                 Remember me
               </label>
             </div>
-            <div className="font-sans">Forgot password?</div>
+            <div className="font-sans text-[#3A73CB]">Forgot password?</div>
           </div>
           {error && <p className="text-red-500">Error: {error.message}</p>}
           <button
-            className=" bg-[#1E282D] font-sans rounded-md text-white p-3 w-full mt-10 mb-3"
+            className=" bg-[#304F40] font-sans rounded-md text-white text-lg p-3 w-full mt-10 mb-3"
             onClick={() => signInWithEmailAndPassword(email, password)}
           >
             Log In
@@ -106,7 +103,10 @@ const Login = () => {
 
           <p className=" text-sm label-text-alt  text-center my-3 font-sans">
             Don't have an account?{' '}
-            <Link to="/signup" className="hover:underline   font-sans ">
+            <Link
+              to="/signup"
+              className="hover:underline text-[#3A73CB]  font-sans "
+            >
               {' '}
               SignUp
             </Link>

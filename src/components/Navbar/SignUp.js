@@ -42,18 +42,18 @@ const SignUp = () => {
 
   return (
     <div className="flex flex-col items-center sm:justify-center sm:pt-0 bg-gray-50 font-sans ">
-      <div className="flex justify-center items-center lg:mt-20 w-full px-6 py-4  overflow-hidden bg-white shadow-md sm:max-w-lg sm:rounded-lg mb-5">
+      <div className="flex justify-center items-center lg:mt-20 w-full  py-4  overflow-hidden bg-white shadow-md sm:max-w-lg sm:rounded-lg mb-5">
         <div className="card flex-shrink-0 lg:w-96 w-80  mb-5">
           <div>
             {' '}
             <img
               src={image}
-              className="lg:w-[190px] md:w-[155px] md:h-9 lg:h-10  p-1 mt-5  lg:ml-[100px]"
+              className="lg:w-[225px] md:w-[155px] md:h-9 lg:h-[65px] p-1 mt-10  lg:ml-[80px]"
               alt=""
             />
           </div>
 
-          <p className="text-center font-semibold mt-3 underline text-2xl underline-offset-4 font-sans">
+          <p className="text-center text-black mt-3 text-2xl font-sans">
             Sign Up
           </p>
 
@@ -63,14 +63,14 @@ const SignUp = () => {
                 onClick={() => signInWithGoogle()}
                 className="btn btn-outline font-sans bg-[#1E282D] text-white normal-case"
               >
-                <img src={icon} className="w-5 mr-2 font-sans " alt="" />
-                Continue with google
+                <img src={icon} className="w-5 gap-5 mr-2 font-sans " alt="" />
+                <p className="text-lg font-normal">Log In with google</p>
               </button>
             </div>
 
-            <div className="divider my-5 font-sans">OR</div>
+            <div className="divider mt-5 font-sans">OR</div>
             <form onSubmit={handleSubmit(onSubmit)}>
-              <div className="form-control">
+              {/* <div className="form-control">
                 <label className="label">
                   <span className="label-text font-sans">Name</span>
                 </label>
@@ -93,15 +93,12 @@ const SignUp = () => {
                     </span>
                   )}
                 </label>
-              </div>
+              </div> */}
 
-              <div className="form-control mt-5">
-                {/* <label className="label">
-                  <span className="label-text font-sans">Email</span>
-                </label> */}
+              <div className="form-control mt-2">
                 <input
                   type="email"
-                  placeholder="Your email"
+                  placeholder="Email"
                   className="input input-bordered text-black "
                   {...register('email', {
                     required: {
@@ -134,7 +131,7 @@ const SignUp = () => {
                 </label> */}
                 <input
                   type="password"
-                  placeholder="password"
+                  placeholder="Password"
                   className="input input-bordered font-sans text-black"
                   {...register('password', {
                     required: {
@@ -174,14 +171,14 @@ const SignUp = () => {
                   I agree with the{' '}
                   <a
                     href="#"
-                    class="text-[#304F40] dark:text-blue-500 mr-1 hover:underline"
+                    class="text-[#3A73CB] dark:text-blue-500 mr-1 hover:underline"
                   >
                     agreement
                   </a>
                   and
                   <a
                     href="#"
-                    class="text-[#304F40] dark:text-blue-500 mx-1 hover:underline"
+                    class="text-[#3A73CB] dark:text-blue-500 mx-1 hover:underline"
                   >
                     policy
                   </a>
@@ -192,7 +189,7 @@ const SignUp = () => {
               <input
                 type="submit"
                 value="Join Scholarship Australia"
-                className="bg-[#304F40]  cursor-pointer font-sans rounded-md mt-5 text-white p-3 w-full"
+                className="bg-[#304F40]  cursor-pointer text-lg font-sans rounded-md mt-5 text-white p-3 w-full"
               />
               <p className="border-b-2 mt-5 border-gray-300"></p>
 
@@ -200,7 +197,7 @@ const SignUp = () => {
                 Already have an account?{' '}
                 <Link
                   to="/login"
-                  className="hover:underline font-sans cursor-pointer text-[#304F40]"
+                  className="hover:underline font-sans cursor-pointer text-[#3A73CB]"
                 >
                   Log In
                 </Link>
