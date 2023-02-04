@@ -31,25 +31,18 @@ const SecondNavbar = () => {
                   // OnClick="isOpen=!isOpen"
                   onClick={() => setProfileUser(!profileUser)}
                 >
-                  {/* <span
-                    className="cursor-pointer px-10 py-5"
-                   
-                  >
-                    {' '}
-                    {user?.displayName}
-                  </span> */}
                   <div className="items-center">
                     <div class="avatar">
-                      <div class="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                      <div class="w-8 rounded-full">
                         <img
-                          src={
-                            user?.user?.photoURL
-                              ? user?.user?.photoURL
-                              : userProfile
-                          }
+                          src={user?.photoURL ? user?.photoURL : userProfile}
                           alt=""
                         />
                       </div>
+                  
+                        {' '}
+                        {user?.displayName}
+                      
                     </div>
                     {/* <IoIosArrowDown className="text-lg font-bold ml-2" /> */}
                               
