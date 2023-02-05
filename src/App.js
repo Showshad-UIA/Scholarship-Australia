@@ -24,6 +24,7 @@ import SignUp from './components/Navbar/SignUp';
 import Login from './components/Navbar/Login';
 import JobChoice from './components/Navbar/JobChoice';
 import Consultant from './components/Navbar/Consultant';
+import Profile from './components/UserProfile/Profile';
 
 
 function App() {
@@ -40,6 +41,8 @@ function App() {
       <Routes>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/profile" element={<Profile></Profile>}></Route>
+
         <Route path="/jobChoices" element={<JobChoice></JobChoice>}></Route>
         <Route path="/consultant" element={<Consultant></Consultant>}></Route>
         <Route path="/" element={<Home></Home>}></Route>

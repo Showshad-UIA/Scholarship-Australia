@@ -62,7 +62,7 @@ const SecondNavbar = () => {
                       <ul className="menu menu-vertical px-1 font-sans ">
                         <p className="px-4 font-sans font-bold">Account</p>
                         <li>
-                          <a className="font-sans" href=" ">
+                          <a className="font-sans" href="/profile ">
                             View profile
                           </a>
                         </li>
