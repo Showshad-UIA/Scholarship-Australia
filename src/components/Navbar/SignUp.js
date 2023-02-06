@@ -44,7 +44,7 @@ const SignUp = () => {
   return (
     <div className="flex flex-col items-center sm:justify-center sm:pt-0 bg-gray-50 font-sans ">
       <div className="flex justify-center items-center lg:mt-20 w-full  py-4  overflow-hidden bg-white shadow-md sm:max-w-lg sm:rounded-lg mb-5">
-        <div className="card flex lg:w-96 px-5 w-96  mb-5">
+        <div className="card flex lg:w-96 px-5 w-[350px]  mb-5">
           <div>
             {' '}
             <img
@@ -64,11 +64,11 @@ const SignUp = () => {
               className="btn btn-outline rounded-sm font-sans bg-[#1E282D] text-white normal-case  "
             >
               <img src={icon} className="w-5   mr-2 font-sans " alt="" />
-              <p className="font-bold text-[20px] ">Continue In with Google</p>
+              <p className="font-bold text-[20px] ">Continue with Google</p>
             </button>
           </div>
 
-          <div className="divider mt-7 font-sans">OR</div>
+          <div className="divider mt-7 font-bold font-sans">OR</div>
           <form onSubmit={handleSubmit(onSubmit)}>
             {/* <div className="form-control">
                 <label className="label">
@@ -95,11 +95,11 @@ const SignUp = () => {
                 </label>
               </div> */}
 
-            <div className="form-control mt-2">
+            <div className="form-control mt-4">
               <input
                 type="email"
                 placeholder="Email"
-                className="input input-bordered rounded-sm text-black "
+                className="input input-bordered rounded-sm  text-sm  text-black "
                 {...register('email', {
                   required: {
                     value: true,
@@ -129,7 +129,7 @@ const SignUp = () => {
               <input
                 type="password"
                 placeholder="Password"
-                className="input input-bordered rounded-sm font-sans text-black"
+                className="input input-bordered  rounded-sm font-sans text-black"
                 {...register('password', {
                   required: {
                     value: true,
@@ -154,7 +154,7 @@ const SignUp = () => {
                 )}
               </label>
             </div>
-            <div class="flex items-center my-5">
+            <div class="flex items-center mt-5">
               <input
                 id="link-checkbox"
                 type="checkbox"
@@ -168,14 +168,14 @@ const SignUp = () => {
                 I agree to the Scholarships Australia {}
                 <a
                   href="#"
-                  class="text-[#3A73CB] dark:text-blue-500 mr-1 hover:underline"
+                  class="text-[#3A73CB] dark:text-blue-500 mr-1 underline"
                 >
                   User Agreement
                 </a>
                 and
                 <a
                   href="#"
-                  class="text-[#3A73CB] dark:text-blue-500 mx-1 hover:underline"
+                  class="text-[#3A73CB] dark:text-blue-500 mx-1 underline"
                 >
                   Privacy Policy
                 </a>
@@ -188,7 +188,7 @@ const SignUp = () => {
               value="Join Scholarships Australia"
               className="bg-[#304F40] px-2 cursor-pointer text-[20px] font-bold rounded-sm my-5 text-white p-3 w-full"
             />
-            <p className="border-b-2 mt-5 border-gray-300"></p>
+            <p className="border-b-2  border-gray-300"></p>
 
             <p className=" text-sm label-text-alt text-center  my-5 font-sans">
               Already have an account?{' '}
