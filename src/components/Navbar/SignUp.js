@@ -154,16 +154,16 @@ const SignUp = () => {
                 )}
               </label>
             </div>
-            <div class="flex items-center mt-5">
+            <div class="flex items-center gap-2 ">
               <input
                 id="link-checkbox"
                 type="checkbox"
                 value=""
-                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                class="w-5   h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               />
               <label
                 for="link-checkbox"
-                class="ml-2 text-j text-sm font-medium text-gray-900 dark:text-gray-300"
+                class=" text-j text-sm font-medium mt-5 text-gray-900 dark:text-gray-300"
               >
                 I agree to the Scholarships Australia {}
                 <a
@@ -186,7 +186,7 @@ const SignUp = () => {
             <input
               type="submit"
               value="Join Scholarships Australia"
-              className="bg-[#304F40] px-2 cursor-pointer text-[20px] font-bold rounded-sm my-5 text-white p-3 w-full"
+              className="bg-[#304F40] px-2 cursor-pointer text-[20px] font-bold rounded-sm my-5 text-white p-2 w-full"
             />
             <p className="border-b-2  border-gray-300"></p>
 

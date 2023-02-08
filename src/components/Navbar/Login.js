@@ -49,7 +49,7 @@ const Login = () => {
               className="btn btn-outline rounded-sm font-sans bg-[#1E282D] text-white normal-case  "
             >
               <img src={icon} className="w-5   mr-2 font-sans " alt="" />
-              <p className="font-bold text-[20px] ">Log In with Google</p>
+              <p className="font-bold text-[20px] ">Log in with Google</p>
             </button>
           </div>
 
@@ -98,7 +98,7 @@ const Login = () => {
             </div>
             {error && <p className="text-red-500">Error: {error.message}</p>}
             <button
-              className=" bg-[#304F40] px-2 cursor-pointer text-[20px] font-bold rounded-sm mt-7 mb-4 text-white p-3 w-full"
+              className=" bg-[#304F40] px-2 cursor-pointer text-[20px] font-bold rounded-sm mt-7 mb-4 text-white p-2 w-full"
               onClick={() => signInWithEmailAndPassword(email, password)}
             >
               Log In
