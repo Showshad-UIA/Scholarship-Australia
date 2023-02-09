@@ -32,6 +32,20 @@ const SignUp = () => {
     reset,
   } = useForm();
   const onSubmit = async data => {
+    fetch("https://scolarshipsaustralia.up.railway.app/api/users",{
+      method: "POST",
+      headers:{
+        "content-type": "application/json"
+      },
+      body: JSON.stringify({
+        userName:data.name,
+        email: data.email,
+        password :data.password
+      })
+    })
+    .then(res => res.json())
+    .then(data=> console.log(data))
+    
     await createUserWithEmailAndPassword(data.email, data.password);
     // await updateProfile({ displayName: data.name });
     reset();
@@ -68,9 +82,9 @@ const SignUp = () => {
             </button>
           </div>
 
-          <div className="divider mt-7 font-bold font-sans">OR</div>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            {/* <div className="form-control">
+            <div className="divider mt-5 font-sans">OR</div>
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <div className="form-control">
                 <label className="label">
                   <span className="label-text font-sans">Name</span>
                 </label>
@@ -93,7 +107,7 @@ const SignUp = () => {
                     </span>
                   )}
                 </label>
-              </div> */}
+              </div>
 
             <div className="form-control mt-4">
               <input

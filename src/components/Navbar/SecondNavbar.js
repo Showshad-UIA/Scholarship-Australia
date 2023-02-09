@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
@@ -11,12 +11,20 @@ const SecondNavbar = () => {
   const [nav, setNav] = useState(false);
   const [profileUser, setProfileUser] = useState(false);
   const [user] = useAuthState(auth);
+  const [usersget,setUsersGet]=useState([])
   const { handleSignOut } = useFirebase();
-  console.log(user);
+  console.log(user,usersget);
+  useEffect(()=>{
+    if(user){
+      fetch(`https://scolarshipsaustralia.up.railway.app/api/users/?email=${user.email}`)
+      .then(res=>res.json())
+      .then(data => setUsersGet(data.data));
+    }
+  },[user])
 
   return (
     <>
-      <div className=" h-15  bg-[#fff] container mx-auto relative ">
+      <div className=" h-15  bg-[#fff] container mx-auto   ">
         <div className="flex justify-between items-center    py-2 lg:mx-32">
           <div className="md:flex hidden">
             <a className="mx-2   cursor-pointer">Hire a Consultant</a>
@@ -47,7 +55,10 @@ const SecondNavbar = () => {
                         />
                       </div>{' '}
                       <p className="flex items-center justify-center">
-                        {user?.displayName}
+                      {user?.displayName ?  user?.displayName:<>{
+      usersget.map(({userName})=><><p>{userName}</p></>)
+     }</> }
+                  
                       </p>
                     </div>
                   </div>
@@ -144,6 +155,7 @@ const SecondNavbar = () => {
         </div>
         {nav && <div></div>}
       </div>
+     
     </>
   );
 };
