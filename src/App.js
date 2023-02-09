@@ -31,7 +31,7 @@ function App() {
   const [selectScholarships, setSelectScholarships] = useState(0);
 
   return (
-    <div className="max-w-[1900px] mx-auto bg:gray-500 relative ">
+    <div className="max-w-[1900px] mx-auto bg-[#F7F7F7] relative ">
       <SecondNavbar></SecondNavbar>
       <Navbar></Navbar>
       {/* <Banner/>
