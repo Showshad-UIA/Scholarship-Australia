@@ -19,7 +19,7 @@ const SecondNavbar = () => {
 
   return (
     <>
-      <div className=" h-15  bg-[#fff] container mx-auto   ">
+      <div className=" h-15  bg-[#F7F7F7] container mx-auto   ">
         <div className="flex justify-between items-center    py-2 lg:mx-32">
           <div className="md:flex hidden">
             <a className="mx-2   cursor-pointer">Hire a Consultant</a>
@@ -36,56 +36,69 @@ const SecondNavbar = () => {
             }
           >
             {user?.uid ? (
-              <div x-data="{isOpen:true}" class="relative inline-block">
+              <div x-data="{isOpen:true}" className="relative inline-block">
                 <button
-                  class="flex    items-center justify-content-center rounded-lg text-black transition overflow-hidden "
+                  class="flex    items-center justify-content-center rounded-[3px] text-black transition overflow-hidden "
                   onClick={() => setProfileUser(!profileUser)}
                 >
-                  <div className="items-center justify-center">
-                    <div class="avatar">
-                      <div class="w-8 rounded-full">
+                  <div className="items-center justify-center  ">
+                    <div className="avatar gap-2">
+                      <div className="w-8 ">
                         <img
+                          className="mt-1 "
                           src={user?.photoURL ? user?.photoURL : userProfile}
                           alt=""
                         />
                       </div>{' '}
                       <p className="flex items-center justify-center">
-                      {user?.displayName ?  user?.displayName:<>{
-      usersget.map(({userName})=><><p>{userName}</p></>)
-     }</> }
-                  
+                        {user?.displayName ? (
+                          user?.displayName
+                        ) : (
+                          <>
+                            {usersget.map(({ userName }) => (
+                              <>
+                                <p>{userName}</p>
+                              </>
+                            ))}
+                          </>
+                        )}
                       </p>
                     </div>
                   </div>
                 </button>
 
                 {profileUser && (
-                  <div
-                    x-show="isOpen"
-                    x-transition=""
-                    class="absolute left-2 mt-3 flex w-60 flex-col gap-3  text-black bg-white p-4   z-20"
-                  >
-                    <div className="flex-none">
-                      <ul className="menu menu-vertical px-1 font-sans ">
-                        <p className="px-4 font-sans font-bold">Account</p>
+                  <div>
+                    <div className="group hover:visible dropdownProfile absolute left-[-5] mt-5 flex w-60 flex-col gap-3  text-black bg-white p-4   z-20">
+                      <ul className="flex flex-col gap-3 px-1 font-sans ">
+                        <p className=" font-sans font-bold ">Account</p>
                         <li>
-                          <a className="font-sans" href="/profile ">
+                          <a
+                            className="font-sans hover:text-[#6CA0F3]"
+                            href="/profile "
+                          >
                             View profile
                           </a>
                         </li>
                         <li>
-                          <a className="font-sans" href=" ">
+                          <a
+                            className="font-sans hover:text-[#6CA0F3]"
+                            href=" "
+                          >
                             Settings
                           </a>
                         </li>
                         <li>
-                          <a className="font-sans" href=" ">
+                          <a
+                            className="font-sans hover:text-[#6CA0F3]"
+                            href=" "
+                          >
                             Memberships
                           </a>
                         </li>
                         <li>
                           <a
-                            className="font-sans"
+                            className="font-sans hover:text-[#6CA0F3]"
                             onClick={() => handleSignOut()}
                           >
                             Logout
@@ -107,7 +120,7 @@ const SecondNavbar = () => {
               </>
             )}
 
-            <button className="mx-2 px-2 py-0.5 rounded bg-[#DA2B81] text-white cursor-pointer">
+            <button className="mx-2 px-2 py-1 rounded bg-[#DA2B81] text-white cursor-pointer">
               Post a Project{' '}
             </button>
           </div>
@@ -120,7 +133,6 @@ const SecondNavbar = () => {
         </div>
         {nav && <div></div>}
       </div>
-     
     </>
   );
 };

@@ -1,23 +1,40 @@
 import React, { useEffect, useState } from 'react';
 import ExternalBanner from '../Banner/ExternalBanner';
 import photo from '../../Image/photo.png';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from '../../firebase.init';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faChevronDown,
+  faChevronUp,
+  faEnvelope,
+  faMoneyCheck,
+  faPhone,
+  faUser,
+  faUserGear,
+} from '@fortawesome/free-solid-svg-icons';
 import useUsers from '../../Hooks/useUsers';
+import auth from '../../firebase.init';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 const Profile = () => {
+  const {usersget}=useUsers()
+  const [consultantInfo,serConsultantInfo] = useState([])
+  const [quantity, setQuantity] = useState(0);
   const [user] = useAuthState(auth);
-  const {usersget}=useUsers();
-  const [consultantInfo,setConsultantInfo]=useState([])
 
   useEffect(()=>{
     if(user){
       fetch(`https://scolarshipsaustralia.up.railway.app/api/consultantInfo/?email=${user.email}`)
       .then(res=>res.json())
-      .then(data =>setConsultantInfo(data.data));
+      .then(data => serConsultantInfo(data.data));
     }
   },[user])
 
+  const handleIncrease = () => {
+    setQuantity(prevCount => prevCount + 1);
+  };
+  const handleDecrease = () => {
+    setQuantity(prevCount => prevCount - 1);
+  };
 
 
 
@@ -26,146 +43,306 @@ const Profile = () => {
     <div>
       <ExternalBanner></ExternalBanner>
 
-      <div className="container mx-auto text-md my-5 py-5 ">
-        <div className="lg:mx-28  shadow-lg border-2   ">
-          <div className="flex gap-5 px-5">
-            <div>
-              <img src={photo} className="py-2"></img>
-            </div>
+      <div className="lg:w-[66%] mx-auto text-md my-5 py-5 ">
+        <div className="grid grid-cols-5 gap-7   ">
+          <div className="col-span-4 ">
+            <div className="   mb-7 border-2 rounded-[5px] pb-10 bg-[#FFFFFF]  ">
+              <div className="flex  ">
+                <div className="">
+                  <img
+                    src={photo}
+                    className="p-5 lg:w-[350px] rounded-[7px] lg:h-[320px] "
+                  ></img>
 
-            <div>
-              <h1 className="text-xl font-bold">
-                {
-                  usersget.map(({userName})=><><p>{userName}</p></>)
-                }
-                
-              </h1>
-              <div className="shadow-lg py-2 px-20 border-2 border-l-4 border-l-[#446154]">
-                <h1 className="font-bold">Email verification required</h1>
-                <p className="mb-10 mt-3">
-                  Please click on the link in the verification email we sent to
-                  shadbd2021@gmail.com to activate your account and continue
-                  posting your project.
-                </p>
-                <div className="flex gap-5 ">
-                  <button className="p-2 bg-[#446154] rounded-md text-white">
-                    Resend Email
-                  </button>
-                  <button className="p-2 bg-[#446154] text-white rounded-md">
-                    Change Email Address
-                  </button>
-                  <button className="p-2 bg-[#446154] text-white rounded-md">
-                    Contact Us
-                  </button>
+                  <div>
+                    <p className="mt-7 px-2 font-sans font-bold mb-3">
+                      Hourely Rate
+                    </p>
+                    <div className="col-md-3 w-[320px]  border-2 border-[#56B55D] px-2  mx-2 ">
+                      <div className="input-group mt-2 justify-between flex mx-2">
+                        <div className=" "> $ {quantity}</div>
+
+                        <div className=" flex group ">
+                          <div className="flex flex-col  invisible group-hover:visible -mt-2 ">
+                            <button
+                              onClick={handleIncrease}
+                              className=" "
+                              type=""
+                            >
+                              <FontAwesomeIcon
+                                icon={faChevronUp}
+                                className="w-5 h-2 text-black hover:bg-[#BEC0C2] "
+                              ></FontAwesomeIcon>
+                            </button>
+
+                            <button
+                              onClick={handleDecrease}
+                              className=" "
+                              type=""
+                            >
+                              <FontAwesomeIcon
+                                icon={faChevronDown}
+                                className="w-5 h-2 -mt-5 text-black hover:bg-[#BEC0C2]"
+                              ></FontAwesomeIcon>
+                            </button>
+                          </div>
+                          <p className="px-2">USD per hour</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="w-[70%] px-4">
+                  <div className="my-4">
+                    <p className="font-bold text-xl">{
+                      usersget.map(({userName})=><p>{userName}</p>)
+                    }</p>
+                    {
+                      consultantInfo.map(({profession,summery})=><>
+
+<div className="mt-4">
+                      <label
+                        for="headline"
+                        className="block text-gray-900 dark:text-gray-300"
+                      >
+                        <p className="font-sans font-bold text-md mb-2">
+                          Professional Headline
+                        </p>
+                      </label>
+                      <input
+                        type="text"
+                        id="headline"
+                        value={profession}
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder=""
+                        required
+                      />
+                    </div>
+                    <div className="mt-5">
+                      <p className="font-sans mt-3  font-bold text-md mb-2">
+                        Summary
+                      </p>
+                      <textarea
+                        id="message"
+                        rows="8"
+                        name="consultantDoc"
+                        value={summery}
+                        className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="Write your thoughts here..."
+                      ></textarea>
+                    </div>
+                      </>)
+                    }
+                    
+                  </div>
+
+                  <div className="flex justify-end gap-5 mb-10">
+                    <button className="py-2 px-5  text-black bg-[#BEC0C2] rounded-[5px]">
+                      Cancel
+                    </button>
+                    <button className="py-2 px-5 bg-[#446154] text-white rounded-[5px]">
+                      Save
+                    </button>
+                  </div>
                 </div>
               </div>
-              {
-                consultantInfo.map(({profession,summery})=><>
-                <div className="my-5">
-                <label
-                  for="message"
-                  class="font-sans  tracking-wide text-gray-700  font-bold"
-                >
-                  Professional Headline
-                </label>
-                <textarea
-                  id=""
-                  rows=""
-                  name="message"
-                   value={profession}
-                  class="block p-2 py-5 text-md  w-full  font-sans bg-gray-50 rounded-lg border border-gray-300  focus:border-red-400 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  // placeholder="Please detail what assistance you are seeking for your scholarship application...."
-                ></textarea>
+            </div>
+            <div className="  border-2 mb-7 rounded-[5px] bg-[#FFFFFF]  ">
+              <div className="">
+                <div>
+                  <h1 className="text-xl font-bold border-b-2 px-5 py-5">
+                    Reviews
+                  </h1>
+                  <div className="s py-2 px-20   mt-5 ">
+                    <p className="mb-10 mt-3 flex justify-center">
+                      No reviews to see here!
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div className="my-5">
-                <label
-                  for="message"
-                  class="font-sans  tracking-wide text-gray-700  font-bold"
-                >
-                  Summary
-                </label>
-                <textarea
-                  id=""
-                  rows="4"
-                  name="message"
-                  value={summery}
-                  class="block p-2 py-5 text-md  w-full  font-sans bg-gray-50 rounded-lg border border-gray-300  focus:border-red-400 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  // placeholder="Please detail what assistance you are seeking for your scholarship application...."
-                ></textarea>
-              </div></>)
-              }
+            </div>
+            <div className="   border-2 mb-7 rounded-[5px]   bg-[#FFFFFF]  ">
+              <div className="">
+                <div>
+                  <div className="flex justify-between border-b py-5 px-5">
+                    <h1 className="text-xl font-bold   ">Experience</h1>
+                    <button className="text-md font-bold px-5 py-2 rounded-[5px] text-white bg-[#446154]  ">
+                      Add Experience
+                    </button>
+                  </div>
+                  <div className=" py-2 px-20   mt-5 ">
+                    <p className="mb-10 mt-3 flex justify-center">
+                      No experience to see here!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="   border-2  mb-7 rounded-[5px] bg-[#FFFFFF]  ">
+              <div className="">
+                <div>
+                  <div className="flex justify-between border-b py-5 px-5">
+                    <h1 className="text-xl font-bold   ">Qualifications</h1>
+                    <button className="text-md font-bold px-5  text-white py-2 rounded-[5px]  bg-[#446154]  ">
+                      Add Qualification
+                    </button>
+                  </div>
+                  <div className=" py-2 px-20   mt-5 ">
+                    <p className="mb-10 mt-3 flex justify-center">
+                      No Qualifications have been added.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className=" border-2 mb-7 rounded-[5px]  bg-[#FFFFFF]  ">
+              <div className="">
+                <div>
+                  <div className="flex justify-between py-5 px-5 border-b">
+                    <h1 className="text-xl font-bold ">Publications</h1>
+                    <button className="text-md font-bold px-5 py-2 rounded-[5px] text-white bg-[#446154]  ">
+                      Add Publication
+                    </button>
+                  </div>
+                  <div className=" py-2 px-20   mt-5 ">
+                    <p className="mb-10 mt-3 flex justify-center">
+                      No publications have been added.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className=" card w-[300PX]  ">
+            <div className="border-2  bg-[#FFFFFF] mt-8 rounded-[5px]">
+              <p className="border-b-2 font-sans font-bold p-3 text-lg">
+                Verifications
+              </p>
+              <div className="px-3 py-5">
+                <div className="flex py-2  gap-5 items-center">
+                  <div>
+                    <FontAwesomeIcon
+                      icon={faUserGear}
+                      className="w-5 h-5  text-[#BEC0C2] "
+                    ></FontAwesomeIcon>
+                  </div>
+                  <div className="flex w-full">
+                    <div className="w-[80%]">
+                      <p className="font-sans">Preferred Consultant</p>
+                    </div>
+                    <div className="w-[20%]">
+                      <p className="font-sans text-[#4F7FAA] hover:underline cursor-pointer">
+                        Verify
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex py-2 gap-5 items-center">
+                  <div>
+                    <FontAwesomeIcon
+                      icon={faUser}
+                      className="w-5 h-5  text-[#BEC0C2]  "
+                    ></FontAwesomeIcon>
+                  </div>
+                  <div className="flex w-full">
+                    <div className="w-[80%]">
+                      <p className="font-sans">Identity Verified</p>
+                    </div>
+                    <div className="w-[20%]">
+                      <p className="font-sans cursor-pointer text-[#4F7FAA] hover:underline">
+                        Verify
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex py-2 gap-5 items-center">
+                  <div>
+                    <FontAwesomeIcon
+                      icon={faMoneyCheck}
+                      className="w-5 h-5  text-[#BEC0C2]  "
+                    ></FontAwesomeIcon>
+                  </div>
+                  <div className="flex w-full">
+                    <div className="w-[80%]">
+                      <p className="font-sans">Payment Verified</p>
+                    </div>
+                    <div className="w-[20%]">
+                      <p className="font-sans cursor-pointer text-[#4F7FAA] hover:underline">
+                        Verify
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex py-2  gap-5 items-center">
+                  <div>
+                    <FontAwesomeIcon
+                      icon={faPhone}
+                      className="w-5 h-5  text-[#84D8A2]  "
+                    ></FontAwesomeIcon>
+                  </div>
+                  <div className="flex w-full">
+                    <div className="w-[80%]">
+                      <p className="font-sans ">Phone Verified</p>
+                    </div>
+                    <div className="w-[20%]">
+                      <p className="font-sans cursor-pointer text-[#84D8A2] hover:underline">
+                        Verify
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex py-2   gap-5 items-center">
+                  <div>
+                    <FontAwesomeIcon
+                      icon={faEnvelope}
+                      className="w-5 h-5  text-[#84D8A2]  "
+                    ></FontAwesomeIcon>
+                  </div>
+                  <div className="flex w-full">
+                    <div className="w-[80%]">
+                      <p className="font-sans ">Email Verified</p>
+                    </div>
+                    <div className="w-[20%]">
+                      <p className="font-sans cursor-pointer text-[#84D8A2] hover:underline">
+                        Verified
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="border-2 w-full bg-[#FFFFFF] mt-10 rounded-[5px]  ">
+              <div className="flex justify-between border-b-2">
+                <p className=" font-sans font-bold p-3 text-lg">Top Skills</p>
+                <button className="bg-[#446154] text-white rounded-[5px] text-lg font-sans font-bold m-3 px-2 py-1">
+                  Edit Skills
+                </button>
+              </div>
+              <div className="px-3 ">
+                <div className="pt-3">
+                  <p className="font-sans cursor-pointer ">Website Design</p>
+                </div>
 
-              <div className="flex justify-end gap-5 mb-10">
-                <button className="p-2 bg-[#446154] text-white rounded-md">
-                  Cancel
-                </button>
-                <button className="p-2 bg-[#446154] text-white rounded-md">
-                  Save
-                </button>
+                <div className="pt-3 pb-7">
+                  <p className="font-sans hover:underline cursor-pointer">Video Production</p>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="lg:mx-28  border-2   ">
-          <div className="">
-            <div>
-              <h1 className="text-xl font-bold border-b-2 px-5 py-5">
-                Reviews
-              </h1>
-              <div className="shadow-lg py-2 px-20 border-2  mt-5 ">
-                <p className="mb-10 mt-3 flex justify-center">
-                  No reviews to see here!
+            <div className="border-2 w-full bg-[#FFFFFF] mt-10 rounded-[5px] ">
+              <p className="border-b-2 font-sans font-bold p-3 text-lg ">
+                Browse Similar Consultant
+              </p>
+              <div className=" flex flex-col">
+                <p className="mt-3 border-2 font-sans  mx-5 p-2 cursor-pointer">
+                  Expert on prepare documents
                 </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="lg:mx-28   border-2    ">
-          <div className="">
-            <div>
-              <div className="flex justify-between py-5 px-5">
-                <h1 className="text-xl font-bold   ">Experience</h1>
-                <button className="text-md font-bold px-5 rounded-sm  text-white bg-[#446154]  ">
-                  Add Experience
-                </button>
-              </div>
-              <div className="shadow-lg py-2 px-20 border-2  mt-5 ">
-                <p className="mb-10 mt-3 flex justify-center">
-                  No experience to see here!
+                <p className="mt-3 border-2 font-sans mx-5 p-2 cursor-pointer ">
+                  Expert on proposal writing{' '}
                 </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="lg:mx-28   border-2    ">
-          <div className="">
-            <div>
-              <div className="flex justify-between py-5 px-5">
-                <h1 className="text-xl font-bold   ">Qualifications</h1>
-                <button className="text-md font-bold px-5 rounded-sm text-white  bg-[#446154]  ">
-                  Add Qualifications
-                </button>
-              </div>
-              <div className="shadow-lg py-2 px-20 border-2  mt-5 ">
-                <p className="mb-10 mt-3 flex justify-center">
-                  No Qualifications have been added.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="lg:mx-28   border-2    ">
-          <div className="">
-            <div>
-              <div className="flex justify-between py-5 px-5">
-                <h1 className="text-xl font-bold   ">Publication</h1>
-                <button className="text-md font-bold px-5 rounded-sm text-white bg-[#446154]  ">
-                  Add Publication
-                </button>
-              </div>
-              <div className="shadow-lg py-2 px-20 border-2  mt-5 ">
-                <p className="mb-10 mt-3 flex justify-center">
-                  No publications have been added.
+
+                <p className="mt-3 mb-7 font-sans border-2 p-2 mx-5 cursor-pointer">
+                  Expert on mentorship
                 </p>
               </div>
             </div>
