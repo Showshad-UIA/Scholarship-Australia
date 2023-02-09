@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import useFirebase from '../../Hooks/useFirebase';
 import userProfile from '../../Image/User.jpg';
+import "../Navbar/Profile.css"
 
 const SecondNavbar = () => {
   const [nav, setNav] = useState(false);
@@ -53,14 +54,44 @@ const SecondNavbar = () => {
                 </button>
 
                 {profileUser && (
-                  <div
-                    x-show="isOpen"
-                    x-transition=""
-                    class="absolute left-2 mt-3 flex w-60 flex-col gap-3  text-black bg-white p-4   z-20"
-                  >
-                    <div className="flex-none">
-                      <ul className="menu menu-vertical px-1 font-sans ">
-                        <p className="px-4 font-sans font-bold">Account</p>
+                  // <div
+                  //   x-show="isOpen"
+                  //   x-transition=""
+                  //   class="absolute left-2 mt-3 flex w-60 flex-col gap-3  text-black bg-white p-4   z-20"
+                  // >
+                  //   <div className="flex-none">
+                  //     <ul className="menu menu-vertical px-1 font-sans ">
+                  //       <p className="px-4 font-sans font-bold">Account</p>
+                  //       <li>
+                  //         <a className="font-sans" href="/profile ">
+                  //           View profile
+                  //         </a>
+                  //       </li>
+                  //       <li>
+                  //         <a className="font-sans" href=" ">
+                  //           Settings
+                  //         </a>
+                  //       </li>
+                  //       <li>
+                  //         <a className="font-sans" href=" ">
+                  //           Memberships
+                  //         </a>
+                  //       </li>
+                  //       <li>
+                  //         <a
+                  //           className="font-sans"
+                  //           onClick={() => handleSignOut()}
+                  //         >
+                  //           Logout
+                  //         </a>
+                  //       </li>
+                  //     </ul>
+                  //   </div>
+                  // </div>
+                  <div>
+                    <div className=" hover:visible dropdownProfile absolute left-2 mt-2.5 flex w-60 flex-col gap-3  text-black bg-white p-4   z-20">
+                      <ul className="flex flex-col gap-3 px-1 font-sans ">
+                        <p className=" font-sans font-bold border-b-2">Account</p>
                         <li>
                           <a className="font-sans" href="/profile ">
                             View profile
