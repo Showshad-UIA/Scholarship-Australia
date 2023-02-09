@@ -32,7 +32,7 @@ const SignUp = () => {
     reset,
   } = useForm();
   const onSubmit = async data => {
-    fetch("http://localhost:5000/api/users/",{
+    fetch("https://scolarshipsaustralia.up.railway.app/api/users",{
       method: "POST",
       headers:{
         "content-type": "application/json"
