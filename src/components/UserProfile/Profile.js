@@ -185,9 +185,9 @@ const Profile = () => {
               </div>
             </div>
           </div>
-          <div className=" card w-[300PX] ">
-            <div className="border-2  bg-[#FFFFFF] mt-10 ">
-              <p className="border-b-2 font-sans font-bold p-3">
+          <div className=" card w-[300PX]  ">
+            <div className="border-2  bg-[#FFFFFF] mt-8 rounded-[5px]">
+              <p className="border-b-2 font-sans font-bold p-3 text-lg">
                 Verifications
               </p>
               <div className="px-3 py-5">
@@ -195,89 +195,124 @@ const Profile = () => {
                   <div>
                     <FontAwesomeIcon
                       icon={faUserGear}
-                      className="w-5 h-5  text-[#BEC0C2] hover:bg-[#BEC0C2] "
+                      className="w-5 h-5  text-[#BEC0C2] "
                     ></FontAwesomeIcon>
                   </div>
-                  <div>
-                    <p>Preferred Consultant</p>
+                  <div className="flex w-full">
+                    <div className="w-[80%]">
+                      <p className="font-sans">Preferred Consultant</p>
+                    </div>
+                    <div className="w-[20%]">
+                      <p className="font-sans text-[#4F7FAA] hover:underline cursor-pointer">
+                        Verify
+                      </p>
+                    </div>
                   </div>
                 </div>
                 <div className="flex py-2 gap-5 items-center">
                   <div>
                     <FontAwesomeIcon
                       icon={faUser}
-                      className="w-5 h-5  text-[#BEC0C2] hover:bg-[#BEC0C2] "
+                      className="w-5 h-5  text-[#BEC0C2]  "
                     ></FontAwesomeIcon>
                   </div>
-                  <div>
-                    <p>Identity Verified</p>
+                  <div className="flex w-full">
+                    <div className="w-[80%]">
+                      <p className="font-sans">Identity Verified</p>
+                    </div>
+                    <div className="w-[20%]">
+                      <p className="font-sans cursor-pointer text-[#4F7FAA] hover:underline">
+                        Verify
+                      </p>
+                    </div>
                   </div>
                 </div>
                 <div className="flex py-2 gap-5 items-center">
                   <div>
                     <FontAwesomeIcon
                       icon={faMoneyCheck}
-                      className="w-5 h-5  text-[#BEC0C2] hover:bg-[#BEC0C2] "
+                      className="w-5 h-5  text-[#BEC0C2]  "
                     ></FontAwesomeIcon>
                   </div>
-                  <div>
-                    <p>Payment Verified</p>
+                  <div className="flex w-full">
+                    <div className="w-[80%]">
+                      <p className="font-sans">Payment Verified</p>
+                    </div>
+                    <div className="w-[20%]">
+                      <p className="font-sans cursor-pointer text-[#4F7FAA] hover:underline">
+                        Verify
+                      </p>
+                    </div>
                   </div>
                 </div>
                 <div className="flex py-2  gap-5 items-center">
                   <div>
                     <FontAwesomeIcon
                       icon={faPhone}
-                      className="w-5 h-5  text-[#BEC0C2] hover:bg-[#BEC0C2] "
+                      className="w-5 h-5  text-[#84D8A2]  "
                     ></FontAwesomeIcon>
                   </div>
-                  <div>
-                    <p>Phone Verified</p>
+                  <div className="flex w-full">
+                    <div className="w-[80%]">
+                      <p className="font-sans ">Phone Verified</p>
+                    </div>
+                    <div className="w-[20%]">
+                      <p className="font-sans cursor-pointer text-[#84D8A2] hover:underline">
+                        Verify
+                      </p>
+                    </div>
                   </div>
                 </div>
-                <div className="flex py-2  gap-5 items-center">
+                <div className="flex py-2   gap-5 items-center">
                   <div>
                     <FontAwesomeIcon
                       icon={faEnvelope}
-                      className="w-5 h-5  text-[#BEC0C2] hover:bg-[#BEC0C2] "
+                      className="w-5 h-5  text-[#84D8A2]  "
                     ></FontAwesomeIcon>
                   </div>
-                  <div>
-                    <p>Email Verified</p>
+                  <div className="flex w-full">
+                    <div className="w-[80%]">
+                      <p className="font-sans ">Email Verified</p>
+                    </div>
+                    <div className="w-[20%]">
+                      <p className="font-sans cursor-pointer text-[#84D8A2] hover:underline">
+                        Verified
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="border-2 w-full bg-[#FFFFFF] mt-10 ">
+            <div className="border-2 w-full bg-[#FFFFFF] mt-10 rounded-[5px]  ">
               <div className="flex justify-between border-b-2">
-                <p className=" font-sans font-bold p-3">Top Skills</p>
-                <button className="bg-[#3A73CB] text-white rounded-[5px] font-sans font-bold m-3 px-2 py-1">
+                <p className=" font-sans font-bold p-3 text-lg">Top Skills</p>
+                <button className="bg-[#446154] text-white rounded-[5px] text-lg font-sans font-bold m-3 px-2 py-1">
                   Edit Skills
                 </button>
               </div>
               <div className="px-3 ">
                 <div className="pt-3">
-                  <p className="font-sans hover:underline">Website Design</p>
+                  <p className="font-sans cursor-pointer ">Website Design</p>
                 </div>
 
                 <div className="pt-3 pb-7">
-                  <p className="font-sans hover:underline">Video Production</p>
+                  <p className="font-sans hover:underline cursor-pointer">Video Production</p>
                 </div>
               </div>
             </div>
-            <div className="border-2 w-full bg-[#FFFFFF] mt-10 ">
-              <p className="border-b-2 font-sans font-bold p-3 ">
+            <div className="border-2 w-full bg-[#FFFFFF] mt-10 rounded-[5px] ">
+              <p className="border-b-2 font-sans font-bold p-3 text-lg ">
                 Browse Similar Consultant
               </p>
               <div className=" flex flex-col">
-                <p className="mt-3 border-2 font-sans mx-5 px-3 cursor-pointer">
+                <p className="mt-3 border-2 font-sans  mx-5 p-2 cursor-pointer">
                   Expert on prepare documents
                 </p>
-                <p className="mt-3 border-2 font-sans mx-5 px-3 cursor-pointer ">
+                <p className="mt-3 border-2 font-sans mx-5 p-2 cursor-pointer ">
                   Expert on proposal writing{' '}
                 </p>
 
-                <p className="mt-3 mb-7 font-sans border-2 px-3 mx-5 cursor-pointer">
+                <p className="mt-3 mb-7 font-sans border-2 p-2 mx-5 cursor-pointer">
                   Expert on mentorship
                 </p>
               </div>
