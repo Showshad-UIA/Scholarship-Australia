@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ExternalBanner from '../Banner/ExternalBanner';
 import photo from '../../Image/photo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,15 +11,34 @@ import {
   faUser,
   faUserGear,
 } from '@fortawesome/free-solid-svg-icons';
+import useUsers from '../../Hooks/useUsers';
+import auth from '../../firebase.init';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 const Profile = () => {
+  const {usersget}=useUsers()
+  const [consultantInfo,serConsultantInfo] = useState([])
   const [quantity, setQuantity] = useState(0);
+  const [user] = useAuthState(auth);
+
+  useEffect(()=>{
+    if(user){
+      fetch(`https://scolarshipsaustralia.up.railway.app/api/consultantInfo/?email=${user.email}`)
+      .then(res=>res.json())
+      .then(data => serConsultantInfo(data.data));
+    }
+  },[user])
+
   const handleIncrease = () => {
     setQuantity(prevCount => prevCount + 1);
   };
   const handleDecrease = () => {
     setQuantity(prevCount => prevCount - 1);
   };
+
+
+
+
   return (
     <div>
       <ExternalBanner></ExternalBanner>
@@ -76,8 +95,13 @@ const Profile = () => {
 
                 <div className="w-[70%] px-4">
                   <div className="my-4">
-                    <p className="font-bold text-xl">User name will display</p>
-                    <div className="mt-4">
+                    <p className="font-bold text-xl">{
+                      usersget.map(({userName})=><p>{userName}</p>)
+                    }</p>
+                    {
+                      consultantInfo.map(({profession,summery})=><>
+
+<div className="mt-4">
                       <label
                         for="headline"
                         className="block text-gray-900 dark:text-gray-300"
@@ -89,6 +113,7 @@ const Profile = () => {
                       <input
                         type="text"
                         id="headline"
+                        value={profession}
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder=""
                         required
@@ -102,10 +127,14 @@ const Profile = () => {
                         id="message"
                         rows="8"
                         name="consultantDoc"
+                        value={summery}
                         className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder="Write your thoughts here..."
                       ></textarea>
                     </div>
+                      </>)
+                    }
+                    
                   </div>
 
                   <div className="flex justify-end gap-5 mb-10">

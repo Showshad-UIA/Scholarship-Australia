@@ -4,23 +4,18 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import useFirebase from '../../Hooks/useFirebase';
-import userProfile from '../../Image/photo.png';
-import "../Navbar/Profile.css"
+import useUsers from '../../Hooks/useUsers';
+import userProfile from '../../Image/User.jpg';
 
 const SecondNavbar = () => {
   const [nav, setNav] = useState(false);
   const [profileUser, setProfileUser] = useState(false);
   const [user] = useAuthState(auth);
-  const [usersget,setUsersGet]=useState([])
+  // const [usersget,setUsersGet]=useState([])
   const { handleSignOut } = useFirebase();
-  console.log(user,usersget);
-  useEffect(()=>{
-    if(user){
-      fetch(`https://scolarshipsaustralia.up.railway.app/api/users/?email=${user.email}`)
-      .then(res=>res.json())
-      .then(data => setUsersGet(data.data));
-    }
-  },[user])
+  // console.log(user,usersget);
+  const {usersget}=useUsers()
+ 
 
   return (
     <>
