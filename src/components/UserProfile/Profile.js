@@ -1,8 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ExternalBanner from '../Banner/ExternalBanner';
 import photo from '../../Image/photo.png';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import useUsers from '../../Hooks/useUsers';
 
 const Profile = () => {
+  const [user] = useAuthState(auth);
+  const {usersget}=useUsers();
+  const [consultantInfo,setConsultantInfo]=useState([])
+
+  useEffect(()=>{
+    if(user){
+      fetch(`https://scolarshipsaustralia.up.railway.app/api/consultantInfo/?email=${user.email}`)
+      .then(res=>res.json())
+      .then(data =>setConsultantInfo(data.data));
+    }
+  },[user])
+
+
+
+
+
   return (
     <div>
       <ExternalBanner></ExternalBanner>
@@ -16,7 +35,10 @@ const Profile = () => {
 
             <div>
               <h1 className="text-xl font-bold">
-                Dynamically user name will show
+                {
+                  usersget.map(({userName})=><><p>{userName}</p></>)
+                }
+                
               </h1>
               <div className="shadow-lg py-2 px-20 border-2 border-l-4 border-l-[#446154]">
                 <h1 className="font-bold">Email verification required</h1>
@@ -37,7 +59,9 @@ const Profile = () => {
                   </button>
                 </div>
               </div>
-              <div className="my-5">
+              {
+                consultantInfo.map(({profession,summery})=><>
+                <div className="my-5">
                 <label
                   for="message"
                   class="font-sans  tracking-wide text-gray-700  font-bold"
@@ -48,6 +72,7 @@ const Profile = () => {
                   id=""
                   rows=""
                   name="message"
+                   value={profession}
                   class="block p-2 py-5 text-md  w-full  font-sans bg-gray-50 rounded-lg border border-gray-300  focus:border-red-400 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   // placeholder="Please detail what assistance you are seeking for your scholarship application...."
                 ></textarea>
@@ -63,10 +88,12 @@ const Profile = () => {
                   id=""
                   rows="4"
                   name="message"
+                  value={summery}
                   class="block p-2 py-5 text-md  w-full  font-sans bg-gray-50 rounded-lg border border-gray-300  focus:border-red-400 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   // placeholder="Please detail what assistance you are seeking for your scholarship application...."
                 ></textarea>
-              </div>
+              </div></>)
+              }
 
               <div className="flex justify-end gap-5 mb-10">
                 <button className="p-2 bg-[#446154] text-white rounded-md">
