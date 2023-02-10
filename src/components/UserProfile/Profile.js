@@ -20,12 +20,18 @@ const Profile = () => {
   const [consultantInfo,serConsultantInfo] = useState([])
   const [quantity, setQuantity] = useState(0);
   const [user] = useAuthState(auth);
+  // console.log(user.email)
 
   useEffect(()=>{
     if(user){
       fetch(`https://scolarshipsaustralia.up.railway.app/api/consultantInfo/?email=${user.email}`)
       .then(res=>res.json())
-      .then(data => serConsultantInfo(data.data));
+      .then(data =>{
+        console.log(data)
+        serConsultantInfo(data.data)
+      } 
+      );
+        
     }
   },[user])
 

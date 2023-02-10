@@ -5,6 +5,7 @@ import auth from '../firebase.init';
 const useUsers = () => {
     const [user] = useAuthState(auth);
   const [usersget,setUsersGet]=useState([])
+  console.log(usersget)
     useEffect(()=>{
         if(user){
           fetch(`https://scolarshipsaustralia.up.railway.app/api/users/?email=${user.email}`)
