@@ -14,7 +14,7 @@ const Consultant = () => {
 
   // console.log(user.email);
   const handleConsultant= () => {
-    fetch("http://localhost:5000/api/consultantInfo",{
+    fetch("https://scolarshipsaustralia.up.railway.app/api/consultantInfo",{
       method: 'POST',
       headers: {
         "content-type": "application/json",
