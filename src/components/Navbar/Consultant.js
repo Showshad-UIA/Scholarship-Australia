@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 
 const Consultant = () => {
   const [consultSummery, setConsultSummery] = useState('');
   const [proHeadline, setProHeadline] = useState('');
+  const [user] = useAuthState(auth);
 
-  // console.log(data);
+  // console.log(user.email);
   const handleConsultant= () => {
     fetch("https://scolarshipsaustralia.up.railway.app/api/consultantInfo",{
       method: 'POST',
@@ -14,7 +17,8 @@ const Consultant = () => {
       },
       body: JSON.stringify({
         profession:proHeadline,
-        summery:consultSummery
+        summery:consultSummery,
+        email:user?.email
       })
     }) 
     .then(res=>res.json())
