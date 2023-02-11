@@ -1,5 +1,6 @@
 import React from 'react';
 import ResourcesBanner from '../Banner/ResourcesBanner';
+import StudentProject from '../StudentDetails/StudentProject';
 
 const Resources = () => {
   return (
@@ -11,6 +12,7 @@ const Resources = () => {
             Our resources page content will update soon
           </marquee>
         </h1>
+        <StudentProject></StudentProject>
       </div>
     </>
   );

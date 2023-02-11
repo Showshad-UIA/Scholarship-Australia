@@ -14,8 +14,7 @@ const SecondNavbar = () => {
   // const [usersget,setUsersGet]=useState([])
   const { handleSignOut } = useFirebase();
   // console.log(user,usersget);
-  const {usersget}=useUsers()
- 
+  const { usersget } = useUsers();
 
   return (
     <>
@@ -121,7 +120,7 @@ const SecondNavbar = () => {
             )}
 
             <button className="mx-2 px-2 py-1 rounded bg-[#DA2B81] text-white cursor-pointer">
-              Post a Project{' '}
+              <Link to="/student">Post a Project</Link>
             </button>
           </div>
         </div>
