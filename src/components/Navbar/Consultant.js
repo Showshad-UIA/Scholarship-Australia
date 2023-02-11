@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 
 const Consultant = () => {
   const [consultSummery, setConsultSummery] = useState('');
   const [proHeadline, setProHeadline] = useState('');
+  const [infoError,setInfoError]=useState('');
   const [user] = useAuthState(auth);
+  const navigate=useNavigate()
 
   // console.log(user.email);
   const handleConsultant= () => {
-    fetch("https://scolarshipsaustralia.up.railway.app/api/consultantInfo",{
+    fetch("http://localhost:5000/api/consultantInfo",{
       method: 'POST',
       headers: {
         "content-type": "application/json",
@@ -26,6 +30,12 @@ const Consultant = () => {
       if(data.status === 'success'){
         setConsultSummery('')
         setProHeadline('')
+        navigate("/profile")
+        toast.success(data.message)
+      }
+      else{
+        setInfoError(data?.error)
+        // console.log(data.error)
       }
     });
 
@@ -83,6 +93,9 @@ const Consultant = () => {
           . The subject of the email should be your Scholarships Australia
           username.
         </p>
+        {
+         infoError && <p className='text-red-500'>Error:{infoError}</p>
+        }
         <button
           type="submit"
           className="px-5 py-3 mt-3 mb-4 bg-[#304F40] text-white rounded"

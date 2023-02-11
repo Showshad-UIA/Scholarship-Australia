@@ -1,7 +1,3 @@
-import React, { useEffect, useState } from 'react';
-import ExternalBanner from '../Banner/ExternalBanner';
-import photo from '../../Image/photo.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faChevronDown,
   faChevronUp,
@@ -10,40 +6,48 @@ import {
   faPhone,
   faUser,
   faUserGear,
-} from '@fortawesome/free-solid-svg-icons';
-import useUsers from '../../Hooks/useUsers';
-import auth from '../../firebase.init';
-import { useAuthState } from 'react-firebase-hooks/auth';
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import useUsers from "../../Hooks/useUsers";
+import photo from "../../Image/photo.png";
+import ExternalBanner from "../Banner/ExternalBanner";
 
 const Profile = () => {
-  const {usersget}=useUsers()
-  const [consultantInfo,serConsultantInfo] = useState([])
+  const { usersget } = useUsers();
+  const [consultantInfo, serConsultantInfo] = useState([]);
   const [quantity, setQuantity] = useState(0);
+  const [editInfo, setEditInfo] = useState(false);
   const [user] = useAuthState(auth);
   // console.log(user.email)
 
-  useEffect(()=>{
-    if(user){
-      fetch(`https://scolarshipsaustralia.up.railway.app/api/consultantInfo/?email=${user.email}`)
-      .then(res=>res.json())
-      .then(data =>{
-        console.log(data)
-        serConsultantInfo(data.data)
-      } 
-      );
-        
+  useEffect(() => {
+    if (user) {
+      fetch(
+        `https://scolarshipsaustralia.up.railway.app/api/consultantInfo/?email=${user.email}`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          serConsultantInfo(data.data);
+        });
     }
-  },[user])
+  }, [user]);
 
   const handleIncrease = () => {
-    setQuantity(prevCount => prevCount + 1);
+    setQuantity((prevCount) => prevCount + 1);
   };
   const handleDecrease = () => {
-    setQuantity(prevCount => prevCount - 1);
+    setQuantity((prevCount) => prevCount - 1);
   };
 
+  const handleConsultInfoEdit=(id)=>{
+    console.log(id);
+     setEditInfo(!editInfo)
 
-
+  }
 
   return (
     <div>
@@ -100,57 +104,87 @@ const Profile = () => {
                 </div>
 
                 <div className="w-[70%] px-4">
-                  <div className="my-4">
-                    <p className="font-bold text-xl">{
-                      usersget.map(({userName})=><p>{userName}</p>)
-                    }</p>
-                    {
-                      consultantInfo.map(({profession,summery})=><>
-
-<div className="mt-4">
-                      <label
-                        for="headline"
-                        className="block text-gray-900 dark:text-gray-300"
+                  <div className="my-4 flex justify-between">
+                    <p className="font-bold text-xl mt-2">
+                      {user?.displayName ? (
+                        user?.displayName
+                      ) : (
+                        <>
+                          {usersget.map(({ userName }) => (
+                            <p>{userName}</p>
+                          ))}
+                        </>
+                      )}
+                    </p>
+                    {!editInfo && (
+                      <div
+                        onClick={() => setEditInfo(!editInfo)}
+                        className="bg-[#2683d4] hover:bg-[#1073CB] rounded-sm"
                       >
-                        <p className="font-sans font-bold text-md mb-2">
-                          Professional Headline
+                        <p className="px-5 py-2 text-white cursor-pointer">
+                          Edit
                         </p>
-                      </label>
-                      <input
-                        type="text"
-                        id="headline"
-                        value={profession}
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder=""
-                        required
-                      />
-                    </div>
-                    <div className="mt-5">
-                      <p className="font-sans mt-3  font-bold text-md mb-2">
-                        Summary
-                      </p>
-                      <textarea
-                        id="message"
-                        rows="8"
-                        name="consultantDoc"
-                        value={summery}
-                        className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="Write your thoughts here..."
-                      ></textarea>
-                    </div>
-                      </>)
-                    }
-                    
+                      </div>
+                    )}
                   </div>
 
-                  <div className="flex justify-end gap-5 mb-10">
-                    <button className="py-2 px-5  text-black bg-[#BEC0C2] rounded-[5px]">
-                      Cancel
-                    </button>
-                    <button className="py-2 px-5 bg-[#446154] text-white rounded-[5px]">
-                      Save
-                    </button>
-                  </div>
+                  {!editInfo ? (
+                    <div>
+                      {consultantInfo.map(({ profession, summery })=><>
+                      <h3 className="text-md font-bold">{profession}</h3>
+                      <p className="">{summery}</p>
+                      </>)}
+                    </div>
+                  ) : (
+                    <div>
+                      {consultantInfo.map(({ profession, summery,_id }) => (
+                        <>
+                          <div className="mt-4">
+                            <label
+                              for="headline"
+                              className="block text-gray-900 dark:text-gray-300"
+                            >
+                              <p className="font-sans font-bold text-md mb-2">
+                                Professional Headline
+                              </p>
+                            </label>
+                            <input
+                              type="text"
+                              id="headline"
+                              value={profession}
+                              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                              placeholder=""
+                              required
+                            />
+                          </div>
+                          <div className="mt-5">
+                            <p className="font-sans mt-3  font-bold text-md mb-2">
+                              Summary
+                            </p>
+                            <textarea
+                              id="message"
+                              rows="8"
+                              name="consultantDoc"
+                              value={summery}
+                              className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                              placeholder="Write your thoughts here..."
+                            ></textarea>
+                          </div>
+
+                          <div className="flex justify-end gap-5 mb-10 mt-2">
+                        <button onClick={() => setEditInfo(!editInfo)} className="py-2 px-5  text-black bg-[#BEC0C2] rounded-[5px]">
+                          Cancel
+                        </button>
+                        <button onClick={()=>handleConsultInfoEdit(_id)}  className="py-2 px-5 bg-[#446154] text-white rounded-[5px]">
+                          Save
+                        </button>
+                      </div>
+                        </>
+                      ))}
+
+                     
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -331,7 +365,9 @@ const Profile = () => {
                 </div>
 
                 <div className="pt-3 pb-7">
-                  <p className="font-sans hover:underline cursor-pointer">Video Production</p>
+                  <p className="font-sans hover:underline cursor-pointer">
+                    Video Production
+                  </p>
                 </div>
               </div>
             </div>
@@ -344,7 +380,7 @@ const Profile = () => {
                   Expert on prepare documents
                 </p>
                 <p className="mt-3 border-2 font-sans mx-5 p-2 cursor-pointer ">
-                  Expert on proposal writing{' '}
+                  Expert on proposal writing{" "}
                 </p>
 
                 <p className="mt-3 mb-7 font-sans border-2 p-2 mx-5 cursor-pointer">
