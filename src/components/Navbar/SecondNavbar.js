@@ -6,7 +6,7 @@ import auth from '../../firebase.init';
 import useFirebase from '../../Hooks/useFirebase';
 import useUsers from '../../Hooks/useUsers';
 import userProfile from '../../Image/User.jpg';
-import "../Navbar/Profile.css"
+import "../../styles/secondNavber/secondNavbar.css"
 
 const SecondNavbar = () => {
   const [nav, setNav] = useState(false);

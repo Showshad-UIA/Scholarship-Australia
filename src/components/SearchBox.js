@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import '../components/Searchbox.css';
+import '../styles/searchbox/Searchbox.css';
 import AllScholarships from './Home/AllScholarships';
 import WesternSydney from './Pages/WesternSydney';
 
