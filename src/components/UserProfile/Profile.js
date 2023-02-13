@@ -48,19 +48,19 @@ const Profile = () => {
   const handleConsultInfoEdit=(id)=>{
     
 
-    fetch(`http://localhost:5000/api/consultantInfo/${id}`,{
-      method: 'PATCH',
-      headers: { 
-        "content-type": "application/json"
-      },
-      body: JSON.stringify({
-        profession:proHeadline,
-        summery:consultSummery,
-        email:user?.email
-      })
-    })
-    .then(res=>res.json())
-    .then(data=>console.log(data))
+    // fetch(`http://localhost:5000/api/consultantInfo/${id}`,{
+    //   method: 'PATCH',
+    //   headers: { 
+    //     "content-type": "application/json"
+    //   },
+    //   body: JSON.stringify({
+    //     profession:proHeadline,
+    //     summery:consultSummery,
+    //     email:user?.email
+    //   })
+    // })
+    // .then(res=>res.json())
+    // .then(data=>console.log(data))
     
     
     console.log(id);
