@@ -25,6 +25,7 @@ import Login from './components/Navbar/Login';
 import JobChoice from './components/Navbar/JobChoice';
 import Consultant from './components/Navbar/Consultant';
 import Profile from './components/UserProfile/Profile';
+import StudentProject from './components/StudentDetails/StudentProject';
 
 
 function App() {
@@ -45,6 +46,8 @@ function App() {
 
         <Route path="/jobChoices" element={<JobChoice></JobChoice>}></Route>
         <Route path="/consultant" element={<Consultant></Consultant>}></Route>
+        <Route path="/student" element={<StudentProject></StudentProject>}></Route>
+
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="search" element={<SearchBox></SearchBox>}></Route>
         <Route

@@ -1,6 +1,7 @@
 import React from 'react';
 import ResourcesBanner from '../Banner/ResourcesBanner';
 
+
 const Resources = () => {
   return (
     <>
@@ -11,6 +12,7 @@ const Resources = () => {
             Our resources page content will update soon
           </marquee>
         </h1>
+       
       </div>
     </>
   );

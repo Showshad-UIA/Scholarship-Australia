@@ -348,7 +348,7 @@ const Profile = () => {
                     </div>
                     <div className="w-[20%]">
                       <p className="font-sans cursor-pointer text-[#84D8A2] hover:underline">
-                        Verify
+                        Verified
                       </p>
                     </div>
                   </div>

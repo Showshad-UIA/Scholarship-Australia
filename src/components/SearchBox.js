@@ -41,14 +41,6 @@ const SearchBox = ({}) => {
   const handleSearchScholarship = e => {
     console.log(selectedScholarship, selectedLevel);
     e.preventDefault();
-    // if (selectedScholarship === 'External scholarships') {
-    //   navigate('/external');
-    // }else if( selectedScholarship==="Government scholarships"){
-    //   navigate('/government')
-    // }
-    //  else {
-    //   navigate(`/searchScholarships/${selectedScholarship}/${selectedLevel}`);
-    // }
 
     if (selectedScholarship && selectedLevel) {
       if (selectedScholarship === 'External scholarships') {
@@ -86,7 +78,7 @@ const SearchBox = ({}) => {
         <div className="relative px-1.5 w-full  lg:w-60 md:w-52 lg:max-w-sm dropdown ">
           <select
             onChange={e => setSelectedScholarship(e.target.value)}
-            className=" p-1 px-2 w-full  bg-white  text-black border-2 border-[#304F40] rounded-3xl shadow-sm outline-none appearance-none  "
+            className=" p-1 px-2 w-full    text-black border-2 border-[#304F40] rounded-3xl shadow-sm outline-none appearance-none  "
           >
             <option className="font-bold dropdown inline text-black disabled ">
               Select type of scholarship
