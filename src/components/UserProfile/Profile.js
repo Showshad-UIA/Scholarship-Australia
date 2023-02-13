@@ -20,13 +20,15 @@ const Profile = () => {
   const [consultantInfo, serConsultantInfo] = useState([]);
   const [quantity, setQuantity] = useState(0);
   const [editInfo, setEditInfo] = useState(false);
+  const [consultSummery, setConsultSummery] = useState('');
+  const [proHeadline, setProHeadline] = useState('');
   const [user] = useAuthState(auth);
   // console.log(user.email)
 
   useEffect(() => {
     if (user) {
       fetch(
-        `https://scolarshipsaustralia.up.railway.app/api/consultantInfo/?email=${user.email}`
+        `http://localhost:5000/api/consultantInfo/?email=${user.email}`
       )
         .then((res) => res.json())
         .then((data) => {
@@ -44,6 +46,23 @@ const Profile = () => {
   };
 
   const handleConsultInfoEdit=(id)=>{
+    
+
+    fetch(`http://localhost:5000/api/consultantInfo/${id}`,{
+      method: 'PATCH',
+      headers: { 
+        "content-type": "application/json"
+      },
+      body: JSON.stringify({
+        profession:proHeadline,
+        summery:consultSummery,
+        email:user?.email
+      })
+    })
+    .then(res=>res.json())
+    .then(data=>console.log(data))
+    
+    
     console.log(id);
      setEditInfo(!editInfo)
 
@@ -151,7 +170,8 @@ const Profile = () => {
                             <input
                               type="text"
                               id="headline"
-                              value={profession}
+                              defaultValue={profession}
+                              onChange={(e)=>setProHeadline(e.target.value)}
                               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                               placeholder=""
                               required
@@ -165,7 +185,8 @@ const Profile = () => {
                               id="message"
                               rows="8"
                               name="consultantDoc"
-                              value={summery}
+                              defaultValue={summery}
+                              onChange={e => setConsultSummery(e.target.value)}
                               className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                               placeholder="Write your thoughts here..."
                             ></textarea>
