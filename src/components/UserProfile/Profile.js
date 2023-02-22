@@ -20,20 +20,19 @@ const Profile = () => {
   const [consultantInfo, serConsultantInfo] = useState([]);
   const [quantity, setQuantity] = useState(0);
   const [editInfo, setEditInfo] = useState(false);
-  const [consultSummery, setConsultSummery] = useState('');
-  const [proHeadline, setProHeadline] = useState('');
+  const [consultSummery, setConsultSummery] = useState("");
+  const [proHeadline, setProHeadline] = useState("");
   const [user] = useAuthState(auth);
-  // console.log(user.email)
+  // console.log(consultantInfo,user.email);
+
 
   useEffect(() => {
     if (user) {
-      fetch(
-        `http://localhost:5000/api/consultantInfo/?email=${user.email}`
-      )
+      fetch(`http://localhost:5000/api/consultantInfo/?email=${user.email}`)
         .then((res) => res.json())
-        .then((data) => {
+        .then(async(data) => {
           console.log(data);
-          serConsultantInfo(data.data);
+          await serConsultantInfo(data.data);
         });
     }
   }, [user]);
@@ -45,28 +44,28 @@ const Profile = () => {
     setQuantity((prevCount) => prevCount - 1);
   };
 
-  const handleConsultInfoEdit=(id)=>{
-    
+  const handleConsultInfoEdit = (e) => {
+    e.preventDefault();
+    const cons_id = e.target.id.value;
+    // console.log(e.target.consultantDoc.value,e.target.headline.value,cons_id)
 
-    // fetch(`http://localhost:5000/api/consultantInfo/${id}`,{
-    //   method: 'PATCH',
-    //   headers: { 
-    //     "content-type": "application/json"
-    //   },
-    //   body: JSON.stringify({
-    //     profession:proHeadline,
-    //     summery:consultSummery,
-    //     email:user?.email
-    //   })
-    // })
-    // .then(res=>res.json())
-    // .then(data=>console.log(data))
-    
-    
-    console.log(id);
-     setEditInfo(!editInfo)
+    fetch(`http://localhost:5000/api/consultantInfo/${cons_id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        profession: e.target.headline.value,
+        summery: e.target.consultantDoc.value,
+        // user_email: user?.email,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
 
-  }
+    // console.log(cons_id);
+    setEditInfo(!editInfo);
+  };
 
   return (
     <div>
@@ -79,7 +78,7 @@ const Profile = () => {
               <div className="flex  ">
                 <div className="">
                   <img
-                    src={photo}
+                    src={user?.photoURL ? user?.photoURL : photo}
                     className="p-5 lg:w-[350px] rounded-[7px] lg:h-[320px] "
                   ></img>
 
@@ -129,8 +128,8 @@ const Profile = () => {
                         user?.displayName
                       ) : (
                         <>
-                          {usersget.map(({ userName }) => (
-                            <p>{userName}</p>
+                          {usersget.map(({ user_name }) => (
+                            <p>{user_name}</p>
                           ))}
                         </>
                       )}
@@ -149,61 +148,79 @@ const Profile = () => {
 
                   {!editInfo ? (
                     <div>
-                      {consultantInfo.map(({ profession, summery })=><>
-                      <h3 className="text-md font-bold">{profession}</h3>
-                      <p className="">{summery}</p>
-                      </>)}
+                      {consultantInfo.map(({ profession, summery }) => (
+                        <div>
+                          <h3 className="text-md font-bold">{profession}</h3>
+                          <p className="">{summery}</p>
+                        </div>
+                      ))}
                     </div>
                   ) : (
                     <div>
-                      {consultantInfo.map(({ profession, summery,_id }) => (
-                        <>
-                          <div className="mt-4">
-                            <label
-                              for="headline"
-                              className="block text-gray-900 dark:text-gray-300"
-                            >
-                              <p className="font-sans font-bold text-md mb-2">
-                                Professional Headline
+                      {consultantInfo.map(
+                        ({ profession, summery, cons_id }) => (
+                          <form onSubmit={handleConsultInfoEdit}>
+                            <div className="mt-4">
+                              <input
+                                type="text"
+                                className="hidden"
+                                defaultValue={cons_id}
+                                name="id"
+                              />
+                              <label
+                                for="headline"
+                                className="block text-gray-900 dark:text-gray-300"
+                              >
+                                <p className="font-sans font-bold text-md mb-2">
+                                  Professional Headline
+                                </p>
+                              </label>
+
+                              <input
+                                type="text"
+                                id="headline"
+                                defaultValue={profession}
+                                name="headline"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder=""
+                                required
+                              />
+                            </div>
+                            <div className="mt-5">
+                              <p className="font-sans mt-3  font-bold text-md mb-2">
+                                Summary
                               </p>
-                            </label>
-                            <input
-                              type="text"
-                              id="headline"
-                              defaultValue={profession}
-                              onChange={(e)=>setProHeadline(e.target.value)}
-                              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                              placeholder=""
-                              required
-                            />
-                          </div>
-                          <div className="mt-5">
-                            <p className="font-sans mt-3  font-bold text-md mb-2">
-                              Summary
-                            </p>
-                            <textarea
-                              id="message"
-                              rows="8"
-                              name="consultantDoc"
-                              defaultValue={summery}
-                              onChange={e => setConsultSummery(e.target.value)}
-                              className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                              placeholder="Write your thoughts here..."
-                            ></textarea>
-                          </div>
+                              <textarea
+                                id="message"
+                                rows="8"
+                                name="consultantDoc"
+                                defaultValue={summery}
+                                // onBlur={(e) =>
+                                //   setConsultSummery(e.target.value)
+                                // }
+                                className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="Write your thoughts here..."
+                              ></textarea>
+                            </div>
 
-                          <div className="flex justify-end gap-5 mb-10 mt-2">
-                        <button onClick={() => setEditInfo(!editInfo)} className="py-2 px-5  text-black bg-[#BEC0C2] rounded-[5px]">
-                          Cancel
-                        </button>
-                        <button onClick={()=>handleConsultInfoEdit(_id)}  className="py-2 px-5 bg-[#446154] text-white rounded-[5px]">
-                          Save
-                        </button>
-                      </div>
-                        </>
-                      ))}
-
-                     
+                            <div className="flex justify-end gap-5 mb-10 mt-2">
+                              <button
+                                onClick={() => setEditInfo(!editInfo)}
+                                className="py-2 px-5  text-black bg-[#BEC0C2] rounded-[5px]"
+                              >
+                                Cancel
+                              </button>
+                              <button
+                                // onClick={() => handleConsultInfoEdit(cons_id )}
+                                type="submit"
+                                className="py-2 px-5 bg-[#446154] text-white rounded-[5px]"
+                              >
+                                Save
+                              </button>
+                            </div>
+                          </form>
+                        )
+                      )}
                     </div>
                   )}
                 </div>

@@ -14,7 +14,7 @@ const Consultant = () => {
 
   // console.log(user.email);
   const handleConsultant= () => {
-    fetch("https://scolarshipsaustralia.up.railway.app/api/consultantInfo",{
+    fetch("http://localhost:5000/api/consultantInfo",{
       method: 'POST',
       headers: {
         "content-type": "application/json",
@@ -22,7 +22,7 @@ const Consultant = () => {
       body: JSON.stringify({
         profession:proHeadline,
         summery:consultSummery,
-        email:user?.email
+        user_email:user?.email
       })
     }) 
     .then(res=>res.json())

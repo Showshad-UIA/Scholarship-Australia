@@ -16,7 +16,7 @@ const SecondNavbar = () => {
   const { handleSignOut } = useFirebase();
   // console.log(user,usersget);
   const { usersget } = useUsers();
-
+  
   return (
     <>
       <div className=" h-15  bg-[#F7F7F7] container mx-auto   ">
@@ -55,9 +55,9 @@ const SecondNavbar = () => {
                           user?.displayName
                         ) : (
                           <>
-                            {usersget.map(({ userName }) => (
+                            {usersget?.map(({ user_name }) => (
                               <>
-                                <p>{userName}</p>
+                                <p>{user_name}</p>
                               </>
                             ))}
                           </>

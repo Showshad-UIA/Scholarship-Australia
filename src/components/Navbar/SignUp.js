@@ -32,15 +32,15 @@ const SignUp = () => {
     reset,
   } = useForm();
   const onSubmit = async data => {
-    fetch('https://scolarshipsaustralia.up.railway.app/api/users', {
+    fetch('http://localhost:5000/api/users/', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
       },
       body: JSON.stringify({
-        userName: data.name,
-        email: data.email,
-        password: data.password,
+        user_name: data.name,
+        user_email: data.email,
+        user_pass: data.password,
       }),
     })
       .then(res => res.json())
@@ -53,7 +53,7 @@ const SignUp = () => {
   if (gUser || user) {
     navigate('/jobChoices');
   }
-  console.log(user);
+  // console.log(user);
 
   return (
     <div className="flex flex-col items-center sm:justify-center sm:pt-0 bg-gray-50 font-sans ">
