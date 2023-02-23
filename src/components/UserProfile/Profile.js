@@ -14,23 +14,26 @@ import auth from "../../firebase.init";
 import useUsers from "../../Hooks/useUsers";
 import photo from "../../Image/photo.png";
 import ExternalBanner from "../Banner/ExternalBanner";
+import ExperienceForm from "./ExperienceForm";
+import PublicationsForm from "./PublicationsForm";
+import QualificationsForm from "./QualificationsForm";
 
 const Profile = () => {
   const { usersget } = useUsers();
   const [consultantInfo, serConsultantInfo] = useState([]);
   const [quantity, setQuantity] = useState(0);
   const [editInfo, setEditInfo] = useState(false);
-  const [consultSummery, setConsultSummery] = useState("");
-  const [proHeadline, setProHeadline] = useState("");
+  const [addExperience, setAddExperience] = useState(false);
   const [user] = useAuthState(auth);
+  const [addQualifications, setAddQualifications] = useState(false);
+  const [addPublications, setAddPublications] = useState(false);
   // console.log(consultantInfo,user.email);
-
 
   useEffect(() => {
     if (user) {
       fetch(`http://localhost:5000/api/consultantInfo/?email=${user.email}`)
         .then((res) => res.json())
-        .then(async(data) => {
+        .then(async (data) => {
           console.log(data);
           await serConsultantInfo(data.data);
         });
@@ -181,7 +184,7 @@ const Profile = () => {
                                 id="headline"
                                 defaultValue={profession}
                                 name="headline"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 outline-none dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder=""
                                 required
                               />
@@ -198,7 +201,7 @@ const Profile = () => {
                                 // onBlur={(e) =>
                                 //   setConsultSummery(e.target.value)
                                 // }
-                                className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white outline-none dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Write your thoughts here..."
                               ></textarea>
                             </div>
@@ -206,14 +209,14 @@ const Profile = () => {
                             <div className="flex justify-end gap-5 mb-10 mt-2">
                               <button
                                 onClick={() => setEditInfo(!editInfo)}
-                                className="py-2 px-5  text-black bg-[#BEC0C2] rounded-[5px]"
+                                className="py-2 px-5  text-black bg-[#BEC0C2] hover:bg-[#a9abad] rounded-[5px]"
                               >
                                 Cancel
                               </button>
                               <button
                                 // onClick={() => handleConsultInfoEdit(cons_id )}
                                 type="submit"
-                                className="py-2 px-5 bg-[#446154] text-white rounded-[5px]"
+                                className="py-2 px-5 bg-[#446154] hover:bg-[#274b3b] text-white rounded-[5px]"
                               >
                                 Save
                               </button>
@@ -240,20 +243,31 @@ const Profile = () => {
                 </div>
               </div>
             </div>
+
+            {/* experience form */}
             <div className="   border-2 mb-7 rounded-[5px]   bg-[#FFFFFF]  ">
               <div className="">
                 <div>
                   <div className="flex justify-between border-b py-5 px-5">
                     <h1 className="text-xl font-bold   ">Experience</h1>
-                    <button className="text-md font-bold px-5 py-2 rounded-[5px] text-white bg-[#446154]  ">
+                    <button
+                      onClick={() => setAddExperience(!addExperience)}
+                      className="text-md font-bold px-5 py-2 rounded-[5px] text-white bg-[#446154]  "
+                    >
                       Add Experience
                     </button>
                   </div>
-                  <div className=" py-2 px-20   mt-5 ">
-                    <p className="mb-10 mt-3 flex justify-center">
-                      No experience to see here!
-                    </p>
-                  </div>
+                  {!addExperience ? (
+                    <div className=" py-2 px-20   mt-5 ">
+                      <p className="mb-10 mt-3 flex justify-center">
+                        No experience to see here!
+                      </p>
+                    </div>
+                  ) : (
+
+                    <ExperienceForm setAddExperience={setAddExperience} addExperience={addExperience} />
+                 
+                  )}
                 </div>
               </div>
             </div>
@@ -262,15 +276,19 @@ const Profile = () => {
                 <div>
                   <div className="flex justify-between border-b py-5 px-5">
                     <h1 className="text-xl font-bold   ">Qualifications</h1>
-                    <button className="text-md font-bold px-5  text-white py-2 rounded-[5px]  bg-[#446154]  ">
+                    <button onClick={()=>setAddQualifications(!addQualifications)} className="text-md font-bold px-5  text-white py-2 rounded-[5px]  bg-[#446154]  ">
                       Add Qualification
                     </button>
                   </div>
+                  {
+                    addQualifications ? 
                   <div className=" py-2 px-20   mt-5 ">
                     <p className="mb-10 mt-3 flex justify-center">
                       No Qualifications have been added.
                     </p>
-                  </div>
+                  </div>: <QualificationsForm setAddQualifications={setAddQualifications} addQualifications={addQualifications}
+                />
+                  }
                 </div>
               </div>
             </div>
@@ -279,15 +297,18 @@ const Profile = () => {
                 <div>
                   <div className="flex justify-between py-5 px-5 border-b">
                     <h1 className="text-xl font-bold ">Publications</h1>
-                    <button className="text-md font-bold px-5 py-2 rounded-[5px] text-white bg-[#446154]  ">
+                    <button onClick={()=>setAddPublications(!addPublications)} className="text-md font-bold px-5 py-2 rounded-[5px] text-white bg-[#446154]  ">
                       Add Publication
                     </button>
                   </div>
+                  {
+                    addPublications ? 
                   <div className=" py-2 px-20   mt-5 ">
                     <p className="mb-10 mt-3 flex justify-center">
                       No publications have been added.
                     </p>
-                  </div>
+                  </div>:<PublicationsForm setAddPublications={setAddPublications} addPublications={addPublications} />
+                  }
                 </div>
               </div>
             </div>

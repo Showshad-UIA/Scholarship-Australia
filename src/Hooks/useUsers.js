@@ -13,8 +13,8 @@ const useUsers = () => {
           // fetch(`http://localhost:5000/api/users`)
           .then(res=>res.json())
           .then(data => 
-            // console.log(data)
-            setUsersGet(data)
+            // console.log(data.data)
+            setUsersGet(data.data)
             );
         }
       },[user])
