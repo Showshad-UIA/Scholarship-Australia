@@ -31,16 +31,35 @@ const SignUp = () => {
     handleSubmit,
     reset,
   } = useForm();
+  // const onSubmit = async data => {
+  //   fetch('https://scolarshipsaustralia.up.railway.app/api/users', {
+  //     method: 'POST',
+  //     headers: {
+  //       'content-type': 'application/json',
+  //     },
+  //     body: JSON.stringify({
+  //       userName: data.name,
+  //       email: data.email,
+  //       password: data.password,
+  //     }),
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => console.log(data));
+
+  //   await createUserWithEmailAndPassword(data.email, data.password);
+  //   // await updateProfile({ displayName: data.name });
+  //   reset();
+  // };
   const onSubmit = async data => {
-    fetch('https://scolarshipsaustralia.up.railway.app/api/users', {
+    fetch('http://localhost:5000/api/users/', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
       },
       body: JSON.stringify({
-        userName: data.name,
-        email: data.email,
-        password: data.password,
+        user_name: data.name,
+        user_email: data.email,
+        user_pass: data.password,
       }),
     })
       .then(res => res.json())
@@ -50,6 +69,7 @@ const SignUp = () => {
     // await updateProfile({ displayName: data.name });
     reset();
   };
+
   if (gUser || user) {
     navigate('/jobChoices');
   }

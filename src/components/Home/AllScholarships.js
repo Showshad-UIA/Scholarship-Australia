@@ -17,7 +17,6 @@ const AllScholarships = ({ d }) => {
   }, []);
   return (
     <div className="container mx-auto  ">
-      {/* <p className='h-10 bg-red-500 text-black'> {schol} {grad}</p> */}
       {universityName.map(d => (
         <div className="mt-10 l mb-5">
           <div className="lg:mx-10 lg:border-t-2  ">

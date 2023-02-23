@@ -55,9 +55,9 @@ const SecondNavbar = () => {
                           user?.displayName
                         ) : (
                           <>
-                            {usersget.map(({ userName }) => (
+                            {usersget.map(({ user_name }) => (
                               <>
-                                <p>{userName}</p>
+                                <p>{user_name}</p>
                               </>
                             ))}
                           </>

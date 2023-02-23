@@ -2,43 +2,40 @@ import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import auth from '../../firebase.init';
-
+import auth from '../../../firebase.init';
 
 const Consultant = () => {
   const [consultSummery, setConsultSummery] = useState('');
   const [proHeadline, setProHeadline] = useState('');
-  const [infoError,setInfoError]=useState('');
+  const [infoError, setInfoError] = useState('');
   const [user] = useAuthState(auth);
-  const navigate=useNavigate()
+  const navigate = useNavigate();
 
   // console.log(user.email);
-  const handleConsultant= () => {
-    fetch("https://scolarshipsaustralia.up.railway.app/api/consultantInfo",{
+  const handleConsultant = () => {
+    fetch('https://scolarshipsaustralia.up.railway.app/api/consultantInfo', {
       method: 'POST',
       headers: {
-        "content-type": "application/json",
+        'content-type': 'application/json',
       },
       body: JSON.stringify({
-        profession:proHeadline,
-        summery:consultSummery,
-        email:user?.email
-      })
-    }) 
-    .then(res=>res.json())
-    .then(data=>{
-      if(data.status === 'success'){
-        setConsultSummery('')
-        setProHeadline('')
-        navigate("/profile")
-        toast.success(data.message)
-      }
-      else{
-        setInfoError(data?.error)
-        // console.log(data.error)
-      }
-    });
-
+        profession: proHeadline,
+        summery: consultSummery,
+        email: user?.email,
+      }),
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.status === 'success') {
+          setConsultSummery('');
+          setProHeadline('');
+          navigate('/profile');
+          toast.success(data.message);
+        } else {
+          setInfoError(data?.error);
+          // console.log(data.error)
+        }
+      });
   };
 
   return (
@@ -57,18 +54,20 @@ const Consultant = () => {
           qualification and experience with Australian scholarships. (word limit
           200 words)
         </p>
-        <div className='mt-4'>
+        <div className="mt-4">
           <label
             for="headline"
             className="block    text-gray-900 dark:text-gray-300"
           >
-            <p className="font-sans font-bold text-xl mb-5">Professional Headline</p>
+            <p className="font-sans font-bold text-xl mb-5">
+              Professional Headline
+            </p>
           </label>
           <input
             type="text"
             id="headline"
             name="Pro-headline"
-            onBlur={(e)=>setProHeadline(e.target.value)}
+            onBlur={e => setProHeadline(e.target.value)}
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder=""
             required
@@ -93,9 +92,7 @@ const Consultant = () => {
           . The subject of the email should be your Scholarships Australia
           username.
         </p>
-        {
-         infoError && <p className='text-red-500'>Error:{infoError}</p>
-        }
+        {infoError && <p className="text-red-500">Error:{infoError}</p>}
         <button
           type="submit"
           className="px-5 py-3 mt-3 mb-4 bg-[#304F40] text-white rounded"

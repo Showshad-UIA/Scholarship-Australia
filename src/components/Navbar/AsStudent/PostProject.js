@@ -1,38 +1,37 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import StudentPageBanner from '../Banner/StudentPageBanner';
+import StudentPageBanner from '../../Banner/StudentPageBanner';
 import Skills from './Skills';
 import StudentFileAttach from './StudentFileAttach';
 
-const StudentProject = () => {
+const PostProject = () => {
   const { register, handleSubmit } = useForm();
   const [data, setData] = useState('');
 
-   const [state, setState] = React.useState({
-     wordCount: 0,
-     charCount: 0,
-   });
+  const [state, setState] = React.useState({
+    wordCount: 0,
+    charCount: 0,
+  });
 
-   const handleKeyPress = e => {
-     const count = e.target.value;
+  const handleKeyPress = e => {
+    const count = e.target.value;
 
-     const countWords = count => {
-       if (count.length === 0) {
-         return 0;
-       } 
-       else {
-         count = count.replace(/(^\s*)|(\s*$)/gi, '');
-         count = count.replace(/[ ]{2,}/gi, ' ');
-         count = count.replace(/\n /, '\n');
-         return count.split(' ').length;
-       }
-     };
+    const countWords = count => {
+      if (count.length === 0) {
+        return 0;
+      } else {
+        count = count.replace(/(^\s*)|(\s*$)/gi, '');
+        count = count.replace(/[ ]{2,}/gi, ' ');
+        count = count.replace(/\n /, '\n');
+        return count.split(' ').length;
+      }
+    };
 
-     setState({
-       wordCount: countWords(count),
-       charCount: count.length,
-     });
-   };
+    setState({
+      wordCount: countWords(count),
+      charCount: count.length,
+    });
+  };
   return (
     <div>
       <StudentPageBanner></StudentPageBanner>
@@ -72,8 +71,8 @@ const StudentProject = () => {
                 <StudentFileAttach></StudentFileAttach>
               </div>
               <div className="mt-5 form-control">
-                <h1 className='my-2'>What skills are required?</h1>
-                <p className='mb-3'>
+                <h1 className="my-2">What skills are required?</h1>
+                <p className="mb-3">
                   Enter up to 5 skills that best describe your project.
                   Freelancers will use these skills to find projects they are
                   most interested and experienced in.
@@ -97,4 +96,4 @@ const StudentProject = () => {
   );
 };
 
-export default StudentProject;
+export default PostProject;

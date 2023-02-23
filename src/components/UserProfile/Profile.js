@@ -6,14 +6,14 @@ import {
   faPhone,
   faUser,
   faUserGear,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useState } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
-import auth from "../../firebase.init";
-import useUsers from "../../Hooks/useUsers";
-import photo from "../../Image/photo.png";
-import ExternalBanner from "../Banner/ExternalBanner";
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import useUsers from '../../Hooks/useUsers';
+import photo from '../../Image/photo.png';
+import ExternalBanner from '../Banner/ExternalBanner';
 
 const Profile = () => {
   const { usersget } = useUsers();
@@ -27,11 +27,9 @@ const Profile = () => {
 
   useEffect(() => {
     if (user) {
-      fetch(
-        `http://localhost:5000/api/consultantInfo/?email=${user.email}`
-      )
-        .then((res) => res.json())
-        .then((data) => {
+      fetch(`http://localhost:5000/api/consultantInfo/?email=${user.email}`)
+        .then(res => res.json())
+        .then(data => {
           console.log(data);
           serConsultantInfo(data.data);
         });
@@ -39,18 +37,16 @@ const Profile = () => {
   }, [user]);
 
   const handleIncrease = () => {
-    setQuantity((prevCount) => prevCount + 1);
+    setQuantity(prevCount => prevCount + 1);
   };
   const handleDecrease = () => {
-    setQuantity((prevCount) => prevCount - 1);
+    setQuantity(prevCount => prevCount - 1);
   };
 
-  const handleConsultInfoEdit=(id)=>{
-    
-
+  const handleConsultInfoEdit = id => {
     // fetch(`http://localhost:5000/api/consultantInfo/${id}`,{
     //   method: 'PATCH',
-    //   headers: { 
+    //   headers: {
     //     "content-type": "application/json"
     //   },
     //   body: JSON.stringify({
@@ -61,12 +57,10 @@ const Profile = () => {
     // })
     // .then(res=>res.json())
     // .then(data=>console.log(data))
-    
-    
-    console.log(id);
-     setEditInfo(!editInfo)
 
-  }
+    console.log(id);
+    setEditInfo(!editInfo);
+  };
 
   return (
     <div>
@@ -79,7 +73,7 @@ const Profile = () => {
               <div className="flex  ">
                 <div className="">
                   <img
-                    src={photo}
+                    src={user?.photoURL ? user?.photoURL : photo}
                     className="p-5 lg:w-[350px] rounded-[7px] lg:h-[320px] "
                   ></img>
 
@@ -87,7 +81,7 @@ const Profile = () => {
                     <p className="mt-7 px-2 font-sans font-bold mb-3">
                       Hourely Rate
                     </p>
-                    <div className="col-md-3 w-[320px]  border-2 border-[#56B55D] px-2  mx-2 ">
+                    {/* <div className="col-md-3 w-[320px]  border-2 border-[#56B55D] px-2  mx-2 ">
                       <div className="input-group mt-2 justify-between flex mx-2">
                         <div className=" "> $ {quantity}</div>
 
@@ -118,7 +112,12 @@ const Profile = () => {
                           <p className="px-2">USD per hour</p>
                         </div>
                       </div>
-                    </div>
+                    </div> */}
+                    <form className="col-md-3 w-[320px]  border-2 border-[#56B55D] px-2  mx-2 flex gap-2">
+                      <p>$</p>
+                      <input type="number" className="outline-none w-40" />
+                      <p>Usd per hour</p>
+                    </form>
                   </div>
                 </div>
 
@@ -129,8 +128,8 @@ const Profile = () => {
                         user?.displayName
                       ) : (
                         <>
-                          {usersget.map(({ userName }) => (
-                            <p>{userName}</p>
+                          {usersget.map(({ user_name }) => (
+                            <p>{user_name}</p>
                           ))}
                         </>
                       )}
@@ -149,14 +148,16 @@ const Profile = () => {
 
                   {!editInfo ? (
                     <div>
-                      {consultantInfo.map(({ profession, summery })=><>
-                      <h3 className="text-md font-bold">{profession}</h3>
-                      <p className="">{summery}</p>
-                      </>)}
+                      {consultantInfo.map(({ profession, summery }) => (
+                        <>
+                          <h3 className="text-md font-bold">{profession}</h3>
+                          <p className="">{summery}</p>
+                        </>
+                      ))}
                     </div>
                   ) : (
                     <div>
-                      {consultantInfo.map(({ profession, summery,_id }) => (
+                      {consultantInfo.map(({ profession, summery, _id }) => (
                         <>
                           <div className="mt-4">
                             <label
@@ -171,7 +172,7 @@ const Profile = () => {
                               type="text"
                               id="headline"
                               defaultValue={profession}
-                              onChange={(e)=>setProHeadline(e.target.value)}
+                              onChange={e => setProHeadline(e.target.value)}
                               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                               placeholder=""
                               required
@@ -193,17 +194,21 @@ const Profile = () => {
                           </div>
 
                           <div className="flex justify-end gap-5 mb-10 mt-2">
-                        <button onClick={() => setEditInfo(!editInfo)} className="py-2 px-5  text-black bg-[#BEC0C2] rounded-[5px]">
-                          Cancel
-                        </button>
-                        <button onClick={()=>handleConsultInfoEdit(_id)}  className="py-2 px-5 bg-[#446154] text-white rounded-[5px]">
-                          Save
-                        </button>
-                      </div>
+                            <button
+                              onClick={() => setEditInfo(!editInfo)}
+                              className="py-2 px-5  text-black bg-[#BEC0C2] rounded-[5px]"
+                            >
+                              Cancel
+                            </button>
+                            <button
+                              onClick={() => handleConsultInfoEdit(_id)}
+                              className="py-2 px-5 bg-[#446154] text-white rounded-[5px]"
+                            >
+                              Save
+                            </button>
+                          </div>
                         </>
                       ))}
-
-                     
                     </div>
                   )}
                 </div>
@@ -401,7 +406,7 @@ const Profile = () => {
                   Expert on prepare documents
                 </p>
                 <p className="mt-3 border-2 font-sans mx-5 p-2 cursor-pointer ">
-                  Expert on proposal writing{" "}
+                  Expert on proposal writing{' '}
                 </p>
 
                 <p className="mt-3 mb-7 font-sans border-2 p-2 mx-5 cursor-pointer">

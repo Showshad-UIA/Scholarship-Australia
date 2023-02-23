@@ -23,9 +23,11 @@ import ExternalEnquireFrom from './components/Pages/ExternalEnquireFrom';
 import SignUp from './components/Navbar/SignUp';
 import Login from './components/Navbar/Login';
 import JobChoice from './components/Navbar/JobChoice';
-import Consultant from './components/Navbar/Consultant';
 import Profile from './components/UserProfile/Profile';
-import StudentProject from './components/StudentDetails/StudentProject';
+import RequiredAuth from './components/RequiredAuth/RequiredAuth';
+import Consultant from './components/Navbar/AsConsultant/Consultant';
+import PostProject from './components/Navbar/AsStudent/PostProject';
+
 
 
 function App() {
@@ -45,8 +47,22 @@ function App() {
         <Route path="/profile" element={<Profile></Profile>}></Route>
 
         <Route path="/jobChoices" element={<JobChoice></JobChoice>}></Route>
-        <Route path="/consultant" element={<Consultant></Consultant>}></Route>
-        <Route path="/student" element={<StudentProject></StudentProject>}></Route>
+        <Route
+          path="/consultant"
+          element={
+            <RequiredAuth>
+              <Consultant></Consultant>
+            </RequiredAuth>
+          }
+        ></Route>
+        <Route
+          path="/student"
+          element={
+            <RequiredAuth>
+              <PostProject></PostProject>
+            </RequiredAuth>
+          }
+        ></Route>
 
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="search" element={<SearchBox></SearchBox>}></Route>
