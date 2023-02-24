@@ -281,7 +281,7 @@ const Profile = () => {
                     </button>
                   </div>
                   {
-                    addQualifications ? 
+                    !addQualifications ? 
                   <div className=" py-2 px-20   mt-5 ">
                     <p className="mb-10 mt-3 flex justify-center">
                       No Qualifications have been added.
@@ -302,7 +302,7 @@ const Profile = () => {
                     </button>
                   </div>
                   {
-                    addPublications ? 
+                    !addPublications ? 
                   <div className=" py-2 px-20   mt-5 ">
                     <p className="mb-10 mt-3 flex justify-center">
                       No publications have been added.

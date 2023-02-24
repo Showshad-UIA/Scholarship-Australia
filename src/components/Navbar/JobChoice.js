@@ -1,10 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import useUsers from '../../Hooks/useUsers';
 
 const JobChoice = () => {
   const [dataValue, setDataValue] = useState('');
   const navigate = useNavigate();
+  const {userId}=useUsers()
   console.log(dataValue);
   const chooseOptions = [
     {
@@ -27,6 +29,24 @@ const JobChoice = () => {
       navigate('/');
     }
   };
+  const handleUserType =()=>{
+    // const userType ={dataValue === 'Join as consultant'? 1:2}
+    fetch('http://localhost:5000/api/usersTypes', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        user_id:userId,
+        user_type:dataValue === 'Join as consultant'? 1:2
+      }),
+    })
+      .then(res => res.json())
+      .then(data => console.log(data));
+  }
+
+
+
   return (
     <div className="container mx-auto">
       <div className="shadow-md rounded-md border-2 lg:mx-60 my-20">
@@ -61,7 +81,7 @@ const JobChoice = () => {
           </div>
           <div className="flex justify-center " onClick={handleService}>
             {dataValue ? (
-              <button className="bg-[#304F40] w-md font-sans rounded-md text-white p-3  mt-3 px-10   mb-3">
+              <button onClick={handleUserType} className="bg-[#304F40] w-md font-sans rounded-md text-white p-3  mt-3 px-10   mb-3">
                 {dataValue}
               </button>
             ) : (
