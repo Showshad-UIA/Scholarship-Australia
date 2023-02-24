@@ -73,7 +73,7 @@ const SignUp = () => {
   if (gUser || user) {
     navigate('/jobChoices');
   }
-  console.log(user);
+  // console.log(user);
 
   return (
     <div className="flex flex-col items-center sm:justify-center sm:pt-0 bg-gray-50 font-sans ">

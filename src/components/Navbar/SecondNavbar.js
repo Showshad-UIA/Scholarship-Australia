@@ -6,7 +6,7 @@ import auth from '../../firebase.init';
 import useFirebase from '../../Hooks/useFirebase';
 import useUsers from '../../Hooks/useUsers';
 import userProfile from '../../Image/User.jpg';
-import "../../styles/secondNavber/secondNavbar.css"
+import '../../styles/secondNavber/secondNavbar.css';
 
 const SecondNavbar = () => {
   const [nav, setNav] = useState(false);
@@ -55,7 +55,7 @@ const SecondNavbar = () => {
                           user?.displayName
                         ) : (
                           <>
-                            {usersget.map(({ user_name }) => (
+                            {usersget?.map(({ user_name }) => (
                               <>
                                 <p>{user_name}</p>
                               </>
